@@ -1,0 +1,271 @@
+<HTML>
+<HEAD><TITLE>I/O Timing Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Top"></A><B><U><big>I/O Timing Report</big></U></B>
+Loading design for application iotiming from file sdram_controller_impl1.ncd.
+Design name: sdram_controller
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CABGA256
+Performance: 5
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 36.4.
+Loading design for application iotiming from file sdram_controller_impl1.ncd.
+Design name: sdram_controller
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CABGA256
+Performance: 6
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 36.4.
+Loading design for application iotiming from file sdram_controller_impl1.ncd.
+Design name: sdram_controller
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO2-4000HC
+Package:     CABGA256
+Performance: M
+Package Status:                     Final          Version 1.44.
+Performance Hardware Data Status:   Final          Version 36.4.
+// Design: sdram_controller
+// Package: CABGA256
+// ncd File: sdram_controller_impl1.ncd
+// Version: Diamond (64-bit) 3.14.0.75.2
+// Written on Fri Mar 14 14:29:04 2025
+// M: Minimum Performance Grade
+// iotiming sdram_controller_impl1.ncd sdram_controller_impl1.prf -gui
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (M, 6, 5, 4):
+
+// Input Setup and Hold Times
+
+Port                    Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+ram_side_data_chip0[0]  clk   R    -0.279      M       1.241     4
+ram_side_data_chip0[10] clk   R    -0.299      M       1.283     4
+ram_side_data_chip0[11] clk   R    -0.275      M       1.229     4
+ram_side_data_chip0[12] clk   R     0.043      4       0.784     4
+ram_side_data_chip0[13] clk   R    -0.299      M       1.283     4
+ram_side_data_chip0[14] clk   R    -0.247      M       1.121     4
+ram_side_data_chip0[15] clk   R    -0.248      M       1.118     4
+ram_side_data_chip0[1]  clk   R     0.164      4       0.717     4
+ram_side_data_chip0[2]  clk   R    -0.275      M       1.229     4
+ram_side_data_chip0[3]  clk   R    -0.299      M       1.283     4
+ram_side_data_chip0[4]  clk   R    -0.302      M       1.313     4
+ram_side_data_chip0[5]  clk   R    -0.191      M       1.002     4
+ram_side_data_chip0[6]  clk   R     0.043      4       0.784     4
+ram_side_data_chip0[7]  clk   R    -0.305      M       1.312     4
+ram_side_data_chip0[8]  clk   R    -0.247      M       1.121     4
+ram_side_data_chip0[9]  clk   R    -0.247      M       1.121     4
+ram_side_data_chip1[0]  clk   R    -0.275      M       1.229     4
+ram_side_data_chip1[10] clk   R    -0.279      M       1.241     4
+ram_side_data_chip1[11] clk   R    -0.305      M       1.312     4
+ram_side_data_chip1[12] clk   R    -0.247      M       1.121     4
+ram_side_data_chip1[13] clk   R    -0.041      4       0.852     4
+ram_side_data_chip1[14] clk   R    -0.295      M       1.271     4
+ram_side_data_chip1[15] clk   R    -0.295      M       1.271     4
+ram_side_data_chip1[1]  clk   R    -0.247      M       1.121     4
+ram_side_data_chip1[2]  clk   R    -0.305      M       1.312     4
+ram_side_data_chip1[3]  clk   R    -0.247      M       1.121     4
+ram_side_data_chip1[4]  clk   R    -0.279      M       1.241     4
+ram_side_data_chip1[5]  clk   R    -0.275      M       1.229     4
+ram_side_data_chip1[6]  clk   R    -0.275      M       1.229     4
+ram_side_data_chip1[7]  clk   R    -0.279      M       1.241     4
+ram_side_data_chip1[8]  clk   R    -0.298      M       1.294     4
+ram_side_data_chip1[9]  clk   R    -0.295      M       1.271     4
+soc_side_rd_enable      clk   R     1.504      4       0.184     6
+soc_side_rst_n          clk   R     6.897      4       0.288     6
+soc_side_wr_data[0]     clk   R    -0.187      M       2.373     4
+soc_side_wr_data[10]    clk   R    -0.206      M       2.415     4
+soc_side_wr_data[11]    clk   R    -0.183      M       2.361     4
+soc_side_wr_data[12]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[13]    clk   R    -0.206      M       2.415     4
+soc_side_wr_data[14]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[15]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[16]    clk   R    -0.183      M       2.361     4
+soc_side_wr_data[17]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[18]    clk   R    -0.212      M       2.444     4
+soc_side_wr_data[19]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[1]     clk   R    -0.209      M       2.445     4
+soc_side_wr_data[20]    clk   R    -0.187      M       2.373     4
+soc_side_wr_data[21]    clk   R    -0.183      M       2.361     4
+soc_side_wr_data[22]    clk   R    -0.183      M       2.361     4
+soc_side_wr_data[23]    clk   R    -0.187      M       2.373     4
+soc_side_wr_data[24]    clk   R    -0.205      M       2.426     4
+soc_side_wr_data[25]    clk   R    -0.203      M       2.403     4
+soc_side_wr_data[26]    clk   R    -0.187      M       2.373     4
+soc_side_wr_data[27]    clk   R    -0.212      M       2.444     4
+soc_side_wr_data[28]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[29]    clk   R    -0.155      M       2.253     4
+soc_side_wr_data[2]     clk   R    -0.183      M       2.361     4
+soc_side_wr_data[30]    clk   R    -0.203      M       2.403     4
+soc_side_wr_data[31]    clk   R    -0.203      M       2.403     4
+soc_side_wr_data[3]     clk   R    -0.206      M       2.415     4
+soc_side_wr_data[4]     clk   R    -0.209      M       2.445     4
+soc_side_wr_data[5]     clk   R    -0.203      M       2.403     4
+soc_side_wr_data[6]     clk   R    -0.155      M       2.253     4
+soc_side_wr_data[7]     clk   R    -0.212      M       2.444     4
+soc_side_wr_data[8]     clk   R    -0.155      M       2.253     4
+soc_side_wr_data[9]     clk   R    -0.155      M       2.253     4
+soc_side_wr_enable      clk   R     4.305      4       0.238     6
+
+
+// Clock to Output Delay
+
+Port                    Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+ram_side_addr[0]        clk   R    14.681         4        3.956          M
+ram_side_addr[10]       clk   R    14.330         4        3.181          M
+ram_side_addr[11]       clk   R    12.148         4        3.453          M
+ram_side_addr[1]        clk   R    13.991         4        3.686          M
+ram_side_addr[2]        clk   R    15.620         4        4.177          M
+ram_side_addr[3]        clk   R    15.704         4        4.205          M
+ram_side_addr[4]        clk   R    13.209         4        3.378          M
+ram_side_addr[5]        clk   R    13.135         4        3.394          M
+ram_side_addr[6]        clk   R    14.013         4        3.687          M
+ram_side_addr[7]        clk   R    15.413         4        4.151          M
+ram_side_addr[8]        clk   R    12.532         4        3.346          M
+ram_side_addr[9]        clk   R    11.416         4        3.159          M
+ram_side_bank_addr[0]   clk   R    14.080         4        3.411          M
+ram_side_bank_addr[1]   clk   R    13.631         4        3.305          M
+ram_side_cas_n          clk   R     7.855         4        2.536          M
+ram_side_data_chip0[0]  clk   R    12.857         4        2.789          M
+ram_side_data_chip0[10] clk   R    12.356         4        2.798          M
+ram_side_data_chip0[11] clk   R    15.494         4        2.908          M
+ram_side_data_chip0[12] clk   R    17.386         4        2.764          M
+ram_side_data_chip0[13] clk   R    11.896         4        2.798          M
+ram_side_data_chip0[14] clk   R    17.466         4        2.844          M
+ram_side_data_chip0[15] clk   R    17.466         4        2.844          M
+ram_side_data_chip0[1]  clk   R    11.372         4        2.710          M
+ram_side_data_chip0[2]  clk   R    14.973         4        2.794          M
+ram_side_data_chip0[3]  clk   R    12.750         4        2.798          M
+ram_side_data_chip0[4]  clk   R    12.738         4        2.790          M
+ram_side_data_chip0[5]  clk   R    15.445         4        2.721          M
+ram_side_data_chip0[6]  clk   R    16.876         4        2.764          M
+ram_side_data_chip0[7]  clk   R    16.277         4        2.789          M
+ram_side_data_chip0[8]  clk   R    17.466         4        2.844          M
+ram_side_data_chip0[9]  clk   R    17.379         4        2.764          M
+ram_side_data_chip1[0]  clk   R    15.494         4        2.794          M
+ram_side_data_chip1[10] clk   R    12.864         4        2.789          M
+ram_side_data_chip1[11] clk   R    15.446         4        2.789          M
+ram_side_data_chip1[12] clk   R    16.449         4        2.764          M
+ram_side_data_chip1[13] clk   R    15.473         4        2.845          M
+ram_side_data_chip1[14] clk   R    15.445         4        2.721          M
+ram_side_data_chip1[15] clk   R    14.899         4        2.886          M
+ram_side_data_chip1[1]  clk   R    16.449         4        2.844          M
+ram_side_data_chip1[2]  clk   R    15.453         4        2.789          M
+ram_side_data_chip1[3]  clk   R    16.959         4        2.844          M
+ram_side_data_chip1[4]  clk   R    12.430         4        2.789          M
+ram_side_data_chip1[5]  clk   R    15.494         4        2.794          M
+ram_side_data_chip1[6]  clk   R    15.494         4        2.714          M
+ram_side_data_chip1[7]  clk   R    12.864         4        2.789          M
+ram_side_data_chip1[8]  clk   R    11.294         4        2.796          M
+ram_side_data_chip1[9]  clk   R    14.899         4        2.801          M
+ram_side_ldqm_pin_chip0 clk   R    14.604         4        3.768          M
+ram_side_ldqm_pin_chip1 clk   R    14.688         4        3.796          M
+ram_side_ras_n          clk   R     7.855         4        2.536          M
+ram_side_udqm_pin_chip0 clk   R    13.582         4        3.527          M
+ram_side_udqm_pin_chip1 clk   R    14.688         4        3.796          M
+ram_side_wr_enable      clk   R     7.855         4        2.536          M
+soc_side_busy           clk   R     7.855         4        2.536          M
+soc_side_rd_data[0]     clk   R     7.930         4        2.529          M
+soc_side_rd_data[10]    clk   R     7.856         4        2.538          M
+soc_side_rd_data[11]    clk   R     7.940         4        2.534          M
+soc_side_rd_data[12]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[13]    clk   R     7.856         4        2.538          M
+soc_side_rd_data[14]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[15]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[16]    clk   R     7.940         4        2.534          M
+soc_side_rd_data[17]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[18]    clk   R     7.874         4        2.529          M
+soc_side_rd_data[19]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[1]     clk   R     7.844         4        2.530          M
+soc_side_rd_data[20]    clk   R     7.930         4        2.529          M
+soc_side_rd_data[21]    clk   R     7.940         4        2.534          M
+soc_side_rd_data[22]    clk   R     7.940         4        2.534          M
+soc_side_rd_data[23]    clk   R     7.930         4        2.529          M
+soc_side_rd_data[24]    clk   R     7.855         4        2.536          M
+soc_side_rd_data[25]    clk   R     7.866         4        2.541          M
+soc_side_rd_data[26]    clk   R     7.930         4        2.529          M
+soc_side_rd_data[27]    clk   R     7.874         4        2.529          M
+soc_side_rd_data[28]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[29]    clk   R     8.036         4        2.584          M
+soc_side_rd_data[2]     clk   R     7.940         4        2.534          M
+soc_side_rd_data[30]    clk   R     7.866         4        2.541          M
+soc_side_rd_data[31]    clk   R     7.866         4        2.541          M
+soc_side_rd_data[3]     clk   R     7.856         4        2.538          M
+soc_side_rd_data[4]     clk   R     7.844         4        2.530          M
+soc_side_rd_data[5]     clk   R     7.866         4        2.541          M
+soc_side_rd_data[6]     clk   R     8.036         4        2.584          M
+soc_side_rd_data[7]     clk   R     7.874         4        2.529          M
+soc_side_rd_data[8]     clk   R     8.036         4        2.584          M
+soc_side_rd_data[9]     clk   R     8.036         4        2.584          M
+soc_side_rd_ready       clk   R     7.930         4        2.529          M
+WARNING: you must also run trce with hold speed: 4
+WARNING: you must also run trce with hold speed: 6
+WARNING: you must also run trce with setup speed: M
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

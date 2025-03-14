@@ -1,0 +1,52 @@
+Selecting top level module sdram_controller
+@N: CG364 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":47:7:47:22|Synthesizing module sdram_controller in library work.
+@W: CG133 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":172:11:172:28|Object init_pause_counter is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on sdram_controller .......
+@W: CL169 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":242:0:242:5|Pruning unused register refresh_cnt[9:0]. Make sure that there are no unused intermediate registers.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":204:0:204:5|Register bit command[6] is always 0.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":204:0:204:5|Register bit command[7] is always 1.
+@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":204:0:204:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 91MB peak: 92MB)
+Running optimization stage 2 on sdram_controller .......
+@N: CL201 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":204:0:204:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 32 reachable states with original encodings of:
+   00000
+   00001
+   00010
+   00011
+   00100
+   00101
+   00110
+   00111
+   01000
+   01001
+   01010
+   01011
+   01100
+   01101
+   01110
+   01111
+   10000
+   10001
+   10010
+   10011
+   10100
+   10101
+   10110
+   10111
+   11000
+   11001
+   11010
+   11011
+   11100
+   11101
+   11110
+   11111
+Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
+
+For a summary of runtime per design unit, please see file:
+==========================================================
+@L: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\layer0.duruntime
+
+

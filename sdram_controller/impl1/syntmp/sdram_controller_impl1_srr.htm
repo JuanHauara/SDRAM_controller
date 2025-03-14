@@ -1,0 +1,937 @@
+<html><body><samp><pre>
+<!@TC:1741958920>
+#Build: Synplify Pro (R) V-2023.09L-2, Build 349R, Sep 17 2024
+#install: C:\lscc\diamond\3.14\synpbase
+#OS: Windows 10 or later
+#Hostname: JH-LAPTOP
+
+# Fri Mar 14 14:28:40 2025
+
+#Implementation: impl1
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=compilerReport1></a>Synopsys HDL Compiler, Version comp202309synp1, Build 349R, Built Sep 17 2024 08:16:26, @</a>
+
+@N: : <!@TM:1741958921> | Running in 64-bit mode 
+###########################################################[
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=compilerReport2></a>Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 2024 08:16:26, @</a>
+
+@N: : <!@TM:1741958921> | Running in 64-bit mode 
+@I::"C:\lscc\diamond\3.14\synpbase\lib\lucent\machxo2.v" (library work)
+@I::"C:\lscc\diamond\3.14\synpbase\lib\lucent\pmi_def.v" (library work)
+@I::"C:\lscc\diamond\3.14\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v" (library work)
+Verilog syntax check successful!
+Selecting top level module sdram_controller
+@N:<a href="@N:CG364:@XP_HELP">CG364</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@N:CG364:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958921> | Synthesizing module sdram_controller in library work.
+<font color=#A52A2A>@W:<a href="@W:CG133:@XP_HELP">CG133</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:172:11:172:29:@W:CG133:@XP_MSG">sdram_controller.v(172)</a><!@TM:1741958921> | Object init_pause_counter is declared but not assigned. Either assign a value or remove the declaration.</font>
+Running optimization stage 1 on sdram_controller .......
+<font color=#A52A2A>@W:<a href="@W:CL169:@XP_HELP">CL169</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:242:0:242:6:@W:CL169:@XP_MSG">sdram_controller.v(242)</a><!@TM:1741958921> | Pruning unused register refresh_cnt[9:0]. Make sure that there are no unused intermediate registers.</font>
+@N:<a href="@N:CL189:@XP_HELP">CL189</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:CL189:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958921> | Register bit command[6] is always 0.
+@N:<a href="@N:CL189:@XP_HELP">CL189</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:CL189:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958921> | Register bit command[7] is always 1.
+<font color=#A52A2A>@W:<a href="@W:CL279:@XP_HELP">CL279</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@W:CL279:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958921> | Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</font>
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 91MB peak: 92MB)
+Running optimization stage 2 on sdram_controller .......
+@N:<a href="@N:CL201:@XP_HELP">CL201</a> : <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:CL201:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958921> | Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 32 reachable states with original encodings of:
+   00000
+   00001
+   00010
+   00011
+   00100
+   00101
+   00110
+   00111
+   01000
+   01001
+   01010
+   01011
+   01100
+   01101
+   01110
+   01111
+   10000
+   10001
+   10010
+   10011
+   10100
+   10101
+   10110
+   10111
+   11000
+   11001
+   11010
+   11011
+   11100
+   11101
+   11110
+   11111
+Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
+
+For a summary of runtime per design unit, please see file:
+==========================================================
+Linked File:  <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\layer0.duruntime:@XP_FILE">layer0.duruntime</a>
+
+
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 92MB peak: 93MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Mar 14 14:28:41 2025
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=compilerReport3></a>Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep 17 2024 08:16:26, @</a>
+
+@N: : <!@TM:1741958921> | Running in 64-bit mode 
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Mar 14 14:28:41 2025
+
+###########################################################]
+
+For a summary of runtime and memory usage for all design units, please see file:
+==========================================================
+Linked File:  <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_comp.rt.csv:@XP_FILE">sdram_controller_impl1_comp.rt.csv</a>
+
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 22MB peak: 23MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Mar 14 14:28:41 2025
+
+###########################################################]
+
+</pre></samp></body></html>
+<html><body><samp><pre>
+<!@TC:1741958920>
+###########################################################[
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=compilerReport4></a>Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep 17 2024 08:16:26, @</a>
+
+@N: : <!@TM:1741958922> | Running in 64-bit mode 
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Mar 14 14:28:42 2025
+
+###########################################################]
+
+</pre></samp></body></html>
+<html><body><samp><pre>
+<!@TC:1741958920>
+Premap Report
+
+
+</pre></samp></body></html>
+<html><body><samp><pre>
+<!@TC:1741958920>
+# Fri Mar 14 14:28:42 2025
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=mapperReport5></a>Synopsys Lattice Technology Pre-mapping, Version map202309lat, Build 191R, Built Sep 17 2024 10:38:50, @</a>
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 182MB peak: 182MB)
+
+
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 197MB)
+
+@A:<a href="@A:MF827:@XP_HELP">MF827</a> : <!@TM:1741958923> | No constraint file specified. 
+Linked File:  <a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1_scck.rpt:@XP_FILE">sdram_controller_impl1_scck.rpt</a>
+See clock summary report "C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1_scck.rpt"
+@N:<a href="@N:MF916:@XP_HELP">MF916</a> : <!@TM:1741958923> | Option synthesis_strategy=base is enabled.  
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1741958923> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1741958923> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 189MB peak: 197MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 189MB peak: 197MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 202MB peak: 202MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 203MB peak: 205MB)
+
+NConnInternalConnection caching is on
+
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+
+
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+
+
+Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+
+
+Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+
+Encoding state machine state[31:0] (in view: work.sdram_controller(verilog))
+original code -> new code
+   00000 -> 00000000000000000000000000000001
+   00001 -> 00000000000000000000000000000010
+   00010 -> 00000000000000000000000000000100
+   00011 -> 00000000000000000000000000001000
+   00100 -> 00000000000000000000000000010000
+   00101 -> 00000000000000000000000000100000
+   00110 -> 00000000000000000000000001000000
+   00111 -> 00000000000000000000000010000000
+   01000 -> 00000000000000000000000100000000
+   01001 -> 00000000000000000000001000000000
+   01010 -> 00000000000000000000010000000000
+   01011 -> 00000000000000000000100000000000
+   01100 -> 00000000000000000001000000000000
+   01101 -> 00000000000000000010000000000000
+   01110 -> 00000000000000000100000000000000
+   01111 -> 00000000000000001000000000000000
+   10000 -> 00000000000000010000000000000000
+   10001 -> 00000000000000100000000000000000
+   10010 -> 00000000000001000000000000000000
+   10011 -> 00000000000010000000000000000000
+   10100 -> 00000000000100000000000000000000
+   10101 -> 00000000001000000000000000000000
+   10110 -> 00000000010000000000000000000000
+   10111 -> 00000000100000000000000000000000
+   11000 -> 00000001000000000000000000000000
+   11001 -> 00000010000000000000000000000000
+   11010 -> 00000100000000000000000000000000
+   11011 -> 00001000000000000000000000000000
+   11100 -> 00010000000000000000000000000000
+   11101 -> 00100000000000000000000000000000
+   11110 -> 01000000000000000000000000000000
+   11111 -> 10000000000000000000000000000000
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[0]. 
+<font color=#A52A2A>@W:<a href="@W:FX474:@XP_HELP">FX474</a> : <!@TM:1741958923> | User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. </font> 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[1]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[2]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[3]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[4]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[5]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[6]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[7]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "1" on instance state[8]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[9]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[10]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[11]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[12]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[13]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[14]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[15]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[16]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[17]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[18]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[19]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[20]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[21]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[22]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[23]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[24]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[25]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[26]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[27]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[28]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[29]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[30]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958923> | Applying initial value "0" on instance state[31]. 
+
+Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+
+
+mixed edge conversion for GCC is OFF
+
+Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+
+
+Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 272MB peak: 272MB)
+
+
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 272MB peak: 273MB)
+
+@N:<a href="@N:FX1184:@XP_HELP">FX1184</a> : <!@TM:1741958923> | Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller  
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 272MB peak: 273MB)
+
+
+
+<a name=mapperReport6></a>Clock Summary</a>
+******************
+
+          Start                    Requested     Requested     Clock        Clock          Clock
+Level     Clock                    Frequency     Period        Type         Group          Load 
+------------------------------------------------------------------------------------------------
+0 -       sdram_controller|clk     100.0 MHz     10.000        inferred     (multiple)     108  
+================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                         Clock     Source        Clock Pin             Non-clock Pin     Non-clock Pin
+Clock                    Load      Pin           Seq Example           Seq Example       Comb Example 
+------------------------------------------------------------------------------------------------------
+sdram_controller|clk     108       clk(port)     wr_data_r[31:0].C     -                 -            
+======================================================================================================
+
+<font color=#A52A2A>@W:<a href="@W:MT529:@XP_HELP">MT529</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@W:MT529:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958923> | Found inferred clock sdram_controller|clk which controls 108 sequential elements including state[31]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </font>
+
+ICG Latch Removal Summary:
+Number of ICG latches removed: 0
+Number of ICG latches not removed:	0
+
+
+@S |Clock Optimization Summary
+
+
+
+<a name=clockReport7></a>#### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[</a>
+
+1 non-gated/non-generated clock tree(s) driving 108 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+=========================== Non-Gated/Non-Generated Clocks ============================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
+---------------------------------------------------------------------------------------
+<a href="@|L:C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_prem.srm@|S:clk@|E:state[31]@|F:@syn_dgcc_clockid0_0==1@|M:ClockId_0_0 @XP_NAMES_BY_PROP">ClockId_0_0</a>       clk                 port                   108        state[31]      
+=======================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######
+
+
+Summary of user generated gated clocks:
+0 user generated gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+
+@N:<a href="@N:FX1143:@XP_HELP">FX1143</a> : <!@TM:1741958923> | Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized. 
+Finished Pre Mapping Phase.
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 274MB peak: 274MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 274MB peak: 274MB)
+
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 275MB peak: 275MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 184MB peak: 276MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri Mar 14 14:28:43 2025
+
+###########################################################]
+
+</pre></samp></body></html>
+<html><body><samp><pre>
+<!@TC:1741958920>
+Map & Optimize Report
+
+
+</pre></samp></body></html>
+<html><body><samp><pre>
+<!@TC:1741958920>
+# Fri Mar 14 14:28:44 2025
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09L-2
+Install: C:\lscc\diamond\3.14\synpbase
+OS: Windows 10 or later
+Hostname: JH-LAPTOP
+
+Implementation : impl1
+<a name=mapperReport18></a>Synopsys Lattice Technology Mapper, Version map202309lat, Build 191R, Built Sep 17 2024 10:38:50, @</a>
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 182MB peak: 182MB)
+
+@N:<a href="@N:MF916:@XP_HELP">MF916</a> : <!@TM:1741958926> | Option synthesis_strategy=base is enabled.  
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1741958926> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1741958926> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 197MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 197MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 199MB peak: 199MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 200MB peak: 202MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
+
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[0] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[1] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[2] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[3] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[4] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[5] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[6] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[7] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[8] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[9] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[10] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[11] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[12] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[13] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[14] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip0[15] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[0] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[1] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[2] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[3] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[4] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[5] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[6] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[7] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[8] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[9] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[10] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[11] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[12] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[13] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[14] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net ram_side_data_chip1[15] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1251 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1252 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1253 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1254 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1255 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1256 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1257 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1258 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1259 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1260 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1261 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1262 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1263 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1264 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1265 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1266 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1267 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1268 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1269 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1270 has multiple drivers .</font>
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM state_cnt_nxt_2[2:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM next_3[4:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM command_nxt_3[7:2] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM state_cnt_nxt_2[2:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:MO106:@XP_HELP">MO106</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:MO106:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | Found ROM state_cnt_nxt_2[2:0] (in view: work.sdram_controller(verilog)) with 18 words by 3 bits.
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM next_3[4:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:MO106:@XP_HELP">MO106</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:MO106:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | Found ROM next_3[4:0] (in view: work.sdram_controller(verilog)) with 18 words by 5 bits.
+@N:<a href="@N:BZ173:@XP_HELP">BZ173</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:BZ173:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | ROM command_nxt_3[7:2] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N:<a href="@N:MO106:@XP_HELP">MO106</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:353:2:353:6:@N:MO106:@XP_MSG">sdram_controller.v(353)</a><!@TM:1741958926> | Found ROM command_nxt_3[7:2] (in view: work.sdram_controller(verilog)) with 18 words by 6 bits.
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net state_cnt_nxt_2[0] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net state_cnt_nxt_2[1] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net state_cnt_nxt_2[2] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1432 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net command_nxt_3[3] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net command_nxt_3[4] has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1479 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1480 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1481 has multiple drivers .</font>
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 284MB)
+
+<font color=#A52A2A>@W:<a href="@W:BN132:@XP_HELP">BN132</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@W:BN132:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing instance command[2] because it is equivalent to instance command[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.</font>
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[0]. 
+<font color=#A52A2A>@W:<a href="@W:FX474:@XP_HELP">FX474</a> : <!@TM:1741958926> | User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. </font> 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[1]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[2]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[3]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[4]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[5]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[6]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[7]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "1" on instance state[8]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[9]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[10]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[11]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[12]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[13]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[14]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[15]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[16]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[17]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[18]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[19]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[20]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[21]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[22]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[23]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[24]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[25]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[26]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[27]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[28]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[29]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[30]. 
+@N:<a href="@N:FX493:@XP_HELP">FX493</a> : <!@TM:1741958926> | Applying initial value "0" on instance state[31]. 
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance command[1] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register command[1] (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_1670 has multiple drivers .</font>
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 284MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 284MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+NConnInternalConnection caching is on
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[6] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[1] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[7] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[21] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[28] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[23] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[22] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[31] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[30] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[29] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 272MB peak: 284MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 272MB peak: 284MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 284MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 284MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 284MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 283MB peak: 284MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:01s		     1.82ns		 168 /        96
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 283MB peak: 284MB)
+
+@N:<a href="@N:BN362:@XP_HELP">BN362</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@N:BN362:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Removing sequential instance state[2] (in view: work.sdram_controller(verilog)) because it does not drive other instances.
+@N:<a href="@N:FX164:@XP_HELP">FX164</a> : <!@TM:1741958926> | The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.   
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register wr_data_r_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register rd_data_r_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register command_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register command_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register command_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A:<a href="@A:BN291:@XP_HELP">BN291</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:204:0:204:6:@A:BN291:@XP_MSG">sdram_controller.v(204)</a><!@TM:1741958926> | Boundary register command_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net N_2139 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_0 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_1 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_2 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_3 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_4 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_5 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_6 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_7 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_8 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_9 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_10 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_11 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_12 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_13 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_14 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_15 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_16 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_17 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_18 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_19 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_20 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_21 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_22 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_23 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_24 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_25 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_26 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_27 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_28 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_29 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_30 has multiple drivers .</font>
+<font color=#A52A2A>@W:<a href="@W:BN161:@XP_HELP">BN161</a> : <a href="c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v:47:7:47:23:@W:BN161:@XP_MSG">sdram_controller.v(47)</a><!@TM:1741958926> | Net soc_side_rst_n_c_i_31 has multiple drivers .</font>
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 283MB peak: 284MB)
+
+
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 284MB peak: 284MB)
+
+
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 284MB peak: 284MB)
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 227MB peak: 284MB)
+
+Writing Analyst data base C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 283MB peak: 284MB)
+
+Writing EDIF Netlist and constraint files
+@N:<a href="@N:FX1056:@XP_HELP">FX1056</a> : <!@TM:1741958926> | Writing EDF file: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi 
+@N:<a href="@N:BW106:@XP_HELP">BW106</a> : <!@TM:1741958926> | Synplicity Constraint File capacitance units using default value of 1pF  
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 291MB peak: 291MB)
+
+
+Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 291MB peak: 292MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 289MB peak: 292MB)
+
+<font color=#A52A2A>@W:<a href="@W:MT420:@XP_HELP">MT420</a> : <!@TM:1741958926> | Found inferred clock sdram_controller|clk with period 10.00ns. Please declare a user-defined clock on port clk.</font> 
+
+
+<a name=timingReport19></a>##### START OF TIMING REPORT #####[</a>
+# Timing report written on Fri Mar 14 14:28:46 2025
+#
+
+
+Top view:               sdram_controller
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N:<a href="@N:MT320:@XP_HELP">MT320</a> : <!@TM:1741958926> | This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report. 
+
+@N:<a href="@N:MT322:@XP_HELP">MT322</a> : <!@TM:1741958926> | Clock constraints include only register-to-register paths associated with each individual clock. 
+
+
+
+<a name=performanceSummary20></a>Performance Summary</a>
+*******************
+
+
+Worst slack in design: 1.111
+
+                         Requested     Estimated     Requested     Estimated               Clock        Clock     
+Starting Clock           Frequency     Frequency     Period        Period        Slack     Type         Group     
+------------------------------------------------------------------------------------------------------------------
+sdram_controller|clk     100.0 MHz     112.5 MHz     10.000        8.889         1.111     inferred     (multiple)
+==================================================================================================================
+
+
+
+
+
+<a name=clockRelationships21></a>Clock Relationships</a>
+*******************
+
+Clocks                                      |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+----------------------------------------------------------------------------------------------------------------------------------
+Starting              Ending                |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+----------------------------------------------------------------------------------------------------------------------------------
+sdram_controller|clk  sdram_controller|clk  |  10.000      1.111  |  No paths    -      |  No paths    -      |  No paths    -    
+==================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+<a name=interfaceInfo22></a>Interface Information </a>
+*********************
+
+No IO constraint found
+
+
+
+====================================
+<a name=clockReport23></a>Detailed Report for Clock: sdram_controller|clk</a>
+====================================
+
+
+
+<a name=startingSlack24></a>Starting Points with Worst Slack</a>
+********************************
+
+              Starting                                                   Arrival          
+Instance      Reference                Type        Pin     Net           Time        Slack
+              Clock                                                                       
+------------------------------------------------------------------------------------------
+state[25]     sdram_controller|clk     FD1S3AX     Q       state[25]     1.180       1.111
+state[27]     sdram_controller|clk     FD1S3AX     Q       state[27]     1.180       1.111
+state[26]     sdram_controller|clk     FD1S3AX     Q       state[26]     1.232       1.139
+state[17]     sdram_controller|clk     FD1S3AX     Q       state[17]     1.148       1.143
+state[19]     sdram_controller|clk     FD1S3AX     Q       state[19]     1.148       1.143
+state[18]     sdram_controller|clk     FD1S3AX     Q       state[18]     1.220       1.151
+state[24]     sdram_controller|clk     FD1S3AX     Q       state[24]     1.204       1.159
+state[14]     sdram_controller|clk     FD1S3AX     Q       state[14]     1.204       1.167
+state[16]     sdram_controller|clk     FD1S3AX     Q       state[16]     1.188       1.175
+state[10]     sdram_controller|clk     FD1S3AX     Q       state[10]     1.180       1.191
+==========================================================================================
+
+
+<a name=endingSlack25></a>Ending Points with Worst Slack</a>
+******************************
+
+              Starting                                                       Required          
+Instance      Reference                Type        Pin     Net               Time         Slack
+              Clock                                                                            
+-----------------------------------------------------------------------------------------------
+state[3]      sdram_controller|clk     FD1S3AX     D       state_nss[3]      10.089       1.111
+state[4]      sdram_controller|clk     FD1S3AX     D       state_nss[4]      10.089       1.258
+state[11]     sdram_controller|clk     FD1S3AX     D       state_nss[11]     10.089       1.258
+state[12]     sdram_controller|clk     FD1S3AX     D       state_nss[12]     10.089       1.258
+state[13]     sdram_controller|clk     FD1S3AX     D       state_nss[13]     10.089       1.258
+state[5]      sdram_controller|clk     FD1S3AX     D       state_nss[5]      10.089       1.466
+state[14]     sdram_controller|clk     FD1S3AX     D       state_nss[14]     10.089       2.128
+state[15]     sdram_controller|clk     FD1S3AX     D       state_nss[15]     10.089       2.128
+state[17]     sdram_controller|clk     FD1S3AX     D       state_nss[17]     10.089       2.128
+state[18]     sdram_controller|clk     FD1S3AX     D       state_nss[18]     10.089       2.128
+===============================================================================================
+
+
+
+<a name=worstPaths26></a>Worst Path Information</a>
+<a href="C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.srr:srsfC:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.srs:fp:74213:76373:@XP_NAMES_GATE">View Worst Path in Analyst</a>
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            -0.089
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         10.089
+
+    - Propagation time:                      8.977
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     1.111
+
+    Number of logic level(s):                7
+    Starting point:                          state[25] / Q
+    Ending point:                            state[3] / D
+    The start point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+    The end   point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=5.000 period=10.000) on pin CK
+
+Instance / Net                         Pin      Pin               Arrival     No. of    
+Name                      Type         Name     Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------
+state[25]                 FD1S3AX      Q        Out     1.180     1.180 r     -         
+state[25]                 Net          -        -       -         -           5         
+un35_i_a2_1[0]            ORCALUT4     C        In      0.000     1.180 r     -         
+un35_i_a2_1[0]            ORCALUT4     Z        Out     1.233     2.413 f     -         
+N_1354                    Net          -        -       -         -           6         
+un35_i_a2_10[0]           ORCALUT4     A        In      0.000     2.413 f     -         
+un35_i_a2_10[0]           ORCALUT4     Z        Out     1.297     3.709 f     -         
+un35_li[0]                Net          -        -       -         -           13        
+next_3_i_o2[2]            ORCALUT4     A        In      0.000     3.709 f     -         
+next_3_i_o2[2]            ORCALUT4     Z        Out     1.153     4.862 f     -         
+N_1426                    Net          -        -       -         -           3         
+next_3_i[1]               ORCALUT4     A        In      0.000     4.862 f     -         
+next_3_i[1]               ORCALUT4     Z        Out     1.233     6.095 r     -         
+next_3_li[1]              Net          -        -       -         -           6         
+state_ns_0_a2_0[2]        ORCALUT4     A        In      0.000     6.095 r     -         
+state_ns_0_a2_0[2]        ORCALUT4     Z        Out     1.249     7.344 f     -         
+N_1361                    Net          -        -       -         -           7         
+state_ns_0_d_0_1_0[3]     ORCALUT4     A        In      0.000     7.344 f     -         
+state_ns_0_d_0_1_0[3]     ORCALUT4     Z        Out     1.017     8.361 r     -         
+state_ns_0_d_0_1_0[3]     Net          -        -       -         -           1         
+state_ns_0_d_0[3]         ORCALUT4     D        In      0.000     8.361 r     -         
+state_ns_0_d_0[3]         ORCALUT4     Z        Out     0.617     8.977 f     -         
+state_nss[3]              Net          -        -       -         -           1         
+state[3]                  FD1S3AX      D        In      0.000     8.977 f     -         
+========================================================================================
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 290MB peak: 292MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 290MB peak: 292MB)
+
+---------------------------------------
+<a name=resourceUsage27></a>Resource Usage Report</a>
+Part: lcmxo2_4000hc-4
+
+Register bits: 95 of 4320 (2%)
+PIC Latch:       0
+I/O cells:       152
+
+
+Details:
+BB:             32
+FD1P3IX:        1
+FD1S3AX:        20
+FD1S3AY:        1
+FD1S3JX:        4
+GSR:            1
+IB:             63
+IFS1P3IX:       32
+INV:            2
+OB:             57
+OFS1P3DX:       1
+OFS1P3IX:       33
+OFS1P3JX:       3
+ORCALUT4:       158
+PUR:            1
+VHI:            1
+VLO:            1
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 134MB peak: 292MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Fri Mar 14 14:28:46 2025
+
+###########################################################]
+
+</pre></samp></body></html>
