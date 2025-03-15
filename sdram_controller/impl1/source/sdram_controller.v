@@ -97,64 +97,68 @@ module sdram_controller # (
 );
 
 
-/* 
-	Local Parameters. 
-*/
+//-------------------------------
+// Parámetros de Inicialización 
+//-------------------------------
 
-localparam INIT_PAUSE_US = 200;
+localparam INIT_PAUSE_US = 200;  // Pausa inicial de 200us.
 localparam INIT_PAUSE_CYCLES = INIT_PAUSE_US * CLK_FREQUENCY_MHZ;
+
+// Número de ciclos de refresco requeridos durante la inicialización.
+localparam INIT_REFRESH_COUNT = 8;
 
 localparam CYCLES_BETWEEN_REFRESH = (CLK_FREQUENCY_MHZ * 1_000 * REFRESH_TIME_MS) / REFRESH_COUNT;
 
-// STATES
-localparam	IDLE = 5'b00000;
 
-			// SDRAM initialization
-localparam	INIT_NOP1 = 5'b01000,
-			INIT_PRE1 = 5'b01001,
-			INIT_NOP1_1 = 5'b00101,
-			INIT_REF1 = 5'b01010,
-			INIT_NOP2 = 5'b01011,
-			INIT_REF2 = 5'b01100,
-			INIT_NOP3 = 5'b01101,
-			INIT_LOAD = 5'b01110,
-			INIT_NOP4 = 5'b01111;
+//-------------------------------
+// Definición de Estados
+//-------------------------------
 
-			// SDRAM refresh
-localparam	REF_PRE  = 5'b00001,
-			REF_NOP1 = 5'b00010,
-			REF_REF  = 5'b00011,
-			REF_NOP2 = 5'b00100;
+/*
+	Se utiliza codificación Grey.
 
-			// Read SDRAM
-localparam	READ_ACT  = 5'b10000,
-			READ_NOP1 = 5'b10001,
-			READ_CAS  = 5'b10010,
-			READ_NOP2 = 5'b10011,
-			READ_READ = 5'b10100;
+	Ventajas de la Codificación Gray:
+		- Reducción de glitches: Como solo un bit cambia entre estados adyacentes, minimiza 
+		  la posibilidad de estados transitorios no deseados.
+		- Menor consumo de energía: Menos bits cambian durante las transiciones, reduciendo 
+		  la actividad de conmutación.
+		- Mayor inmunidad al ruido: Reduce la probabilidad de transiciones de estado 
+		  incorrectas debido a ruido.
 
-			// Write SDRAM
-localparam	WRIT_ACT  = 5'b11000,
-			WRIT_NOP1 = 5'b11001,
-			WRIT_CAS  = 5'b11010,
-			WRIT_NOP2 = 5'b11011;
-
-// SDRAM Commands        CCRCWBBA
-//                       ESSSE100
-localparam	CMD_PALL = 8'b10010001,
-			CMD_REF  = 8'b10001000,
-			CMD_NOP  = 8'b10111000,
-			CMD_MRS  = 8'b1000000x,
-			CMD_BACT = 8'b10011xxx,
-			CMD_READ = 8'b10101xx1,
-			CMD_WRIT = 8'b10100xx1;
-
-
-/* 
-	Internal Registers and Wires. 
+	Registro de estados de 5 bits: 2^5 = 32 estados máximo.
 */
 
-wire in_refresh_cycle;
+localparam IDLE				= 5'b00000;
+
+// SDRAM initialization.
+localparam INIT_PAUSE		= 5'b00001;  // Pausa inicial de 200us.
+localparam INIT_PRECHARGE	= 5'b00011;  // Precargar todos los bancos.
+localparam INIT_NOP1		= 5'b00010;  // NOP después de precarga.
+localparam INIT_REFRESH		= 5'b00110;  // Auto Refresh (repetido 8 veces).
+localparam INIT_NOP2		= 5'b00111;  // NOP después de auto refresh.
+localparam INIT_MRS			= 5'b00101;  // Mode Register Set (MRS).
+localparam INIT_NOP3		= 5'b00100;  // NOP después de MRS.
+
+
+//-------------------------------
+// Definición de Comandos SDRAM
+//-------------------------------
+
+localparam CMD_PALL	= 8'b10010001;  // Precharge All
+localparam CMD_REF	= 8'b10001000;  // Auto Refresh
+localparam CMD_NOP	= 8'b10111000;  // No Operation
+localparam CMD_MRS	= 8'b1000000x;  // Mode Register Set
+
+
+//-------------------------------
+// Internal Registers and Wires
+//-------------------------------
+
+// Internal state machine signals
+reg [4:0] state, next_state;
+reg [14:0] delay_counter, next_delay_counter;		// Para retardos de tiempo entre comandos.
+reg [3:0] refresh_counter, next_refresh_counter;	// Cuenta los ciclos de auto-refresh.
+reg [7:0] command, next_command;					// Comando SDRAM.
 
 // Internal registers for CPU interface.
 reg [31:0] wr_data_r;
@@ -168,21 +172,13 @@ reg [BANK_WIDTH-1:0] bank_addr_r;
 // Internal registers for Byte mask signals.
 reg [3:0] sdram_side_wr_mask_reg;
 
-// Internal state machine signals.
-reg [14:0] init_pause_counter;  // Counter for 200us init delay.
-reg [3:0] state_cnt;
-reg [9:0] refresh_cnt;
-reg [7:0] command;
-reg [4:0] state;
-reg [7:0] command_nxt;
-reg [3:0] state_cnt_nxt;
-reg [4:0] next;
+wire in_refresh_cycle;
 
 
-// Signal to detect refresh cycle states.
-assign in_refresh_cycle = (state == REF_PRE) || (state == REF_NOP1) || (state == REF_REF) || (state == REF_NOP2);
+//-------------------------------
+// Output assignments
+//-------------------------------
 
-/* Output assignments. */
 assign {ram_side_clock_enable, ram_side_cs_n, ram_side_ras_n, ram_side_cas_n, ram_side_wr_enable} = command[7:3];
 // state[4] is set if mode is read/write.
 assign ram_side_bank_addr = (state[4]) ? bank_addr_r : command[2:1];
@@ -199,29 +195,37 @@ assign ram_side_udqm_pin_chip1 = sdram_side_wr_mask_reg[3];
 assign ram_side_data_chip0 = (state == WRIT_CAS) ? wr_data_r[15:0] : 16'bz;
 assign ram_side_data_chip1 = (state == WRIT_CAS) ? wr_data_r[31:16] : 16'bz;
 
+// Signal to detect refresh cycle states.
+assign in_refresh_cycle = (state == REF_PRE) || (state == REF_NOP1) || (state == REF_REF) || (state == REF_NOP2);
 
-/* Host interface. All registered on positive edge clock. */
-always @ (posedge clk)
+
+//-------------------------------
+// Lógica Secuencial
+//-------------------------------
+
+always @(posedge clk) 
 begin
-	if (~soc_side_rst_n)
+	if (~soc_side_rst_n) 
 		begin
-			state <= INIT_NOP1;
+			state <= INIT_PAUSE;
 			command <= CMD_NOP;
-			state_cnt <= 4'hf;
+
+			// Counters.
+			delay_counter <= INIT_PAUSE_CYCLES;  // Inicializar para la pausa de 200us.
+			refresh_counter <= 0;
+
+			// Ports.
 			wr_data_r <= 32'b0;
 			rd_data_r <= 32'b0;
-			soc_side_busy <= 1'b0;
+			soc_side_busy <= 1'b1;  // El controlador está ocupado durante inicialización.
 		end
-	else
+	else 
 		begin
-			state <= next;
-			command <= command_nxt;
-
-			if (!state_cnt)
-				state_cnt <= state_cnt_nxt;
-			else
-				state_cnt <= state_cnt - 1'b1;
-
+			state <= next_state;
+			delay_counter <= next_delay_counter;
+			refresh_counter <= next_refresh_counter;
+			command <= next_command;
+			
 			if (soc_side_wr_enable)
 				wr_data_r <= soc_side_wr_data;
 
@@ -233,8 +237,12 @@ begin
 			else
 				rd_ready_r <= 1'b0;
 
-            // Indicate that the controller is busy during read/write operations and during refresh cycles.
-            soc_side_busy <= state[4] || in_refresh_cycle;
+			// Indicar que el controlador está ocupado durante inicialización, operaciones
+			// de lectura/escritura y ciclos de refresco.
+			soc_side_busy <= (state == INIT_PAUSE || state == INIT_PRECHARGE || 
+							state == INIT_NOP1 || state == INIT_REFRESH || 
+							state == INIT_NOP2 || state == INIT_MRS || 
+							state == INIT_NOP3 || state[5] || in_refresh_cycle);
 		end
 end
 
@@ -242,14 +250,183 @@ end
 always @ (posedge clk)
 begin
 	if (~soc_side_rst_n)
-		refresh_cnt <= 10'b0;
+		refresh_counter <= 10'b0;
 	else if (state == REF_NOP2)
-		refresh_cnt <= 10'b0;
+		refresh_counter <= 10'b0;
 	else
-		refresh_cnt <= refresh_cnt + 1'b1;
+		refresh_counter <= refresh_counter + 1'b1;
 end
 
-/* Handle logic for sending addresses to SDRAM based on current state. */
+
+//-------------------------------
+// Lógica Combinacional 
+//-------------------------------
+
+// Next state logic.
+always @* 
+begin
+	// Valores por defecto para evitar latches.
+	next_state = state;
+	next_delay_counter = delay_counter;
+	next_refresh_counter = refresh_counter;
+	next_command = CMD_NOP;
+	
+	// Manejo de las señales DQM - always high during initialization
+	if (state == INIT_PAUSE || state == INIT_PRECHARGE || state == INIT_NOP1 || state == INIT_REFRESH || 
+		state == INIT_NOP2 || state == INIT_MRS || state == INIT_NOP3)
+		sdram_side_wr_mask_reg = 4'b1111; // DQM high (deshabilita buffers)
+	else if (state[5]) // Estados de lectura/escritura
+		if (soc_side_wr_mask)
+			sdram_side_wr_mask_reg = ~soc_side_wr_mask;
+		else
+			sdram_side_wr_mask_reg = 4'b0000;
+	else
+		sdram_side_wr_mask_reg = 4'b1111; // Por defecto, deshabilita buffers
+		
+	// Lógica de la máquina de estados
+	case (state)
+		IDLE: 
+		begin
+			// Lógica para salir de IDLE (sin cambios de tu implementación original)
+			if (refresh_counter >= CYCLES_BETWEEN_REFRESH) 
+			begin
+				next_state = REF_PRE;
+				next_command = CMD_PALL;
+			end
+			else if (soc_side_rd_enable) 
+			begin
+				next_state = READ_ACT;
+				next_command = CMD_BACT;
+			end
+			else if (soc_side_wr_enable) 
+			begin
+				next_state = WRIT_ACT;
+				next_command = CMD_BACT;
+			end
+		end
+		
+		//---------- Estados de Inicialización ----------
+		
+		INIT_PAUSE: 
+		begin
+			// Esperar 200us antes de comenzar inicialización
+			if (init_pause_counter != 0)
+				next_init_pause_counter = init_pause_counter - 1'b1;
+			else 
+			begin
+				next_state = INIT_PRECHARGE;
+				next_command = CMD_PALL;
+			end
+		end
+		
+		INIT_PRECHARGE: 
+		begin
+			// Precarga de todos los bancos
+			next_state = INIT_NOP1;
+			next_delay_counter = 4'd2; // Esperar tRP (precharge to active/refresh)
+		end
+		
+		INIT_NOP1: 
+		begin
+			// Esperar después de precarga
+			if (delay_counter != 0)
+				next_delay_counter = delay_counter - 1'b1;
+			else 
+			begin
+				next_state = INIT_REFRESH;
+				next_command = CMD_REF;
+				next_refresh_counter = 0; // Iniciar los 8 ciclos de refresh
+			end
+		end
+		
+		INIT_REFRESH: 
+		begin
+			// Auto Refresh - ciclo actual
+			next_state = INIT_NOP2;
+			next_delay_counter = 4'd7; // Esperar tRFC (refresh cycle time)
+		end
+		
+		INIT_NOP2: 
+		begin
+			// Esperar después del Auto Refresh
+			if (delay_counter != 0)
+				next_delay_counter = delay_counter - 1'b1;
+			else 
+			begin
+				if (refresh_counter < INIT_REFRESH_COUNT - 1) 
+				begin
+					// Aún faltan ciclos de Auto Refresh
+					next_state = INIT_REFRESH;
+					next_command = CMD_REF;
+					next_refresh_counter = refresh_counter + 1'b1;
+				end
+				else 
+				begin
+					// Completados los 8 ciclos, configurar registro de modo
+					next_state = INIT_MRS;
+					next_command = CMD_MRS;
+				end
+			end
+		end
+		
+		INIT_MRS: 
+		begin
+			// Mode Register Set
+			next_state = INIT_NOP3;
+			next_delay_counter = 4'd2; // Esperar tMRD (mode register set cycle time)
+		end
+		
+		INIT_NOP3: 
+		begin
+			// Esperar después del Mode Register Set
+			if (delay_counter != 0)
+				next_delay_counter = delay_counter - 1'b1;
+			else 
+			begin
+				next_state = IDLE; // Inicialización completada
+			end
+		end
+		
+		// Otros estados.....
+		
+		default: 
+			next_state = IDLE;
+
+	endcase
+end
+
+// TODO: nuevo bloque, verifcar con el bloque anterio: Handle logic for sending addresses to SDRAM based on current state.
+// Lógica para configuración del registro de modo.
+always @* 
+begin
+	bank_addr_r = 2'b00;
+	addr_r = {SDRAM_ADDR_WIDTH{1'b0}};
+	
+	if (state == READ_ACT || state == WRIT_ACT)
+		begin
+			// Tu implementación original para lectura/escritura
+			bank_addr_r = soc_side_addr[SOC_SIDE_ADDR_WIDTH-1:SOC_SIDE_ADDR_WIDTH-BANK_WIDTH];
+			addr_r = soc_side_addr[SOC_SIDE_ADDR_WIDTH-(BANK_WIDTH+1):SOC_SIDE_ADDR_WIDTH-(BANK_WIDTH+ROW_WIDTH)];
+		end
+	else if (state == READ_CAS || state == WRIT_CAS)
+		begin
+			// Tu implementación original para operaciones CAS
+			bank_addr_r = soc_side_addr[SOC_SIDE_ADDR_WIDTH-1:SOC_SIDE_ADDR_WIDTH-BANK_WIDTH];
+			addr_r = {{(SDRAM_ADDR_WIDTH-11){1'b0}}, 1'b1, {(10-COL_WIDTH){1'b0}}, 
+					  soc_side_addr[COL_WIDTH-1:0]};
+		end
+	else if (state == INIT_MRS)
+		begin
+			// Configuración del registro de modo durante inicialización
+			//											B  C  SB
+			//											R  A  EUR
+			//											S  S-3Q ST
+			//											T  654L210
+			addr_r = {{(SDRAM_ADDR_WIDTH-10){1'b0}}, 10'b1000110000};  // CAS=3, BL=1, Sequential
+		end
+end
+
+// Handle logic for sending addresses to SDRAM based on current state.
 always @*
 begin
 	// Set write mask signals based on state.
@@ -291,8 +468,8 @@ begin
 
 			/*
 				Examples for math:
-										 BANK     ROW      COL
-					SOC_SIDE_ADDR_WIDTH   2    +   12   +   9   = 23 
+										 BANK	 ROW	 COL
+					SOC_SIDE_ADDR_WIDTH   2	  +  12   +   9   = 23 
 					SDRAM_ADDR_WIDTH 13
 
 					Set CAS address to:
@@ -310,171 +487,11 @@ begin
 	else if (state == INIT_LOAD)
 		begin
 			// Program mode register during load cycle
-			//                                       B  C  SB
-			//                                       R  A  EUR
-			//                                       S  S-3Q ST
-			//                                       T  654L210
+			//									   B  C  SB
+			//									   R  A  EUR
+			//									   S  S-3Q ST
+			//									   T  654L210
 			addr_r = { {(SDRAM_ADDR_WIDTH - 10){1'b0}}, 10'b1000110000 };
-		end
-end
-
-/* Next state logic. */
-always @*
-begin
-	state_cnt_nxt = 4'd0;
-	command_nxt = CMD_NOP;
-
-	if (state == IDLE)
-		begin
-			// Monitor for refresh or hold
-			if (refresh_cnt >= CYCLES_BETWEEN_REFRESH)
-				begin
-					next = REF_PRE;
-					command_nxt = CMD_PALL;
-				end
-			else if (soc_side_rd_enable)
-				begin
-					next = READ_ACT;
-					command_nxt = CMD_BACT;
-				end
-			else if (soc_side_wr_enable)
-				begin
-					next = WRIT_ACT;
-					command_nxt = CMD_BACT;
-				end
-			else
-				begin
-					// HOLD
-					next = IDLE;
-				end
-		end
-	else if (!state_cnt)
-
-		case (state)
-			// INIT ENGINE --------------
-			INIT_NOP1:
-				begin
-					next = INIT_PRE1;
-					command_nxt = CMD_PALL;
-				end
-
-			INIT_PRE1:
-				begin
-					next = INIT_NOP1_1;
-				end
-
-			INIT_NOP1_1:
-				begin
-					next = INIT_REF1;
-					command_nxt = CMD_REF;
-				end
-
-			INIT_REF1:
-				begin
-					next = INIT_NOP2;
-					state_cnt_nxt = 4'd7;
-				end
-
-			INIT_NOP2:
-				begin
-					next = INIT_REF2;
-					command_nxt = CMD_REF;
-				end
-
-			INIT_REF2:
-				begin
-					next = INIT_NOP3;
-					state_cnt_nxt = 4'd7;
-				end
-
-			INIT_NOP3:
-				begin
-					next = INIT_LOAD;
-					command_nxt = CMD_MRS;
-				end
-
-			INIT_LOAD:
-				begin
-					next = INIT_NOP4;
-					state_cnt_nxt = 4'd1;
-				end
-			// INIT_NOP4: default - IDLE
-
-			// REFRESH --------------
-			REF_PRE:
-				begin
-					next = REF_NOP1;
-				end
-
-			REF_NOP1:
-				begin
-					next = REF_REF;
-					command_nxt = CMD_REF;
-				end
-
-			REF_REF:
-				begin
-					next = REF_NOP2;
-					state_cnt_nxt = 4'd7;
-				end
-			// REF_NOP2: default - IDLE
-
-			// WRITE --------------
-			WRIT_ACT:
-				begin
-					next = WRIT_NOP1;
-					state_cnt_nxt = 4'd1;
-				end
-
-			WRIT_NOP1:
-				begin
-					next = WRIT_CAS;
-					command_nxt = CMD_WRIT;
-				end
-
-			WRIT_CAS:
-				begin
-					next = WRIT_NOP2;
-					state_cnt_nxt = 4'd1;
-				end
-			// WRIT_NOP2: default - IDLE
-
-			// READ --------------
-			READ_ACT:
-				begin
-					next = READ_NOP1;
-					state_cnt_nxt = 4'd1;
-				end
-
-			READ_NOP1:
-				begin
-					next = READ_CAS;
-					command_nxt = CMD_READ;
-				end
-
-			READ_CAS:
-				begin
-					next = READ_NOP2;
-					state_cnt_nxt = 4'd1;
-				end
-
-			READ_NOP2:
-				begin
-					next = READ_READ;
-				end
-			// READ_READ: default - IDLE
-
-			default:
-				begin
-					next = IDLE;
-				end
-		endcase
-		
-	else
-		begin
-			// Counter Not Reached - HOLD
-			next = state;
-			command_nxt = command;
 		end
 end
 
