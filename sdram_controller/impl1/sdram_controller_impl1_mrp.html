@@ -18,28 +18,29 @@ Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA256 -s 4 -oc Commercial
      sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/lscc/diam
      ond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1
      _synplify.lpf -lpf C:/lscc/diamond/projects/SDRAM_controller/sdram_controll
-     er/sdram_controller.lpf -c 0 -gui 
+     er/sdram_controller.lpf -c 0 -gui -msgset
+     C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml 
 Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA256
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/14/25  14:28:48
+Mapped on:  03/17/25  19:35:45
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:     95 out of  4941 (2%)
-      PFU registers:           26 out of  4320 (1%)
-      PIO registers:           69 out of   621 (11%)
-   Number of SLICEs:        80 out of  2160 (4%)
-      SLICEs as Logic/ROM:     80 out of  2160 (4%)
+   Number of registers:     51 out of  4941 (1%)
+      PFU registers:           46 out of  4320 (1%)
+      PIO registers:            5 out of   621 (1%)
+   Number of SLICEs:        45 out of  2160 (2%)
+      SLICEs as Logic/ROM:     45 out of  2160 (2%)
       SLICEs as RAM:            0 out of  1620 (0%)
-      SLICEs as Carry:          0 out of  2160 (0%)
-   Number of LUT4s:        160 out of  4320 (4%)
-      Number used as logic LUTs:        160
+      SLICEs as Carry:         17 out of  2160 (1%)
+   Number of LUT4s:         90 out of  4320 (2%)
+      Number used as logic LUTs:         56
       Number used as distributed RAM:     0
-      Number used as ripple logic:        0
+      Number used as ripple logic:       34
       Number used as shift registers:     0
-   Number of PIO sites used: 152 + 4(JTAG) out of 207 (75%)
+   Number of PIO sites used: 59 + 4(JTAG) out of 207 (30%)
    Number of block RAMs:  0 out of 10 (0%)
    Number of GSRs:        0 out of 1 (0%)
    EFB used :        No
@@ -65,33 +66,31 @@ Mapped on:  03/14/25  14:28:48
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 84 loads, 84 rising, 0 falling (Driver: PIO clk )
-   Number of Clock Enables:  4
+     Net clk_c: 31 loads, 31 rising, 0 falling (Driver: PIO clk )
 
-     Net un1_state_cnt7: 4 loads, 1 LSLICEs
-     Net state[20]: 32 loads, 0 LSLICEs
-     Net soc_side_wr_enable_c: 32 loads, 0 LSLICEs
-     Net soc_side_rst_n_c: 1 loads, 0 LSLICEs
-   Number of LSRs:  2
-     Net un1_state5: 4 loads, 1 LSLICEs
-     Net soc_side_rst_n_c: 68 loads, 3 LSLICEs
+   Number of Clock Enables:  0
+   Number of LSRs:  4
+     Net un23_0_a2_i_o2_RNITT8KJ: 5 loads, 5 LSLICEs
+     Net soc_side_rst_n_c: 9 loads, 4 LSLICEs
+     Net state_RNI0IL3F[10]: 9 loads, 9 LSLICEs
+     Net N_49: 2 loads, 2 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net soc_side_rst_n_c: 93 loads
-     Net state[26]: 42 loads
-     Net state[20]: 40 loads
-     Net N_1250: 38 loads
-     Net soc_side_wr_enable_c: 35 loads
-     Net un35_li[4]: 17 loads
-     Net N_1330: 16 loads
-     Net un35_li[3]: 16 loads
-     Net next_3_li[4]: 15 loads
-     Net un35_li[0]: 13 loads
+     Net state_ns_i_a2[1]: 33 loads
+     Net soc_side_rst_n_c: 24 loads
+     Net N_72: 16 loads
+     Net state[11]: 10 loads
+     Net state[6]: 10 loads
+     Net state_RNI0IL3F[10]: 9 loads
+     Net N_65: 8 loads
+     Net state[2]: 7 loads
+     Net state[7]: 7 loads
+     Net next_state19_axb0: 6 loads
 
 
 
 
-   Number of warnings:  0
+   Number of warnings:  93
    Number of errors:    0
      
 
@@ -100,7 +99,195 @@ Mapped on:  03/14/25  14:28:48
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-   No errors or warnings present.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](22)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](21)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](20)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](19)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](18)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](17)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](16)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](15)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](14)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](13)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](12)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](11)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](10)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+
+     soc_side_addr[22:0](9)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](8)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](7)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](6)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](5)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](4)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](3)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](2)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](1)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_addr[22:0](0)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_mask[3:0](3)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_mask[3:0](2)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_mask[3:0](1)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_mask[3:0](0)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](31)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](30)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](29)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](28)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](27)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](26)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](25)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](24)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](23)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](22)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](21)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](20)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](19)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](18)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+
+     soc_side_wr_data[31:0](17)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](16)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](15)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](14)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](13)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](12)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](11)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](10)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](9)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](8)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](7)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](6)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](5)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](4)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](3)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](2)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](1)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     soc_side_wr_data[31:0](0)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port soc_side_wr_enable...logic
+     will be discarded.
+WARNING - map: IO buffer missing for top level port soc_side_rd_enable...logic
+     will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](15)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](14)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](13)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](12)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](11)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](10)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](9)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](8)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+
+     ram_side_data_chip0[15:0](7)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](6)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](5)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](4)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](3)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](2)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](1)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip0[15:0](0)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](15)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](14)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](13)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](12)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](11)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](10)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](9)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](8)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](7)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](6)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](5)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](4)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](3)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](2)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](1)...logic will be discarded.
+WARNING - map: IO buffer missing for top level port
+     ram_side_data_chip1[15:0](0)...logic will be discarded.
 
 
 
@@ -110,9 +297,8 @@ Mapped on:  03/14/25  14:28:48
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[0]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
 | soc_side_busy       | OUTPUT    | LVCMOS25  | OUT        |
+
 +---------------------+-----------+-----------+------------+
 | clk                 | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -126,73 +312,9 @@ Mapped on:  03/14/25  14:28:48
 +---------------------+-----------+-----------+------------+
 | ram_side_clock_enable| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[15]| BIDIR     | LVCMOS25  |            |
-
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[14]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[13]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[12]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[11]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[10]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[9]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[8]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[7]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[6]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[5]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[4]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[3]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[2]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[1]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip1[0]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
 | ram_side_udqm_pin_chip1| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_ldqm_pin_chip1| OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[15]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[14]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[13]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[12]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[11]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[10]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[9]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[8]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[7]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[6]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[5]| BIDIR     | LVCMOS25  |            |
-
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[4]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[3]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[2]| BIDIR     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| ram_side_data_chip0[1]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_udqm_pin_chip0| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -204,7 +326,7 @@ Mapped on:  03/14/25  14:28:48
 +---------------------+-----------+-----------+------------+
 | ram_side_addr[11]   | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr[10]   | OUTPUT    | LVCMOS25  |            |
+| ram_side_addr[10]   | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | ram_side_addr[9]    | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -226,197 +348,73 @@ Mapped on:  03/14/25  14:28:48
 +---------------------+-----------+-----------+------------+
 | ram_side_addr[0]    | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_ready   | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_ready   | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_enable  | INPUT     | LVCMOS25  |            |
+| soc_side_rd_data[31]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[31]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[30]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[30]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data[29]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data[28]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data[27]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data[26]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[29]| OUTPUT    | LVCMOS25  |            |
 
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[25]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[28]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[24]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[27]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[23]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[26]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[22]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[25]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[21]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[24]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[20]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[23]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[19]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[22]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[18]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[21]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[17]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[20]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[16]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[19]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[15]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[18]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[14]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[17]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[13]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[16]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[12]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[15]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[11]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[14]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[10]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[13]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[9] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[12]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[8] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[11]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[7] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[10]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[6] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[9] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[5] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[8] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[4] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[7] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[3] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[6] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[2] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[5] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[1] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[4] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data[0] | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data[3] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_enable  | INPUT     | LVCMOS25  |            |
+| soc_side_rd_data[2] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data[31]| INPUT     | LVCMOS25  | IN         |
+| soc_side_rd_data[1] | OUTPUT    | LVCMOS25  |            |
 
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data[30]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[29]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[28]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[27]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[26]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[25]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[24]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[23]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[22]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[21]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[20]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[19]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[18]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[17]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[16]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[15]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[14]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[13]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[12]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[11]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[10]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[9] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[8] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[7] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[6] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[5] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[4] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[3] | INPUT     | LVCMOS25  | IN         |
-
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[2] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[1] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data[0] | INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask[3] | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask[2] | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask[1] | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask[0] | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[22]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[21]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[20]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[19]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[18]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[17]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[16]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[15]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[14]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[13]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[12]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[11]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[10]   | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[9]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[8]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[7]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[6]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[5]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[4]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[3]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[2]    | INPUT     | LVCMOS25  |            |
-
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[1]    | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_addr[0]    | INPUT     | LVCMOS25  |            |
+| soc_side_rd_data[0] | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_rst_n      | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -426,9 +424,23 @@ Mapped on:  03/14/25  14:28:48
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
 Block GSR_INST undriven or does not drive anything - clipped.
-Signal state_i[26] was merged into signal state[26]
 Signal soc_side_rst_n_c_i was merged into signal soc_side_rst_n_c
-Block state_RNI175I7[26] was optimized away.
+Signal next_refresh_counter_s_15_0_S1 undriven or does not drive anything -
+     clipped.
+Signal next_refresh_counter_s_15_0_COUT undriven or does not drive anything -
+     clipped.
+Signal un1_delay_counter_16_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal un1_delay_counter_16_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal N_2 undriven or does not drive anything - clipped.
+Signal un1_delay_counter_16_cry_13_0_COUT undriven or does not drive anything -
+     clipped.
+Signal next_refresh_counter_cry_0_0_S1 undriven or does not drive anything -
+     clipped.
+Signal next_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
+     clipped.
+Signal N_1 undriven or does not drive anything - clipped.
 Block soc_side_rst_n_pad_RNI23RA5 was optimized away.
 
      
@@ -440,20 +452,8 @@ Block soc_side_rst_n_pad_RNI23RA5 was optimized away.
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 37 MB
+   Peak Memory Usage: 35 MB
         
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
