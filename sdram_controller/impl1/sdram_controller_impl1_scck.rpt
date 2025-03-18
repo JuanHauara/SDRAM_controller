@@ -12,7 +12,7 @@ Hostname: JH-LAPTOP
 
 Implementation : impl1
 
-# Written on Mon Mar 17 19:35:41 2025
+# Written on Tue Mar 18 19:50:36 2025
 
 ##### FILES SYNTAX CHECKED ##############################################
 Constraint File(s):      (none)
@@ -32,15 +32,15 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock          Clock
 Level     Clock                    Frequency     Period        Type         Group          Load 
 ------------------------------------------------------------------------------------------------
-0 -       sdram_controller|clk     100.0 MHz     10.000        inferred     (multiple)     51   
+0 -       sdram_controller|clk     100.0 MHz     10.000        inferred     (multiple)     89   
 ================================================================================================
 
 
 Clock Load Summary
 ******************
 
-                         Clock     Source        Clock Pin           Non-clock Pin     Non-clock Pin
-Clock                    Load      Pin           Seq Example         Seq Example       Comb Example 
-----------------------------------------------------------------------------------------------------
-sdram_controller|clk     51        clk(port)     soc_side_busy.C     -                 -            
-====================================================================================================
+                         Clock     Source        Clock Pin               Non-clock Pin     Non-clock Pin
+Clock                    Load      Pin           Seq Example             Seq Example       Comb Example 
+--------------------------------------------------------------------------------------------------------
+sdram_controller|clk     89        clk(port)     wr_data_reg[31:0].C     -                 -            
+========================================================================================================
