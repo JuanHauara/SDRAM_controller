@@ -370,7 +370,7 @@ begin
 		// ---- Initialization Sequence ----
 		/*
 			Initialization Sequence
-			------------------------
+			-----------------------
 
 			The implemented sequence follows the requirements of the W9812G6KH-5I datasheet.
 
@@ -520,10 +520,10 @@ begin
 			end
 
 
-		// ---- Auto Refresh Cycle ----
+		// ---- Auto Refresh Sequence ----
 		/*
-			Auto Refresh Cycle
-			-------------------
+			Auto Refresh Sequence
+			---------------------
 
 			The automatic refresh cycle is activated periodically to maintain data in SDRAM:
 
@@ -599,10 +599,10 @@ begin
 			end
 
 
-		// ---- Write Cycle ----
+		// ---- Write Sequence ----
 		/*
-			Write Cycle
-			------------
+			Write Sequence
+			--------------
 
 			The write cycle follows the required sequence to write data to SDRAM:
 
@@ -704,7 +704,39 @@ begin
 					end
 			end
 
-		// ---- Read Cycle ----
+		// ---- Read Sequence ----
+		/*
+			Read Sequence
+			-------------
+
+			The read cycle follows the required sequence to read data from SDRAM:
+
+			1. READ_BANK_ACTIVATE: Activates the specific bank and row.
+				- Selects the memory row containing the address to read.
+				- Bank address is provided via BS0, BS1.
+				- Row address is provided via A0-A11.
+
+			2. READ_WAIT_TRCD: Wait tRCD nanoseconds after activation.
+				- Time required between row activation and column command (Row to Column Delay).
+				- tRCD minimum is 15ns for -5/-5I/-5J grade parts.
+
+			3. READ_CAS: Issues the read command.
+				- Column address is presented and CS, CAS are set low, RAS, WE are set high.
+				- A10 is configured for auto-precharge if enabled.
+
+			4. READ_WAIT_CAS_LATENCY: Wait for CAS Latency cycles.
+				- CAS Latency is 3 clock cycles as configured in Mode Register.
+				- This delay is necessary for the SDRAM to retrieve data from the memory array.
+
+			5. READ_DATA: Capture the data appearing on DQ pins.
+				- Data becomes available exactly after CAS Latency.
+				- The data is held valid for tOH (data output hold time) after the next rising clock edge.
+
+			6. READ_PRECHARGE/READ_WAIT_TRP (optional if auto-precharge not used):
+				- Precharges the specific bank and waits tRP before new operations.
+				- tRP minimum is 15ns for -5/-5I/-5J grade parts.
+				- Auto-precharge eliminates the need for an explicit precharge command.
+		*/
 		READ_BANK_ACTIVATE:
 			begin
 				// Activar el banco y fila especificados.
@@ -780,29 +812,29 @@ begin
 					end
 			end
 
-        READ_PRECHARGE:
-            begin
-                // Precargar el banco específico.
-                // Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
+		READ_PRECHARGE:
+			begin
+				// Precargar el banco específico.
+				// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
 
-                next_state = READ_WAIT_TRP;
-                next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+				next_state = READ_WAIT_TRP;
+				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-                next_delay_counter = TRP_CYCLES;  // Esperar tRP.
-            end
+				next_delay_counter = TRP_CYCLES;  // Esperar tRP.
+			end
 
-        READ_WAIT_TRP:
-            begin
-                // Esperar tRP después de precargar.
+		READ_WAIT_TRP:
+			begin
+				// Esperar tRP después de precargar.
 
-                if (delay_counter != 0)
-                    next_delay_counter = delay_counter - 1'b1;
-                else
-                    begin
+				if (delay_counter != 0)
+					next_delay_counter = delay_counter - 1'b1;
+				else
+					begin
 						next_state = IDLE;			// Volver a IDLE.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
-                    end
-            end
+					end
+			end
 
 		
 		default: 
@@ -821,12 +853,12 @@ begin
 	bank_addr_reg = 2'b00;
 	addr_reg = {SDRAM_ADDR_WIDTH{1'b0}};
 	
-	if (/*state == READ_ACT || */state == WRITE_BANK_ACTIVATE)  // TODO: Descomentar esto cuando implemente la lectura.
+	if (state == READ_BANK_ACTIVATE || state == WRITE_BANK_ACTIVATE)
 		begin
 			bank_addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 			addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
-	else if (/*state == READ_CAS || */state == WRITE_CAS)  // TODO: Descomentar esto cuando implemente la lectura.
+	else if (state == READ_CAS || state == WRITE_CAS)
 		begin
 			bank_addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 
@@ -838,7 +870,7 @@ begin
 			addr_reg = { {(SDRAM_ADDR_WIDTH - 11){1'b0}},		/* 0s */
 						1'b1,									/* 1 (A10 is always for auto precharge) */
 						{(10 - COL_WIDTH){1'b0}},				/* 0s */
-						soc_side_addr_pin[COL_WIDTH - 1: 0]			/* column address */
+						soc_side_addr_pin[COL_WIDTH - 1: 0]		/* column address */
 					};
 		end
 	else if (state == INIT_MRS)

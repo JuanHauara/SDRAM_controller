@@ -1,6 +1,6 @@
 
 Lattice Place and Route Report for Design "sdram_controller_impl1_map.ncd"
-Wed Mar 19 17:59:19 2025
+Wed Mar 19 18:11:07 2025
 
 PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
 Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir/5_1.ncd sdram_controller_impl1.prf
@@ -32,8 +32,8 @@ Device utilization summary:
 
 
 
-Number of Signals: 314
-Number of Connections: 836
+Number of Signals: 315
+Number of Connections: 830
 
 Pin Constraint Summary:
    0 out of 152 pins locked (0% locked).
@@ -49,18 +49,18 @@ The following 2 signals are selected to use the secondary clock routing resource
 No signal is selected as Global Set/Reset.
 .
 Starting Placer Phase 0.
-..............
+.............
 Finished Placer Phase 0.  REAL time: 0 secs 
 
 Starting Placer Phase 1.
-....................
-Placer score = 87331.
-Finished Placer Phase 1.  REAL time: 8 secs 
+...................
+Placer score = 484765.
+Finished Placer Phase 1.  REAL time: 7 secs 
 
 Starting Placer Phase 2.
 .
-Placer score =  86719
-Finished Placer Phase 2.  REAL time: 8 secs 
+Placer score =  480991
+Finished Placer Phase 2.  REAL time: 7 secs 
 
 
 ------------------ Clock Report ------------------
@@ -95,24 +95,24 @@ I/O Bank Usage Summary:
 +----------+----------------+------------+-----------+
 | I/O Bank | Usage          | Bank Vccio | Bank Vref |
 +----------+----------------+------------+-----------+
-| 0        | 22 / 51 ( 43%) | 2.5V       | -         |
-| 1        | 43 / 52 ( 82%) | 2.5V       | -         |
-| 2        | 39 / 52 ( 75%) | 2.5V       | -         |
-| 3        | 15 / 16 ( 93%) | 2.5V       | -         |
+| 0        | 24 / 51 ( 47%) | 2.5V       | -         |
+| 1        | 48 / 52 ( 92%) | 2.5V       | -         |
+| 2        | 32 / 52 ( 61%) | 2.5V       | -         |
+| 3        | 16 / 16 (100%) | 2.5V       | -         |
 | 4        | 15 / 16 ( 93%) | 2.5V       | -         |
-| 5        | 18 / 20 ( 90%) | 2.5V       | -         |
+| 5        | 17 / 20 ( 85%) | 2.5V       | -         |
 +----------+----------------+------------+-----------+
 
 Total placer CPU time: 7 secs 
 
 Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 
-0 connections routed; 836 unrouted.
+0 connections routed; 830 unrouted.
 Starting router resource preassignment
 
-Completed router resource preassignment. Real time: 14 secs 
+Completed router resource preassignment. Real time: 15 secs 
 
-Start NBR router at 17:59:33 03/19/25
+Start NBR router at 18:11:22 03/19/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -127,138 +127,108 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 17:59:33 03/19/25
+Start NBR special constraint process at 18:11:22 03/19/25
 
-Start NBR section for initial routing at 17:59:33 03/19/25
+Start NBR section for initial routing at 18:11:22 03/19/25
 Level 1, iteration 1
-10(0.00%) conflicts; 559(66.87%) untouched conns; 368080 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.097ns/-368.081ns; real time: 14 secs 
+0(0.00%) conflict; 568(68.43%) untouched conns; 461790 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.766ns/-461.791ns; real time: 15 secs 
 Level 2, iteration 1
-33(0.01%) conflicts; 484(57.89%) untouched conns; 347538 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.314ns/-347.539ns; real time: 14 secs 
+41(0.02%) conflicts; 486(58.55%) untouched conns; 342660 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.803ns/-342.661ns; real time: 15 secs 
 Level 3, iteration 1
-24(0.01%) conflicts; 234(27.99%) untouched conns; 346782 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.366ns/-346.783ns; real time: 14 secs 
+31(0.01%) conflicts; 239(28.80%) untouched conns; 351119 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.906ns/-351.120ns; real time: 15 secs 
 Level 4, iteration 1
-25(0.01%) conflicts; 0(0.00%) untouched conn; 346311 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.366ns/-346.312ns; real time: 14 secs 
+24(0.01%) conflicts; 0(0.00%) untouched conn; 358082 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.906ns/-358.082ns; real time: 15 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 17:59:33 03/19/25
+Start NBR section for normal routing at 18:11:22 03/19/25
 Level 1, iteration 1
-25(0.01%) conflicts; 6(0.72%) untouched conns; 333025 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.208ns/-333.026ns; real time: 14 secs 
+27(0.01%) conflicts; 2(0.24%) untouched conns; 350810 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-350.811ns; real time: 15 secs 
 Level 4, iteration 1
-22(0.01%) conflicts; 0(0.00%) untouched conn; 336351 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.245ns/-336.352ns; real time: 14 secs 
+20(0.01%) conflicts; 0(0.00%) untouched conn; 353321 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-353.321ns; real time: 15 secs 
 Level 4, iteration 2
-19(0.01%) conflicts; 0(0.00%) untouched conn; 336526 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.245ns/-336.527ns; real time: 14 secs 
+22(0.01%) conflicts; 0(0.00%) untouched conn; 352114 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-352.115ns; real time: 16 secs 
 Level 4, iteration 3
-15(0.01%) conflicts; 0(0.00%) untouched conn; 338276 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.245ns/-338.277ns; real time: 14 secs 
+19(0.01%) conflicts; 0(0.00%) untouched conn; 356234 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-356.234ns; real time: 16 secs 
 Level 4, iteration 4
-14(0.01%) conflicts; 0(0.00%) untouched conn; 338276 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.245ns/-338.277ns; real time: 14 secs 
+19(0.01%) conflicts; 0(0.00%) untouched conn; 356234 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-356.234ns; real time: 16 secs 
 Level 4, iteration 5
-11(0.00%) conflicts; 0(0.00%) untouched conn; 349671 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.247ns/-349.672ns; real time: 14 secs 
+17(0.01%) conflicts; 0(0.00%) untouched conn; 358526 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-358.526ns; real time: 16 secs 
 Level 4, iteration 6
-9(0.00%) conflicts; 0(0.00%) untouched conn; 349671 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.247ns/-349.672ns; real time: 14 secs 
+12(0.00%) conflicts; 0(0.00%) untouched conn; 358526 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.842ns/-358.526ns; real time: 16 secs 
 Level 4, iteration 7
-9(0.00%) conflicts; 0(0.00%) untouched conn; 354967 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.241ns/-354.967ns; real time: 14 secs 
+11(0.00%) conflicts; 0(0.00%) untouched conn; 364387 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.870ns/-364.387ns; real time: 16 secs 
 Level 4, iteration 8
-10(0.00%) conflicts; 0(0.00%) untouched conn; 354967 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.241ns/-354.967ns; real time: 14 secs 
+11(0.00%) conflicts; 0(0.00%) untouched conn; 364387 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.870ns/-364.387ns; real time: 16 secs 
 Level 4, iteration 9
-7(0.00%) conflicts; 0(0.00%) untouched conn; 362715 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.306ns/-362.716ns; real time: 14 secs 
+10(0.00%) conflicts; 0(0.00%) untouched conn; 364985 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.870ns/-364.985ns; real time: 16 secs 
 Level 4, iteration 10
-8(0.00%) conflicts; 0(0.00%) untouched conn; 362715 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.306ns/-362.716ns; real time: 14 secs 
+7(0.00%) conflicts; 0(0.00%) untouched conn; 364985 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.870ns/-364.985ns; real time: 16 secs 
 Level 4, iteration 11
-4(0.00%) conflicts; 0(0.00%) untouched conn; 400298 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.647ns/-400.299ns; real time: 14 secs 
+4(0.00%) conflicts; 0(0.00%) untouched conn; 416755 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.436ns/-416.756ns; real time: 16 secs 
 Level 4, iteration 12
-7(0.00%) conflicts; 0(0.00%) untouched conn; 400298 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.647ns/-400.299ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 416755 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.436ns/-416.756ns; real time: 16 secs 
 Level 4, iteration 13
-5(0.00%) conflicts; 0(0.00%) untouched conn; 392310 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.563ns/-392.310ns; real time: 14 secs 
-Level 4, iteration 14
-5(0.00%) conflicts; 0(0.00%) untouched conn; 392310 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.563ns/-392.310ns; real time: 14 secs 
-Level 4, iteration 15
-2(0.00%) conflicts; 0(0.00%) untouched conn; 401000 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.647ns/-401.001ns; real time: 14 secs 
-Level 4, iteration 16
-3(0.00%) conflicts; 0(0.00%) untouched conn; 401000 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.647ns/-401.001ns; real time: 14 secs 
-Level 4, iteration 17
-3(0.00%) conflicts; 0(0.00%) untouched conn; 407815 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-407.816ns; real time: 14 secs 
-Level 4, iteration 18
-2(0.00%) conflicts; 0(0.00%) untouched conn; 407815 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-407.816ns; real time: 14 secs 
-Level 4, iteration 19
-2(0.00%) conflicts; 0(0.00%) untouched conn; 408087 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.088ns; real time: 15 secs 
-Level 4, iteration 20
-2(0.00%) conflicts; 0(0.00%) untouched conn; 408087 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.088ns; real time: 15 secs 
-Level 4, iteration 21
-1(0.00%) conflict; 0(0.00%) untouched conn; 408371 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.372ns; real time: 15 secs 
-Level 4, iteration 22
-1(0.00%) conflict; 0(0.00%) untouched conn; 408371 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.372ns; real time: 15 secs 
-Level 4, iteration 23
-0(0.00%) conflict; 0(0.00%) untouched conn; 408874 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.875ns; real time: 15 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 430468 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.436ns/-430.468ns; real time: 16 secs 
 
-Start NBR section for performance tuning (iteration 1) at 17:59:34 03/19/25
+Start NBR section for performance tuning (iteration 1) at 18:11:23 03/19/25
 Level 4, iteration 1
-7(0.00%) conflicts; 0(0.00%) untouched conn; 365041 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.306ns/-365.042ns; real time: 15 secs 
+7(0.00%) conflicts; 0(0.00%) untouched conn; 367879 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -2.870ns/-367.879ns; real time: 16 secs 
 Level 4, iteration 2
-9(0.00%) conflicts; 0(0.00%) untouched conn; 396659 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.608ns/-396.660ns; real time: 15 secs 
+2(0.00%) conflicts; 0(0.00%) untouched conn; 395108 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.127ns/-395.108ns; real time: 16 secs 
 Level 4, iteration 3
-3(0.00%) conflicts; 0(0.00%) untouched conn; 409899 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.696ns/-409.900ns; real time: 15 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 421423 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.343ns/-421.423ns; real time: 16 secs 
 
-Start NBR section for re-routing at 17:59:34 03/19/25
+Start NBR section for re-routing at 18:11:23 03/19/25
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 408874 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -3.674ns/-408.875ns; real time: 15 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 421423 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -3.343ns/-421.423ns; real time: 16 secs 
 
-Start NBR section for post-routing at 17:59:34 03/19/25
+Start NBR section for post-routing at 18:11:23 03/19/25
 
 End NBR router with 0 unrouted connection
 
 NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
-  Number of connections with timing violations : 233 (27.87%)
-  Estimated worst slack<setup> : -3.674ns
-  Timing score<setup> : 3795180
+  Number of connections with timing violations : 234 (28.19%)
+  Estimated worst slack<setup> : -3.343ns
+  Timing score<setup> : 4064695
 -----------
 Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
 
 
 
-Total CPU time 14 secs 
-Total REAL time: 15 secs 
+Total CPU time 16 secs 
+Total REAL time: 16 secs 
 Completely routed.
-End of route.  836 routed (100.00%); 0 unrouted.
+End of route.  830 routed (100.00%); 0 unrouted.
 
 Hold time timing score: 0, hold timing errors: 0
 
-Timing score: 3795180 
+Timing score: 4064695 
 
 Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 
@@ -268,14 +238,14 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = -3.674
-PAR_SUMMARY::Timing score<setup/<ns>> = 3795.180
+PAR_SUMMARY::Worst  slack<setup/<ns>> = -3.343
+PAR_SUMMARY::Timing score<setup/<ns>> = 4064.695
 PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.379
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  time to completion: 14 secs 
-Total REAL time to completion: 15 secs 
+Total CPU  time to completion: 16 secs 
+Total REAL time to completion: 16 secs 
 
 par done!
 
