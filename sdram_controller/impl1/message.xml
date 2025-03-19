@@ -12,6 +12,13 @@
             <Dynamic> SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK</Dynamic>
         </Message>
     </Task>
+    <Task name="Map">
+        <Message>
+            <ID>51001046</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>soc_side_rd_en_pin</Dynamic>
+        </Message>
+    </Task>
     <Task name="Translate">
         <Message>
             <ID>1121028</ID>
@@ -41,7 +48,7 @@
         <Message>
             <ID>1121028</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BANK_WIDTH</Dynamic>
+            <Dynamic>BANK_ADDR_WIDTH</Dynamic>
         </Message>
         <Message>
             <ID>1121028</ID>
@@ -53,6 +60,18 @@
             <Severity>Warning</Severity>
             <Dynamic>ROW_WIDTH</Dynamic>
         </Message>
+        <Message>
+            <ID>1166052</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>logical</Dynamic>
+            <Dynamic>soc_side_rd_en_pin</Dynamic>
+            <Navigation>soc_side_rd_en_pin</Navigation>
+        </Message>
+        <Message>
+            <ID>1163101</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>1</Dynamic>
+        </Message>
     </Task>
     <Task name="Synplify_Synthesis">
         <Message>
@@ -62,48 +81,48 @@
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CG133 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:202:4:202:17|Object read_ready_reg is declared but not assigned. Either assign a value or remove the declaration.</Dynamic>
+            <Dynamic>CG133 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:214:4:214:17|Object read_ready_reg is declared but not assigned. Either assign a value or remove the declaration.</Dynamic>
             <Navigation>CG133</Navigation>
             <Navigation>C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>202</Navigation>
+            <Navigation>214</Navigation>
             <Navigation>4</Navigation>
-            <Navigation>202</Navigation>
+            <Navigation>214</Navigation>
             <Navigation>17</Navigation>
             <Navigation>Object read_ready_reg is declared but not assigned. Either assign a value or remove the declaration.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CL279 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:248:0:248:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Dynamic>
+            <Dynamic>CL279 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:267:0:267:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Dynamic>
             <Navigation>CL279</Navigation>
             <Navigation>C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>0</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>5</Navigation>
             <Navigation>Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CL279 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:248:0:248:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Dynamic>
+            <Dynamic>CL279 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:267:0:267:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Dynamic>
             <Navigation>CL279</Navigation>
             <Navigation>C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>0</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>5</Navigation>
             <Navigation>Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>CL260 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:248:0:248:5|Pruning register bit 3 of init_refresh_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.</Dynamic>
+            <Dynamic>CL260 :&quot;C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:267:0:267:5|Pruning register bit 3 of init_refresh_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.</Dynamic>
             <Navigation>CL260</Navigation>
             <Navigation>C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>0</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>5</Navigation>
             <Navigation>Pruning register bit 3 of init_refresh_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.</Navigation>
         </Message>
@@ -117,398 +136,398 @@
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>MT529 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:248:0:248:5|Found inferred clock sdram_controller|clk which controls 89 sequential elements including state[17]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance.</Dynamic>
+            <Dynamic>MT529 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:267:0:267:5|Found inferred clock sdram_controller|clk which controls 89 sequential elements including state[17]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance.</Dynamic>
             <Navigation>MT529</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>0</Navigation>
-            <Navigation>248</Navigation>
+            <Navigation>267</Navigation>
             <Navigation>5</Navigation>
             <Navigation>Found inferred clock sdram_controller|clk which controls 89 sequential elements including state[17]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[0] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[0] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[0] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[0] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[1] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[1] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[1] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[1] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[2] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[2] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[2] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[2] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[3] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[3] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[3] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[3] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[4] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[4] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[4] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[4] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[5] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[5] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[5] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[5] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[6] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[6] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[6] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[6] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[7] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[7] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[7] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[7] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[8] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[8] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[8] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[8] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[9] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[9] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[9] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[9] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[10] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[10] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[10] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[10] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[11] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[11] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[11] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[11] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[12] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[12] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[12] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[12] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[13] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[13] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[13] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[13] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[14] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[14] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[14] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[14] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[15] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[15] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[15] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[15] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[0] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[0] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[0] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[0] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[1] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[1] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[1] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[1] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[2] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[2] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[2] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[2] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[3] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[3] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[3] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[3] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[4] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[4] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[4] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[4] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[5] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[5] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[5] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[5] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[6] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[6] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[6] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[6] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[7] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[7] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[7] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[7] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[8] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[8] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[8] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[8] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[9] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[9] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[9] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[9] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[10] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[10] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[10] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[10] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[11] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[11] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[11] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[11] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[12] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[12] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[12] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[12] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[13] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[13] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[13] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[13] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[14] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[14] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[14] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[14] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[15] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[15] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[15] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[15] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019993</ID>
@@ -588,6 +607,66 @@
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
             <Navigation>Net state_ns[16] has multiple drivers .</Navigation>
+        </Message>
+        <Message>
+            <ID>2019991</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_333 has multiple drivers .</Dynamic>
+            <Navigation>BN161</Navigation>
+            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>7</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>22</Navigation>
+            <Navigation>Net N_333 has multiple drivers .</Navigation>
+        </Message>
+        <Message>
+            <ID>2019991</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_334 has multiple drivers .</Dynamic>
+            <Navigation>BN161</Navigation>
+            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>7</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>22</Navigation>
+            <Navigation>Net N_334 has multiple drivers .</Navigation>
+        </Message>
+        <Message>
+            <ID>2019991</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_335 has multiple drivers .</Dynamic>
+            <Navigation>BN161</Navigation>
+            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>7</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>22</Navigation>
+            <Navigation>Net N_335 has multiple drivers .</Navigation>
+        </Message>
+        <Message>
+            <ID>2019991</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_336 has multiple drivers .</Dynamic>
+            <Navigation>BN161</Navigation>
+            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>7</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>22</Navigation>
+            <Navigation>Net N_336 has multiple drivers .</Navigation>
+        </Message>
+        <Message>
+            <ID>2019991</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_337 has multiple drivers .</Dynamic>
+            <Navigation>BN161</Navigation>
+            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>7</Navigation>
+            <Navigation>47</Navigation>
+            <Navigation>22</Navigation>
+            <Navigation>Net N_337 has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
@@ -760,74 +839,26 @@
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_356 has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_352 has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net N_356 has multiple drivers .</Navigation>
+            <Navigation>Net N_352 has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_357 has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_411 has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net N_357 has multiple drivers .</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_358 has multiple drivers .</Dynamic>
-            <Navigation>BN161</Navigation>
-            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>7</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>22</Navigation>
-            <Navigation>Net N_358 has multiple drivers .</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_359 has multiple drivers .</Dynamic>
-            <Navigation>BN161</Navigation>
-            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>7</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>22</Navigation>
-            <Navigation>Net N_359 has multiple drivers .</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_360 has multiple drivers .</Dynamic>
-            <Navigation>BN161</Navigation>
-            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>7</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>22</Navigation>
-            <Navigation>Net N_360 has multiple drivers .</Navigation>
-        </Message>
-        <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net N_414 has multiple drivers .</Dynamic>
-            <Navigation>BN161</Navigation>
-            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>7</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>22</Navigation>
-            <Navigation>Net N_414 has multiple drivers .</Navigation>
+            <Navigation>Net N_411 has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
@@ -868,386 +899,386 @@
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[0] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[0] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[0] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[0] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[1] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[1] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[1] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[1] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[2] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[2] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[2] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[2] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[3] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[3] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[3] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[3] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[4] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[4] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[4] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[4] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[5] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[5] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[5] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[5] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[6] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[6] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[6] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[6] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[7] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[7] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[7] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[7] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[8] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[8] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[8] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[8] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[9] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[9] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[9] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[9] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[10] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[10] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[10] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[10] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[11] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[11] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[11] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[11] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[12] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[12] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[12] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[12] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[13] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[13] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[13] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[13] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[14] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[14] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[14] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[14] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip0[15] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip0_data_pin[15] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip0[15] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip0_data_pin[15] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[0] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[0] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[0] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[0] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[1] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[1] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[1] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[1] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[2] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[2] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[2] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[2] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[3] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[3] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[3] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[3] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[4] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[4] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[4] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[4] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[5] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[5] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[5] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[5] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[6] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[6] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[6] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[6] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[7] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[7] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[7] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[7] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[8] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[8] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[8] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[8] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[9] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[9] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[9] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[9] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[10] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[10] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[10] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[10] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[11] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[11] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[11] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[11] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[12] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[12] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[12] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[12] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[13] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[13] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[13] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[13] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[14] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[14] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[14] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[14] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
             <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_data_chip1[15] has multiple drivers .</Dynamic>
+            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net ram_side_chip1_data_pin[15] has multiple drivers .</Dynamic>
             <Navigation>BN161</Navigation>
             <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
             <Navigation>47</Navigation>
             <Navigation>7</Navigation>
             <Navigation>47</Navigation>
             <Navigation>22</Navigation>
-            <Navigation>Net ram_side_data_chip1[15] has multiple drivers .</Navigation>
+            <Navigation>Net ram_side_chip1_data_pin[15] has multiple drivers .</Navigation>
         </Message>
         <Message>
             <ID>2019991</ID>
@@ -1322,23 +1353,11 @@
             <Navigation>Net next_refresh_counter_axb_4 has multiple drivers .</Navigation>
         </Message>
         <Message>
-            <ID>2019991</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>BN161 :&quot;c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v&quot;:47:7:47:22|Net next_refresh_counter_axb_5 has multiple drivers .</Dynamic>
-            <Navigation>BN161</Navigation>
-            <Navigation>c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>7</Navigation>
-            <Navigation>47</Navigation>
-            <Navigation>22</Navigation>
-            <Navigation>Net next_refresh_counter_axb_5 has multiple drivers .</Navigation>
-        </Message>
-        <Message>
             <ID>2019993</ID>
             <Severity>Warning</Severity>
-            <Dynamic>MT420 |Found inferred clock sdram_controller|clk with period 10.00ns. Please declare a user-defined clock on port clk.</Dynamic>
+            <Dynamic>MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.</Dynamic>
             <Navigation>MT420</Navigation>
-            <Navigation>Found inferred clock sdram_controller|clk with period 10.00ns. Please declare a user-defined clock on port clk.</Navigation>
+            <Navigation>Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.</Navigation>
         </Message>
     </Task>
 </BaliMessageLog>

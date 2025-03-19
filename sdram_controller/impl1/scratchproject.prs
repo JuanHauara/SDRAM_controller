@@ -25,6 +25,7 @@ set_option -speed_grade -4
 set_option -part_companion ""
 
 #compilation/mapping options
+set_option -top_module "sdram_controller"
 
 # hdl_compiler_options
 set_option -distributed_compile 0
@@ -33,7 +34,7 @@ set_option -scm2hydra_preserve_rtl_sig 1
 set_option -hdl_strict_syntax 0
 
 # mapper_without_write_options
-set_option -frequency 100
+set_option -frequency 80
 set_option -srs_instrumentation 1
 
 # mapper_options

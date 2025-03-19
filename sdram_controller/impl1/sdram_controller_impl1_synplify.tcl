@@ -15,7 +15,7 @@ set_option -resource_sharing true
 set_option -vlog_std v2001
 
 #map options
-set_option -frequency 100
+set_option -frequency 80
 set_option -maxfan 1000
 set_option -auto_constrain_io 0
 set_option -disable_io_insertion false
@@ -48,6 +48,8 @@ set_option -seqshift_no_replicate 0
 set_option -include_path {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller}
 add_file -verilog -vlog_std v2001 {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v}
 
+#-- top module name
+set_option -top_module sdram_controller
 
 #-- set result format/file last
 project -result_file {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.edi}

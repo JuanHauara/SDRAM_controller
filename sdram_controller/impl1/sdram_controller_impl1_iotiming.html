@@ -38,7 +38,7 @@ Performance Hardware Data Status:   Final          Version 36.4.
 // Package: CABGA256
 // ncd File: sdram_controller_impl1.ncd
 // Version: Diamond (64-bit) 3.14.0.75.2
-// Written on Tue Mar 18 19:50:57 2025
+// Written on Wed Mar 19 17:03:34 2025
 // M: Minimum Performance Grade
 // iotiming sdram_controller_impl1.ncd sdram_controller_impl1.prf -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml
 
@@ -48,103 +48,102 @@ Worst Case Results across Performance Grades (M, 6, 5, 4):
 
 // Input Setup and Hold Times
 
-Port                 Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+Port                     Clock Edge  Setup Performance_Grade  Hold Performance_Grade
 ----------------------------------------------------------------------
-soc_side_rd_enable   clk   R     3.638      4       0.024     M
-soc_side_rst_n       clk   R     5.328      4       0.288     6
-soc_side_wr_data[0]  clk   R    -0.155      M       2.253     4
-soc_side_wr_data[10] clk   R    -0.187      M       2.373     4
-soc_side_wr_data[11] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[12] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[13] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[14] clk   R    -0.206      M       2.415     4
-soc_side_wr_data[15] clk   R    -0.187      M       2.373     4
-soc_side_wr_data[16] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[17] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[18] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[19] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[1]  clk   R    -0.205      M       2.426     4
-soc_side_wr_data[20] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[21] clk   R    -0.203      M       2.403     4
-soc_side_wr_data[22] clk   R    -0.212      M       2.444     4
-soc_side_wr_data[23] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[24] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[25] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[26] clk   R    -0.155      M       2.253     4
-soc_side_wr_data[27] clk   R    -0.187      M       2.373     4
-soc_side_wr_data[28] clk   R    -0.209      M       2.445     4
-soc_side_wr_data[29] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[2]  clk   R    -0.209      M       2.445     4
-soc_side_wr_data[30] clk   R    -0.206      M       2.415     4
-soc_side_wr_data[31] clk   R    -0.205      M       2.426     4
-soc_side_wr_data[3]  clk   R    -0.209      M       2.445     4
-soc_side_wr_data[4]  clk   R    -0.187      M       2.373     4
-soc_side_wr_data[5]  clk   R    -0.209      M       2.445     4
-soc_side_wr_data[6]  clk   R    -0.206      M       2.415     4
-soc_side_wr_data[7]  clk   R    -0.155      M       2.253     4
-soc_side_wr_data[8]  clk   R    -0.187      M       2.373     4
-soc_side_wr_data[9]  clk   R    -0.155      M       2.253     4
-soc_side_wr_enable   clk   R     4.552      4       0.238     6
+soc_side_rst_n_pin       clk   R     5.391      4       0.288     6
+soc_side_wr_data_pin[0]  clk   R    -0.183      M       2.361     4
+soc_side_wr_data_pin[10] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[11] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[12] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[13] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[14] clk   R    -0.206      M       2.415     4
+soc_side_wr_data_pin[15] clk   R    -0.209      M       2.445     4
+soc_side_wr_data_pin[16] clk   R    -0.206      M       2.415     4
+soc_side_wr_data_pin[17] clk   R    -0.209      M       2.445     4
+soc_side_wr_data_pin[18] clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[19] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[1]  clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[20] clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[21] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[22] clk   R    -0.209      M       2.445     4
+soc_side_wr_data_pin[23] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[24] clk   R    -0.203      M       2.403     4
+soc_side_wr_data_pin[25] clk   R    -0.206      M       2.415     4
+soc_side_wr_data_pin[26] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[27] clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[28] clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[29] clk   R    -0.187      M       2.373     4
+soc_side_wr_data_pin[2]  clk   R    -0.187      M       2.373     4
+soc_side_wr_data_pin[30] clk   R    -0.187      M       2.373     4
+soc_side_wr_data_pin[31] clk   R    -0.187      M       2.373     4
+soc_side_wr_data_pin[3]  clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[4]  clk   R    -0.155      M       2.253     4
+soc_side_wr_data_pin[5]  clk   R    -0.187      M       2.373     4
+soc_side_wr_data_pin[6]  clk   R    -0.183      M       2.361     4
+soc_side_wr_data_pin[7]  clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[8]  clk   R    -0.205      M       2.426     4
+soc_side_wr_data_pin[9]  clk   R    -0.205      M       2.426     4
+soc_side_wr_en_pin       clk   R     4.550      4       0.238     6
 
 
 // Clock to Output Delay
 
-Port                    Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+Port                        Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
 ------------------------------------------------------------------------
-ram_side_addr[0]        clk   R    12.104         4        3.438          M
-ram_side_addr[10]       clk   R    12.474         4        2.991          M
-ram_side_addr[11]       clk   R    10.970         4        3.195          M
-ram_side_addr[1]        clk   R    11.769         4        3.354          M
-ram_side_addr[2]        clk   R    13.229         4        3.496          M
-ram_side_addr[3]        clk   R    13.171         4        3.629          M
-ram_side_addr[4]        clk   R    14.566         4        3.187          M
-ram_side_addr[5]        clk   R    14.052         4        3.195          M
-ram_side_addr[6]        clk   R    11.035         4        3.145          M
-ram_side_addr[7]        clk   R    11.080         4        3.230          M
-ram_side_addr[8]        clk   R    13.486         4        3.720          M
-ram_side_addr[9]        clk   R    13.233         4        2.999          M
-ram_side_bank_addr[0]   clk   R    13.961         4        3.691          M
-ram_side_bank_addr[1]   clk   R    11.415         4        3.314          M
-ram_side_cas_n          clk   R     7.940         4        2.534          M
-ram_side_data_chip0[0]  clk   R    11.109         4        2.902          M
-ram_side_data_chip0[10] clk   R    18.748         4        2.902          M
-ram_side_data_chip0[11] clk   R    16.210         4        2.716          M
-ram_side_data_chip0[12] clk   R    16.210         4        2.796          M
-ram_side_data_chip0[13] clk   R    11.977         4        2.844          M
-ram_side_data_chip0[14] clk   R    16.798         4        2.798          M
-ram_side_data_chip0[15] clk   R    18.377         4        3.009          M
-ram_side_data_chip0[1]  clk   R    16.122         4        2.881          M
-ram_side_data_chip0[2]  clk   R    16.287         4        2.710          M
-ram_side_data_chip0[3]  clk   R    16.786         4        2.790          M
-ram_side_data_chip0[4]  clk   R    18.748         4        2.709          M
-ram_side_data_chip0[5]  clk   R    16.798         4        2.988          M
-ram_side_data_chip0[6]  clk   R    16.790         4        2.798          M
-ram_side_data_chip0[7]  clk   R    11.977         4        2.844          M
-ram_side_data_chip0[8]  clk   R    19.175         4        2.789          M
-ram_side_data_chip0[9]  clk   R    11.603         4        2.844          M
-ram_side_data_chip1[0]  clk   R    11.530         4        2.958          M
-ram_side_data_chip1[10] clk   R    11.103         4        2.900          M
-ram_side_data_chip1[11] clk   R    17.881         4        2.789          M
-ram_side_data_chip1[12] clk   R    16.786         4        2.791          M
-ram_side_data_chip1[13] clk   R    14.273         4        2.881          M
-ram_side_data_chip1[14] clk   R    16.939         4        2.798          M
-ram_side_data_chip1[15] clk   R    15.768         4        2.716          M
-ram_side_data_chip1[1]  clk   R    15.695         4        2.910          M
-ram_side_data_chip1[2]  clk   R    14.670         4        2.796          M
-ram_side_data_chip1[3]  clk   R    15.261         4        2.910          M
-ram_side_data_chip1[4]  clk   R    12.102         4        2.764          M
-ram_side_data_chip1[5]  clk   R    12.305         4        2.801          M
-ram_side_data_chip1[6]  clk   R    11.873         4        2.789          M
-ram_side_data_chip1[7]  clk   R    11.543         4        2.764          M
-ram_side_data_chip1[8]  clk   R    15.174         4        2.796          M
-ram_side_data_chip1[9]  clk   R    11.109         4        2.902          M
-ram_side_ldqm_pin_chip0 clk   R    14.039         4        3.629          M
-ram_side_ldqm_pin_chip1 clk   R    14.058         4        3.651          M
-ram_side_ras_n          clk   R     8.036         4        2.584          M
-ram_side_udqm_pin_chip0 clk   R    13.803         4        3.563          M
-ram_side_udqm_pin_chip1 clk   R    14.085         4        3.624          M
-ram_side_wr_enable      clk   R     8.036         4        2.584          M
-soc_side_busy           clk   R     7.940         4        2.534          M
+ram_side_addr_pin[0]        clk   R    12.466         4        3.441          M
+ram_side_addr_pin[10]       clk   R    14.938         4        3.078          M
+ram_side_addr_pin[11]       clk   R    10.339         4        3.050          M
+ram_side_addr_pin[1]        clk   R    12.345         4        3.518          M
+ram_side_addr_pin[2]        clk   R    12.454         4        3.528          M
+ram_side_addr_pin[3]        clk   R    12.758         4        3.474          M
+ram_side_addr_pin[4]        clk   R    13.036         4        3.171          M
+ram_side_addr_pin[5]        clk   R    12.938         4        3.178          M
+ram_side_addr_pin[6]        clk   R    12.153         4        3.358          M
+ram_side_addr_pin[7]        clk   R    12.119         4        3.444          M
+ram_side_addr_pin[8]        clk   R    12.758         4        3.474          M
+ram_side_addr_pin[9]        clk   R    11.150         4        3.051          M
+ram_side_bank_addr_pin[0]   clk   R    12.010         4        3.434          M
+ram_side_bank_addr_pin[1]   clk   R    10.886         4        3.135          M
+ram_side_cas_n_pin          clk   R     7.874         4        2.529          M
+ram_side_chip0_data_pin[0]  clk   R    13.388         4        2.794          M
+ram_side_chip0_data_pin[10] clk   R    15.026         4        2.844          M
+ram_side_chip0_data_pin[11] clk   R    16.006         4        3.011          M
+ram_side_chip0_data_pin[12] clk   R    15.026         4        2.844          M
+ram_side_chip0_data_pin[13] clk   R    16.006         4        2.844          M
+ram_side_chip0_data_pin[14] clk   R    15.345         4        2.798          M
+ram_side_chip0_data_pin[15] clk   R    17.281         4        2.790          M
+ram_side_chip0_data_pin[1]  clk   R    11.444         4        2.796          M
+ram_side_chip0_data_pin[2]  clk   R    15.016         4        2.790          M
+ram_side_chip0_data_pin[3]  clk   R    17.292         4        2.716          M
+ram_side_chip0_data_pin[4]  clk   R    14.622         4        2.958          M
+ram_side_chip0_data_pin[5]  clk   R    14.979         4        2.789          M
+ram_side_chip0_data_pin[6]  clk   R    13.388         4        2.794          M
+ram_side_chip0_data_pin[7]  clk   R    11.047         4        2.796          M
+ram_side_chip0_data_pin[8]  clk   R    10.526         4        2.731          M
+ram_side_chip0_data_pin[9]  clk   R    11.120         4        2.796          M
+ram_side_chip0_ldqm_pin     clk   R    14.041         4        3.403          M
+ram_side_chip0_udqm_pin     clk   R    14.335         4        3.464          M
+ram_side_chip1_data_pin[0]  clk   R    15.338         4        2.798          M
+ram_side_chip1_data_pin[10] clk   R    14.586         4        2.844          M
+ram_side_chip1_data_pin[11] clk   R    11.040         4        2.716          M
+ram_side_chip1_data_pin[12] clk   R    14.592         4        2.764          M
+ram_side_chip1_data_pin[13] clk   R    15.443         4        2.789          M
+ram_side_chip1_data_pin[14] clk   R    15.000         4        2.789          M
+ram_side_chip1_data_pin[15] clk   R    15.000         4        2.902          M
+ram_side_chip1_data_pin[1]  clk   R    16.427         4        2.790          M
+ram_side_chip1_data_pin[2]  clk   R    10.526         4        2.731          M
+ram_side_chip1_data_pin[3]  clk   R    14.592         4        2.844          M
+ram_side_chip1_data_pin[4]  clk   R    11.547         4        2.716          M
+ram_side_chip1_data_pin[5]  clk   R    15.572         4        2.958          M
+ram_side_chip1_data_pin[6]  clk   R    16.427         4        2.790          M
+ram_side_chip1_data_pin[7]  clk   R    15.572         4        2.844          M
+ram_side_chip1_data_pin[8]  clk   R    11.812         4        2.801          M
+ram_side_chip1_data_pin[9]  clk   R    15.494         4        2.798          M
+ram_side_chip1_ldqm_pin     clk   R    14.125         4        3.431          M
+ram_side_chip1_udqm_pin     clk   R    14.371         4        3.485          M
+ram_side_ras_n_pin          clk   R     7.855         4        2.536          M
+ram_side_wr_en_pin          clk   R     7.874         4        2.529          M
+soc_side_busy_pin           clk   R     7.866         4        2.541          M
 WARNING: you must also run trce with hold speed: 4
 WARNING: you must also run trce with hold speed: 6
 WARNING: you must also run trce with setup speed: M
