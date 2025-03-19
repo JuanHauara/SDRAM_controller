@@ -1,6 +1,7 @@
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: BN362 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":287:0:287:5|Removing sequential instance rd_data_reg[0] (in view: work.sdram_controller(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
 @N: FX493 |Applying initial value "0" on instance state[0].
 @N: FX493 |Applying initial value "1" on instance state[1].
 @N: FX493 |Applying initial value "0" on instance state[2].
@@ -19,5 +20,9 @@
 @N: FX493 |Applying initial value "0" on instance state[15].
 @N: FX493 |Applying initial value "0" on instance state[16].
 @N: FX493 |Applying initial value "0" on instance state[17].
+@N: FX493 |Applying initial value "0" on instance state[18].
+@N: FX493 |Applying initial value "0" on instance state[19].
+@N: FX493 |Applying initial value "0" on instance state[20].
+@N: FX493 |Applying initial value "0" on instance state[21].
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.

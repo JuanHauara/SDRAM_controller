@@ -24,23 +24,23 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA256
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/19/25  17:03:16
+Mapped on:  03/19/25  17:59:19
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:     89 out of  4941 (2%)
-      PFU registers:           53 out of  4320 (1%)
-      PIO registers:           36 out of   621 (6%)
-   Number of SLICEs:        64 out of  2160 (3%)
-      SLICEs as Logic/ROM:     64 out of  2160 (3%)
+   Number of registers:     94 out of  4941 (2%)
+      PFU registers:           57 out of  4320 (1%)
+      PIO registers:           37 out of   621 (6%)
+   Number of SLICEs:        74 out of  2160 (3%)
+      SLICEs as Logic/ROM:     74 out of  2160 (3%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        127 out of  4320 (3%)
-      Number used as logic LUTs:         93
+   Number of LUT4s:        147 out of  4320 (3%)
+      Number used as logic LUTs:        113
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
-   Number of PIO sites used: 151 + 4(JTAG) out of 207 (75%)
+   Number of PIO sites used: 152 + 4(JTAG) out of 207 (75%)
    Number of block RAMs:  0 out of 10 (0%)
    Number of GSRs:        0 out of 1 (0%)
    EFB used :        No
@@ -66,32 +66,33 @@ Mapped on:  03/19/25  17:03:16
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 67 loads, 67 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 70 loads, 70 rising, 0 falling (Driver: PIO clk )
 
-   Number of Clock Enables:  1
+   Number of Clock Enables:  2
      Net soc_side_wr_en_pin_c: 32 loads, 0 LSLICEs
+     Net soc_side_rst_n_pin_c: 1 loads, 0 LSLICEs
    Number of LSRs:  4
      Net soc_side_rst_n_pin_c: 42 loads, 6 LSLICEs
-     Net N_38: 2 loads, 2 LSLICEs
-     Net state_RNIAPSIC[14]: 9 loads, 9 LSLICEs
-     Net next_delay_counter_f0_i_0_1_RNI0600I[0]: 5 loads, 5 LSLICEs
+     Net state_RNI2LJCE[14]: 9 loads, 9 LSLICEs
+     Net un1_soc_side_rst_n_pin_1_0_0: 2 loads, 2 LSLICEs
+     Net next_delay_counter_f0_i_0_1_RNIAI42B[2]: 5 loads, 5 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net soc_side_rst_n_pin_c: 63 loads
-     Net state[9]: 46 loads
-     Net state_ns_i_a2[1]: 41 loads
-     Net soc_side_wr_en_pin_c: 35 loads
+     Net soc_side_rst_n_pin_c: 68 loads
+     Net state[9]: 48 loads
+     Net next_state_0_sqmuxa_7_i_a2: 42 loads
+     Net soc_side_wr_en_pin_c: 36 loads
      Net state[10]: 17 loads
-     Net N_174: 16 loads
-     Net next_delay_counter_f0_i_o4_2_o2[2]: 12 loads
-     Net N_211: 11 loads
-     Net N_30_1: 11 loads
-     Net state_RNIAPSIC[14]: 9 loads
+     Net un1_next_init_refresh_counter_0_sqmuxa_i_0_a2: 16 loads
+     Net N_173_1: 11 loads
+     Net N_261: 11 loads
+     Net N_158: 10 loads
+     Net state_RNI2LJCE[14]: 9 loads
 
 
 
 
-   Number of warnings:  1
+   Number of warnings:  0
    Number of errors:    0
      
 
@@ -100,8 +101,7 @@ Mapped on:  03/19/25  17:03:16
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
-     will be discarded.
+   No errors or warnings present.
 
 
 
@@ -227,7 +227,9 @@ WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
 +---------------------+-----------+-----------+------------+
 | ram_side_addr_pin[0]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_ready_pin| OUTPUT    | LVCMOS25  |            |
+| soc_side_rd_ready_pin| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_en_pin  | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[31]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -239,9 +241,9 @@ WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[27]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
+
 | soc_side_rd_data_pin[26]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_rd_data_pin[25]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[24]| OUTPUT    | LVCMOS25  |            |
@@ -296,9 +298,9 @@ WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_en_pin  | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
+
 | soc_side_wr_data_pin[31]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_wr_data_pin[30]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[29]| INPUT     | LVCMOS25  | IN         |
@@ -353,9 +355,9 @@ WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[4]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
+
 | soc_side_wr_data_pin[3]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_wr_data_pin[2]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[1]| INPUT     | LVCMOS25  | IN         |
@@ -410,9 +412,9 @@ WARNING - map: IO buffer missing for top level port soc_side_rd_en_pin...logic
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[3]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
+
 | soc_side_addr_pin[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_addr_pin[1]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[0]| INPUT     | LVCMOS25  |            |
@@ -455,10 +457,8 @@ Block soc_side_rst_n_pin_pad_RNI862Q2 was optimized away.
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 36 MB
+   Peak Memory Usage: 37 MB
         
-
-
 
 
 

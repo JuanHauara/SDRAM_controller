@@ -110,8 +110,6 @@ module sdram_controller # (
 
 localparam CYCLES_BETWEEN_REFRESH = (CLK_FREQUENCY_MHZ * 1_000 * REFRESH_TIME_MS) / REFRESH_COUNT;
 
-localparam CAS_LATENCY = 3;
-
 // ------------------------------------------------------------------------
 // Times: Table "9.5 AC Characteristics and Operating Condition", page 15.
 // ------------------------------------------------------------------------
@@ -131,12 +129,14 @@ localparam TRC_CYCLES = ((TRC_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Cantida
 
 localparam TRSC_CYCLES = 2;  // Mode Register Set Cycle Time, tRSC: 2 clock cycles. Tiempo de espera luego de emitir el comando CMD_MRS Mode Register Set (MRS).
 
-// Tiempos para escritura.
-// -----------------------
+// Tiempos para escritura y lectura.
+// ---------------------------------
 localparam TRCD_NS = 18;  // Active to Read/Write Command Delay Time, tRCD: 15ns + margen de seguridad. Tiempo de espera luego de emitir el comando CMD_BANK_ACTIVATE.
 localparam TRCD_CYCLES = ((TRCD_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Cantidad de ciclos de espera para cumplir con el tiempo tRCD. Redondeo hacia arriba.
 
 localparam TWR_CYCLES = 2;  // Write Recovery Time, tWR: 2 clock cycles. Tiempo de espera luego de emitir el comando CMD_WRITE.
+
+localparam CAS_LATENCY = 3;
 // ------------------------------------------------------------------------
 
 
@@ -224,7 +224,7 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 // Internal registers for CPU interface.
 reg [31:0] wr_data_reg;
 reg [31:0] rd_data_reg;
-reg read_ready_reg;
+reg read_ready_reg, next_read_ready_reg;
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] addr_reg;
@@ -234,7 +234,8 @@ reg [3:0] sdram_side_wr_mask_reg;  // Internal registers for Byte mask signals.
 
 wire in_initialization_cycle;
 wire in_refresh_cycle;
-wire in_read_write_cycle;
+wire in_write_cycle;
+wire in_read_cycle;
 
 
 //-------------------------------
@@ -243,8 +244,8 @@ wire in_read_write_cycle;
 
 // Assigns command bits to outputs.
 assign {ram_side_ck_en_pin, ram_side_cs_n_pin, ram_side_ras_n_pin, ram_side_cas_n_pin, ram_side_wr_en_pin} = command[7:3];
-assign ram_side_bank_addr_pin = in_read_write_cycle ? bank_addr_reg : command[2:1];
-assign ram_side_addr_pin = (in_read_write_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+assign ram_side_bank_addr_pin = (in_write_cycle || in_read_cycle) ? bank_addr_reg : command[2:1];
+assign ram_side_addr_pin = (in_write_cycle || in_read_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
 assign soc_side_rd_data_pin = rd_data_reg;
 assign soc_side_rd_ready_pin = read_ready_reg;
@@ -267,10 +268,16 @@ assign in_initialization_cycle = (state == INIT_PAUSE) || (state == INIT_PRECHAR
 assign in_refresh_cycle = (state == REFRESH_PRECHARGE_ALL) || (state == REFRESH_WAIT_TRP) || 
 						(state == REFRESH_AUTO_REFRESH) || (state == REFRESH_WAIT_TRC);
 
-// Signal to detect read or write cycle states.
-assign in_read_write_cycle = (state == WRITE_BANK_ACTIVATE) || (state == WRITE_WAIT_TRCD) || 
+// Signal to detect write cycle states.
+assign in_write_cycle = (state == WRITE_BANK_ACTIVATE) || (state == WRITE_WAIT_TRCD) || 
 							(state == WRITE_CAS) || (state == WRITE_WAIT_TWR) || 
-							(state == WRITE_PRECHARGE) || (state == WRITE_WAIT_TRP);  // TODO: Agregar estados de lectura de memoria.
+							(state == WRITE_PRECHARGE) || (state == WRITE_WAIT_TRP);
+
+// Signal to detect read cycle states.
+assign in_read_cycle = (state == READ_BANK_ACTIVATE) || (state == READ_WAIT_TRCD)  ||
+					(state == READ_CAS) || (state == READ_WAIT_CAS_LATENCY)  ||
+					(state == READ_DATA) || (state == READ_PRECHARGE)  ||
+					(state == READ_WAIT_TRP);
 
 
 //-------------------------------
@@ -308,20 +315,16 @@ begin
 				wr_data_reg <= soc_side_wr_data_pin;  // Update write data.
 
 			// Update read data and read ready signal.
-			// TODO: Descomentar esto cuando implemente la lectura.
-			/*if (state == READ_READ)
-				begin
-					rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
-					read_ready_reg <= 1'b1;
-				end
-			else
-				read_ready_reg <= 1'b0;*/
+			if (state == READ_DATA)
+				rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
+			
+			read_ready_reg <= next_read_ready_reg;
 
 			/*
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
-				los ciclos de refresco y los ciclos de lectura o escritura.
+				los ciclos de refresco y los ciclos de escritura o lectura.
 			*/
-			soc_side_busy_pin <= in_initialization_cycle || in_refresh_cycle || in_read_write_cycle;
+			soc_side_busy_pin <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
 		end
 end
 
@@ -358,6 +361,8 @@ begin
 	next_delay_counter = delay_counter;
 	next_init_refresh_counter = init_refresh_counter;
 	next_refresh_counter = refresh_counter + 1'b1;  // Siempre incrementa, se resetea en REF_NOP2
+    next_cas_counter = cas_counter;
+    next_read_ready_reg = 1'b0;
 	
 	// Lógica de la máquina de estados.
 	case (state)
@@ -509,8 +514,8 @@ begin
 				else if (soc_side_rd_en_pin) 
 					begin
 						// Inicia secuencia de lectura.
-						/*next_state = READ_ACT;
-						next_command = CMD_BACT;*/
+						next_state = READ_BANK_ACTIVATE;
+						next_command = CMD_BANK_ACTIVATE;
 					end
 			end
 
@@ -664,7 +669,8 @@ begin
 									Si A10=1 durante el comando WRITE, auto-precharge está activo
 									y no necesitamos enviar un comando de precharge explícito.
 									Actualmente A10=1 siempre pero se mantienen los siguientes dos
-									estados para futuras mejoras del controlador.
+									estados WRITE_PRECHARGE y WRITE_WAIT_TRP para futuras mejoras 
+									del controlador.
 								*/
 
 								next_state = IDLE;			// Volver a IDLE directamente.
@@ -699,6 +705,104 @@ begin
 			end
 
 		// ---- Read Cycle ----
+		READ_BANK_ACTIVATE:
+			begin
+				// Activar el banco y fila especificados.
+				// Comando CMD_BANK_ACTIVATE emitido en el estado anterior IDLE.
+
+				next_state = READ_WAIT_TRCD;
+				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+
+				next_delay_counter = TRCD_CYCLES;  // Esperar tRCD.
+			end
+
+		READ_WAIT_TRCD:
+			begin
+				// Esperar tRCD después de activar el banco.
+
+				if (delay_counter != 0)
+					next_delay_counter = delay_counter - 1'b1;
+				else
+					begin
+						next_state = READ_CAS;
+						next_command = CMD_READ;
+					end
+			end
+
+		READ_CAS:
+			begin
+				// Comando de lectura emitido en el estado anterior.
+
+				next_state = READ_WAIT_CAS_LATENCY;
+				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+
+				next_cas_counter = CAS_LATENCY - 1;  // Iniciar contador para latencia CAS.
+			end
+
+		READ_WAIT_CAS_LATENCY:
+			begin
+				// Esperar CAS_LATENCY ciclos antes de que los datos estén disponibles.
+
+				if (cas_counter != 0)
+					next_cas_counter = cas_counter - 1'b1;
+				else
+					begin
+						next_state = READ_DATA;
+						next_command = CMD_NOP;
+					end
+			end
+
+		READ_DATA:
+			begin
+				// Capturar datos de los pines DQ.
+				// Los datos se capturan en el bloque secuencial en el registro rd_data_reg.
+
+				next_read_ready_reg = 1'b1;  // Indicar que los datos están listos.
+
+				// Si A10=1 durante el comando READ, auto-precharge está activo.
+				if (addr_reg[10])
+					begin
+						/*
+							Si A10=1 durante el comando READ, auto-precharge está activo
+							y no necesitamos enviar un comando de precharge explícito.
+							Actualmente A10=1 siempre pero se mantienen los siguientes dos
+							estados READ_PRECHARGE y READ_WAIT_TRP para futuras mejoras del 
+							controlador.
+						*/
+
+						next_state = IDLE;			// Volver a IDLE directamente.
+						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+					end
+				else
+					begin
+						next_state = READ_PRECHARGE;
+						next_command = CMD_PRECHARGE_BANK;
+					end
+			end
+
+        READ_PRECHARGE:
+            begin
+                // Precargar el banco específico.
+                // Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
+
+                next_state = READ_WAIT_TRP;
+                next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+
+                next_delay_counter = TRP_CYCLES;  // Esperar tRP.
+            end
+
+        READ_WAIT_TRP:
+            begin
+                // Esperar tRP después de precargar.
+
+                if (delay_counter != 0)
+                    next_delay_counter = delay_counter - 1'b1;
+                else
+                    begin
+						next_state = IDLE;			// Volver a IDLE.
+						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+                    end
+            end
 
 		
 		default: 
@@ -757,10 +861,21 @@ begin
 
 	// Set the writing mask based on the current state.
 	// -------------------------------------------------
+	/*
+		PicoRV32 SOC, mem_wstrb signals:
+			soc_side_wr_mask_pin = 0000 --> No write. Read memory.
+			soc_side_wr_mask_pin = 1111 --> Write 32 bits.
+			soc_side_wr_mask_pin = 1100 --> Write upper 16 bits.
+			soc_side_wr_mask_pin = 0011 --> Write lower 16 bits.
+			soc_side_wr_mask_pin = 0001 --> Write Byte 0.
+			soc_side_wr_mask_pin = 0010 --> Write Byte 1.
+			soc_side_wr_mask_pin = 0100 --> Write Byte 2.
+			soc_side_wr_mask_pin = 1000 --> Write Byte 3.
+	*/
 	if (in_initialization_cycle)
 		// Deshabilita buffers during initialization. Mask all bits high so that the SDRAM drives the input/output buffers to HIGH-Z.
 		sdram_side_wr_mask_reg = 4'b1111;
-	else if (in_read_write_cycle)
+	else if (in_write_cycle)
 		/*
 			PicoRV32 SOC, mem_wstrb signals:
 				soc_side_wr_mask_pin = 0000 --> No write. Read memory.
@@ -775,10 +890,10 @@ begin
 			The mem_wstrb signals of the SoC are inverted because the LDQM and UDQM pins of the 
 			SDRAM set the input/output buffers to HIGH-Z with 1 and enable them with 0.
 		*/
-		if (soc_side_wr_mask_pin)								// If the soc wants to write in the memory (soc_side_wr_mask_pin diferent from 0000).
-			sdram_side_wr_mask_reg = ~soc_side_wr_mask_pin;		// Use the 4-bit write mask from the soc (mem_wstrb signals).
-		else 
-			sdram_side_wr_mask_reg = 4'b0000;	// If the SOC needs to read from memory, enable buffers.
+		sdram_side_wr_mask_reg = ~soc_side_wr_mask_pin;  // Use the 4-bit write mask from the soc (mem_wstrb signals).
+    else if (in_read_cycle)
+        // Durante la lectura, habilitar todos los buffers para que los datos puedan leerse.
+        sdram_side_wr_mask_reg = 4'b0000;  // DQM = 0 habilita la salida de datos en lectura.
 	else
 		// If the state is not read or write, mask all bits high so that the SDRAM drives the input/output buffers to HIGH-Z.
 		sdram_side_wr_mask_reg = 4'b1111;
