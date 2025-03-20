@@ -33,6 +33,8 @@
 
 		- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
 
+		// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
+
 		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
 		  soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
 
@@ -81,7 +83,7 @@ module sdram_controller # (
 	input wire soc_side_rd_en_pin,
 
 	/* SDRAM side */
-	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_pin,		// SDRAM chips 0 and 1, A0 to A11 pins.
+	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_pin,		// SDRAM chips 0 and 1, A0 to A11 pins.  TODO: Ver que el ancho de este bus sea correcto.
 	output wire [BANK_ADDR_WIDTH - 1: 0] ram_side_bank_addr_pin,	// SDRAM chips 0 and 1, BS0 and BS1 pins.
 
 	output wire ram_side_chip0_ldqm_pin,		// SDRAM chip 0, LDQM pin.
