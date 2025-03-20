@@ -39,6 +39,7 @@ Verilog syntax check successful!
 File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
 @N: CG364 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Synthesizing module sdram_controller in library work.
+@W: CG133 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":230:14:230:26|Object next_busy_reg is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on sdram_controller .......
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[1] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[2] is always 0.
@@ -46,7 +47,7 @@ Running optimization stage 1 on sdram_controller .......
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[7] is always 1.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 94MB)
 Running optimization stage 2 on sdram_controller .......
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit cas_counter[2] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit init_refresh_counter[3] is always 0.
@@ -80,7 +81,7 @@ State machine has 25 reachable states with original encodings of:
    11101
    11110
    11111
-Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 95MB peak: 95MB)
+Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 94MB peak: 95MB)
 
 For a summary of runtime per design unit, please see file:
 ==========================================================
@@ -93,7 +94,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 20:41:30 2025
+# Thu Mar 20 21:21:28 2025
 
 ###########################################################]
 ###########################################################[
@@ -119,7 +120,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 20:41:30 2025
+# Thu Mar 20 21:21:28 2025
 
 ###########################################################]
 
@@ -134,6 +135,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 20:41:30 2025
+# Thu Mar 20 21:21:28 2025
 
 ###########################################################]

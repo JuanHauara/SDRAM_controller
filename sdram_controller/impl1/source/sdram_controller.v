@@ -227,8 +227,8 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 // Internal registers for CPU interface.
 reg [31:0] wr_data_reg;
 reg [31:0] rd_data_reg;
-reg busy_reg;
-reg ready_reg;
+reg busy_reg, next_busy_reg;
+reg ready_reg, next_ready_reg;
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] addr_reg;
@@ -310,8 +310,8 @@ begin
 			// I/O.
 			wr_data_reg <= 32'b0;
 			rd_data_reg <= 32'b0;
-			ready_reg <= 1'b0;		// Controlador no listo durante el reset.
-			busy_reg <= 1'b1;		// Controlador ocupado durante el reset.
+			ready_reg <= 1'b0;
+			busy_reg <= 1'b1;  // Controlador ocupado durante el reset.
 		end
 	else 
 		begin
@@ -328,20 +328,15 @@ begin
 			if (soc_side_wr_en_pin)
 				wr_data_reg <= soc_side_wr_data_pin;  // Update write data.
 
-			// Update read data and read ready signal.
-			if (state == READ_DATA)
-				begin
-					rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
-					ready_reg <= 1'b1;  // Indicar a la CPU que el dato está listo en el bus de datos.
-				end
-			else
-				ready_reg <= 1'b0;
+			if (state == READ_DATA)  // Update read data.
+				rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
 
 			/*
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
 				los ciclos de refresco y los ciclos de escritura o lectura.
 			*/
 			busy_reg <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
+			ready_reg <= next_ready_reg;
 		end
 end
 
@@ -387,6 +382,8 @@ begin
 		la secuencia de auto refresh, en el estado REFRESH_WAIT_TRC.
 	*/
 	next_refresh_counter = refresh_counter + 1'b1;
+
+	next_ready_reg = ready_reg;  // Por defecto mantener el valor anterior.
 	
 	// Lógica de la máquina de estados.
 	case (state)
@@ -701,6 +698,8 @@ begin
 
 								next_state = IDLE;			// Volver a IDLE directamente.
 								next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+								next_ready_reg = 1'b1;		// Indicar a la CPU que el dato ya fué escrito.
 							end
 						else 
 							begin
@@ -727,6 +726,8 @@ begin
 					begin
 						next_state = IDLE;			// Volver a IDLE.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_ready_reg = 1'b1;		// Indicar a la CPU que el dato ya fué escrito.
 					end
 			end
 
@@ -831,6 +832,8 @@ begin
 
 						next_state = IDLE;			// Volver a IDLE directamente.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_ready_reg = 1'b1;		// Indicar a la CPU que el dato ya está disponible en el bus de datos.
 					end
 				else
 					begin
@@ -860,6 +863,8 @@ begin
 					begin
 						next_state = IDLE;			// Volver a IDLE.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_ready_reg = 1'b1;		// Indicar a la CPU que el dato ya está disponible en el bus de datos.
 					end
 			end
 

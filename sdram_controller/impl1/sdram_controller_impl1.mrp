@@ -16,20 +16,20 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA256
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/20/25  20:41:36
+Mapped on:  03/20/25  21:21:33
 
 Design Summary
 --------------
 
    Number of registers:    131 out of  4941 (3%)
-      PFU registers:           62 out of  4320 (1%)
-      PIO registers:           69 out of   621 (11%)
-   Number of SLICEs:        75 out of  2160 (3%)
-      SLICEs as Logic/ROM:     75 out of  2160 (3%)
+      PFU registers:           63 out of  4320 (1%)
+      PIO registers:           68 out of   621 (11%)
+   Number of SLICEs:        76 out of  2160 (4%)
+      SLICEs as Logic/ROM:     76 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        150 out of  4320 (3%)
-      Number used as logic LUTs:        116
+   Number of LUT4s:        151 out of  4320 (3%)
+      Number used as logic LUTs:        117
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -66,7 +66,7 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 Design Summary (cont)
 ---------------------
@@ -76,23 +76,23 @@ Design Summary (cont)
    Number of LSRs:  7
      Net N_550_i: 1 loads, 1 LSLICEs
      Net N_167_i: 1 loads, 1 LSLICEs
-     Net reset_n_pin_c: 76 loads, 7 LSLICEs
-     Net state_RNI43KQC[14]: 9 loads, 9 LSLICEs
-     Net un1_reset_n_pin_3_0: 2 loads, 2 LSLICEs
-     Net un1_ram_side_addr_pin_2_0_a2_1_RNIKNC47: 3 loads, 3 LSLICEs
+     Net reset_n_pin_c: 76 loads, 8 LSLICEs
+     Net state_RNI2PV5A[14]: 9 loads, 9 LSLICEs
+     Net un1_reset_n_pin_3_0_0: 2 loads, 2 LSLICEs
+     Net un1_ram_side_addr_pin_2_0_a2_0_a3_0_RNIOFTDF: 3 loads, 3 LSLICEs
      Net next_delay_counter[0]: 1 loads, 1 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
      Net reset_n_pin_c: 104 loads
-     Net next_state_0_sqmuxa_7_i_a2: 45 loads
-     Net state[9]: 39 loads
-     Net state[22]: 37 loads
+     Net next_state_0_sqmuxa_5_i_a2: 43 loads
+     Net state[9]: 38 loads
      Net soc_side_wr_en_pin_c: 36 loads
-     Net N_598: 22 loads
-     Net N_579: 16 loads
-     Net state[5]: 16 loads
-     Net un1_ram_side_addr_pin_2_0_a2_1: 11 loads
-     Net state[23]: 9 loads
+     Net state[22]: 36 loads
+     Net N_580: 16 loads
+     Net N_581_1: 12 loads
+     Net N_76: 12 loads
+     Net un1_ram_side_addr_pin_2_0_a2_0_a3_0: 11 loads
+     Net N_606_i_0: 10 loads
 
 
 
@@ -132,7 +132,7 @@ IO (PIO) Attributes
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -198,7 +198,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -264,7 +264,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -330,7 +330,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -396,7 +396,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -462,7 +462,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  20:41:36
+Design:  sdram_controller                              Date:  03/20/25  21:21:33
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -473,7 +473,7 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_ready_pin  | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_ready_pin  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | reset_n_pin         | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
