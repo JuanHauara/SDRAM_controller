@@ -4,34 +4,34 @@
 	achieve a total of 32MB (4M words x 32 bits).
 
 	Default options
-		CLK_FREQUENCY_MHZ = 100MHz
+		CLK_FREQUENCY_MHZ = 80MHz
 		CAS 3
 
 	Very simple CPU interface
 
 		- No burst support.
 		
-		- soc_side_rst_n_pin: Start init SDRAM process.
+		- soc_side_reset_n_pin: Starts the initialization sequence for the SDRAM.
 
-		- soc_side_busy_pin: Indicate that the controller is busy during read/write operations 
-		  and during refresh cycles. The CPU must wait for soc_side_busy_pin to be low before 
+		- soc_side_busy_pin: Indicate that the controller is busy during read/write operations, refresh cycles 
+		  and during the initialization sequence. The CPU must wait for soc_side_busy_pin to be low before 
 		  sending commands to the SDRAM.
 		
-		- soc_side_addr_pin: Address for read/write 32 bits of data.
+		- soc_side_addr_pin: Address for read/write 32 bits data.
 
 		- soc_side_wr_mask_pin: 0000 --> No write/read memory.
-							1111 --> Write 32 bits.
-							1100 --> Write upper 16 bits.
-							0011 --> Write lower 16 bits.
-							0001 --> Write Byte 0.
-							0010 --> Write Byte 1.
-							0100 --> Write Byte 2.
-							1000 --> Write Byte 3.
+								1111 --> Write 32 bits.
+								1100 --> Write upper 16 bits.
+								0011 --> Write lower 16 bits.
+								0001 --> Write Byte 0.
+								0010 --> Write Byte 1.
+								0100 --> Write Byte 2.
+								1000 --> Write Byte 3.
 
-		- soc_side_wr_data_pin: Data for writing, latched in when soc_side_wr_en_pin is high.
+		- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
 
-		- soc_side_wr_en_pin: On clk posedge soc_side_addr_pin and soc_side_wr_data_pin will be 
-		  latched in, after a few clocks data will be written to the SDRAM.
+		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_addr_pin and 
+		  soc_side_wr_data_pin will be latched in, after a few clocks data will be written to the SDRAM.
 
 		- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
 		  soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
@@ -61,7 +61,7 @@ module sdram_controller # (
 	input wire clk,
 
 	/* SOC interface */
-	input wire soc_side_rst_n_pin,
+	input wire soc_side_reset_n_pin,
 	output reg soc_side_busy_pin,
 
 	// Address
@@ -161,7 +161,7 @@ localparam CAS_LATENCY = 3;
 localparam IDLE						= 5'b00000;
 
 // SDRAM initialization.
-localparam INIT_PAUSE				= 5'b00001;  // Pausa inicial de 200us.
+localparam INIT_PAUSE				= 5'b00001;  // Pausa inicial de al menos 200us.
 localparam INIT_PRECHARGE_ALL		= 5'b00011;  // Precargar todos los bancos.
 localparam INIT_WAIT_TRP			= 5'b00010;  // Esperar tRP nanosegundos después de precharge all.
 localparam INIT_AUTO_REFRESH		= 5'b00110;  // 8 ciclos de Auto Refresh.
@@ -286,13 +286,13 @@ assign in_read_cycle = (state == READ_BANK_ACTIVATE) || (state == READ_WAIT_TRCD
 
 always @(posedge clk) 
 begin
-	if (~soc_side_rst_n_pin) 
+	if (~soc_side_reset_n_pin) 
 		begin
 			state <= INIT_PAUSE;
 			command <= CMD_NOP;
 
 			// Counters.
-			delay_counter <= INIT_PAUSE_CYCLES;  // Inicializar contador para la pausa de 200us.
+			delay_counter <= INIT_PAUSE_CYCLES - 1;  // Inicializar contador para la pausa de al menos 200us.
 			init_refresh_counter <= 0;
 			refresh_counter <= 0;
 
@@ -345,7 +345,9 @@ end
 			next_state = SIGUIENTE_ESTADO;
 			next_command = COMANDO_PARA_SIGUIENTE_ESTADO;
 
-			// Inicializar next_delay_counter si el siguiente estado necesita cumplir con una espera de tiempo.
+			// Inicializar next_delay_counter si el siguiente estado necesita cumplir con una espera de tiempo de n ciclos de reloj.
+			next_delay_counter = n - 1;
+
 			// Otras asignaciones.
 		end
 
@@ -374,7 +376,7 @@ begin
 
 			The implemented sequence follows the requirements of the W9812G6KH-5I datasheet.
 
-			1. INIT_PAUSE: Wait 200us after power-up.
+			1. INIT_PAUSE: Wait at least 200us after power-up.
 				- During this pause, DQM and CKE are kept high to prevent data contention.
 
 			2. INIT_PRECHARGE_ALL: Issues the precharge all banks command.
@@ -395,7 +397,7 @@ begin
 		*/
 		INIT_PAUSE: 
 			begin
-				// Esperar 200us antes de comenzar la inicialización.
+				// Esperar al menos 200us antes de comenzar la inicialización.
 
 				if (delay_counter != 0)
 					next_delay_counter = delay_counter - 1'b1;
@@ -414,7 +416,7 @@ begin
 				next_state = INIT_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRP_CYCLES;  // Inicializar contador para esperar tRP nanosegundos en el siguiente estado.
+				next_delay_counter = TRP_CYCLES - 1;  // Inicializar contador para esperar TRP_CYCLES ciclos en el siguiente estado.
 			end
 		
 		INIT_WAIT_TRP: 
@@ -442,10 +444,10 @@ begin
 					la SDRAM espera tRC con comando NOP.
 				*/
 
-				next_state = INIT_WAIT_TRC;	// Esperar tiempo de ciclo de refresco tRC luego de enviar el comando auto refresh.
+				next_state = INIT_WAIT_TRC;		// Esperar tiempo de ciclo de refresco tRC luego de enviar el comando auto refresh.
 				next_command = CMD_NOP;			// Emitir comando CMD_NOP durante los tiempos de espera.
 				
-				next_delay_counter = TRC_CYCLES;  // Esperar tRC nanosegundos.
+				next_delay_counter = TRC_CYCLES - 1;  // Esperar tRC nanosegundos.
 			end
 		
 		INIT_WAIT_TRC: 
@@ -454,6 +456,7 @@ begin
 					next_delay_counter = delay_counter - 1'b1;
 				else 
 					begin
+						// Luego de esperar tRC, comprobar si se han completado los 8 ciclos de refresco.
 						if (init_refresh_counter < INIT_REFRESH_COUNT - 1) 
 							begin
 								// Aún no completa los 8 ciclos de Auto Refresh.
@@ -479,7 +482,7 @@ begin
 				next_state = INIT_WAIT_TRSC;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRSC_CYCLES;  // Esperar tRSC (Mode Register Set Cycle Time) en el siguiente estado.
+				next_delay_counter = TRSC_CYCLES - 1;  // Esperar tRSC (Mode Register Set Cycle Time) en el siguiente estado.
 			end
 		
 		INIT_WAIT_TRSC: 
@@ -551,7 +554,7 @@ begin
 				next_state = REFRESH_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRP_CYCLES;  // Inicializar contador para esperar tRP nanosegundos en el siguiente estado.
+				next_delay_counter = TRP_CYCLES - 1;  // Inicializar contador para esperar tRP nanosegundos en el siguiente estado.
 			end
 
 		REFRESH_WAIT_TRP: 
@@ -580,7 +583,7 @@ begin
 				next_state = REFRESH_WAIT_TRC;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRC_CYCLES;  // Esperar tRC nanosegundos.
+				next_delay_counter = TRC_CYCLES - 1;  // Esperar tRC nanosegundos.
 			end
 
 		REFRESH_WAIT_TRC:
@@ -630,7 +633,7 @@ begin
 				next_state = WRITE_WAIT_TRCD;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRCD_CYCLES;  // Esperar tRCD.
+				next_delay_counter = TRCD_CYCLES - 1;  // Esperar tRCD.
 			end
 
 		WRITE_WAIT_TRCD: 
@@ -654,7 +657,7 @@ begin
 				next_state = WRITE_WAIT_TWR;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TWR_CYCLES;  // Esperar tWR.
+				next_delay_counter = TWR_CYCLES - 1;  // Esperar tWR.
 			end
 
 		WRITE_WAIT_TWR: 
@@ -690,7 +693,7 @@ begin
 				// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
 
 				next_state = WRITE_WAIT_TRP;
-				next_delay_counter = TRP_CYCLES;  // Esperar tRP.
+				next_delay_counter = TRP_CYCLES - 1;  // Esperar tRP.
 			end
 
 		WRITE_WAIT_TRP: 
@@ -740,17 +743,28 @@ begin
 		READ_BANK_ACTIVATE:
 			begin
 				// Activar el banco y fila especificados.
-				// Comando CMD_BANK_ACTIVATE emitido en el estado anterior IDLE.
+				// command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
 
 				next_state = READ_WAIT_TRCD;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRCD_CYCLES;  // Esperar tRCD.
+				next_delay_counter = TRCD_CYCLES - 1;  // Esperar tRCD.
 			end
+		
+		/*
+			clk:                    	1                 2               3                4
+			state:            	READ_BANK_ACTIVATE  READ_WAIT_TRCD  READ_WAIT_TRCD      READ_CAS
+			delay_counter:          	x                 1               0                x
+			next_delay_counter:     	1                 0               0                x
+			next_state:       	  READ_WAIT_TRCD    READ_WAIT_TRCD     READ_CAS		 READ_WAIT_CAS_LATENCY
+			command:			CMD_BANK_ACTIVATE	   CMD_NOP		   CMD_NOP		    CMD_READ
+			next_command:			 CMD_NOP		   CMD_NOP		   CMD_READ			CMD_NOP
+		*/
 
 		READ_WAIT_TRCD:
 			begin
 				// Esperar tRCD después de activar el banco.
+				// command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
 
 				if (delay_counter != 0)
 					next_delay_counter = delay_counter - 1'b1;
@@ -763,7 +777,8 @@ begin
 
 		READ_CAS:
 			begin
-				// Comando de lectura emitido en el estado anterior.
+				// Emitir comando de lectura.
+				// command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
 
 				next_state = READ_WAIT_CAS_LATENCY;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
@@ -789,7 +804,7 @@ begin
 				// Capturar datos de los pines DQ.
 				// Los datos se capturan en el bloque secuencial en el registro rd_data_reg.
 
-				next_read_ready_reg = 1'b1;  // Indicar que los datos están listos.
+				next_read_ready_reg = 1'b1;  // Indicar que los datos están listos en el bus de datos.
 
 				// Si A10=1 durante el comando READ, auto-precharge está activo.
 				if (addr_reg[10])
@@ -820,7 +835,7 @@ begin
 				next_state = READ_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				next_delay_counter = TRP_CYCLES;  // Esperar tRP.
+				next_delay_counter = TRP_CYCLES - 1;  // Esperar tRP.
 			end
 
 		READ_WAIT_TRP:

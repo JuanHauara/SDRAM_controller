@@ -2,9 +2,9 @@
 <BaliProject version="3.2" title="sdram_controller" device="LCMXO2-4000HC-4BG256C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="synplify" default_strategy="Strategy1">
-        <Options/>
+        <Options def_top="sdram_controller"/>
         <Source name="impl1/source/sdram_controller.v" type="Verilog" type_short="Verilog">
-            <Options/>
+            <Options top_module="sdram_controller"/>
         </Source>
         <Source name="sdram_controller.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
