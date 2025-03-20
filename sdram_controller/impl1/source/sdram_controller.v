@@ -42,14 +42,14 @@
 		- soc_side_rd_en_pin: On clk posedge soc_side_addr_pin will be latched in, after a 
 		  few clocks data will be available on the soc_side_rd_data_pin port.
 
-		- soc_side_rd_ready_pin: This signal is used to notify the CPU when the read data is 
+		- soc_side_ready_pin: This signal is used to notify the CPU when the read data is 
 		  available on the soc_side_rd_data_pin bus.
  */
 
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 100,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -65,7 +65,8 @@ module sdram_controller # (
 	input wire reset_n_pin,
 
 	/* SOC interface */
-	output reg soc_side_busy_pin,
+	output wire soc_side_busy_pin,
+	output wire soc_side_ready_pin,
 
 	// Address
 	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_pin,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
@@ -78,7 +79,6 @@ module sdram_controller # (
 	// Read
 	output wire [31:0] soc_side_rd_data_pin,
 	input wire soc_side_rd_en_pin,
-	output wire soc_side_rd_ready_pin,
 
 	/* SDRAM side */
 	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_pin,		// SDRAM chips 0 and 1, A0 to A11 pins.
@@ -227,7 +227,8 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 // Internal registers for CPU interface.
 reg [31:0] wr_data_reg;
 reg [31:0] rd_data_reg;
-reg rd_ready_reg;
+reg busy_reg;
+reg ready_reg;
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] addr_reg;
@@ -251,7 +252,8 @@ assign ram_side_bank_addr_pin = (in_write_cycle || in_read_cycle) ? bank_addr_re
 assign ram_side_addr_pin = (in_write_cycle || in_read_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
 assign soc_side_rd_data_pin = rd_data_reg;
-assign soc_side_rd_ready_pin = rd_ready_reg;
+assign soc_side_busy_pin = busy_reg;
+assign soc_side_ready_pin = ready_reg;
 
 assign ram_side_chip0_ldqm_pin = sdram_side_wr_mask_reg[0];
 assign ram_side_chip0_udqm_pin = sdram_side_wr_mask_reg[1];
@@ -291,28 +293,37 @@ always @(posedge clk)
 begin
 	if (~reset_n_pin) 
 		begin
+			/*
+				Se inicializan todos los registros y contadores para lograr 
+				Determinismo y mejorar la robustez.
+			*/
+			
 			state <= INIT_PAUSE;
 			command <= CMD_NOP;
 
-			// Counters.
+			// Contadores.
 			delay_counter <= INIT_PAUSE_CYCLES - 1;  // Inicializar contador para la pausa de al menos 200us.
 			init_refresh_counter <= 0;
 			refresh_counter <= 0;
+			cas_counter <= CAS_LATENCY - 1;  // Iniciar contador para latencia CAS.
 
-			// Ports.
+			// I/O.
 			wr_data_reg <= 32'b0;
 			rd_data_reg <= 32'b0;
-			soc_side_busy_pin <= 1'b1;  // El controlador está ocupado durante inicialización.
+			ready_reg <= 1'b0;		// Controlador no listo durante el reset.
+			busy_reg <= 1'b1;		// Controlador ocupado durante el reset.
 		end
 	else 
 		begin
+			// Update state and command.
 			state <= next_state;
+			command <= next_command;
 
+			// Update counters.
 			delay_counter <= next_delay_counter;
 			init_refresh_counter <= next_init_refresh_counter;
 			refresh_counter <= next_refresh_counter;
-
-			command <= next_command;
+			cas_counter <= next_cas_counter;
 			
 			if (soc_side_wr_en_pin)
 				wr_data_reg <= soc_side_wr_data_pin;  // Update write data.
@@ -321,16 +332,16 @@ begin
 			if (state == READ_DATA)
 				begin
 					rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
-					rd_ready_reg <= 1'b1;  // Indicar a la CPU que el dato está listo en el bus de datos.
+					ready_reg <= 1'b1;  // Indicar a la CPU que el dato está listo en el bus de datos.
 				end
 			else
-				rd_ready_reg <= 1'b0;
+				ready_reg <= 1'b0;
 
 			/*
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
 				los ciclos de refresco y los ciclos de escritura o lectura.
 			*/
-			soc_side_busy_pin <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
+			busy_reg <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
 		end
 end
 
@@ -366,10 +377,16 @@ begin
 	next_state = state;
 	next_command = CMD_NOP;
 
+	// Estos contadores por defecto mantienen el valor anterior.
 	next_delay_counter = delay_counter;
 	next_init_refresh_counter = init_refresh_counter;
-	next_refresh_counter = refresh_counter + 1'b1;  // Siempre incrementa, se resetea en REF_NOP2
     next_cas_counter = cas_counter;
+
+	/*
+		El contador de auto refresco se incrementa siemrpe y se resetea al finalizar 
+		la secuencia de auto refresh, en el estado REFRESH_WAIT_TRC.
+	*/
+	next_refresh_counter = refresh_counter + 1'b1;
 	
 	// Lógica de la máquina de estados.
 	case (state)
@@ -435,7 +452,8 @@ begin
 						next_state = INIT_AUTO_REFRESH;
 						next_command = CMD_AUTO_REFRESH;
 
-						next_init_refresh_counter = 0; // Cuenta los 8 ciclos de auto refresh requeridos para la inicialización.
+						// Resetea el contador para los 8 ciclos de auto refresh requeridos durante la inicialización.
+						next_init_refresh_counter = 0;
 					end
 			end
 		
@@ -756,16 +774,6 @@ begin
 				next_delay_counter = TRCD_CYCLES - 1;  // Esperar tRCD.
 			end
 		
-		/*
-			clk:                    	1                 2               3                4
-			state:            	READ_BANK_ACTIVATE  READ_WAIT_TRCD  READ_WAIT_TRCD      READ_CAS
-			delay_counter:          	x                 1               0                x
-			next_delay_counter:     	1                 0               0                x
-			next_state:       	  READ_WAIT_TRCD    READ_WAIT_TRCD     READ_CAS		 READ_WAIT_CAS_LATENCY
-			command:			CMD_BANK_ACTIVATE	   CMD_NOP		   CMD_NOP		    CMD_READ
-			next_command:			 CMD_NOP		   CMD_NOP		   CMD_READ			CMD_NOP
-		*/
-
 		READ_WAIT_TRCD:
 			begin
 				// Esperar tRCD después de activar el banco.

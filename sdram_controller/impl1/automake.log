@@ -10,7 +10,7 @@ Lattice Diamond Version 3.14.0.75.2
 #OS: Windows 10 or later
 #Hostname: JH-LAPTOP
 
-# Thu Mar 20 14:40:43 2025
+# Thu Mar 20 20:41:30 2025
 
 #Implementation: impl1
 
@@ -55,21 +55,22 @@ Verilog syntax check successful!
 File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
 @N: CG364 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Synthesizing module sdram_controller in library work.
-@W: CG133 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":224:10:224:20|Object cas_counter is declared but not assigned. Either assign a value or remove the declaration.
 Running optimization stage 1 on sdram_controller .......
-@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Register bit command[1] is always 0.
-@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Register bit command[2] is always 0.
-@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Register bit command[6] is always 0.
-@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Register bit command[7] is always 1.
-@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 94MB)
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[1] is always 0.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[2] is always 0.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[6] is always 0.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit command[7] is always 1.
+@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
 Running optimization stage 2 on sdram_controller .......
-@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Register bit init_refresh_counter[3] is always 0.
-@W: CL260 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Pruning register bit 3 of init_refresh_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Trying to extract state machine for register state.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit cas_counter[2] is always 0.
+@N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Register bit init_refresh_counter[3] is always 0.
+@W: CL260 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bit 3 of init_refresh_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Pruning register bit 2 of cas_counter[2:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Trying to extract state machine for register state.
 Extracted state machine for register state
-State machine has 22 reachable states with original encodings of:
+State machine has 25 reachable states with original encodings of:
    00000
    00001
    00010
@@ -86,14 +87,16 @@ State machine has 22 reachable states with original encodings of:
    01101
    01110
    01111
+   10100
    11000
    11001
    11010
    11011
+   11100
+   11101
    11110
    11111
-@W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Pruning register bits 31 to 1 of rd_data_reg[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 94MB peak: 95MB)
+Finished optimization stage 2 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 95MB peak: 95MB)
 
 For a summary of runtime per design unit, please see file:
 ==========================================================
@@ -106,7 +109,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 14:40:43 2025
+# Thu Mar 20 20:41:30 2025
 
 ###########################################################]
 ###########################################################[
@@ -127,12 +130,12 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 
 @N|Running in 64-bit mode
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 14:40:43 2025
+# Thu Mar 20 20:41:30 2025
 
 ###########################################################]
 
@@ -147,7 +150,7 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 14:40:43 2025
+# Thu Mar 20 20:41:30 2025
 
 ###########################################################]
 ###########################################################[
@@ -169,15 +172,15 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 @N|Running in 64-bit mode
 File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_comp.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Mar 20 14:40:44 2025
+# Thu Mar 20 20:41:32 2025
 
 ###########################################################]
-# Thu Mar 20 14:40:44 2025
+# Thu Mar 20 20:41:32 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -198,7 +201,7 @@ Synopsys Lattice Technology Pre-mapping, Version map202309lat, Build 191R, Built
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 182MB peak: 182MB)
 
 
-Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 187MB peak: 197MB)
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 197MB)
 
 @A: MF827 |No constraint file specified.
 @L: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1_scck.rpt 
@@ -231,31 +234,33 @@ Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00
 
 Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
-@N: BN362 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Removing sequential instance rd_data_reg[0] (in view: work.sdram_controller(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
-Encoding state machine state[21:0] (in view: work.sdram_controller(verilog))
+Encoding state machine state[24:0] (in view: work.sdram_controller(verilog))
 original code -> new code
-   00000 -> 0000000000000000000001
-   00001 -> 0000000000000000000010
-   00010 -> 0000000000000000000100
-   00011 -> 0000000000000000001000
-   00100 -> 0000000000000000010000
-   00101 -> 0000000000000000100000
-   00110 -> 0000000000000001000000
-   00111 -> 0000000000000010000000
-   01000 -> 0000000000000100000000
-   01001 -> 0000000000001000000000
-   01010 -> 0000000000010000000000
-   01011 -> 0000000000100000000000
-   01100 -> 0000000001000000000000
-   01101 -> 0000000010000000000000
-   01110 -> 0000000100000000000000
-   01111 -> 0000001000000000000000
-   11000 -> 0000010000000000000000
-   11001 -> 0000100000000000000000
-   11010 -> 0001000000000000000000
-   11011 -> 0010000000000000000000
-   11110 -> 0100000000000000000000
-   11111 -> 1000000000000000000000
+   00000 -> 0000000000000000000000001
+   00001 -> 0000000000000000000000010
+   00010 -> 0000000000000000000000100
+   00011 -> 0000000000000000000001000
+   00100 -> 0000000000000000000010000
+   00101 -> 0000000000000000000100000
+   00110 -> 0000000000000000001000000
+   00111 -> 0000000000000000010000000
+   01000 -> 0000000000000000100000000
+   01001 -> 0000000000000001000000000
+   01010 -> 0000000000000010000000000
+   01011 -> 0000000000000100000000000
+   01100 -> 0000000000001000000000000
+   01101 -> 0000000000010000000000000
+   01110 -> 0000000000100000000000000
+   01111 -> 0000000001000000000000000
+   10100 -> 0000000010000000000000000
+   11000 -> 0000000100000000000000000
+   11001 -> 0000001000000000000000000
+   11010 -> 0000010000000000000000000
+   11011 -> 0000100000000000000000000
+   11100 -> 0001000000000000000000000
+   11101 -> 0010000000000000000000000
+   11110 -> 0100000000000000000000000
+   11111 -> 1000000000000000000000000
 @N: FX493 |Applying initial value "0" on instance state[0].
 @W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
 @N: FX493 |Applying initial value "1" on instance state[1].
@@ -279,23 +284,26 @@ original code -> new code
 @N: FX493 |Applying initial value "0" on instance state[19].
 @N: FX493 |Applying initial value "0" on instance state[20].
 @N: FX493 |Applying initial value "0" on instance state[21].
+@N: FX493 |Applying initial value "0" on instance state[22].
+@N: FX493 |Applying initial value "0" on instance state[23].
+@N: FX493 |Applying initial value "0" on instance state[24].
 
 Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
 
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 
-Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
+Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 264MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 264MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 
 
@@ -305,7 +313,7 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock          Clock
 Level     Clock                    Frequency     Period        Type         Group          Load 
 ------------------------------------------------------------------------------------------------
-0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     94   
+0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     131  
 ================================================================================================
 
 
@@ -316,10 +324,10 @@ Clock Load Summary
                          Clock     Source        Clock Pin               Non-clock Pin     Non-clock Pin
 Clock                    Load      Pin           Seq Example             Seq Example       Comb Example 
 --------------------------------------------------------------------------------------------------------
-sdram_controller|clk     94        clk(port)     wr_data_reg[31:0].C     -                 -            
+sdram_controller|clk     131       clk(port)     wr_data_reg[31:0].C     -                 -            
 ========================================================================================================
 
-@W: MT529 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Found inferred clock sdram_controller|clk which controls 94 sequential elements including state[21]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Found inferred clock sdram_controller|clk which controls 131 sequential elements including state[24]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
 
 ICG Latch Removal Summary:
 Number of ICG latches removed: 0
@@ -332,14 +340,14 @@ Number of ICG latches not removed:	0
 
 #### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
 
-1 non-gated/non-generated clock tree(s) driving 94 clock pin(s) of sequential element(s)
+1 non-gated/non-generated clock tree(s) driving 131 clock pin(s) of sequential element(s)
 0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
 0 instances converted, 0 sequential instances remain driven by gated/generated clocks
 
 =========================== Non-Gated/Non-Generated Clocks ============================
 Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
 ---------------------------------------------------------------------------------------
-@KP:ckid0_0       clk                 port                   94         state[21]      
+@KP:ckid0_0       clk                 port                   131        state[24]      
 =======================================================================================
 
 
@@ -352,23 +360,23 @@ Summary of user generated gated clocks:
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
 
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 170MB peak: 265MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 266MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Mar 20 14:40:45 2025
+# Thu Mar 20 20:41:33 2025
 
 ###########################################################]
-# Thu Mar 20 14:40:46 2025
+# Thu Mar 20 20:41:33 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -407,8 +415,6 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 252MB peak: 252MB)
 
-@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":373:1:373:4|ROM next_read_ready_reg (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":373:1:373:4|Found ROM next_read_ready_reg (in view: work.sdram_controller(verilog)) with 25 words by 1 bit.
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[0] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[1] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[2] has multiple drivers .
@@ -441,9 +447,8 @@ Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapse
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[13] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[14] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[15] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net next_read_ready_reg has multiple drivers .
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 257MB peak: 257MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 256MB peak: 256MB)
 
 @N: FX493 |Applying initial value "0" on instance state[0].
 @W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
@@ -468,16 +473,18 @@ Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00
 @N: FX493 |Applying initial value "0" on instance state[19].
 @N: FX493 |Applying initial value "0" on instance state[20].
 @N: FX493 |Applying initial value "0" on instance state[21].
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net N_132 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net un1_refresh_counterlto2 has multiple drivers .
+@N: FX493 |Applying initial value "0" on instance state[22].
+@N: FX493 |Applying initial value "0" on instance state[23].
+@N: FX493 |Applying initial value "0" on instance state[24].
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net N_139 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net un1_refresh_counterlto10 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net un1_refresh_counterlto1 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net un1_refresh_counterlto0 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net N_163 has multiple drivers .
 
 Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
 
 
 Available hyper_sources - for debug and ip models
@@ -485,40 +492,8 @@ Available hyper_sources - for debug and ip models
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[0] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[1] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[2] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[3] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[4] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[5] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[6] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[7] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[8] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[9] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[10] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[11] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[12] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[13] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[14] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[15] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[0] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[1] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[2] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[3] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[4] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[5] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[6] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[7] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[8] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[9] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[10] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[11] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[12] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[13] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[14] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip1_data_pin[15] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net un1_delay_counter_16 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net next_refresh_counter_axb_0 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net next_refresh_counter_axb_1 has multiple drivers .
@@ -537,107 +512,156 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CP
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net next_refresh_counter_axb_14 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net next_refresh_counter_axb_15 has multiple drivers .
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 260MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 260MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:00s		     4.37ns		 112 /        94
+   1		0h:00m:00s		     5.04ns		 116 /       131
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
 
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Boundary register wr_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[0] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[1] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[2] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[3] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[4] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[5] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[6] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[7] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[8] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[9] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[10] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[11] has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net ram_side_chip0_data_pin[12] has multiple drivers .
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register wr_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":292:0:292:5|Boundary register rd_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_0 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_1 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_2 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_3 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_4 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_5 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_6 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_7 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_8 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_9 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_10 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_11 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_12 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_13 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_14 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_15 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_16 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_17 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_18 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_19 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_20 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_21 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_22 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_23 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_24 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_25 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_26 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_27 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_28 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_29 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_30 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":50:7:50:22|Net reset_n_pin_c_i_31 has multiple drivers .
 
-Only the first 100 messages of id 'BN161' are reported. To see all messages use 'report_messages -log C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synlog\sdram_controller_impl1_fpga_mapper.srr -id BN161' in the Tcl shell. To see all messages in future runs, use the command 'message_override -limit {BN161} -count unlimited' in the Tcl shell.
-
-Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 266MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 264MB peak: 264MB)
 
 
-Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 264MB peak: 264MB)
 
 
-Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 264MB peak: 265MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 210MB peak: 266MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 207MB peak: 265MB)
 
 Writing Analyst data base C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 265MB peak: 266MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 264MB peak: 265MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 273MB peak: 273MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 272MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 273MB peak: 274MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 273MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 274MB)
+Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 273MB)
 
 @W: MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Thu Mar 20 14:40:47 2025
+# Timing report written on Thu Mar 20 20:41:35 2025
 #
 
 
@@ -656,12 +680,12 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 3.424
+Worst slack in design: 4.464
 
                          Requested     Estimated     Requested     Estimated               Clock        Clock     
 Starting Clock           Frequency     Frequency     Period        Period        Slack     Type         Group     
 ------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk     80.0 MHz      110.2 MHz     12.500        9.076         3.424     inferred     (multiple)
+sdram_controller|clk     80.0 MHz      124.4 MHz     12.500        8.036         4.464     inferred     (multiple)
 ==================================================================================================================
 
 
@@ -675,7 +699,7 @@ Clocks                                      |    rise  to  rise   |    fall  to 
 ----------------------------------------------------------------------------------------------------------------------------------
 Starting              Ending                |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
 ----------------------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk  sdram_controller|clk  |  12.500      3.424  |  No paths    -      |  No paths    -      |  No paths    -    
+sdram_controller|clk  sdram_controller|clk  |  12.500      4.464  |  No paths    -      |  No paths    -      |  No paths    -    
 ==================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -698,41 +722,41 @@ Detailed Report for Clock: sdram_controller|clk
 Starting Points with Worst Slack
 ********************************
 
-                     Starting                                                          Arrival          
-Instance             Reference                Type        Pin     Net                  Time        Slack
-                     Clock                                                                              
---------------------------------------------------------------------------------------------------------
-state[17]            sdram_controller|clk     FD1S3AX     Q       state[17]            1.180       3.424
-state[14]            sdram_controller|clk     FD1S3AX     Q       state[14]            1.148       3.455
-state[4]             sdram_controller|clk     FD1S3AX     Q       state[4]             1.108       3.495
-state[2]             sdram_controller|clk     FD1S3AX     Q       state[2]             1.148       4.336
-state[7]             sdram_controller|clk     FD1S3AX     Q       state[7]             1.108       4.376
-state[11]            sdram_controller|clk     FD1S3AX     Q       state[11]            1.220       4.472
-state[18]            sdram_controller|clk     FD1S3AX     Q       state[18]            1.204       4.488
-state[1]             sdram_controller|clk     FD1S3AY     Q       state[1]             1.188       4.504
-delay_counter[0]     sdram_controller|clk     FD1S3JX     Q       delay_counter[0]     1.108       4.513
-delay_counter[1]     sdram_controller|clk     FD1S3JX     Q       delay_counter[1]     1.044       4.577
-========================================================================================================
+                       Starting                                                            Arrival          
+Instance               Reference                Type        Pin     Net                    Time        Slack
+                       Clock                                                                                
+------------------------------------------------------------------------------------------------------------
+state[7]               sdram_controller|clk     FD1S3AX     Q       state[7]               1.228       4.464
+state[14]              sdram_controller|clk     FD1S3AX     Q       state[14]              1.148       4.472
+state[11]              sdram_controller|clk     FD1S3AX     Q       state[11]              1.204       4.488
+state[1]               sdram_controller|clk     FD1S3AY     Q       state[1]               1.188       4.504
+state[2]               sdram_controller|clk     FD1S3AX     Q       state[2]               1.188       4.504
+delay_counter[0]       sdram_controller|clk     FD1S3JX     Q       delay_counter[0]       1.108       4.507
+refresh_counter[1]     sdram_controller|clk     FD1S3IX     Q       refresh_counter[1]     1.044       4.507
+refresh_counter[2]     sdram_controller|clk     FD1S3IX     Q       refresh_counter[2]     1.044       4.507
+refresh_counter[3]     sdram_controller|clk     FD1S3IX     Q       refresh_counter[3]     1.044       4.507
+refresh_counter[4]     sdram_controller|clk     FD1S3IX     Q       refresh_counter[4]     1.044       4.507
+============================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                      Starting                                                                Required          
-Instance              Reference                Type        Pin     Net                        Time         Slack
-                      Clock                                                                                     
-----------------------------------------------------------------------------------------------------------------
-delay_counter[13]     sdram_controller|clk     FD1S3JX     D       next_delay_counter[13]     12.589       3.424
-delay_counter[14]     sdram_controller|clk     FD1S3JX     D       next_delay_counter[14]     12.589       3.424
-delay_counter[12]     sdram_controller|clk     FD1S3JX     D       next_delay_counter[12]     12.589       3.566
-delay_counter[10]     sdram_controller|clk     FD1S3JX     D       next_delay_counter[10]     12.589       3.709
-delay_counter[8]      sdram_controller|clk     FD1S3JX     D       next_delay_counter[8]      12.589       3.852
-delay_counter[11]     sdram_controller|clk     FD1S3IX     D       next_delay_counter[11]     12.394       3.989
-delay_counter[5]      sdram_controller|clk     FD1S3JX     D       next_delay_counter[5]      12.589       3.995
-delay_counter[9]      sdram_controller|clk     FD1S3IX     D       next_delay_counter[9]      12.394       4.131
-delay_counter[3]      sdram_controller|clk     FD1S3JX     D       next_delay_counter[3]      12.589       4.138
-delay_counter[7]      sdram_controller|clk     FD1S3IX     D       next_delay_counter[7]      12.394       4.274
-================================================================================================================
+                      Starting                                                                 Required          
+Instance              Reference                Type         Pin     Net                        Time         Slack
+                      Clock                                                                                      
+-----------------------------------------------------------------------------------------------------------------
+delay_counter[14]     sdram_controller|clk     FD1S3JX      D       next_delay_counter[14]     12.589       4.464
+command_0io[3]        sdram_controller|clk     OFS1P3JX     D       N_137_i                    12.589       4.507
+command_0io[5]        sdram_controller|clk     OFS1P3JX     D       N_141_i                    12.589       4.507
+delay_counter[11]     sdram_controller|clk     FD1S3JX      D       next_delay_counter[11]     12.589       4.607
+delay_counter[12]     sdram_controller|clk     FD1S3JX      D       next_delay_counter[12]     12.589       4.607
+delay_counter[10]     sdram_controller|clk     FD1S3JX      D       next_delay_counter[10]     12.589       4.750
+delay_counter[13]     sdram_controller|clk     FD1S3IX      D       next_delay_counter[13]     12.394       4.887
+delay_counter[7]      sdram_controller|clk     FD1S3JX      D       next_delay_counter[7]      12.589       4.893
+delay_counter[8]      sdram_controller|clk     FD1S3JX      D       next_delay_counter[8]      12.589       4.893
+delay_counter[5]      sdram_controller|clk     FD1S3JX      D       next_delay_counter[5]      12.589       5.035
+=================================================================================================================
 
 
 
@@ -746,59 +770,56 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         12.589
 
-    - Propagation time:                      9.165
+    - Propagation time:                      8.124
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     3.424
+    = Slack (critical) :                     4.464
 
-    Number of logic level(s):                12
-    Starting point:                          state[17] / Q
+    Number of logic level(s):                11
+    Starting point:                          state[7] / Q
     Ending point:                            delay_counter[14] / D
     The start point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
     The end   point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
 
-Instance / Net                                                     Pin      Pin               Arrival     No. of    
-Name                                                  Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------------------
-state[17]                                             FD1S3AX      Q        Out     1.180     1.180 r     -         
-state[17]                                             Net          -        -       -         -           5         
-state_srsts_0_0_0_o3[0]                               ORCALUT4     C        In      0.000     1.180 r     -         
-state_srsts_0_0_0_o3[0]                               ORCALUT4     Z        Out     1.089     2.269 r     -         
-N_206                                                 Net          -        -       -         -           2         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2_2     ORCALUT4     B        In      0.000     2.269 r     -         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2_2     ORCALUT4     Z        Out     1.017     3.285 f     -         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2_2     Net          -        -       -         -           1         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2       ORCALUT4     D        In      0.000     3.285 f     -         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2       ORCALUT4     Z        Out     1.313     4.598 f     -         
-un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2       Net          -        -       -         -           16        
-un1_delay_counter_16_cry_0_0                          CCU2D        C1       In      0.000     4.598 f     -         
-un1_delay_counter_16_cry_0_0                          CCU2D        COUT     Out     1.544     6.143 r     -         
-un1_delay_counter_16_cry_0                            Net          -        -       -         -           1         
-un1_delay_counter_16_cry_1_0                          CCU2D        CIN      In      0.000     6.143 r     -         
-un1_delay_counter_16_cry_1_0                          CCU2D        COUT     Out     0.143     6.285 r     -         
-un1_delay_counter_16_cry_2                            Net          -        -       -         -           1         
-un1_delay_counter_16_cry_3_0                          CCU2D        CIN      In      0.000     6.285 r     -         
-un1_delay_counter_16_cry_3_0                          CCU2D        COUT     Out     0.143     6.428 r     -         
-un1_delay_counter_16_cry_4                            Net          -        -       -         -           1         
-un1_delay_counter_16_cry_5_0                          CCU2D        CIN      In      0.000     6.428 r     -         
-un1_delay_counter_16_cry_5_0                          CCU2D        COUT     Out     0.143     6.571 r     -         
-un1_delay_counter_16_cry_6                            Net          -        -       -         -           1         
-un1_delay_counter_16_cry_7_0                          CCU2D        CIN      In      0.000     6.571 r     -         
-un1_delay_counter_16_cry_7_0                          CCU2D        COUT     Out     0.143     6.714 r     -         
-un1_delay_counter_16_cry_8                            Net          -        -       -         -           1         
-un1_delay_counter_16_cry_9_0                          CCU2D        CIN      In      0.000     6.714 r     -         
-un1_delay_counter_16_cry_9_0                          CCU2D        COUT     Out     0.143     6.857 r     -         
-un1_delay_counter_16_cry_10                           Net          -        -       -         -           1         
-un1_delay_counter_16_cry_11_0                         CCU2D        CIN      In      0.000     6.857 r     -         
-un1_delay_counter_16_cry_11_0                         CCU2D        COUT     Out     0.143     7.000 r     -         
-un1_delay_counter_16_cry_12                           Net          -        -       -         -           1         
-un1_delay_counter_16_cry_13_0                         CCU2D        CIN      In      0.000     7.000 r     -         
-un1_delay_counter_16_cry_13_0                         CCU2D        S1       Out     1.549     8.549 r     -         
-un1_delay_counter_16_cry_13_0_S1                      Net          -        -       -         -           1         
-delay_counter_RNO[14]                                 ORCALUT4     D        In      0.000     8.549 r     -         
-delay_counter_RNO[14]                                 ORCALUT4     Z        Out     0.617     9.165 r     -         
-next_delay_counter[14]                                Net          -        -       -         -           1         
-delay_counter[14]                                     FD1S3JX      D        In      0.000     9.165 r     -         
-====================================================================================================================
+Instance / Net                                                 Pin      Pin               Arrival     No. of    
+Name                                              Type         Name     Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------------------------------
+state[7]                                          FD1S3AX      Q        Out     1.228     1.228 r     -         
+state[7]                                          Net          -        -       -         -           9         
+un1_next_init_refresh_counter_0_sqmuxa_i_a2_3     ORCALUT4     C        In      0.000     1.228 r     -         
+un1_next_init_refresh_counter_0_sqmuxa_i_a2_3     ORCALUT4     Z        Out     1.017     2.245 f     -         
+un1_next_init_refresh_counter_0_sqmuxa_i_a2_3     Net          -        -       -         -           1         
+un1_next_init_refresh_counter_0_sqmuxa_i_a2       ORCALUT4     D        In      0.000     2.245 f     -         
+un1_next_init_refresh_counter_0_sqmuxa_i_a2       ORCALUT4     Z        Out     1.313     3.557 f     -         
+N_579                                             Net          -        -       -         -           16        
+un1_delay_counter_16_cry_0_0                      CCU2D        C1       In      0.000     3.557 f     -         
+un1_delay_counter_16_cry_0_0                      CCU2D        COUT     Out     1.544     5.102 r     -         
+un1_delay_counter_16_cry_0                        Net          -        -       -         -           1         
+un1_delay_counter_16_cry_1_0                      CCU2D        CIN      In      0.000     5.102 r     -         
+un1_delay_counter_16_cry_1_0                      CCU2D        COUT     Out     0.143     5.245 r     -         
+un1_delay_counter_16_cry_2                        Net          -        -       -         -           1         
+un1_delay_counter_16_cry_3_0                      CCU2D        CIN      In      0.000     5.245 r     -         
+un1_delay_counter_16_cry_3_0                      CCU2D        COUT     Out     0.143     5.388 r     -         
+un1_delay_counter_16_cry_4                        Net          -        -       -         -           1         
+un1_delay_counter_16_cry_5_0                      CCU2D        CIN      In      0.000     5.388 r     -         
+un1_delay_counter_16_cry_5_0                      CCU2D        COUT     Out     0.143     5.530 r     -         
+un1_delay_counter_16_cry_6                        Net          -        -       -         -           1         
+un1_delay_counter_16_cry_7_0                      CCU2D        CIN      In      0.000     5.530 r     -         
+un1_delay_counter_16_cry_7_0                      CCU2D        COUT     Out     0.143     5.673 r     -         
+un1_delay_counter_16_cry_8                        Net          -        -       -         -           1         
+un1_delay_counter_16_cry_9_0                      CCU2D        CIN      In      0.000     5.673 r     -         
+un1_delay_counter_16_cry_9_0                      CCU2D        COUT     Out     0.143     5.816 r     -         
+un1_delay_counter_16_cry_10                       Net          -        -       -         -           1         
+un1_delay_counter_16_cry_11_0                     CCU2D        CIN      In      0.000     5.816 r     -         
+un1_delay_counter_16_cry_11_0                     CCU2D        COUT     Out     0.143     5.959 r     -         
+un1_delay_counter_16_cry_12                       Net          -        -       -         -           1         
+un1_delay_counter_16_cry_13_0                     CCU2D        CIN      In      0.000     5.959 r     -         
+un1_delay_counter_16_cry_13_0                     CCU2D        S1       Out     1.549     7.508 r     -         
+un1_delay_counter_16_cry_13_0_S1                  Net          -        -       -         -           1         
+delay_counter_RNO[14]                             ORCALUT4     C        In      0.000     7.508 r     -         
+delay_counter_RNO[14]                             ORCALUT4     Z        Out     0.617     8.124 r     -         
+next_delay_counter[14]                            Net          -        -       -         -           1         
+delay_counter[14]                                 FD1S3JX      D        In      0.000     8.124 r     -         
+================================================================================================================
 
 
 
@@ -806,44 +827,44 @@ delay_counter[14]                                     FD1S3JX      D        In  
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 273MB peak: 274MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 273MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 273MB peak: 274MB)
+Finished timing report (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 273MB)
 
 ---------------------------------------
 Resource Usage Report
 Part: lcmxo2_4000hc-4
 
-Register bits: 94 of 4320 (2%)
+Register bits: 131 of 4320 (3%)
 PIC Latch:       0
 I/O cells:       152
 
 
 Details:
+BB:             32
 CCU2D:          17
-FD1S3AX:        21
+FD1S3AX:        24
 FD1S3AY:        1
-FD1S3IX:        25
-FD1S3JX:        10
+FD1S3IX:        24
+FD1S3JX:        13
 GSR:            1
 IB:             63
 IFS1P3IX:       32
 INV:            4
 OB:             57
-OBZ:            32
-OFS1P3DX:       1
+OFS1P3IX:       33
 OFS1P3JX:       4
-ORCALUT4:       108
+ORCALUT4:       112
 PUR:            1
 VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 133MB peak: 274MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 132MB peak: 273MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Mar 20 14:40:47 2025
+Process took 0h:00m:01s realtime, 0h:00m:02s cputime
+# Thu Mar 20 20:41:35 2025
 
 ###########################################################]
 
@@ -893,12 +914,12 @@ Running DRC...
 DRC complete with no errors or warnings
 
 Design Results:
-    378 blocks expanded
+    419 blocks expanded
 Complete the first expansion.
 Writing 'sdram_controller_impl1.ngd' ...
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 18 MB
+Peak Memory Usage: 19 MB
 
 
 map -a "MachXO2" -p LCMXO2-4000HC -t CABGA256 -s 4 -oc Commercial   "sdram_controller_impl1.ngd" -o "sdram_controller_impl1_map.ncd" -pr "sdram_controller_impl1.prf" -mp "sdram_controller_impl1.mrp" -lpf "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1_synplify.lpf" -lpf "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/sdram_controller.lpf"  -c 0           
@@ -937,15 +958,15 @@ Optimizing...
 
 
 Design Summary:
-   Number of registers:     94 out of  4941 (2%)
-      PFU registers:           57 out of  4320 (1%)
-      PIO registers:           37 out of   621 (6%)
-   Number of SLICEs:        73 out of  2160 (3%)
-      SLICEs as Logic/ROM:     73 out of  2160 (3%)
+   Number of registers:    131 out of  4941 (3%)
+      PFU registers:           62 out of  4320 (1%)
+      PIO registers:           69 out of   621 (11%)
+   Number of SLICEs:        75 out of  2160 (3%)
+      SLICEs as Logic/ROM:     75 out of  2160 (3%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        146 out of  4320 (3%)
-      Number used as logic LUTs:        112
+   Number of LUT4s:        150 out of  4320 (3%)
+      Number used as logic LUTs:        116
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -973,27 +994,30 @@ Design Summary:
       1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
    Number of clocks:  1
-     Net clk_c: 70 loads, 70 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 106 loads, 106 rising, 0 falling (Driver: PIO clk )
    Number of Clock Enables:  2
+     Net state[22]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_pin_c: 32 loads, 0 LSLICEs
-     Net reset_n_pin_c: 1 loads, 0 LSLICEs
-   Number of LSRs:  4
-     Net reset_n_pin_c: 42 loads, 6 LSLICEs
+   Number of LSRs:  7
+     Net N_550_i: 1 loads, 1 LSLICEs
+     Net N_167_i: 1 loads, 1 LSLICEs
+     Net reset_n_pin_c: 76 loads, 7 LSLICEs
      Net state_RNI43KQC[14]: 9 loads, 9 LSLICEs
-     Net un1_reset_n_pin_1_0_0_0: 2 loads, 2 LSLICEs
-     Net next_delay_counter_f0_0_a4_i_o2_RNID0R9I[1]: 5 loads, 5 LSLICEs
+     Net un1_reset_n_pin_3_0: 2 loads, 2 LSLICEs
+     Net un1_ram_side_addr_pin_2_0_a2_1_RNIKNC47: 3 loads, 3 LSLICEs
+     Net next_delay_counter[0]: 1 loads, 1 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_pin_c: 69 loads
-     Net next_state_0_sqmuxa_7_i_a2: 41 loads
-     Net state[9]: 37 loads
-     Net soc_side_wr_en_pin_c: 35 loads
-     Net un1_next_init_refresh_counter_0_sqmuxa_i_0_0_a2: 16 loads
-     Net state[15]: 14 loads
-     Net N_147: 13 loads
-     Net state[6]: 13 loads
-     Net N_209: 11 loads
-     Net N_557_i_0: 11 loads
+     Net reset_n_pin_c: 104 loads
+     Net next_state_0_sqmuxa_7_i_a2: 45 loads
+     Net state[9]: 39 loads
+     Net state[22]: 37 loads
+     Net soc_side_wr_en_pin_c: 36 loads
+     Net N_598: 22 loads
+     Net N_579: 16 loads
+     Net state[5]: 16 loads
+     Net un1_ram_side_addr_pin_2_0_a2_1: 11 loads
+     Net state[23]: 9 loads
  
 
    Number of warnings:  0
@@ -1003,7 +1027,7 @@ Design Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 36 MB
+Peak Memory Usage: 37 MB
 
 Dumping design to file sdram_controller_impl1_map.ncd.
 
@@ -1030,7 +1054,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Thu Mar 20 14:40:49 2025
+Thu Mar 20 20:41:36 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -1057,14 +1081,14 @@ BLOCK RESETPATHS
 Timing summary (Setup):
 ---------------
 
-Timing errors: 1635  Score: 1056261
-Cumulative negative slack: 1056261
+Timing errors: 3360  Score: 4918658
+Cumulative negative slack: 4918658
 
-Constraints cover 4204 paths, 1 nets, and 491 connections (58.38% coverage)
+Constraints cover 4396 paths, 1 nets, and 487 connections (49.24% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Thu Mar 20 14:40:49 2025
+Thu Mar 20 20:41:36 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -1093,23 +1117,23 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 4204 paths, 1 nets, and 491 connections (58.38% coverage)
+Constraints cover 4396 paths, 1 nets, and 524 connections (52.98% coverage)
 
 
 
 Timing summary (Setup and Hold):
 ---------------
 
-Timing errors: 1635 (setup), 0 (hold)
-Score: 1056261 (setup), 0 (hold)
-Cumulative negative slack: 1056261 (1056261+0)
+Timing errors: 3360 (setup), 0 (hold)
+Score: 4918658 (setup), 0 (hold)
+Cumulative negative slack: 4918658 (4918658+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 61 MB
+Peak Memory Usage: 62 MB
 
 
 mpartrce -p "sdram_controller_impl1.p2t" -f "sdram_controller_impl1.p3t" -tf "sdram_controller_impl1.pt" "sdram_controller_impl1_map.ncd" "sdram_controller_impl1.ncd"
@@ -1119,7 +1143,7 @@ Removing old design directory at request of -rem command line option to this pro
 Running par. Please wait . . .
 
 Lattice Place and Route Report for Design "sdram_controller_impl1_map.ncd"
-Thu Mar 20 14:40:49 2025
+Thu Mar 20 20:41:36 2025
 
 PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
 Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir/5_1.ncd sdram_controller_impl1.prf
@@ -1145,41 +1169,42 @@ Device utilization summary:
 
    PIO (prelim)  152+4(JTAG)/280     56% used
                  152+4(JTAG)/207     75% bonded
-   IOLOGIC           37/280          13% used
+   IOLOGIC           69/280          24% used
 
-   SLICE             73/2160          3% used
+   SLICE             75/2160          3% used
 
 
 
-Number of Signals: 313
-Number of Connections: 841
+Number of Signals: 386
+Number of Connections: 989
 
 Pin Constraint Summary:
    0 out of 152 pins locked (0% locked).
 
 The following 1 signal is selected to use the primary clock routing resources:
-    clk_c (driver: clk, clk load #: 70)
+    clk_c (driver: clk, clk load #: 106)
 
 
-The following 2 signals are selected to use the secondary clock routing resources:
-    reset_n_pin_c (driver: reset_n_pin, clk load #: 0, sr load #: 42, ce load #: 1)
+The following 3 signals are selected to use the secondary clock routing resources:
+    reset_n_pin_c (driver: reset_n_pin, clk load #: 0, sr load #: 76, ce load #: 0)
+    state[22] (driver: SLICE_41, clk load #: 0, sr load #: 0, ce load #: 32)
     soc_side_wr_en_pin_c (driver: soc_side_wr_en_pin, clk load #: 0, sr load #: 0, ce load #: 32)
 
 No signal is selected as Global Set/Reset.
 .
 Starting Placer Phase 0.
-..............
+...........
 Finished Placer Phase 0.  REAL time: 0 secs 
 
 Starting Placer Phase 1.
-....................
-Placer score = 35951.
-Finished Placer Phase 1.  REAL time: 7 secs 
+.....................
+Placer score = 75536.
+Finished Placer Phase 1.  REAL time: 8 secs 
 
 Starting Placer Phase 2.
 .
-Placer score =  35526
-Finished Placer Phase 2.  REAL time: 7 secs 
+Placer score =  72866
+Finished Placer Phase 2.  REAL time: 8 secs 
 
 
 ------------------ Clock Report ------------------
@@ -1191,12 +1216,13 @@ Global Clock Resources:
   DCC        : 0 out of 8 (0%)
 
 Global Clocks:
-  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "T9 (PB20A)", clk load = 70
-  SECONDARY "reset_n_pin_c" from comp "reset_n_pin" on CLK_PIN site "L2 (PL17A)", clk load = 0, ce load = 1, sr load = 42
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "T9 (PB20A)", clk load = 106
+  SECONDARY "reset_n_pin_c" from comp "reset_n_pin" on CLK_PIN site "L2 (PL17A)", clk load = 0, ce load = 0, sr load = 76
+  SECONDARY "state[22]" from Q0 on comp "SLICE_41" on site "R12C15B", clk load = 0, ce load = 32, sr load = 0
   SECONDARY "soc_side_wr_en_pin_c" from comp "soc_side_wr_en_pin" on CLK_PIN site "J1 (PL10C)", clk load = 0, ce load = 32, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
-  SECONDARY: 2 out of 8 (25%)
+  SECONDARY: 3 out of 8 (37%)
 
 Edge Clocks:
   No edge clock selected.
@@ -1214,24 +1240,24 @@ I/O Bank Usage Summary:
 +----------+----------------+------------+-----------+
 | I/O Bank | Usage          | Bank Vccio | Bank Vref |
 +----------+----------------+------------+-----------+
-| 0        | 42 / 51 ( 82%) | 2.5V       | -         |
-| 1        | 33 / 52 ( 63%) | 2.5V       | -         |
+| 0        | 32 / 51 ( 62%) | 2.5V       | -         |
+| 1        | 36 / 52 ( 69%) | 2.5V       | -         |
 | 2        | 44 / 52 ( 84%) | 2.5V       | -         |
-| 3        | 7 / 16 ( 43%)  | 2.5V       | -         |
-| 4        | 9 / 16 ( 56%)  | 2.5V       | -         |
-| 5        | 17 / 20 ( 85%) | 2.5V       | -         |
+| 3        | 9 / 16 ( 56%)  | 2.5V       | -         |
+| 4        | 15 / 16 ( 93%) | 2.5V       | -         |
+| 5        | 16 / 20 ( 80%) | 2.5V       | -         |
 +----------+----------------+------------+-----------+
 
 Total placer CPU time: 7 secs 
 
 Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 
-0 connections routed; 841 unrouted.
+0 connections routed; 989 unrouted.
 Starting router resource preassignment
 
-Completed router resource preassignment. Real time: 13 secs 
+Completed router resource preassignment. Real time: 19 secs 
 
-Start NBR router at 14:41:02 03/20/25
+Start NBR router at 20:41:55 03/20/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -1246,149 +1272,131 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 14:41:02 03/20/25
+Start NBR special constraint process at 20:41:55 03/20/25
 
-Start NBR section for initial routing at 14:41:02 03/20/25
+Start NBR section for initial routing at 20:41:55 03/20/25
 Level 1, iteration 1
-2(0.00%) conflicts; 572(68.01%) untouched conns; 27065 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.791ns/-27.065ns; real time: 13 secs 
+18(0.01%) conflicts; 570(57.63%) untouched conns; 287086 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.376ns/-287.086ns; real time: 19 secs 
 Level 2, iteration 1
-24(0.01%) conflicts; 502(59.69%) untouched conns; 18636 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.721ns/-18.636ns; real time: 13 secs 
+20(0.01%) conflicts; 497(50.25%) untouched conns; 238864 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.621ns/-238.864ns; real time: 19 secs 
 Level 3, iteration 1
-12(0.00%) conflicts; 320(38.05%) untouched conns; 22225 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.751ns/-22.225ns; real time: 13 secs 
+15(0.01%) conflicts; 258(26.09%) untouched conns; 309022 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.789ns/-309.022ns; real time: 19 secs 
 Level 4, iteration 1
-8(0.00%) conflicts; 0(0.00%) untouched conn; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
+12(0.00%) conflicts; 0(0.00%) untouched conn; 323450 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.782ns/-323.450ns; real time: 19 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 14:41:03 03/20/25
+Start NBR section for normal routing at 20:41:55 03/20/25
 Level 1, iteration 1
-5(0.00%) conflicts; 3(0.36%) untouched conns; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
-Level 2, iteration 1
-5(0.00%) conflicts; 3(0.36%) untouched conns; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
-Level 3, iteration 1
-5(0.00%) conflicts; 3(0.36%) untouched conns; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
+14(0.01%) conflicts; 22(2.22%) untouched conns; 314590 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.409ns/-314.590ns; real time: 19 secs 
 Level 4, iteration 1
-5(0.00%) conflicts; 0(0.00%) untouched conn; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
+16(0.01%) conflicts; 0(0.00%) untouched conn; 318295 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.629ns/-318.295ns; real time: 19 secs 
 Level 4, iteration 2
-5(0.00%) conflicts; 0(0.00%) untouched conn; 22435 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-22.435ns; real time: 14 secs 
+8(0.00%) conflicts; 0(0.00%) untouched conn; 321944 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-321.945ns; real time: 19 secs 
 Level 4, iteration 3
-5(0.00%) conflicts; 0(0.00%) untouched conn; 23031 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-23.031ns; real time: 14 secs 
+8(0.00%) conflicts; 0(0.00%) untouched conn; 323169 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-323.169ns; real time: 20 secs 
 Level 4, iteration 4
-5(0.00%) conflicts; 0(0.00%) untouched conn; 23031 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.763ns/-23.031ns; real time: 14 secs 
+6(0.00%) conflicts; 0(0.00%) untouched conn; 323169 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-323.169ns; real time: 20 secs 
 Level 4, iteration 5
-5(0.00%) conflicts; 0(0.00%) untouched conn; 23826 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-23.826ns; real time: 14 secs 
+4(0.00%) conflicts; 0(0.00%) untouched conn; 322448 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-322.448ns; real time: 20 secs 
 Level 4, iteration 6
-3(0.00%) conflicts; 0(0.00%) untouched conn; 23826 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-23.826ns; real time: 14 secs 
+3(0.00%) conflicts; 0(0.00%) untouched conn; 322448 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-322.448ns; real time: 20 secs 
 Level 4, iteration 7
-3(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+6(0.00%) conflicts; 0(0.00%) untouched conn; 322753 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-322.754ns; real time: 20 secs 
 Level 4, iteration 8
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+4(0.00%) conflicts; 0(0.00%) untouched conn; 322753 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-322.754ns; real time: 20 secs 
 Level 4, iteration 9
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+6(0.00%) conflicts; 0(0.00%) untouched conn; 324709 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-324.709ns; real time: 20 secs 
 Level 4, iteration 10
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+2(0.00%) conflicts; 0(0.00%) untouched conn; 324709 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-324.709ns; real time: 20 secs 
 Level 4, iteration 11
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+2(0.00%) conflicts; 0(0.00%) untouched conn; 324452 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-324.452ns; real time: 20 secs 
 Level 4, iteration 12
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 324452 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-324.452ns; real time: 20 secs 
 Level 4, iteration 13
-0(0.00%) conflict; 0(0.00%) untouched conn; 47720 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.387ns/-47.720ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 328475 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.892ns/-328.475ns; real time: 20 secs 
 Level 4, iteration 14
-1(0.00%) conflict; 0(0.00%) untouched conn; 47720 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.387ns/-47.720ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 328475 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.892ns/-328.475ns; real time: 20 secs 
 Level 4, iteration 15
-1(0.00%) conflict; 0(0.00%) untouched conn; 39900 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.182ns/-39.900ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 329577 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.892ns/-329.577ns; real time: 20 secs 
 Level 4, iteration 16
-0(0.00%) conflict; 0(0.00%) untouched conn; 39900 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.182ns/-39.900ns; real time: 14 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 329577 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.892ns/-329.577ns; real time: 20 secs 
 
-Start NBR section for performance tuning (iteration 1) at 14:41:03 03/20/25
+Start NBR section for performance tuning (iteration 1) at 20:41:56 03/20/25
 Level 4, iteration 1
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 326171 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-326.171ns; real time: 20 secs 
 Level 4, iteration 2
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24323 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.323ns; real time: 14 secs 
+3(0.00%) conflicts; 0(0.00%) untouched conn; 326165 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.715ns/-326.165ns; real time: 20 secs 
 Level 4, iteration 3
-2(0.00%) conflicts; 0(0.00%) untouched conn; 24422 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.422ns; real time: 14 secs 
-Level 4, iteration 4
-1(0.00%) conflict; 0(0.00%) untouched conn; 24422 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -0.802ns/-24.422ns; real time: 14 secs 
-Level 4, iteration 5
-1(0.00%) conflict; 0(0.00%) untouched conn; 39900 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.182ns/-39.900ns; real time: 14 secs 
-Level 4, iteration 6
-0(0.00%) conflict; 0(0.00%) untouched conn; 39900 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.182ns/-39.900ns; real time: 14 secs 
-Level 4, iteration 7
-0(0.00%) conflict; 0(0.00%) untouched conn; 47720 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.387ns/-47.720ns; real time: 14 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 330619 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.923ns/-330.619ns; real time: 20 secs 
 
-Start NBR section for re-routing at 14:41:03 03/20/25
+Start NBR section for re-routing at 20:41:56 03/20/25
 Level 4, iteration 1
-0(0.00%) conflict; 0(0.00%) untouched conn; 47720 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: -1.387ns/-47.720ns; real time: 14 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 330194 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: -4.892ns/-330.194ns; real time: 20 secs 
 
-Start NBR section for post-routing at 14:41:03 03/20/25
+Start NBR section for post-routing at 20:41:56 03/20/25
 
 End NBR router with 0 unrouted connection
 
 NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
-  Number of connections with timing violations : 74 (8.80%)
-  Estimated worst slack<setup> : -1.387ns
-  Timing score<setup> : 89175
+  Number of connections with timing violations : 181 (18.30%)
+  Estimated worst slack<setup> : -4.892ns
+  Timing score<setup> : 2326686
 -----------
 Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
 
 
 
-Total CPU time 14 secs 
-Total REAL time: 14 secs 
+Total CPU time 19 secs 
+Total REAL time: 20 secs 
 Completely routed.
-End of route.  841 routed (100.00%); 0 unrouted.
+End of route.  989 routed (100.00%); 0 unrouted.
 
 Hold time timing score: 0, hold timing errors: 0
 
-Timing score: 89175 
+Timing score: 2326686 
 
 Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = -1.387
-PAR_SUMMARY::Timing score<setup/<ns>> = 89.175
+PAR_SUMMARY::Worst  slack<setup/<ns>> = -4.892
+PAR_SUMMARY::Timing score<setup/<ns>> = 2326.686
 PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.379
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  time to completion: 14 secs 
-Total REAL time to completion: 14 secs 
+Total CPU  time to completion: 19 secs 
+Total REAL time to completion: 20 secs 
 
 par done!
 
@@ -1425,7 +1433,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Thu Mar 20 14:41:03 2025
+Thu Mar 20 20:41:57 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -1452,14 +1460,14 @@ BLOCK RESETPATHS
 Timing summary (Setup):
 ---------------
 
-Timing errors: 218  Score: 89175
-Cumulative negative slack: 89175
+Timing errors: 2435  Score: 2326686
+Cumulative negative slack: 2326686
 
-Constraints cover 4204 paths, 1 nets, and 523 connections (62.19% coverage)
+Constraints cover 4396 paths, 1 nets, and 556 connections (56.22% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Thu Mar 20 14:41:03 2025
+Thu Mar 20 20:41:57 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -1488,23 +1496,23 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 4204 paths, 1 nets, and 523 connections (62.19% coverage)
+Constraints cover 4396 paths, 1 nets, and 556 connections (56.22% coverage)
 
 
 
 Timing summary (Setup and Hold):
 ---------------
 
-Timing errors: 218 (setup), 0 (hold)
-Score: 89175 (setup), 0 (hold)
-Cumulative negative slack: 89175 (89175+0)
+Timing errors: 2435 (setup), 0 (hold)
+Score: 2326686 (setup), 0 (hold)
+Cumulative negative slack: 2326686 (2326686+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 59 MB
+Peak Memory Usage: 60 MB
 
 
 iotiming  "sdram_controller_impl1.ncd" "sdram_controller_impl1.prf"
