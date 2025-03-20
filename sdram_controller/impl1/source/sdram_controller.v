@@ -1,7 +1,7 @@
 /*
 	Simple SDRAM controller for two Winbond W9812G6KH-5I SDRAM chips in parallel.
-	It is designed to use two of these 2M word x 4 bank x 16 bits chips in parallel to 
-	achieve a total of 32MB (4M words x 32 bits).
+	It is designed to use two of these 2M word x 4 bank x 16 bits (8M words x 16 bits) chips in parallel to 
+	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
 		CLK_FREQUENCY_MHZ = 80MHz
@@ -9,9 +9,12 @@
 
 	Very simple CPU interface
 
+		- The CPU sees RAM organized into 8 million 32-bit words and using the soc_side_wr_mask_pin[4] signals, 
+		  it can select which of the 4 Bytes of each word to write to.
+
 		- No burst support.
 		
-		- soc_side_reset_n_pin: Starts the initialization sequence for the SDRAM.
+		- reset_n_pin: Starts the initialization sequence for the SDRAM.
 
 		- soc_side_busy_pin: Indicate that the controller is busy during read/write operations, refresh cycles 
 		  and during the initialization sequence. The CPU must wait for soc_side_busy_pin to be low before 
@@ -30,8 +33,8 @@
 
 		- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
 
-		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_addr_pin and 
-		  soc_side_wr_data_pin will be latched in, after a few clocks data will be written to the SDRAM.
+		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
+		  soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
 
 		- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
 		  soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
@@ -45,31 +48,31 @@
 
 
 module sdram_controller # (
+	/* Timing parameters */
+	parameter CLK_FREQUENCY_MHZ = 100,	// Clock frequency [MHz].
+	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
+	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
+
 	/* Address parameters */
 	parameter ROW_WIDTH = 12,
 	parameter COL_WIDTH = 9,
 	parameter BANK_ADDR_WIDTH = 2,		// 2 bits wide for 4 banks.
 	
-	parameter SOC_SIDE_ADDR_WIDTH = BANK_ADDR_WIDTH + ROW_WIDTH + COL_WIDTH,
-	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH) ? ROW_WIDTH : COL_WIDTH,
-
-	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 100,	// Clock frequency [MHz].
-	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
-	parameter REFRESH_COUNT = 4096		// Number of refresh cycles per refresh period.
+	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,
+	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH) ? ROW_WIDTH : COL_WIDTH
 ) (
 	input wire clk,
+	input wire reset_n_pin,
 
 	/* SOC interface */
-	input wire soc_side_reset_n_pin,
 	output reg soc_side_busy_pin,
 
 	// Address
-	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_pin,
-	input wire [3:0] soc_side_wr_mask_pin,	// These are the mem_wstrb signals in the PicoRV32 SOC.
+	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_pin,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
 
 	// Write
 	input wire [31:0] soc_side_wr_data_pin,
+	input wire [3:0] soc_side_wr_mask_pin,  // These are the mem_wstrb signals in the PicoRV32 SOC.
 	input wire soc_side_wr_en_pin,
 
 	// Read
@@ -224,7 +227,7 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 // Internal registers for CPU interface.
 reg [31:0] wr_data_reg;
 reg [31:0] rd_data_reg;
-reg read_ready_reg, next_read_ready_reg;
+reg rd_ready_reg;
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] addr_reg;
@@ -248,7 +251,7 @@ assign ram_side_bank_addr_pin = (in_write_cycle || in_read_cycle) ? bank_addr_re
 assign ram_side_addr_pin = (in_write_cycle || in_read_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
 assign soc_side_rd_data_pin = rd_data_reg;
-assign soc_side_rd_ready_pin = read_ready_reg;
+assign soc_side_rd_ready_pin = rd_ready_reg;
 
 assign ram_side_chip0_ldqm_pin = sdram_side_wr_mask_reg[0];
 assign ram_side_chip0_udqm_pin = sdram_side_wr_mask_reg[1];
@@ -286,7 +289,7 @@ assign in_read_cycle = (state == READ_BANK_ACTIVATE) || (state == READ_WAIT_TRCD
 
 always @(posedge clk) 
 begin
-	if (~soc_side_reset_n_pin) 
+	if (~reset_n_pin) 
 		begin
 			state <= INIT_PAUSE;
 			command <= CMD_NOP;
@@ -316,9 +319,12 @@ begin
 
 			// Update read data and read ready signal.
 			if (state == READ_DATA)
-				rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
-			
-			read_ready_reg <= next_read_ready_reg;
+				begin
+					rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
+					rd_ready_reg <= 1'b1;  // Indicar a la CPU que el dato está listo en el bus de datos.
+				end
+			else
+				rd_ready_reg <= 1'b0;
 
 			/*
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
@@ -364,7 +370,6 @@ begin
 	next_init_refresh_counter = init_refresh_counter;
 	next_refresh_counter = refresh_counter + 1'b1;  // Siempre incrementa, se resetea en REF_NOP2
     next_cas_counter = cas_counter;
-    next_read_ready_reg = 1'b0;
 	
 	// Lógica de la máquina de estados.
 	case (state)
@@ -801,13 +806,12 @@ begin
 
 		READ_DATA:
 			begin
-				// Capturar datos de los pines DQ.
-				// Los datos se capturan en el bloque secuencial en el registro rd_data_reg.
+				/*
+					Luego de esperar CAS_LATENCY ciclos los datos se capturan en el bloque secuencial 
+					en el registro rd_data_reg.
+				*/
 
-				next_read_ready_reg = 1'b1;  // Indicar que los datos están listos en el bus de datos.
-
-				// Si A10=1 durante el comando READ, auto-precharge está activo.
-				if (addr_reg[10])
+				if (addr_reg[10])  // Si A10=1 durante el comando READ, auto-precharge está activo.
 					begin
 						/*
 							Si A10=1 durante el comando READ, auto-precharge está activo
@@ -910,7 +914,7 @@ begin
 	// -------------------------------------------------
 	/*
 		PicoRV32 SOC, mem_wstrb signals:
-			soc_side_wr_mask_pin = 0000 --> No write. Read memory.
+			soc_side_wr_mask_pin = 0000 --> No write. Read operation.
 			soc_side_wr_mask_pin = 1111 --> Write 32 bits.
 			soc_side_wr_mask_pin = 1100 --> Write upper 16 bits.
 			soc_side_wr_mask_pin = 0011 --> Write lower 16 bits.

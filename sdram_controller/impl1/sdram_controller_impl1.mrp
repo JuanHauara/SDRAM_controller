@@ -16,7 +16,7 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA256
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/20/25  11:16:38
+Mapped on:  03/20/25  14:40:48
 
 Design Summary
 --------------
@@ -66,21 +66,21 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 Design Summary (cont)
 ---------------------
    Number of Clock Enables:  2
      Net soc_side_wr_en_pin_c: 32 loads, 0 LSLICEs
-     Net soc_side_reset_n_pin_c: 1 loads, 0 LSLICEs
+     Net reset_n_pin_c: 1 loads, 0 LSLICEs
    Number of LSRs:  4
-     Net soc_side_reset_n_pin_c: 42 loads, 6 LSLICEs
-     Net state_RNICQC3E[14]: 9 loads, 9 LSLICEs
-     Net un1_soc_side_reset_n_pin_1_0_0_0: 2 loads, 2 LSLICEs
-     Net next_delay_counter_f0_0_a4_i_o2_RNILNJIJ[1]: 5 loads, 5 LSLICEs
+     Net reset_n_pin_c: 42 loads, 6 LSLICEs
+     Net state_RNI43KQC[14]: 9 loads, 9 LSLICEs
+     Net un1_reset_n_pin_1_0_0_0: 2 loads, 2 LSLICEs
+     Net next_delay_counter_f0_0_a4_i_o2_RNID0R9I[1]: 5 loads, 5 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net soc_side_reset_n_pin_c: 69 loads
+     Net reset_n_pin_c: 69 loads
      Net next_state_0_sqmuxa_7_i_a2: 41 loads
      Net state[9]: 37 loads
      Net soc_side_wr_en_pin_c: 35 loads
@@ -132,7 +132,7 @@ IO (PIO) Attributes
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -198,7 +198,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -264,7 +264,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -330,10 +330,18 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 IO (PIO) Attributes (cont)
 --------------------------
+| soc_side_wr_mask_pin[3]| INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| soc_side_wr_mask_pin[2]| INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| soc_side_wr_mask_pin[1]| INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| soc_side_wr_mask_pin[0]| INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[31]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[30]| INPUT     | LVCMOS25  | IN         |
@@ -382,6 +390,16 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[8]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
+
+                                    Page 6
+
+
+
+
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
+
+IO (PIO) Attributes (cont)
+--------------------------
 | soc_side_wr_data_pin[7]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[6]| INPUT     | LVCMOS25  | IN         |
@@ -390,16 +408,6 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[4]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-
-                                    Page 6
-
-
-
-
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
-
-IO (PIO) Attributes (cont)
---------------------------
 | soc_side_wr_data_pin[3]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[2]| INPUT     | LVCMOS25  | IN         |
@@ -407,14 +415,6 @@ IO (PIO) Attributes (cont)
 | soc_side_wr_data_pin[1]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[0]| INPUT     | LVCMOS25  | IN         |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[3]| INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[2]| INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[1]| INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[22]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -462,7 +462,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/20/25  11:16:38
+Design:  sdram_controller                              Date:  03/20/25  14:40:48
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -472,7 +472,7 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_reset_n_pin| INPUT     | LVCMOS25  |            |
+| reset_n_pin         | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 
 Removed logic
@@ -480,7 +480,7 @@ Removed logic
 
 Block GSR_INST undriven or does not drive anything - clipped.
 Signal state_i[9] was merged into signal state[9]
-Signal soc_side_reset_n_pin_c_i was merged into signal soc_side_reset_n_pin_c
+Signal reset_n_pin_c_i was merged into signal reset_n_pin_c
 Signal next_refresh_counter_s_15_0_S1 undriven or does not drive anything -
      clipped.
 Signal next_refresh_counter_s_15_0_COUT undriven or does not drive anything -
@@ -498,7 +498,7 @@ Signal next_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_1 undriven or does not drive anything - clipped.
 Block state_RNII85D2[9] was optimized away.
-Block soc_side_reset_n_pin_pad_RNIIBRG2 was optimized away.
+Block reset_n_pin_pad_RNIAK281 was optimized away.
 
      
 
@@ -507,7 +507,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 37 MB
+   Peak Memory Usage: 36 MB
         
 
 

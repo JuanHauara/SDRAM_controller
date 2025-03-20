@@ -1,4 +1,4 @@
-# Thu Mar 20 11:16:34 2025
+# Thu Mar 20 14:40:44 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -28,10 +28,10 @@ See clock summary report "C:\lscc\diamond\projects\SDRAM_controller\sdram_contro
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 190MB peak: 197MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 191MB peak: 197MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 190MB peak: 197MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 191MB peak: 197MB)
 
 
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 203MB peak: 203MB)
@@ -52,7 +52,7 @@ Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00
 
 Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
-@N: BN362 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":287:0:287:5|Removing sequential instance rd_data_reg[0] (in view: work.sdram_controller(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Removing sequential instance rd_data_reg[0] (in view: work.sdram_controller(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
 Encoding state machine state[21:0] (in view: work.sdram_controller(verilog))
 original code -> new code
    00000 -> 0000000000000000000001
@@ -140,7 +140,7 @@ Clock                    Load      Pin           Seq Example             Seq Exa
 sdram_controller|clk     94        clk(port)     wr_data_reg[31:0].C     -                 -            
 ========================================================================================================
 
-@W: MT529 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":287:0:287:5|Found inferred clock sdram_controller|clk which controls 94 sequential elements including state[21]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":290:0:290:5|Found inferred clock sdram_controller|clk which controls 94 sequential elements including state[21]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
 
 ICG Latch Removal Summary:
 Number of ICG latches removed: 0
@@ -186,6 +186,6 @@ Pre-mapping successful!
 At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 170MB peak: 265MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Mar 20 11:16:35 2025
+# Thu Mar 20 14:40:45 2025
 
 ###########################################################]
