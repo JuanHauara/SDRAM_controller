@@ -36,14 +36,14 @@
 		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
 		  soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
 
+		- soc_side_ready_pin: This signal is used to notify the CPU when read data is available on the 
+		  soc_side_rd_data_pin bus and also when a data write to memory has finished.
+
 		- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
 		  soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
 
 		- soc_side_rd_en_pin: On clk posedge soc_side_addr_pin will be latched in, after a 
 		  few clocks data will be available on the soc_side_rd_data_pin port.
-
-		- soc_side_ready_pin: This signal is used to notify the CPU when the read data is 
-		  available on the soc_side_rd_data_pin bus.
  */
 
 
@@ -227,7 +227,7 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 // Internal registers for CPU interface.
 reg [31:0] wr_data_reg;
 reg [31:0] rd_data_reg;
-reg busy_reg, next_busy_reg;
+reg busy_reg;
 reg ready_reg, next_ready_reg;
 
 // Internal registers for SDRAM address generation.
@@ -519,6 +519,8 @@ begin
 		// ---- IDLE State ----
 		IDLE: 
 			begin
+				next_ready_reg = 1'b0;
+
 				// Lógica para salir de IDLE.
 				if (refresh_counter >= CYCLES_BETWEEN_REFRESH) 
 					begin
@@ -887,6 +889,8 @@ begin
 	
 	if (state == READ_BANK_ACTIVATE || state == WRITE_BANK_ACTIVATE)
 		begin
+			// TODO: Ver si es correcto capturar el valor de dirección acá o en el bloque secuencial 
+			// cuando alguna de las señales soc_side_wr_en_pin o soc_side_rd_en_pin son high.
 			bank_addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 			addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
