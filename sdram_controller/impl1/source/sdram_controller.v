@@ -103,7 +103,7 @@ module sdram_controller # (
 		During normal access mode, CKE must be held high enabling the clock.
 		Este pin solo es utilizado en Power Down mode, Suspend mode or Self 
 		Refresh mode. Este controlador no implementa estos modos por lo que
-		se mantiene siempre en high.
+		CKE se mantiene siempre en high.
 	*/
 	output wire ram_side_ck_en_pin		// SDRAM chips 0 and 1, CKE pin.
 );

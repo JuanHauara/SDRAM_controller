@@ -13,7 +13,7 @@
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
-Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA256 -s 4 -oc Commercial
+Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA332 -s 4 -oc Commercial
      sdram_controller_impl1.ngd -o sdram_controller_impl1_map.ncd -pr
      sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/lscc/diam
      ond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1
@@ -21,16 +21,16 @@ Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA256 -s 4 -oc Commercial
      er/sdram_controller.lpf -c 0 -gui -msgset
      C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml 
 Target Vendor:  LATTICE
-Target Device:  LCMXO2-4000HCCABGA256
+Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/20/25  21:58:47
+Mapped on:  03/21/25  09:50:19
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:    131 out of  4941 (3%)
+   Number of registers:    131 out of  5145 (3%)
       PFU registers:           62 out of  4320 (1%)
-      PIO registers:           69 out of   621 (11%)
+      PIO registers:           69 out of   825 (8%)
    Number of SLICEs:        76 out of  2160 (4%)
       SLICEs as Logic/ROM:     76 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
@@ -40,7 +40,7 @@ Mapped on:  03/20/25  21:58:47
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
-   Number of PIO sites used: 152 + 4(JTAG) out of 207 (75%)
+   Number of PIO sites used: 152 + 4(JTAG) out of 275 (57%)
    Number of block RAMs:  0 out of 10 (0%)
    Number of GSRs:        0 out of 1 (0%)
    EFB used :        No
@@ -119,7 +119,7 @@ Mapped on:  03/20/25  21:58:47
 +---------------------+-----------+-----------+------------+
 | soc_side_busy_pin   | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| clk                 | INPUT     | LVCMOS25  |            |
+| clk                 | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_ck_en_pin  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -461,7 +461,7 @@ Block reset_n_pin_pad_RNIAK281 was optimized away.
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 36 MB
+   Peak Memory Usage: 52 MB
         
 
 

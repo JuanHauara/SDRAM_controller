@@ -4,7 +4,7 @@
 #device options
 set_option -technology MACHXO2
 set_option -part LCMXO2_4000HC
-set_option -package BG256C
+set_option -package BG332C
 set_option -speed_grade -4
 
 #compilation/mapping options
