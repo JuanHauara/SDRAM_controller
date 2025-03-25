@@ -1,19 +1,20 @@
-#Start recording tcl command: 3/18/2025 17:49:05
+#Start recording tcl command: 3/21/2025 10:33:19
 #Project Location: C:/lscc/diamond/projects/SDRAM_controller/sdram_controller; Project name: sdram_controller
 prj_project open "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/sdram_controller.ldf"
 prj_run Export -impl impl1 -forceAll
+prj_src add "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/sdram_controller_testbench.v"
+prj_src remove "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/sdram_controller_testbench.v"
+prj_src add "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_testbench.v"
+prj_run Export -impl impl1 -forceAll
+prj_run Export -impl impl1 -forceAll
+prj_run Export -impl impl1 -forceAll
+prj_run Export -impl impl1 -forceAll
+prj_src add "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/sdram_controller_simulation/sdram_controller_simulation.spf"
 prj_run Export -impl impl1 -forceAll
 prj_run Export -impl impl1 -forceAll
 prj_run Export -impl impl1 -forceAll
 prj_run Export -impl impl1 -forceAll
 prj_run Export -impl impl1 -forceAll
 prj_run Export -impl impl1 -forceAll
-prj_run Map -impl impl1 -task MapTrace
 prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-prj_run Export -impl impl1 -forceAll
-#Stop recording: 3/18/2025 19:51:07
+#Stop recording: 3/21/2025 18:27:34

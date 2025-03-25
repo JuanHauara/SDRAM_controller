@@ -1,0 +1,307 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/simulation/simulation.mdo}
+# Loading project simulation
+# vsim -voptargs="+acc" -L work -L pmi_work -L ovi_machxo2 sdram_controller_tb 
+# Start time: 12:04:52 on Mar 25,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 0.000us, state: xx
+# Time: 6.667us, state: 01
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, state: xx
+# Time: 6.667us, state: 01
+# Time: 300141.673us, state: 03
+# Time: 300155.007us, state: 02
+# Time: 300181.675us, state: 06
+# Time: 300195.009us, state: 07
+# Time: 300261.679us, state: 06
+# Time: 300275.013us, state: 07
+# Time: 300341.683us, state: 06
+# Time: 300355.017us, state: 07
+# Time: 300421.687us, state: 06
+# Time: 300435.021us, state: 07
+# Time: 300501.691us, state: 06
+# Time: 300515.025us, state: 07
+# Time: 300581.695us, state: 06
+# Time: 300595.029us, state: 07
+# Time: 300661.699us, state: 06
+# Time: 300675.033us, state: 07
+# Time: 300741.703us, state: 06
+# Time: 300755.037us, state: 07
+# Time: 300821.707us, state: 05
+# Time: 300835.041us, state: 04
+# Time: 300861.709us, state: 00
+# Time: 300875.043us, state: 0c
+# Time: 300888.377us, state: 0d
+# Time: 300915.045us, state: 0f
+# Time: 300928.379us, state: 0e
+# Time: 300995.049us, state: 00
+# Time: 316622.497us, state: 0c
+# Time: 316635.831us, state: 0d
+# Time: 316662.499us, state: 0f
+# Time: 316675.833us, state: 0e
+# Time: 316742.503us, state: 00
+# Time: 332369.951us, state: 0c
+# Time: 332383.285us, state: 0d
+# Time: 332409.953us, state: 0f
+# Time: 332423.287us, state: 0e
+# Time: 332489.957us, state: 00
+# Time: 348117.405us, state: 0c
+# Time: 348130.739us, state: 0d
+# Time: 348157.407us, state: 0f
+# Time: 348170.741us, state: 0e
+# Time: 348237.411us, state: 00
+# Time: 363864.859us, state: 0c
+# Time: 363878.193us, state: 0d
+# Time: 363904.861us, state: 0f
+# Time: 363918.195us, state: 0e
+# Time: 363984.865us, state: 00
+# Time: 379612.313us, state: 0c
+# Time: 379625.647us, state: 0d
+# Time: 379652.315us, state: 0f
+# Time: 379665.649us, state: 0e
+# Time: 379732.319us, state: 00
+# Time: 395359.767us, state: 0c
+# Time: 395373.101us, state: 0d
+# Time: 395399.769us, state: 0f
+# Time: 395413.103us, state: 0e
+# Time: 395479.773us, state: 00
+# Time: 411107.221us, state: 0c
+# Time: 411120.555us, state: 0d
+# Time: 411147.223us, state: 0f
+# Time: 411160.557us, state: 0e
+# Time: 411227.227us, state: 00
+# Time: 426854.675us, state: 0c
+# Time: 426868.009us, state: 0d
+# Time: 426894.677us, state: 0f
+# Time: 426908.011us, state: 0e
+# Time: 426974.681us, state: 00
+# Time: 442602.129us, state: 0c
+# Time: 442615.463us, state: 0d
+# Time: 442642.131us, state: 0f
+# Time: 442655.465us, state: 0e
+# Time: 442722.135us, state: 00
+# Time: 458349.583us, state: 0c
+# Time: 458362.917us, state: 0d
+# Time: 458389.585us, state: 0f
+# Time: 458402.919us, state: 0e
+# Time: 458469.589us, state: 00
+# Time: 474097.037us, state: 0c
+# Time: 474110.371us, state: 0d
+# Time: 474137.039us, state: 0f
+# Time: 474150.373us, state: 0e
+# Time: 474217.043us, state: 00
+# Time: 489844.491us, state: 0c
+# Time: 489857.825us, state: 0d
+# Time: 489884.493us, state: 0f
+# Time: 489897.827us, state: 0e
+# Time: 489964.497us, state: 00
+add wave -position insertpoint  \
+sim:/sdram_controller_tb/dut/state
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, state: xx
+# Time: 6.667us, state: 01
+# Time: 300141.673us, state: 03
+# Time: 300155.007us, state: 02
+# Time: 300181.675us, state: 06
+# Time: 300195.009us, state: 07
+# Time: 300261.679us, state: 06
+# Time: 300275.013us, state: 07
+# Time: 300341.683us, state: 06
+# Time: 300355.017us, state: 07
+# Time: 300421.687us, state: 06
+# Time: 300435.021us, state: 07
+# Time: 300501.691us, state: 06
+# Time: 300515.025us, state: 07
+# Time: 300581.695us, state: 06
+# Time: 300595.029us, state: 07
+# Time: 300661.699us, state: 06
+# Time: 300675.033us, state: 07
+# Time: 300741.703us, state: 06
+# Time: 300755.037us, state: 07
+# Time: 300821.707us, state: 05
+# Time: 300835.041us, state: 04
+# Time: 300861.709us, state: 00
+# Time: 300875.043us, state: 0c
+# Time: 300888.377us, state: 0d
+# Time: 300915.045us, state: 0f
+# Time: 300928.379us, state: 0e
+# Time: 300995.049us, state: 00
+# Time: 316622.497us, state: 0c
+# Time: 316635.831us, state: 0d
+# Time: 316662.499us, state: 0f
+# Time: 316675.833us, state: 0e
+# Time: 316742.503us, state: 00
+# Time: 332369.951us, state: 0c
+# Time: 332383.285us, state: 0d
+# Time: 332409.953us, state: 0f
+# Time: 332423.287us, state: 0e
+# Time: 332489.957us, state: 00
+# Time: 348117.405us, state: 0c
+# Time: 348130.739us, state: 0d
+# Time: 348157.407us, state: 0f
+# Time: 348170.741us, state: 0e
+# Time: 348237.411us, state: 00
+# Time: 363864.859us, state: 0c
+# Time: 363878.193us, state: 0d
+# Time: 363904.861us, state: 0f
+# Time: 363918.195us, state: 0e
+# Time: 363984.865us, state: 00
+# Time: 379612.313us, state: 0c
+# Time: 379625.647us, state: 0d
+# Time: 379652.315us, state: 0f
+# Time: 379665.649us, state: 0e
+# Time: 379732.319us, state: 00
+# Time: 395359.767us, state: 0c
+# Time: 395373.101us, state: 0d
+# Time: 395399.769us, state: 0f
+# Time: 395413.103us, state: 0e
+# Time: 395479.773us, state: 00
+# Time: 411107.221us, state: 0c
+# Time: 411120.555us, state: 0d
+# Time: 411147.223us, state: 0f
+# Time: 411160.557us, state: 0e
+# Time: 411227.227us, state: 00
+# Time: 426854.675us, state: 0c
+# Time: 426868.009us, state: 0d
+# Time: 426894.677us, state: 0f
+# Time: 426908.011us, state: 0e
+# Time: 426974.681us, state: 00
+# Time: 442602.129us, state: 0c
+# Time: 442615.463us, state: 0d
+# Time: 442642.131us, state: 0f
+# Time: 442655.465us, state: 0e
+# Time: 442722.135us, state: 00
+# Time: 458349.583us, state: 0c
+# Time: 458362.917us, state: 0d
+# Time: 458389.585us, state: 0f
+# Time: 458402.919us, state: 0e
+# Time: 458469.589us, state: 00
+# Time: 474097.037us, state: 0c
+# Time: 474110.371us, state: 0d
+# Time: 474137.039us, state: 0f
+# Time: 474150.373us, state: 0e
+# Time: 474217.043us, state: 00
+# Time: 489844.491us, state: 0c
+# Time: 489857.825us, state: 0d
+# Time: 489884.493us, state: 0f
+# Time: 489897.827us, state: 0e
+# Time: 489964.497us, state: 00
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, state: xx
+# Time: 6.667us, state: 01
+# Time: 300141.673us, state: 03
+# Time: 300155.007us, state: 02
+# Time: 300181.675us, state: 06
+# Time: 300195.009us, state: 07
+# Time: 300261.679us, state: 06
+# Time: 300275.013us, state: 07
+# Time: 300341.683us, state: 06
+# Time: 300355.017us, state: 07
+# Time: 300421.687us, state: 06
+# Time: 300435.021us, state: 07
+# Time: 300501.691us, state: 06
+# Time: 300515.025us, state: 07
+# Time: 300581.695us, state: 06
+# Time: 300595.029us, state: 07
+# Time: 300661.699us, state: 06
+# Time: 300675.033us, state: 07
+# Time: 300741.703us, state: 06
+# Time: 300755.037us, state: 07
+# Time: 300821.707us, state: 05
+# Time: 300835.041us, state: 04
+# Time: 300861.709us, state: 00
+# Time: 300875.043us, state: 0c
+# Time: 300888.377us, state: 0d
+# Time: 300915.045us, state: 0f
+# Time: 300928.379us, state: 0e
+# Time: 300995.049us, state: 00
+# Time: 316622.497us, state: 0c
+# Time: 316635.831us, state: 0d
+# Time: 316662.499us, state: 0f
+# Time: 316675.833us, state: 0e
+# Time: 316742.503us, state: 00
+# Time: 332369.951us, state: 0c
+# Time: 332383.285us, state: 0d
+# Time: 332409.953us, state: 0f
+# Time: 332423.287us, state: 0e
+# Time: 332489.957us, state: 00
+# Time: 348117.405us, state: 0c
+# Time: 348130.739us, state: 0d
+# Time: 348157.407us, state: 0f
+# Time: 348170.741us, state: 0e
+# Time: 348237.411us, state: 00
+# Time: 363864.859us, state: 0c
+# Time: 363878.193us, state: 0d
+# Time: 363904.861us, state: 0f
+# Time: 363918.195us, state: 0e
+# Time: 363984.865us, state: 00
+# Time: 379612.313us, state: 0c
+# Time: 379625.647us, state: 0d
+# Time: 379652.315us, state: 0f
+# Time: 379665.649us, state: 0e
+# Time: 379732.319us, state: 00
+# Time: 395359.767us, state: 0c
+# Time: 395373.101us, state: 0d
+# Time: 395399.769us, state: 0f
+# Time: 395413.103us, state: 0e
+# Time: 395479.773us, state: 00
+# Time: 411107.221us, state: 0c
+# Time: 411120.555us, state: 0d
+# Time: 411147.223us, state: 0f
+# Time: 411160.557us, state: 0e
+# Time: 411227.227us, state: 00
+# Time: 426854.675us, state: 0c
+# Time: 426868.009us, state: 0d
+# Time: 426894.677us, state: 0f
+# Time: 426908.011us, state: 0e
+# Time: 426974.681us, state: 00
+# Time: 442602.129us, state: 0c
+# Time: 442615.463us, state: 0d
+# Time: 442642.131us, state: 0f
+# Time: 442655.465us, state: 0e
+# Time: 442722.135us, state: 00
+# Time: 458349.583us, state: 0c
+# Time: 458362.917us, state: 0d
+# Time: 458389.585us, state: 0f
+# Time: 458402.919us, state: 0e
+# Time: 458469.589us, state: 00
+# Time: 474097.037us, state: 0c
+# Time: 474110.371us, state: 0d
+# Time: 474137.039us, state: 0f
+# Time: 474150.373us, state: 0e
+# Time: 474217.043us, state: 00
+# Time: 489844.491us, state: 0c
+# Time: 489857.825us, state: 0d
+# Time: 489884.493us, state: 0f
+# Time: 489897.827us, state: 0e
+# Time: 489964.497us, state: 00

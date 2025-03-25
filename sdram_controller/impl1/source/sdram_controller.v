@@ -4,7 +4,7 @@
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
-		CLK_FREQUENCY_MHZ = 80MHz
+		CLK_FREQUENCY_MHZ = 100MHz
 		CAS 3
 
 	Very simple CPU interface
@@ -31,27 +31,29 @@
 								0100 --> Write Byte 2.
 								1000 --> Write Byte 3.
 
-		- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
+		Write data:
+			- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
 
-		// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
+			// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
 
-		- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
-		  soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
+			- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
+			soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
 
-		- soc_side_ready_pin: This signal is used to notify the CPU when read data is available on the 
-		  soc_side_rd_data_pin bus and also when a data write to memory has finished.
+			- soc_side_ready_pin: This signal is used to notify the CPU when read data is available on the 
+			soc_side_rd_data_pin bus and also when a data write to memory has finished.
 
-		- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
-		  soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
+		Read data:
+			- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
+			soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
 
-		- soc_side_rd_en_pin: On clk posedge soc_side_addr_pin will be latched in, after a 
-		  few clocks data will be available on the soc_side_rd_data_pin port.
+			- soc_side_rd_en_pin: On clk posedge soc_side_addr_pin will be latched in, after a 
+			few clocks data will be available on the soc_side_rd_data_pin port.
  */
 
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 75,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -272,8 +274,8 @@ assign in_initialization_cycle = (state == INIT_PAUSE) || (state == INIT_PRECHAR
 								(state == INIT_WAIT_TRSC);
 
 // Signal to detect refresh cycle states.
-assign in_refresh_cycle = (state == REFRESH_PRECHARGE_ALL) || (state == REFRESH_WAIT_TRP) || 
-						(state == REFRESH_AUTO_REFRESH) || (state == REFRESH_WAIT_TRC);
+//assign in_refresh_cycle = (state == REFRESH_PRECHARGE_ALL) || (state == REFRESH_WAIT_TRP) || 
+//						(state == REFRESH_AUTO_REFRESH) || (state == REFRESH_WAIT_TRC);
 
 // Signal to detect write cycle states.
 assign in_write_cycle = (state == WRITE_BANK_ACTIVATE) || (state == WRITE_WAIT_TRCD) || 
@@ -337,7 +339,12 @@ begin
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
 				los ciclos de refresco y los ciclos de escritura o lectura.
 			*/
-			busy_reg <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
+			//busy_reg <= in_initialization_cycle || in_refresh_cycle || in_write_cycle || in_read_cycle;
+			if (state == IDLE)
+				busy_reg <= 1'b0;
+			else
+				busy_reg <= 1'b1;
+
 			ready_reg <= next_ready_reg;
 		end
 end

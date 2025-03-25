@@ -47,6 +47,7 @@ set_option -seqshift_no_replicate 0
 #-- add_file options
 set_option -include_path {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller}
 add_file -verilog -vlog_std v2001 {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v}
+add_file -verilog -vlog_std v2001 {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v}
 
 #-- top module name
 set_option -top_module sdram_controller

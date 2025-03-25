@@ -24,7 +24,7 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/21/25  09:50:19
+Mapped on:  03/25/25  12:04:38
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
@@ -35,8 +35,8 @@ Mapped on:  03/21/25  09:50:19
       SLICEs as Logic/ROM:     76 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        151 out of  4320 (3%)
-      Number used as logic LUTs:        117
+   Number of LUT4s:        152 out of  4320 (4%)
+      Number used as logic LUTs:        118
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -66,32 +66,31 @@ Mapped on:  03/21/25  09:50:19
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 106 loads, 106 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 105 loads, 105 rising, 0 falling (Driver: PIO clk )
 
    Number of Clock Enables:  3
      Net state[22]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_pin_c: 32 loads, 0 LSLICEs
-     Net un1_state_7_0: 1 loads, 0 LSLICEs
-   Number of LSRs:  7
-     Net N_550_i: 1 loads, 1 LSLICEs
+     Net ready_reg_0io_RNO: 1 loads, 0 LSLICEs
+   Number of LSRs:  6
+     Net N_553_i: 1 loads, 1 LSLICEs
      Net N_167_i: 1 loads, 1 LSLICEs
      Net reset_n_pin_c: 76 loads, 7 LSLICEs
      Net state_RNI2PV5A[14]: 9 loads, 9 LSLICEs
      Net un1_reset_n_pin_3_0: 2 loads, 2 LSLICEs
-     Net un1_ram_side_addr_pin_2_0_a2_0_RNIFQ7VA: 3 loads, 3 LSLICEs
-     Net next_delay_counter[0]: 1 loads, 1 LSLICEs
+     Net un36_0_a2_0_RNIQTQL9: 3 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_pin_c: 104 loads
-     Net next_state_0_sqmuxa_5_i_a2: 45 loads
+     Net reset_n_pin_c: 105 loads
+     Net next_state_0_sqmuxa_5_i_a2: 47 loads
      Net state[9]: 39 loads
      Net soc_side_wr_en_pin_c: 36 loads
      Net state[22]: 36 loads
-     Net N_579: 16 loads
-     Net next_delay_counter_f0_1[2]: 12 loads
-     Net N_610: 12 loads
-     Net un1_ram_side_addr_pin_2_0_a2_0: 11 loads
-     Net N_598: 10 loads
+     Net N_582: 16 loads
+     Net N_614: 11 loads
+     Net un36_0_a2_1: 11 loads
+     Net N_602: 10 loads
+     Net un36_0_a2_0: 10 loads
 
 
 
@@ -127,8 +126,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | ram_side_cas_n_pin  | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-
 | ram_side_ras_n_pin  | OUTPUT    | LVCMOS25  | OUT        |
+
 +---------------------+-----------+-----------+------------+
 | ram_side_cs_n_pin   | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -184,8 +183,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_pin[8]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-
 | ram_side_chip0_data_pin[7]| BIDIR     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_pin[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -241,8 +240,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[28]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_rd_data_pin[27]| OUTPUT    | LVCMOS25  | OUT        |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[26]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
@@ -298,8 +297,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_pin[0]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_wr_en_pin  | INPUT     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_mask_pin[3]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -355,8 +354,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[9]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_wr_data_pin[8]| INPUT     | LVCMOS25  | IN         |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_pin[7]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
@@ -412,8 +411,8 @@ Mapped on:  03/21/25  09:50:19
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[4]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-
 | soc_side_addr_pin[3]| INPUT     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_pin[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -463,6 +462,7 @@ Block reset_n_pin_pad_RNIAK281 was optimized away.
    Total REAL Time: 0 secs  
    Peak Memory Usage: 52 MB
         
+
 
 
 
