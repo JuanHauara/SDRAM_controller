@@ -9,20 +9,20 @@
 
 	Very simple CPU interface
 
-		- The CPU sees RAM organized into 8 million 32-bit words and using the soc_side_wr_mask_pin[4] signals, 
+		- The CPU sees RAM organized into 8 million 32-bit words and using the soc_side_wr_mask_port[4] signals, 
 		  it can select which of the 4 Bytes of each word to write to.
 
 		- No burst support.
 		
-		- reset_n_pin: Starts the initialization sequence for the SDRAM.
+		- reset_n_port: Starts the initialization sequence for the SDRAM.
 
-		- soc_side_busy_pin: Indicate that the controller is busy during read/write operations, refresh cycles 
-		  and during the initialization sequence. The CPU must wait for soc_side_busy_pin to be low before 
+		- soc_side_busy_port: Indicate that the controller is busy during read/write operations, refresh cycles 
+		  and during the initialization sequence. The CPU must wait for soc_side_busy_port to be low before 
 		  sending commands to the SDRAM.
 		
-		- soc_side_addr_pin: Address for read/write 32 bits data.
+		- soc_side_addr_port: Address for read/write 32 bits data.
 
-		- soc_side_wr_mask_pin: 0000 --> No write/read memory.
+		- soc_side_wr_mask_port: 0000 --> No write/read memory.
 								1111 --> Write 32 bits.
 								1100 --> Write upper 16 bits.
 								0011 --> Write lower 16 bits.
@@ -32,22 +32,22 @@
 								1000 --> Write Byte 3.
 
 		Write data:
-			- soc_side_wr_data_pin: Data for writing, latched in on clk posedge if soc_side_wr_en_pin is high.
+			- soc_side_wr_data_port: Data for writing, latched in on clk posedge if soc_side_wr_en_port is high.
 
 			// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
 
-			- soc_side_wr_en_pin: On clk posedge, if soc_side_wr_en_pin is high soc_side_wr_data_pin and 
-			soc_side_addr_pin will be latched in, after a few clocks data will be written to the SDRAM.
+			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port and 
+			soc_side_addr_port will be latched in, after a few clocks data will be written to the SDRAM.
 
-			- soc_side_ready_pin: This signal is used to notify the CPU when read data is available on the 
-			soc_side_rd_data_pin bus and also when a data write to memory has finished.
+			- soc_side_ready_port: This signal is used to notify the CPU when read data is available on the 
+			soc_side_rd_data_port bus and also when a data write to memory has finished.
 
 		Read data:
-			- soc_side_rd_data_pin: Data for reading, comes available a few clocks after 
-			soc_side_rd_en_pin and soc_side_addr_pin are presented on the bus.
+			- soc_side_rd_data_port: Data for reading, comes available a few clocks after 
+			soc_side_rd_en_port and soc_side_addr_port are presented on the bus.
 
-			- soc_side_rd_en_pin: On clk posedge soc_side_addr_pin will be latched in, after a 
-			few clocks data will be available on the soc_side_rd_data_pin port.
+			- soc_side_rd_en_port: On clk posedge soc_side_addr_port will be latched in, after a 
+			few clocks data will be available on the soc_side_rd_data_port port.
  */
 
 
@@ -66,40 +66,40 @@ module sdram_controller # (
 	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH) ? ROW_WIDTH : COL_WIDTH
 ) (
 	input wire clk,
-	input wire reset_n_pin,
+	input wire reset_n_port,
 
 	/* SOC interface */
-	output wire soc_side_busy_pin,
-	output wire soc_side_ready_pin,
+	output wire soc_side_busy_port,
+	output wire soc_side_ready_port,
 
 	// Address
-	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_pin,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
+	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
 
 	// Write
-	input wire [31:0] soc_side_wr_data_pin,
-	input wire [3:0] soc_side_wr_mask_pin,  // These are the mem_wstrb signals in the PicoRV32 SOC.
-	input wire soc_side_wr_en_pin,
+	input wire [31:0] soc_side_wr_data_port,
+	input wire [3:0] soc_side_wr_mask_port,  // These are the mem_wstrb signals in the PicoRV32 SOC.
+	input wire soc_side_wr_en_port,
 
 	// Read
-	output wire [31:0] soc_side_rd_data_pin,
-	input wire soc_side_rd_en_pin,
+	output wire [31:0] soc_side_rd_data_port,
+	input wire soc_side_rd_en_port,
 
 	/* SDRAM side */
-	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_pin,		// SDRAM chips 0 and 1, A0 to A11 pins.  TODO: Ver que el ancho de este bus sea correcto.
-	output wire [BANK_ADDR_WIDTH - 1: 0] ram_side_bank_addr_pin,	// SDRAM chips 0 and 1, BS0 and BS1 pins.
+	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_port,		// SDRAM chips 0 and 1, A0 to A11 pins.  TODO: Ver que el ancho de este bus sea correcto.
+	output wire [BANK_ADDR_WIDTH - 1: 0] ram_side_bank_addr_port,	// SDRAM chips 0 and 1, BS0 and BS1 pins.
 
-	output wire ram_side_chip0_ldqm_pin,		// SDRAM chip 0, LDQM pin.
-	output wire ram_side_chip0_udqm_pin,		// SDRAM chip 0, UDQM pin.
-	inout wire [15:0] ram_side_chip0_data_pin,	// SDRAM chip 0, DQ0 to DQ15 pins.
+	output wire ram_side_chip0_ldqm_port,		// SDRAM chip 0, LDQM pin.
+	output wire ram_side_chip0_udqm_port,		// SDRAM chip 0, UDQM pin.
+	inout wire [15:0] ram_side_chip0_data_port,	// SDRAM chip 0, DQ0 to DQ15 pins.
 
-	output wire ram_side_chip1_ldqm_pin,		// SDRAM chip 1, LDQM pin.
-	output wire ram_side_chip1_udqm_pin,		// SDRAM chip 1, UDQM pin.
-	inout wire [15:0] ram_side_chip1_data_pin,	// SDRAM chip 1, DQ0 to DQ15 pins.
+	output wire ram_side_chip1_ldqm_port,		// SDRAM chip 1, LDQM pin.
+	output wire ram_side_chip1_udqm_port,		// SDRAM chip 1, UDQM pin.
+	inout wire [15:0] ram_side_chip1_data_port,	// SDRAM chip 1, DQ0 to DQ15 pins.
 
-	output wire ram_side_cs_n_pin,		// SDRAM chips 0 and 1, CS pin.
-	output wire ram_side_ras_n_pin,		// SDRAM chips 0 and 1, RAS pin.
-	output wire ram_side_cas_n_pin,		// SDRAM chips 0 and 1, CAS pin.
-	output wire ram_side_wr_en_pin,		// SDRAM chips 0 and 1, WE pin.
+	output wire ram_side_cs_n_port,		// SDRAM chips 0 and 1, CS pin.
+	output wire ram_side_ras_n_port,		// SDRAM chips 0 and 1, RAS pin.
+	output wire ram_side_cas_n_port,		// SDRAM chips 0 and 1, CAS pin.
+	output wire ram_side_wr_en_port,		// SDRAM chips 0 and 1, WE pin.
 
 	/*
 		During normal access mode, CKE must be held high enabling the clock.
@@ -107,7 +107,7 @@ module sdram_controller # (
 		Refresh mode. Este controlador no implementa estos modos por lo que
 		CKE se mantiene siempre en high.
 	*/
-	output wire ram_side_ck_en_pin		// SDRAM chips 0 and 1, CKE pin.
+	output wire ram_side_ck_en_port		// SDRAM chips 0 and 1, CKE pin.
 );
 
 
@@ -251,21 +251,21 @@ wire in_read_cycle;
 //-------------------------------
 
 // Assigns command bits to outputs.
-assign {ram_side_ck_en_pin, ram_side_cs_n_pin, ram_side_ras_n_pin, ram_side_cas_n_pin, ram_side_wr_en_pin} = command[7:3];
-assign ram_side_bank_addr_pin = (in_write_cycle || in_read_cycle) ? bank_addr_reg : command[2:1];
-assign ram_side_addr_pin = (in_write_cycle || in_read_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
+assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle) ? bank_addr_reg : command[2:1];
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
-assign soc_side_rd_data_pin = rd_data_reg;
-assign soc_side_busy_pin = busy_reg;
-assign soc_side_ready_pin = ready_reg;
+assign soc_side_rd_data_port = rd_data_reg;
+assign soc_side_busy_port = busy_reg;
+assign soc_side_ready_port = ready_reg;
 
-assign ram_side_chip0_ldqm_pin = sdram_side_wr_mask_reg[0];
-assign ram_side_chip0_udqm_pin = sdram_side_wr_mask_reg[1];
-assign ram_side_chip1_ldqm_pin = sdram_side_wr_mask_reg[2];
-assign ram_side_chip1_udqm_pin = sdram_side_wr_mask_reg[3];
+assign ram_side_chip0_ldqm_port = sdram_side_wr_mask_reg[0];
+assign ram_side_chip0_udqm_port = sdram_side_wr_mask_reg[1];
+assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
+assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
 
-assign ram_side_chip0_data_pin = (state == WRITE_CAS) ? wr_data_reg[15:0] : 16'bz;
-assign ram_side_chip1_data_pin = (state == WRITE_CAS) ? wr_data_reg[31:16] : 16'bz;
+assign ram_side_chip0_data_port = (state == WRITE_CAS) ? wr_data_reg[15:0] : 16'bz;
+assign ram_side_chip1_data_port = (state == WRITE_CAS) ? wr_data_reg[31:16] : 16'bz;
 
 // Signal to detect SDRAM initialization cycle states.
 assign in_initialization_cycle = (state == INIT_PAUSE) || (state == INIT_PRECHARGE_ALL) || 
@@ -295,7 +295,7 @@ assign in_read_cycle = (state == READ_BANK_ACTIVATE) || (state == READ_WAIT_TRCD
 
 always @(posedge clk) 
 begin
-	if (~reset_n_pin) 
+	if (~reset_n_port) 
 		begin
 			/*
 				Se inicializan todos los registros y contadores para lograr 
@@ -329,11 +329,11 @@ begin
 			refresh_counter <= next_refresh_counter;
 			cas_counter <= next_cas_counter;
 			
-			if (soc_side_wr_en_pin)
-				wr_data_reg <= soc_side_wr_data_pin;  // Update write data.
+			if (soc_side_wr_en_port)
+				wr_data_reg <= soc_side_wr_data_port;  // Update write data.
 
 			if (state == READ_DATA)  // Update read data.
-				rd_data_reg <= {ram_side_chip1_data_pin, ram_side_chip0_data_pin};
+				rd_data_reg <= {ram_side_chip1_data_port, ram_side_chip0_data_port};
 
 			/*
 				Indicar que el controlador está ocupado durante el ciclo de inicialización de la SDRAM, 
@@ -539,13 +539,13 @@ begin
 
 						// No resetear refresh_counter aquí, se hace al final de la secuencia de auto refresco.
 					end
-				else if (soc_side_wr_en_pin) 
+				else if (soc_side_wr_en_port) 
 					begin
 						// Inicia secuencia de escritura.
 						next_state = WRITE_BANK_ACTIVATE;
 						next_command = CMD_BANK_ACTIVATE;
 					end
-				else if (soc_side_rd_en_pin) 
+				else if (soc_side_rd_en_port) 
 					begin
 						// Inicia secuencia de lectura.
 						next_state = READ_BANK_ACTIVATE;
@@ -899,13 +899,13 @@ begin
 	if (state == READ_BANK_ACTIVATE || state == WRITE_BANK_ACTIVATE)
 		begin
 			// TODO: Ver si es correcto capturar el valor de dirección acá o en el bloque secuencial 
-			// cuando alguna de las señales soc_side_wr_en_pin o soc_side_rd_en_pin son high.
-			bank_addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
-			addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
+			// cuando alguna de las señales soc_side_wr_en_port o soc_side_rd_en_port son high.
+			bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+			addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
 	else if (state == READ_CAS || state == WRITE_CAS)
 		begin
-			bank_addr_reg = soc_side_addr_pin[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+			bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 
 			/*
 									 BANK	 ROW	 COL
@@ -915,7 +915,7 @@ begin
 			addr_reg = { {(SDRAM_ADDR_WIDTH - 11){1'b0}},		/* 0s */
 						1'b1,									/* 1 (A10 is always for auto precharge) */
 						{(10 - COL_WIDTH){1'b0}},				/* 0s */
-						soc_side_addr_pin[COL_WIDTH - 1: 0]		/* column address */
+						soc_side_addr_port[COL_WIDTH - 1: 0]		/* column address */
 					};
 		end
 	else if (state == INIT_MRS)
@@ -940,14 +940,14 @@ begin
 	// -------------------------------------------------
 	/*
 		PicoRV32 SOC, mem_wstrb signals:
-			soc_side_wr_mask_pin = 0000 --> No write. Read operation.
-			soc_side_wr_mask_pin = 1111 --> Write 32 bits.
-			soc_side_wr_mask_pin = 1100 --> Write upper 16 bits.
-			soc_side_wr_mask_pin = 0011 --> Write lower 16 bits.
-			soc_side_wr_mask_pin = 0001 --> Write Byte 0.
-			soc_side_wr_mask_pin = 0010 --> Write Byte 1.
-			soc_side_wr_mask_pin = 0100 --> Write Byte 2.
-			soc_side_wr_mask_pin = 1000 --> Write Byte 3.
+			soc_side_wr_mask_port = 0000 --> No write. Read operation.
+			soc_side_wr_mask_port = 1111 --> Write 32 bits.
+			soc_side_wr_mask_port = 1100 --> Write upper 16 bits.
+			soc_side_wr_mask_port = 0011 --> Write lower 16 bits.
+			soc_side_wr_mask_port = 0001 --> Write Byte 0.
+			soc_side_wr_mask_port = 0010 --> Write Byte 1.
+			soc_side_wr_mask_port = 0100 --> Write Byte 2.
+			soc_side_wr_mask_port = 1000 --> Write Byte 3.
 	*/
 	if (in_initialization_cycle)
 		// Deshabilita buffers during initialization. Mask all bits high so that the SDRAM drives the input/output buffers to HIGH-Z.
@@ -955,19 +955,19 @@ begin
 	else if (in_write_cycle)
 		/*
 			PicoRV32 SOC, mem_wstrb signals:
-				soc_side_wr_mask_pin = 0000 --> No write. Read memory.
-				soc_side_wr_mask_pin = 1111 --> Write 32 bits.
-				soc_side_wr_mask_pin = 1100 --> Write upper 16 bits.
-				soc_side_wr_mask_pin = 0011 --> Write lower 16 bits.
-				soc_side_wr_mask_pin = 0001 --> Write Byte 0.
-				soc_side_wr_mask_pin = 0010 --> Write Byte 1.
-				soc_side_wr_mask_pin = 0100 --> Write Byte 2.
-				soc_side_wr_mask_pin = 1000 --> Write Byte 3.
+				soc_side_wr_mask_port = 0000 --> No write. Read memory.
+				soc_side_wr_mask_port = 1111 --> Write 32 bits.
+				soc_side_wr_mask_port = 1100 --> Write upper 16 bits.
+				soc_side_wr_mask_port = 0011 --> Write lower 16 bits.
+				soc_side_wr_mask_port = 0001 --> Write Byte 0.
+				soc_side_wr_mask_port = 0010 --> Write Byte 1.
+				soc_side_wr_mask_port = 0100 --> Write Byte 2.
+				soc_side_wr_mask_port = 1000 --> Write Byte 3.
 
 			The mem_wstrb signals of the SoC are inverted because the LDQM and UDQM pins of the 
 			SDRAM set the input/output buffers to HIGH-Z with 1 and enable them with 0.
 		*/
-		sdram_side_wr_mask_reg = ~soc_side_wr_mask_pin;  // Use the 4-bit write mask from the soc (mem_wstrb signals).
+		sdram_side_wr_mask_reg = ~soc_side_wr_mask_port;  // Use the 4-bit write mask from the soc (mem_wstrb signals).
     else if (in_read_cycle)
         // Durante la lectura, habilitar todos los buffers para que los datos puedan leerse.
         sdram_side_wr_mask_reg = 4'b0000;  // DQM = 0 habilita la salida de datos en lectura.

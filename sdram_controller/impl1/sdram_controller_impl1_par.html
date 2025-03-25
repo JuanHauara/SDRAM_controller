@@ -12,7 +12,7 @@ Copyright (c) 1995 AT&amp;T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Mar 25 11:31:11 2025
+Tue Mar 25 12:26:05 2025
 
 C:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f sdram_controller_impl1.p2t
 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir
@@ -36,7 +36,7 @@ par done!
 Note: user must run &apos;Trace&apos; for timing closure signoff.
 
 Lattice Place and Route Report for Design &quot;sdram_controller_impl1_map.ncd&quot;
-Tue Mar 25 11:31:11 2025
+Tue Mar 25 12:26:05 2025
 
 
 <A name="par_best"></A><B><U><big>Best Par Run</big></U></B>
@@ -82,9 +82,9 @@ The following 1 signal is selected to use the primary clock routing resources:
 
 
 The following 3 signals are selected to use the secondary clock routing resources:
-    reset_n_pin_c (driver: reset_n_pin, clk load #: 0, sr load #: 76, ce load #: 0)
+    reset_n_port_c (driver: reset_n_port, clk load #: 0, sr load #: 76, ce load #: 0)
     state[22] (driver: SLICE_40, clk load #: 0, sr load #: 0, ce load #: 32)
-    soc_side_wr_en_pin_c (driver: soc_side_wr_en_pin, clk load #: 0, sr load #: 0, ce load #: 32)
+    soc_side_wr_en_port_c (driver: soc_side_wr_en_port, clk load #: 0, sr load #: 0, ce load #: 32)
 
 No signal is selected as Global Set/Reset.
 .
@@ -95,12 +95,12 @@ Finished Placer Phase 0.  REAL time: 0 secs
 Starting Placer Phase 1.
 .....................
 Placer score = 30483.
-Finished Placer Phase 1.  REAL time: 10 secs 
+Finished Placer Phase 1.  REAL time: 9 secs 
 
 Starting Placer Phase 2.
 .
 Placer score =  30483
-Finished Placer Phase 2.  REAL time: 10 secs 
+Finished Placer Phase 2.  REAL time: 9 secs 
 
 
 
@@ -114,9 +114,9 @@ Global Clock Resources:
 
 Global Clocks:
   PRIMARY &quot;clk_c&quot; from comp &quot;clk&quot; on CLK_PIN site &quot;B9 (PT18A)&quot;, clk load = 105
-  SECONDARY &quot;reset_n_pin_c&quot; from comp &quot;reset_n_pin&quot; on CLK_PIN site &quot;R2 (PL17A)&quot;, clk load = 0, ce load = 0, sr load = 76
+  SECONDARY &quot;reset_n_port_c&quot; from comp &quot;reset_n_port&quot; on CLK_PIN site &quot;R2 (PL17A)&quot;, clk load = 0, ce load = 0, sr load = 76
   SECONDARY &quot;state[22]&quot; from Q0 on comp &quot;SLICE_40&quot; on site &quot;R12C17A&quot;, clk load = 0, ce load = 32, sr load = 0
-  SECONDARY &quot;soc_side_wr_en_pin_c&quot; from comp &quot;soc_side_wr_en_pin&quot; on CLK_PIN site &quot;M1 (PL10C)&quot;, clk load = 0, ce load = 32, sr load = 0
+  SECONDARY &quot;soc_side_wr_en_port_c&quot; from comp &quot;soc_side_wr_en_port&quot; on CLK_PIN site &quot;M1 (PL10C)&quot;, clk load = 0, ce load = 32, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
   SECONDARY: 3 out of 8 (37%)
@@ -152,9 +152,9 @@ Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 0 connections routed; 997 unrouted.
 Starting router resource preassignment
 
-Completed router resource preassignment. Real time: 16 secs 
+Completed router resource preassignment. Real time: 15 secs 
 
-Start NBR router at 11:31:27 03/25/25
+Start NBR router at 12:26:20 03/25/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -169,9 +169,9 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 11:31:27 03/25/25
+Start NBR special constraint process at 12:26:20 03/25/25
 
-Start NBR section for initial routing at 11:31:27 03/25/25
+Start NBR section for initial routing at 12:26:20 03/25/25
 Level 1, iteration 1
 0(0.00%) conflict; 598(59.98%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack&lt;setup&gt;: 3.018ns/0.000ns; real time: 16 secs 
@@ -188,7 +188,7 @@ Estimated worst slack/total negative slack&lt;setup&gt;: 3.241ns/0.000ns; real t
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 11:31:27 03/25/25
+Start NBR section for normal routing at 12:26:21 03/25/25
 Level 1, iteration 1
 0(0.00%) conflict; 14(1.40%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack&lt;setup&gt;: 3.241ns/0.000ns; real time: 16 secs 
@@ -208,14 +208,14 @@ Level 4, iteration 5
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack&lt;setup&gt;: 3.241ns/0.000ns; real time: 16 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 11:31:27 03/25/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 12:26:21 03/25/25
 
-Start NBR section for re-routing at 11:31:27 03/25/25
+Start NBR section for re-routing at 12:26:21 03/25/25
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack&lt;setup&gt;: 3.241ns/0.000ns; real time: 16 secs 
 
-Start NBR section for post-routing at 11:31:27 03/25/25
+Start NBR section for post-routing at 12:26:21 03/25/25
 
 End NBR router with 0 unrouted connection
 

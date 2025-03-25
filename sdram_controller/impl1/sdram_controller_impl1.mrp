@@ -16,7 +16,7 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/25/25  12:04:38
+Mapped on:  03/25/25  12:26:04
 
 Design Summary
 --------------
@@ -66,27 +66,27 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 Design Summary (cont)
 ---------------------
    Number of Clock Enables:  3
      Net state[22]: 32 loads, 0 LSLICEs
-     Net soc_side_wr_en_pin_c: 32 loads, 0 LSLICEs
+     Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
      Net ready_reg_0io_RNO: 1 loads, 0 LSLICEs
    Number of LSRs:  6
      Net N_553_i: 1 loads, 1 LSLICEs
      Net N_167_i: 1 loads, 1 LSLICEs
-     Net reset_n_pin_c: 76 loads, 7 LSLICEs
-     Net state_RNI2PV5A[14]: 9 loads, 9 LSLICEs
-     Net un1_reset_n_pin_3_0: 2 loads, 2 LSLICEs
-     Net un36_0_a2_0_RNIQTQL9: 3 loads, 3 LSLICEs
+     Net reset_n_port_c: 76 loads, 7 LSLICEs
+     Net state_RNI0RJIC[14]: 9 loads, 9 LSLICEs
+     Net un1_reset_n_port_3_0: 2 loads, 2 LSLICEs
+     Net un36_0_a2_0_RNIOVE2C: 3 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_pin_c: 105 loads
+     Net reset_n_port_c: 105 loads
      Net next_state_0_sqmuxa_5_i_a2: 47 loads
      Net state[9]: 39 loads
-     Net soc_side_wr_en_pin_c: 36 loads
+     Net soc_side_wr_en_port_c: 36 loads
      Net state[22]: 36 loads
      Net N_582: 16 loads
      Net N_614: 11 loads
@@ -113,369 +113,369 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[0]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[0]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_busy_pin   | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_busy_port  | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | clk                 | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_ck_en_pin  | OUTPUT    | LVCMOS25  |            |
+| ram_side_ck_en_port | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_wr_en_pin  | OUTPUT    | LVCMOS25  | OUT        |
+| ram_side_wr_en_port | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| ram_side_cas_n_pin  | OUTPUT    | LVCMOS25  | OUT        |
+| ram_side_cas_n_port | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| ram_side_ras_n_pin  | OUTPUT    | LVCMOS25  | OUT        |
+| ram_side_ras_n_port | OUTPUT    | LVCMOS25  | OUT        |
 
                                     Page 2
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| ram_side_cs_n_pin   | OUTPUT    | LVCMOS25  |            |
+| ram_side_cs_n_port  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[15]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[15]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[14]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[14]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[13]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[13]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[12]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[12]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[11]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[11]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[10]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[10]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[9]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[9]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[8]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[8]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[7]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[7]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[6]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[5]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[5]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[4]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[4]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[3]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[3]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[2]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[2]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[1]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[1]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_pin[0]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip1_data_port[0]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_udqm_pin| OUTPUT    | LVCMOS25  |            |
+| ram_side_chip1_udqm_port| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip1_ldqm_pin| OUTPUT    | LVCMOS25  |            |
+| ram_side_chip1_ldqm_port| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[15]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[15]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[14]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[14]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[13]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[13]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[12]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[12]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[11]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[11]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[10]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[10]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[9]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[9]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[8]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[8]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[7]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[7]| BIDIR     | LVCMOS25  |            |
 
                                     Page 3
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[6]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[5]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[5]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[4]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[4]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[3]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[3]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[2]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[2]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_pin[1]| BIDIR     | LVCMOS25  |            |
+| ram_side_chip0_data_port[1]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_udqm_pin| OUTPUT    | LVCMOS25  |            |
+| ram_side_chip0_udqm_port| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_chip0_ldqm_pin| OUTPUT    | LVCMOS25  |            |
+| ram_side_chip0_ldqm_port| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_bank_addr_pin[1]| OUTPUT    | LVCMOS25  |            |
+| ram_side_bank_addr_port[1]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_bank_addr_pin[0]| OUTPUT    | LVCMOS25  |            |
+| ram_side_bank_addr_port[0]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[11]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[11]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[10]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[10]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[9]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[9]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[8]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[8]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[7]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[7]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[6]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[6]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[5]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[5]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[4]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[4]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[3]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[3]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[2]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[2]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[1]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[1]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| ram_side_addr_pin[0]| OUTPUT    | LVCMOS25  |            |
+| ram_side_addr_port[0]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_en_pin  | INPUT     | LVCMOS25  |            |
+| soc_side_rd_en_port | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[31]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[31]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[30]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[30]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[29]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[29]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[28]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[28]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[27]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[27]| OUTPUT    | LVCMOS25  | OUT        |
 
                                     Page 4
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[26]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[26]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[25]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[25]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[24]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[24]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[23]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[23]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[22]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[22]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[21]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[21]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[20]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[20]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[19]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[19]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[18]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[18]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[17]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[17]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[16]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[16]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[15]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[15]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[14]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[14]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[13]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[13]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[12]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[12]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[11]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[11]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[10]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[10]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[9]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[9]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[8]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[8]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[7]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[7]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[6]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[6]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[5]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[4]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[4]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[3]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[3]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[2]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[2]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[1]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[1]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_data_pin[0]| OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_rd_data_port[0]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_en_pin  | INPUT     | LVCMOS25  |            |
+| soc_side_wr_en_port | INPUT     | LVCMOS25  |            |
 
                                     Page 5
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[3]| INPUT     | LVCMOS25  |            |
+| soc_side_wr_mask_port[3]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[2]| INPUT     | LVCMOS25  |            |
+| soc_side_wr_mask_port[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[1]| INPUT     | LVCMOS25  |            |
+| soc_side_wr_mask_port[1]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_mask_pin[0]| INPUT     | LVCMOS25  |            |
+| soc_side_wr_mask_port[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[31]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[31]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[30]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[30]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[29]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[29]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[28]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[28]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[27]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[27]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[26]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[26]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[25]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[25]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[24]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[24]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[23]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[23]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[22]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[22]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[21]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[21]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[20]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[20]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[19]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[19]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[18]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[18]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[17]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[17]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[16]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[16]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[15]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[15]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[14]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[14]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[13]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[13]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[12]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[12]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[11]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[11]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[10]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[10]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[9]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[9]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[8]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[8]| INPUT     | LVCMOS25  | IN         |
 
                                     Page 6
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[7]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[7]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[6]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[6]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[5]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[5]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[4]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[4]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[3]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[3]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[2]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[2]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[1]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[1]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_wr_data_pin[0]| INPUT     | LVCMOS25  | IN         |
+| soc_side_wr_data_port[0]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[22]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[22]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[21]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[21]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[20]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[20]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[19]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[19]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[18]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[18]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[17]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[17]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[16]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[16]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[15]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[15]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[14]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[14]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[13]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[13]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[12]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[12]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[11]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[11]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[10]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[10]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[9]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[9]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[8]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[8]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[7]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[7]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[6]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[6]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[5]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[5]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[4]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[4]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[3]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[3]| INPUT     | LVCMOS25  |            |
 
                                     Page 7
 
 
 
 
-Design:  sdram_controller                              Date:  03/25/25  12:04:38
+Design:  sdram_controller                              Date:  03/25/25  12:26:04
 
 IO (PIO) Attributes (cont)
 --------------------------
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[2]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[1]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[1]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_addr_pin[0]| INPUT     | LVCMOS25  |            |
+| soc_side_addr_port[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_ready_pin  | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_ready_port | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
-| reset_n_pin         | INPUT     | LVCMOS25  |            |
+| reset_n_port        | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 
 Removed logic
@@ -483,7 +483,7 @@ Removed logic
 
 Block GSR_INST undriven or does not drive anything - clipped.
 Signal state_i[9] was merged into signal state[9]
-Signal reset_n_pin_c_i was merged into signal reset_n_pin_c
+Signal reset_n_port_c_i was merged into signal reset_n_port_c
 Signal next_refresh_counter_s_15_0_S1 undriven or does not drive anything -
      clipped.
 Signal next_refresh_counter_s_15_0_COUT undriven or does not drive anything -
@@ -501,7 +501,7 @@ Signal next_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_1 undriven or does not drive anything - clipped.
 Block state_RNII85D2[9] was optimized away.
-Block reset_n_pin_pad_RNIAK281 was optimized away.
+Block reset_n_port_pad_RNI8MMK3 was optimized away.
 
      
 

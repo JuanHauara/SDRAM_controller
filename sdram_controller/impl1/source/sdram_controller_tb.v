@@ -50,32 +50,32 @@ module sdram_controller_tb;
         .BANK_ADDR_WIDTH(2)
     ) dut (
         .clk(clk),
-        .reset_n_pin(reset_n),
+        .reset_n_port(reset_n),
         
         // SOC interface
-        .soc_side_busy_pin(soc_side_busy),
-        .soc_side_ready_pin(soc_side_ready),
-        .soc_side_addr_pin(soc_side_addr),
-        .soc_side_wr_data_pin(soc_side_wr_data),
-        .soc_side_wr_mask_pin(soc_side_wr_mask),
-        .soc_side_wr_en_pin(soc_side_wr_en),
-        .soc_side_rd_data_pin(soc_side_rd_data),
-        .soc_side_rd_en_pin(soc_side_rd_en),
+        .soc_side_busy_port(soc_side_busy),
+        .soc_side_ready_port(soc_side_ready),
+        .soc_side_addr_port(soc_side_addr),
+        .soc_side_wr_data_port(soc_side_wr_data),
+        .soc_side_wr_mask_port(soc_side_wr_mask),
+        .soc_side_wr_en_port(soc_side_wr_en),
+        .soc_side_rd_data_port(soc_side_rd_data),
+        .soc_side_rd_en_port(soc_side_rd_en),
         
         // SDRAM interface
-        .ram_side_addr_pin(ram_side_addr),
-        .ram_side_bank_addr_pin(ram_side_bank_addr),
-        .ram_side_chip0_ldqm_pin(ram_side_chip0_ldqm),
-        .ram_side_chip0_udqm_pin(ram_side_chip0_udqm),
-        .ram_side_chip0_data_pin(ram_side_chip0_data),
-        .ram_side_chip1_ldqm_pin(ram_side_chip1_ldqm),
-        .ram_side_chip1_udqm_pin(ram_side_chip1_udqm),
-        .ram_side_chip1_data_pin(ram_side_chip1_data),
-        .ram_side_cs_n_pin(ram_side_cs_n),
-        .ram_side_ras_n_pin(ram_side_ras_n),
-        .ram_side_cas_n_pin(ram_side_cas_n),
-        .ram_side_wr_en_pin(ram_side_wr_en),
-        .ram_side_ck_en_pin(ram_side_ck_en)
+        .ram_side_addr_port(ram_side_addr),
+        .ram_side_bank_addr_port(ram_side_bank_addr),
+        .ram_side_chip0_ldqm_port(ram_side_chip0_ldqm),
+        .ram_side_chip0_udqm_port(ram_side_chip0_udqm),
+        .ram_side_chip0_data_port(ram_side_chip0_data),
+        .ram_side_chip1_ldqm_port(ram_side_chip1_ldqm),
+        .ram_side_chip1_udqm_port(ram_side_chip1_udqm),
+        .ram_side_chip1_data_port(ram_side_chip1_data),
+        .ram_side_cs_n_port(ram_side_cs_n),
+        .ram_side_ras_n_port(ram_side_ras_n),
+        .ram_side_cas_n_port(ram_side_cas_n),
+        .ram_side_wr_en_port(ram_side_wr_en),
+        .ram_side_ck_en_port(ram_side_ck_en)
     );
     
     // Clock generation.
@@ -114,7 +114,7 @@ module sdram_controller_tb;
 
     // Monitor state machine.
     initial begin
-        $monitor("Time: %0.3fus, state: %h", $realtime, dut.state);
+        $monitor("Time: %0.3fus, state: %b", $realtime, dut.state);
     end
     
 endmodule

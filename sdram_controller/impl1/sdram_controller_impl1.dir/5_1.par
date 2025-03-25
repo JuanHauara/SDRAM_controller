@@ -1,6 +1,6 @@
 
 Lattice Place and Route Report for Design "sdram_controller_impl1_map.ncd"
-Tue Mar 25 11:31:11 2025
+Tue Mar 25 12:26:05 2025
 
 PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
 Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir/5_1.ncd sdram_controller_impl1.prf
@@ -43,9 +43,9 @@ The following 1 signal is selected to use the primary clock routing resources:
 
 
 The following 3 signals are selected to use the secondary clock routing resources:
-    reset_n_pin_c (driver: reset_n_pin, clk load #: 0, sr load #: 76, ce load #: 0)
+    reset_n_port_c (driver: reset_n_port, clk load #: 0, sr load #: 76, ce load #: 0)
     state[22] (driver: SLICE_40, clk load #: 0, sr load #: 0, ce load #: 32)
-    soc_side_wr_en_pin_c (driver: soc_side_wr_en_pin, clk load #: 0, sr load #: 0, ce load #: 32)
+    soc_side_wr_en_port_c (driver: soc_side_wr_en_port, clk load #: 0, sr load #: 0, ce load #: 32)
 
 No signal is selected as Global Set/Reset.
 .
@@ -56,12 +56,12 @@ Finished Placer Phase 0.  REAL time: 0 secs
 Starting Placer Phase 1.
 .....................
 Placer score = 30483.
-Finished Placer Phase 1.  REAL time: 10 secs 
+Finished Placer Phase 1.  REAL time: 9 secs 
 
 Starting Placer Phase 2.
 .
 Placer score =  30483
-Finished Placer Phase 2.  REAL time: 10 secs 
+Finished Placer Phase 2.  REAL time: 9 secs 
 
 
 ------------------ Clock Report ------------------
@@ -74,9 +74,9 @@ Global Clock Resources:
 
 Global Clocks:
   PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B9 (PT18A)", clk load = 105
-  SECONDARY "reset_n_pin_c" from comp "reset_n_pin" on CLK_PIN site "R2 (PL17A)", clk load = 0, ce load = 0, sr load = 76
+  SECONDARY "reset_n_port_c" from comp "reset_n_port" on CLK_PIN site "R2 (PL17A)", clk load = 0, ce load = 0, sr load = 76
   SECONDARY "state[22]" from Q0 on comp "SLICE_40" on site "R12C17A", clk load = 0, ce load = 32, sr load = 0
-  SECONDARY "soc_side_wr_en_pin_c" from comp "soc_side_wr_en_pin" on CLK_PIN site "M1 (PL10C)", clk load = 0, ce load = 32, sr load = 0
+  SECONDARY "soc_side_wr_en_port_c" from comp "soc_side_wr_en_port" on CLK_PIN site "M1 (PL10C)", clk load = 0, ce load = 32, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
   SECONDARY: 3 out of 8 (37%)
@@ -112,9 +112,9 @@ Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 0 connections routed; 997 unrouted.
 Starting router resource preassignment
 
-Completed router resource preassignment. Real time: 16 secs 
+Completed router resource preassignment. Real time: 15 secs 
 
-Start NBR router at 11:31:27 03/25/25
+Start NBR router at 12:26:20 03/25/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -129,9 +129,9 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 11:31:27 03/25/25
+Start NBR special constraint process at 12:26:20 03/25/25
 
-Start NBR section for initial routing at 11:31:27 03/25/25
+Start NBR section for initial routing at 12:26:20 03/25/25
 Level 1, iteration 1
 0(0.00%) conflict; 598(59.98%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 3.018ns/0.000ns; real time: 16 secs 
@@ -148,7 +148,7 @@ Estimated worst slack/total negative slack<setup>: 3.241ns/0.000ns; real time: 1
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 11:31:27 03/25/25
+Start NBR section for normal routing at 12:26:21 03/25/25
 Level 1, iteration 1
 0(0.00%) conflict; 14(1.40%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 3.241ns/0.000ns; real time: 16 secs 
@@ -168,14 +168,14 @@ Level 4, iteration 5
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 3.241ns/0.000ns; real time: 16 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 11:31:27 03/25/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 12:26:21 03/25/25
 
-Start NBR section for re-routing at 11:31:27 03/25/25
+Start NBR section for re-routing at 12:26:21 03/25/25
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 3.241ns/0.000ns; real time: 16 secs 
 
-Start NBR section for post-routing at 11:31:27 03/25/25
+Start NBR section for post-routing at 12:26:21 03/25/25
 
 End NBR router with 0 unrouted connection
 

@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Tue Mar 25 12:04:39 2025
+Tue Mar 25 12:26:04 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -53,13 +53,13 @@ Passed: The following path meets requirements by 0.145ns
 
  Constraint Details:
 
-     13.035ns physical path delay SLICE_15 to ram_side_wr_en_pin_MGIOL meets
+     13.035ns physical path delay SLICE_15 to ram_side_wr_en_port_MGIOL meets
      13.333ns delay constraint less
       0.153ns DO_SET requirement (totaling 13.180ns) by 0.145ns
 
  Physical Path Details:
 
-      Data path SLICE_15 to ram_side_wr_en_pin_MGIOL:
+      Data path SLICE_15 to ram_side_wr_en_port_MGIOL:
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.452   SLICE_15.CLK to    SLICE_15.Q0 SLICE_15 (from clk_c)
@@ -77,7 +77,7 @@ ROUTE         2   e 1.234    SLICE_19.F1 to    SLICE_42.B1 next_state_0_sqmuxa_7
 CTOF_DEL    ---     0.495    SLICE_42.B1 to    SLICE_42.F1 SLICE_42
 ROUTE         2   e 1.234    SLICE_42.F1 to    SLICE_48.A0 N_145
 CTOF_DEL    ---     0.495    SLICE_48.A0 to    SLICE_48.F0 SLICE_48
-ROUTE         1   e 1.234    SLICE_48.F0 to *in_MGIOL.OPOS N_137_i (to clk_c)
+ROUTE         1   e 1.234    SLICE_48.F0 to *rt_MGIOL.OPOS N_137_i (to clk_c)
                   --------
                    13.035   (30.0% logic, 70.0% route), 8 logic levels.
 
@@ -116,7 +116,7 @@ Constraints cover 4412 paths, 1 nets, and 494 connections (49.55% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Tue Mar 25 12:04:39 2025
+Tue Mar 25 12:26:04 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
