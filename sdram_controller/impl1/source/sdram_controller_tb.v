@@ -114,7 +114,7 @@ module sdram_controller_tb;
 
     // Monitor state machine.
     initial begin
-        $monitor("Time: %0.3fus, state: %b", $realtime, dut.state);
+        $monitor("Time: %0.3fns, state: %b, command: %b", $realtime, dut.state, dut.command);
     end
     
 endmodule
