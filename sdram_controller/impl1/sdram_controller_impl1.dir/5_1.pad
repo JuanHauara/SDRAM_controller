@@ -6,164 +6,164 @@ Performance Grade:      4
 PACKAGE:          CABGA332
 Package Status:                     Final          Version 1.44
 
-Tue Mar 25 12:44:15 2025
+Thu Mar 27 11:03:22 2025
 
 Pinout by Port Name:
 +------------------------------+----------+---------------+-------+-----------+-----------+----------------------------------------------------------+
 | Port Name                    | Pin/Bank | Buffer Type   | Site  | PG Enable | BC Enable | Properties                                               |
 +------------------------------+----------+---------------+-------+-----------+-----------+----------------------------------------------------------+
 | clk                          | B9/0     | LVCMOS33_IN   | PT18A |           |           | HYSTERESIS:SMALL                                         |
-| ram_side_addr_port[0]        | U16/2    | LVCMOS25_OUT  | PB27C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[10]       | U11/2    | LVCMOS25_OUT  | PB18D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[11]       | V13/2    | LVCMOS25_OUT  | PB23C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[1]        | R16/1    | LVCMOS25_OUT  | PR17D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[2]        | T19/1    | LVCMOS25_OUT  | PR19A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[0]        | Y18/2    | LVCMOS25_OUT  | PB30D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[10]       | K18/1    | LVCMOS25_OUT  | PR9C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[11]       | L17/1    | LVCMOS25_OUT  | PR10D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[1]        | M17/1    | LVCMOS25_OUT  | PR14C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[2]        | Y17/2    | LVCMOS25_OUT  | PB29B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
 | ram_side_addr_port[3]        | U20/1    | LVCMOS25_OUT  | PR20A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[4]        | V15/2    | LVCMOS25_OUT  | PB24D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[5]        | U15/2    | LVCMOS25_OUT  | PB26A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[6]        | V17/2    | LVCMOS25_OUT  | PB30B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[7]        | W20/1    | LVCMOS25_OUT  | PR19C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[8]        | R18/1    | LVCMOS25_OUT  | PR18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_addr_port[9]        | T13/2    | LVCMOS25_OUT  | PB23D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_bank_addr_port[0]   | W19/2    | LVCMOS25_OUT  | PB29C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_bank_addr_port[1]   | V16/2    | LVCMOS25_OUT  | PB29A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_cas_n_port          | V10/2    | LVCMOS25_OUT  | PB15B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_chip0_data_port[0]  | F4/5     | LVCMOS25_BIDI | PL6C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[10] | P3/3     | LVCMOS25_BIDI | PL16A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[11] | H1/5     | LVCMOS25_BIDI | PL7B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[12] | E19/1    | LVCMOS25_BIDI | PR4A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[13] | P17/1    | LVCMOS25_BIDI | PR15D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[14] | T4/3     | LVCMOS25_BIDI | PL18D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[15] | T12/2    | LVCMOS25_BIDI | PB21C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[1]  | N17/1    | LVCMOS25_BIDI | PR14D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[2]  | U9/2     | LVCMOS25_BIDI | PB12B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[3]  | K19/1    | LVCMOS25_BIDI | PR9D  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[4]  | K4/4     | LVCMOS25_BIDI | PL10A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[5]  | G5/5     | LVCMOS25_BIDI | PL5D  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[6]  | V5/2     | LVCMOS25_BIDI | PB4A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[7]  | F17/1    | LVCMOS25_BIDI | PR5C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[8]  | D19/1    | LVCMOS25_BIDI | PR2B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_data_port[9]  | G20/1    | LVCMOS25_BIDI | PR7B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip0_ldqm_port     | V9/2     | LVCMOS25_OUT  | PB13A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_chip0_udqm_port     | W9/2     | LVCMOS25_OUT  | PB13B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_chip1_data_port[0]  | J2/5     | LVCMOS25_BIDI | PL8B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[10] | N2/4     | LVCMOS25_BIDI | PL14A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[11] | M3/4     | LVCMOS25_BIDI | PL13A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[12] | H18/1    | LVCMOS25_BIDI | PR8A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[13] | N16/1    | LVCMOS25_BIDI | PR16C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[14] | L20/1    | LVCMOS25_BIDI | PR13C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[15] | W7/2     | LVCMOS25_BIDI | PB9B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[1]  | E4/5     | LVCMOS25_BIDI | PL4C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[2]  | N4/3     | LVCMOS25_BIDI | PL15D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[3]  | W2/3     | LVCMOS25_BIDI | PL19C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[4]  | L17/1    | LVCMOS25_BIDI | PR10D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[5]  | B20/1    | LVCMOS25_BIDI | PR3C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[6]  | K1/4     | LVCMOS25_BIDI | PL9D  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[7]  | Y5/2     | LVCMOS25_BIDI | PB6C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[8]  | U4/2     | LVCMOS25_BIDI | PB7C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_data_port[9]  | D3/5     | LVCMOS25_BIDI | PL2C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
-| ram_side_chip1_ldqm_port     | Y12/2    | LVCMOS25_OUT  | PB20A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_chip1_udqm_port     | Y13/2    | LVCMOS25_OUT  | PB21B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_ck_en_port          | V8/2     | LVCMOS25_OUT  | PB10B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_cs_n_port           | Y7/2     | LVCMOS25_OUT  | PB10A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_ras_n_port          | W11/2    | LVCMOS25_OUT  | PB18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| ram_side_wr_en_port          | Y10/2    | LVCMOS25_OUT  | PB15D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[4]        | M16/1    | LVCMOS25_OUT  | PR15C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[5]        | P17/1    | LVCMOS25_OUT  | PR15D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[6]        | T20/1    | LVCMOS25_OUT  | PR18B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[7]        | R18/1    | LVCMOS25_OUT  | PR18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[8]        | V20/1    | LVCMOS25_OUT  | PR20C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_addr_port[9]        | K16/1    | LVCMOS25_OUT  | PR8D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_bank_addr_port[0]   | J20/1    | LVCMOS25_OUT  | PR10B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_bank_addr_port[1]   | M20/1    | LVCMOS25_OUT  | PR13B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_cas_n_port          | H17/1    | LVCMOS25_OUT  | PR7C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_chip0_data_port[0]  | L4/4     | LVCMOS25_BIDI | PL10B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[10] | U4/2     | LVCMOS25_BIDI | PB7C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[11] | W1/3     | LVCMOS25_BIDI | PL19D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[12] | D3/5     | LVCMOS25_BIDI | PL2C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[13] | W14/2    | LVCMOS25_BIDI | PB24A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[14] | J3/5     | LVCMOS25_BIDI | PL8A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[15] | V10/2    | LVCMOS25_BIDI | PB15B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[1]  | Y4/2     | LVCMOS25_BIDI | PB3B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[2]  | W8/2     | LVCMOS25_BIDI | PB12C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[3]  | H1/5     | LVCMOS25_BIDI | PL7B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[4]  | T4/3     | LVCMOS25_BIDI | PL18D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[5]  | W15/2    | LVCMOS25_BIDI | PB26D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[6]  | E18/1    | LVCMOS25_BIDI | PR3B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[7]  | V5/2     | LVCMOS25_BIDI | PB4A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[8]  | E4/5     | LVCMOS25_BIDI | PL4C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_data_port[9]  | J1/4     | LVCMOS25_BIDI | PL9A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip0_ldqm_port     | H18/1    | LVCMOS25_OUT  | PR8A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_chip0_udqm_port     | H19/1    | LVCMOS25_OUT  | PR8B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_chip1_data_port[0]  | Y12/2    | LVCMOS25_BIDI | PB20A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[10] | T12/2    | LVCMOS25_BIDI | PB21C |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[11] | G2/5     | LVCMOS25_BIDI | PL6B  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[12] | P1/3     | LVCMOS25_BIDI | PL15A |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[13] | T13/2    | LVCMOS25_BIDI | PB23D |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[14] | N3/4     | LVCMOS25_BIDI | PL14B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[15] | V11/2    | LVCMOS25_BIDI | PB18B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[1]  | D18/1    | LVCMOS25_BIDI | PR2A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[2]  | R1/3     | LVCMOS25_BIDI | PL16B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[3]  | F18/1    | LVCMOS25_BIDI | PR5A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[4]  | Y5/2     | LVCMOS25_BIDI | PB6C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[5]  | V7/2     | LVCMOS25_BIDI | PB9A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[6]  | C2/5     | LVCMOS25_BIDI | PL3C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[7]  | F5/5     | LVCMOS25_BIDI | PL5C  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[8]  | E19/1    | LVCMOS25_BIDI | PR4A  |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_data_port[9]  | P18/1    | LVCMOS25_BIDI | PR16B |           |           | DRIVE:8mA PULL:DOWN CLAMP:ON HYSTERESIS:SMALL SLEW:SLOW  |
+| ram_side_chip1_ldqm_port     | G17/1    | LVCMOS25_OUT  | PR6C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_chip1_udqm_port     | H16/1    | LVCMOS25_OUT  | PR6D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_ck_en_port          | U14/2    | LVCMOS25_OUT  | PB24C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_cs_n_port           | V8/2     | LVCMOS25_OUT  | PB10B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_ras_n_port          | H20/1    | LVCMOS25_OUT  | PR9A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| ram_side_wr_en_port          | J18/1    | LVCMOS25_OUT  | PR9B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
 | reset_n_port                 | R2/3     | LVCMOS25_IN   | PL17A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[0]        | T15/2    | LVCMOS25_IN   | PB27D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[10]       | T20/1    | LVCMOS25_IN   | PR18B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[11]       | V19/1    | LVCMOS25_IN   | PR19D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[12]       | W17/2    | LVCMOS25_IN   | PB30A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[13]       | W15/2    | LVCMOS25_IN   | PB26D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[14]       | W14/2    | LVCMOS25_IN   | PB24A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[15]       | W18/2    | LVCMOS25_IN   | PB30C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[16]       | T18/1    | LVCMOS25_IN   | PR19B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[17]       | T17/1    | LVCMOS25_IN   | PR18D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[18]       | Y14/2    | LVCMOS25_IN   | PB23B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[19]       | V14/2    | LVCMOS25_IN   | PB24B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[1]        | R20/1    | LVCMOS25_IN   | PR17A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[20]       | W13/2    | LVCMOS25_IN   | PB23A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[21]       | Y19/2    | LVCMOS25_IN   | PB29D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[22]       | Y17/2    | LVCMOS25_IN   | PB29B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[2]        | U17/1    | LVCMOS25_IN   | PR18C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[3]        | Y18/2    | LVCMOS25_IN   | PB30D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[4]        | U14/2    | LVCMOS25_IN   | PB24C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[5]        | Y15/2    | LVCMOS25_IN   | PB26C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[6]        | U18/1    | LVCMOS25_IN   | PR20D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[7]        | V20/1    | LVCMOS25_IN   | PR20C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[8]        | P16/1    | LVCMOS25_IN   | PR17C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_addr_port[9]        | W16/2    | LVCMOS25_IN   | PB27B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_busy_port           | V11/2    | LVCMOS25_OUT  | PB18B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[0]     | G2/5     | LVCMOS25_OUT  | PL6B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[10]    | R1/3     | LVCMOS25_OUT  | PL16B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[11]    | H2/5     | LVCMOS25_OUT  | PL7A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[12]    | F16/1    | LVCMOS25_OUT  | PR4D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[13]    | N20/1    | LVCMOS25_OUT  | PR15A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[14]    | T1/3     | LVCMOS25_OUT  | PL18A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[15]    | V12/2    | LVCMOS25_OUT  | PB21A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[16]    | J3/5     | LVCMOS25_OUT  | PL8A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[17]    | D4/5     | LVCMOS25_OUT  | PL4D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[18]    | P2/3     | LVCMOS25_OUT  | PL15B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[19]    | U1/3     | LVCMOS25_OUT  | PL19B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[1]     | M19/1    | LVCMOS25_OUT  | PR14A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[20]    | J20/1    | LVCMOS25_OUT  | PR10B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[21]    | E18/1    | LVCMOS25_OUT  | PR3B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[22]    | K3/4     | LVCMOS25_OUT  | PL9B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[23]    | T6/2     | LVCMOS25_OUT  | PB6A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[24]    | Y6/2     | LVCMOS25_OUT  | PB7B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[25]    | D1/5     | LVCMOS25_OUT  | PL2B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[26]    | L1/4     | LVCMOS25_OUT  | PL14C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[27]    | N1/4     | LVCMOS25_OUT  | PL13B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[28]    | K16/1    | LVCMOS25_OUT  | PR8D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[29]    | P18/1    | LVCMOS25_OUT  | PR16B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[2]     | U8/2     | LVCMOS25_OUT  | PB12A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[30]    | L19/1    | LVCMOS25_OUT  | PR13D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[31]    | U6/2     | LVCMOS25_OUT  | PB9C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[3]     | H20/1    | LVCMOS25_OUT  | PR9A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[4]     | M2/4     | LVCMOS25_OUT  | PL10D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[5]     | F1/5     | LVCMOS25_OUT  | PL5B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[6]     | W3/2     | LVCMOS25_OUT  | PB4C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[7]     | G16/1    | LVCMOS25_OUT  | PR5D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[8]     | C20/1    | LVCMOS25_OUT  | PR2C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_data_port[9]     | J16/1    | LVCMOS25_OUT  | PR7D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_rd_en_port          | W12/2    | LVCMOS25_IN   | PB20B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_ready_port          | T11/2    | LVCMOS25_OUT  | PB20C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
-| soc_side_wr_data_port[0]     | G3/5     | LVCMOS25_IN   | PL6A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[10]    | N5/3     | LVCMOS25_IN   | PL16C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[11]    | G4/5     | LVCMOS25_IN   | PL7C  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[12]    | E17/1    | LVCMOS25_IN   | PR4C  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[13]    | M16/1    | LVCMOS25_IN   | PR15C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[14]    | R5/3     | LVCMOS25_IN   | PL18C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[15]    | U13/2    | LVCMOS25_IN   | PB21D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[16]    | J4/5     | LVCMOS25_IN   | PL8D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[17]    | F3/5     | LVCMOS25_IN   | PL4B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[18]    | M5/3     | LVCMOS25_IN   | PL15C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[19]    | W1/3     | LVCMOS25_IN   | PL19D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[1]     | M17/1    | LVCMOS25_IN   | PR14C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[20]    | K17/1    | LVCMOS25_IN   | PR10C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[21]    | B19/1    | LVCMOS25_IN   | PR3D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[22]    | J1/4     | LVCMOS25_IN   | PL9A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[23]    | V6/2     | LVCMOS25_IN   | PB6D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[24]    | W6/2     | LVCMOS25_IN   | PB7A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[25]    | C1/5     | LVCMOS25_IN   | PL2D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[26]    | N3/4     | LVCMOS25_IN   | PL14B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[27]    | L3/4     | LVCMOS25_IN   | PL13D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[28]    | H19/1    | LVCMOS25_IN   | PR8B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[29]    | R17/1    | LVCMOS25_IN   | PR16D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[2]     | Y8/2     | LVCMOS25_IN   | PB12D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[30]    | M20/1    | LVCMOS25_IN   | PR13B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[31]    | V7/2     | LVCMOS25_IN   | PB9A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[3]     | J18/1    | LVCMOS25_IN   | PR9B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[4]     | L4/4     | LVCMOS25_IN   | PL10B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[5]     | F2/5     | LVCMOS25_IN   | PL5A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[6]     | W5/2     | LVCMOS25_IN   | PB4B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[7]     | F18/1    | LVCMOS25_IN   | PR5A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[8]     | C19/1    | LVCMOS25_IN   | PR2D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_data_port[9]     | G19/1    | LVCMOS25_IN   | PR7A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[0]        | W18/2    | LVCMOS25_IN   | PB30C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[10]       | L19/1    | LVCMOS25_IN   | PR13D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[11]       | W17/2    | LVCMOS25_IN   | PB30A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[12]       | U19/1    | LVCMOS25_IN   | PR20B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[13]       | N19/1    | LVCMOS25_IN   | PR15B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[14]       | M18/1    | LVCMOS25_IN   | PR14B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[15]       | T19/1    | LVCMOS25_IN   | PR19A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[16]       | U17/1    | LVCMOS25_IN   | PR18C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[17]       | U18/1    | LVCMOS25_IN   | PR20D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[18]       | G16/1    | LVCMOS25_IN   | PR5D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[19]       | K19/1    | LVCMOS25_IN   | PR9D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[1]        | L20/1    | LVCMOS25_IN   | PR13C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[20]       | J19/1    | LVCMOS25_IN   | PR10A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[21]       | K17/1    | LVCMOS25_IN   | PR10C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[22]       | L18/1    | LVCMOS25_IN   | PR13A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[2]        | Y19/2    | LVCMOS25_IN   | PB29D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[3]        | V19/1    | LVCMOS25_IN   | PR19D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[4]        | M19/1    | LVCMOS25_IN   | PR14A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[5]        | N17/1    | LVCMOS25_IN   | PR14D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[6]        | R16/1    | LVCMOS25_IN   | PR17D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[7]        | T17/1    | LVCMOS25_IN   | PR18D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[8]        | W20/1    | LVCMOS25_IN   | PR19C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_addr_port[9]        | V17/2    | LVCMOS25_IN   | PB30B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_busy_port           | F20/1    | LVCMOS25_OUT  | PR6A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[0]     | M2/4     | LVCMOS25_OUT  | PL10D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[10]    | Y6/2     | LVCMOS25_OUT  | PB7B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[11]    | W2/3     | LVCMOS25_OUT  | PL19C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[12]    | C1/5     | LVCMOS25_OUT  | PL2D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[13]    | Y14/2    | LVCMOS25_OUT  | PB23B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[14]    | J2/5     | LVCMOS25_OUT  | PL8B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[15]    | W10/2    | LVCMOS25_OUT  | PB15C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[16]    | U12/2    | LVCMOS25_OUT  | PB20D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[17]    | C20/1    | LVCMOS25_OUT  | PR2C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[18]    | P3/3     | LVCMOS25_OUT  | PL16A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[19]    | E17/1    | LVCMOS25_OUT  | PR4C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[1]     | W4/2     | LVCMOS25_OUT  | PB3A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[20]    | T6/2     | LVCMOS25_OUT  | PB6A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[21]    | U6/2     | LVCMOS25_OUT  | PB9C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[22]    | E2/5     | LVCMOS25_OUT  | PL3B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[23]    | F2/5     | LVCMOS25_OUT  | PL5A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[24]    | F16/1    | LVCMOS25_OUT  | PR4D  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[25]    | P19/1    | LVCMOS25_OUT  | PR16A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[26]    | Y13/2    | LVCMOS25_OUT  | PB21B |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[27]    | F4/5     | LVCMOS25_OUT  | PL6C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[28]    | N4/3     | LVCMOS25_OUT  | PL15D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[29]    | V13/2    | LVCMOS25_OUT  | PB23C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[2]     | Y8/2     | LVCMOS25_OUT  | PB12D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[30]    | N2/4     | LVCMOS25_OUT  | PL14A |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[31]    | U11/2    | LVCMOS25_OUT  | PB18D |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[3]     | H2/5     | LVCMOS25_OUT  | PL7A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[4]     | R5/3     | LVCMOS25_OUT  | PL18C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[5]     | Y15/2    | LVCMOS25_OUT  | PB26C |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[6]     | B20/1    | LVCMOS25_OUT  | PR3C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[7]     | W5/2     | LVCMOS25_OUT  | PB4B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[8]     | F3/5     | LVCMOS25_OUT  | PL4B  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_data_port[9]     | K2/4     | LVCMOS25_OUT  | PL9C  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_rd_en_port          | G20/1    | LVCMOS25_IN   | PR7B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_ready_port          | G19/1    | LVCMOS25_OUT  | PR7A  |           |           | DRIVE:8mA PULL:DOWN SLEW:SLOW                            |
+| soc_side_wr_data_port[0]     | K4/4     | LVCMOS25_IN   | PL10A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[10]    | W6/2     | LVCMOS25_IN   | PB7A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[11]    | T3/3     | LVCMOS25_IN   | PL19A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[12]    | D1/5     | LVCMOS25_IN   | PL2B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[13]    | V15/2    | LVCMOS25_IN   | PB24D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[14]    | J4/5     | LVCMOS25_IN   | PL8D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[15]    | Y10/2    | LVCMOS25_IN   | PB15D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[16]    | W12/2    | LVCMOS25_IN   | PB20B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[17]    | D19/1    | LVCMOS25_IN   | PR2B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[18]    | N5/3     | LVCMOS25_IN   | PL16C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[19]    | F17/1    | LVCMOS25_IN   | PR5C  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[1]     | Y3/2     | LVCMOS25_IN   | PB3D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[20]    | U5/2     | LVCMOS25_IN   | PB6B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[21]    | W7/2     | LVCMOS25_IN   | PB9B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[22]    | E3/5     | LVCMOS25_IN   | PL3A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[23]    | G5/5     | LVCMOS25_IN   | PL5D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[24]    | E20/1    | LVCMOS25_IN   | PR4B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[25]    | R17/1    | LVCMOS25_IN   | PR16D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[26]    | U13/2    | LVCMOS25_IN   | PB21D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[27]    | G3/5     | LVCMOS25_IN   | PL6A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[28]    | P2/3     | LVCMOS25_IN   | PL15B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[29]    | W13/2    | LVCMOS25_IN   | PB23A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[2]     | U8/2     | LVCMOS25_IN   | PB12A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[30]    | M4/4     | LVCMOS25_IN   | PL14D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[31]    | U10/2    | LVCMOS25_IN   | PB18C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[3]     | G4/5     | LVCMOS25_IN   | PL7C  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[4]     | T2/3     | LVCMOS25_IN   | PL18B |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[5]     | U15/2    | LVCMOS25_IN   | PB26A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[6]     | D20/1    | LVCMOS25_IN   | PR3A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[7]     | Y2/2     | LVCMOS25_IN   | PB4D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[8]     | E1/5     | LVCMOS25_IN   | PL4A  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_data_port[9]     | K3/4     | LVCMOS25_IN   | PL9B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
 | soc_side_wr_en_port          | M1/4     | LVCMOS25_IN   | PL10C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_mask_port[0]     | W10/2    | LVCMOS25_IN   | PB15C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_mask_port[1]     | Y9/2     | LVCMOS25_IN   | PB15A |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_mask_port[2]     | U10/2    | LVCMOS25_IN   | PB18C |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
-| soc_side_wr_mask_port[3]     | U12/2    | LVCMOS25_IN   | PB20D |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_mask_port[0]     | J16/1    | LVCMOS25_IN   | PR7D  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_mask_port[1]     | J17/1    | LVCMOS25_IN   | PR8C  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_mask_port[2]     | F19/1    | LVCMOS25_IN   | PR5B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
+| soc_side_wr_mask_port[3]     | G18/1    | LVCMOS25_IN   | PR6B  |           |           | PULL:DOWN CLAMP:ON HYSTERESIS:SMALL                      |
 +------------------------------+----------+---------------+-------+-----------+-----------+----------------------------------------------------------+
 
 Vccio by Bank:
@@ -222,10 +222,10 @@ Pinout by Pin Number:
 | B16/0    |     unused, PULL:DOWN        |            |               | PT27A |                |           |           |
 | B17/0    |     unused, PULL:DOWN        |            |               | PT28D | DONE           |           |           |
 | B18/0    |     unused, PULL:DOWN        |            |               | PT27D |                |           |           |
-| B19/1    | soc_side_wr_data_port[21]    |            | LVCMOS25_IN   | PR3D  |                |           |           |
-| B20/1    | ram_side_chip1_data_port[5]  |            | LVCMOS25_BIDI | PR3C  |                |           |           |
-| C1/5     | soc_side_wr_data_port[25]    |            | LVCMOS25_IN   | PL2D  |                |           |           |
-| C2/5     |     unused, PULL:DOWN        |            |               | PL3C  |                |           |           |
+| B19/1    |     unused, PULL:DOWN        |            |               | PR3D  |                |           |           |
+| B20/1    | soc_side_rd_data_port[6]     |            | LVCMOS25_OUT  | PR3C  |                |           |           |
+| C1/5     | soc_side_rd_data_port[12]    |            | LVCMOS25_OUT  | PL2D  |                |           |           |
+| C2/5     | ram_side_chip1_data_port[6]  |            | LVCMOS25_BIDI | PL3C  |                |           |           |
 | C4/0     |     unused, PULL:DOWN        |            |               | PT9A  |                |           |           |
 | C5/0     |     unused, PULL:DOWN        |            |               | PT10B |                |           |           |
 | C6/0     |     unused, PULL:DOWN        |            |               | PT13A |                |           |           |
@@ -240,12 +240,12 @@ Pinout by Pin Number:
 | C15/0    |     unused, PULL:DOWN        |            |               | PT26C |                |           |           |
 | C16/0    |     unused, PULL:DOWN        |            |               | PT27B |                |           |           |
 | C17/0    |     unused, PULL:DOWN        |            |               | PT28B |                |           |           |
-| C19/1    | soc_side_wr_data_port[8]     |            | LVCMOS25_IN   | PR2D  |                |           |           |
-| C20/1    | soc_side_rd_data_port[8]     |            | LVCMOS25_OUT  | PR2C  |                |           |           |
-| D1/5     | soc_side_rd_data_port[25]    |            | LVCMOS25_OUT  | PL2B  |                |           |           |
+| C19/1    |     unused, PULL:DOWN        |            |               | PR2D  |                |           |           |
+| C20/1    | soc_side_rd_data_port[17]    |            | LVCMOS25_OUT  | PR2C  |                |           |           |
+| D1/5     | soc_side_wr_data_port[12]    |            | LVCMOS25_IN   | PL2B  |                |           |           |
 | D2/5     |     unused, PULL:DOWN        |            |               | PL2A  |                |           |           |
-| D3/5     | ram_side_chip1_data_port[9]  |            | LVCMOS25_BIDI | PL2C  |                |           |           |
-| D4/5     | soc_side_rd_data_port[17]    |            | LVCMOS25_OUT  | PL4D  |                |           |           |
+| D3/5     | ram_side_chip0_data_port[12] |            | LVCMOS25_BIDI | PL2C  |                |           |           |
+| D4/5     |     unused, PULL:DOWN        |            |               | PL4D  |                |           |           |
 | D5/0     |     unused, PULL:DOWN        |            |               | PT11D |                |           |           |
 | D6/0     |     unused, PULL:DOWN        |            |               | PT12B |                |           |           |
 | D7/0     |     unused, PULL:DOWN        |            |               | PT13B |                |           |           |
@@ -259,13 +259,13 @@ Pinout by Pin Number:
 | D15/0    |     unused, PULL:DOWN        |            |               | PT24D |                |           |           |
 | D16/0    |     unused, PULL:DOWN        |            |               | PT26B |                |           |           |
 | D17/0    |     unused, PULL:DOWN        |            |               | PT26A |                |           |           |
-| D18/1    |     unused, PULL:DOWN        |            |               | PR2A  | R_GPLLT_FB/DQ0 |           |           |
-| D19/1    | ram_side_chip0_data_port[8]  |            | LVCMOS25_BIDI | PR2B  | R_GPLLC_FB/DQ0 |           |           |
-| D20/1    |     unused, PULL:DOWN        |            |               | PR3A  | R_GPLLT_IN/DQ0 |           |           |
-| E1/5     |     unused, PULL:DOWN        |            |               | PL4A  | L_GPLLT_IN     |           |           |
-| E2/5     |     unused, PULL:DOWN        |            |               | PL3B  | L_GPLLC_FB     |           |           |
-| E3/5     |     unused, PULL:DOWN        |            |               | PL3A  | L_GPLLT_FB     |           |           |
-| E4/5     | ram_side_chip1_data_port[1]  |            | LVCMOS25_BIDI | PL4C  |                |           |           |
+| D18/1    | ram_side_chip1_data_port[1]  |            | LVCMOS25_BIDI | PR2A  | R_GPLLT_FB/DQ0 |           |           |
+| D19/1    | soc_side_wr_data_port[17]    |            | LVCMOS25_IN   | PR2B  | R_GPLLC_FB/DQ0 |           |           |
+| D20/1    | soc_side_wr_data_port[6]     |            | LVCMOS25_IN   | PR3A  | R_GPLLT_IN/DQ0 |           |           |
+| E1/5     | soc_side_wr_data_port[8]     |            | LVCMOS25_IN   | PL4A  | L_GPLLT_IN     |           |           |
+| E2/5     | soc_side_rd_data_port[22]    |            | LVCMOS25_OUT  | PL3B  | L_GPLLC_FB     |           |           |
+| E3/5     | soc_side_wr_data_port[22]    |            | LVCMOS25_IN   | PL3A  | L_GPLLT_FB     |           |           |
+| E4/5     | ram_side_chip0_data_port[8]  |            | LVCMOS25_BIDI | PL4C  |                |           |           |
 | E6/0     |     unused, PULL:DOWN        |            |               | PT11C |                |           |           |
 | E7/0     |     unused, PULL:DOWN        |            |               | PT12A |                |           |           |
 | E8/0     |     unused, PULL:DOWN        |            |               | PT14C |                |           |           |
@@ -275,199 +275,199 @@ Pinout by Pin Number:
 | E13/0    |     unused, PULL:DOWN        |            |               | PT24C |                |           |           |
 | E14/0    |     unused, PULL:DOWN        |            |               | PT25C |                |           |           |
 | E15/0    |     unused, PULL:DOWN        |            |               | PT25D |                |           |           |
-| E17/1    | soc_side_wr_data_port[12]    |            | LVCMOS25_IN   | PR4C  |                |           |           |
-| E18/1    | soc_side_rd_data_port[21]    |            | LVCMOS25_OUT  | PR3B  | R_GPLLC_IN/DQ0 |           |           |
-| E19/1    | ram_side_chip0_data_port[12] |            | LVCMOS25_BIDI | PR4A  |                |           |           |
-| E20/1    |     unused, PULL:DOWN        |            |               | PR4B  |                |           |           |
-| F1/5     | soc_side_rd_data_port[5]     |            | LVCMOS25_OUT  | PL5B  |                |           |           |
-| F2/5     | soc_side_wr_data_port[5]     |            | LVCMOS25_IN   | PL5A  |                |           |           |
-| F3/5     | soc_side_wr_data_port[17]    |            | LVCMOS25_IN   | PL4B  | L_GPLLC_IN     |           |           |
-| F4/5     | ram_side_chip0_data_port[0]  |            | LVCMOS25_BIDI | PL6C  |                |           |           |
-| F5/5     |     unused, PULL:DOWN        |            |               | PL5C  |                |           |           |
-| F16/1    | soc_side_rd_data_port[12]    |            | LVCMOS25_OUT  | PR4D  |                |           |           |
-| F17/1    | ram_side_chip0_data_port[7]  |            | LVCMOS25_BIDI | PR5C  |                |           |           |
-| F18/1    | soc_side_wr_data_port[7]     |            | LVCMOS25_IN   | PR5A  | DQ0            |           |           |
-| F19/1    |     unused, PULL:DOWN        |            |               | PR5B  | DQ0            |           |           |
-| F20/1    |     unused, PULL:DOWN        |            |               | PR6A  | DQ0            |           |           |
-| G2/5     | soc_side_rd_data_port[0]     |            | LVCMOS25_OUT  | PL6B  | PCLKC5_0       |           |           |
-| G3/5     | soc_side_wr_data_port[0]     |            | LVCMOS25_IN   | PL6A  | PCLKT5_0       |           |           |
-| G4/5     | soc_side_wr_data_port[11]    |            | LVCMOS25_IN   | PL7C  |                |           |           |
-| G5/5     | ram_side_chip0_data_port[5]  |            | LVCMOS25_BIDI | PL5D  |                |           |           |
-| G16/1    | soc_side_rd_data_port[7]     |            | LVCMOS25_OUT  | PR5D  |                |           |           |
-| G17/1    |     unused, PULL:DOWN        |            |               | PR6C  |                |           |           |
-| G18/1    |     unused, PULL:DOWN        |            |               | PR6B  | DQ0            |           |           |
-| G19/1    | soc_side_wr_data_port[9]     |            | LVCMOS25_IN   | PR7A  |                |           |           |
-| G20/1    | ram_side_chip0_data_port[9]  |            | LVCMOS25_BIDI | PR7B  |                |           |           |
-| H1/5     | ram_side_chip0_data_port[11] |            | LVCMOS25_BIDI | PL7B  |                |           |           |
-| H2/5     | soc_side_rd_data_port[11]    |            | LVCMOS25_OUT  | PL7A  |                |           |           |
+| E17/1    | soc_side_rd_data_port[19]    |            | LVCMOS25_OUT  | PR4C  |                |           |           |
+| E18/1    | ram_side_chip0_data_port[6]  |            | LVCMOS25_BIDI | PR3B  | R_GPLLC_IN/DQ0 |           |           |
+| E19/1    | ram_side_chip1_data_port[8]  |            | LVCMOS25_BIDI | PR4A  |                |           |           |
+| E20/1    | soc_side_wr_data_port[24]    |            | LVCMOS25_IN   | PR4B  |                |           |           |
+| F1/5     |     unused, PULL:DOWN        |            |               | PL5B  |                |           |           |
+| F2/5     | soc_side_rd_data_port[23]    |            | LVCMOS25_OUT  | PL5A  |                |           |           |
+| F3/5     | soc_side_rd_data_port[8]     |            | LVCMOS25_OUT  | PL4B  | L_GPLLC_IN     |           |           |
+| F4/5     | soc_side_rd_data_port[27]    |            | LVCMOS25_OUT  | PL6C  |                |           |           |
+| F5/5     | ram_side_chip1_data_port[7]  |            | LVCMOS25_BIDI | PL5C  |                |           |           |
+| F16/1    | soc_side_rd_data_port[24]    |            | LVCMOS25_OUT  | PR4D  |                |           |           |
+| F17/1    | soc_side_wr_data_port[19]    |            | LVCMOS25_IN   | PR5C  |                |           |           |
+| F18/1    | ram_side_chip1_data_port[3]  |            | LVCMOS25_BIDI | PR5A  | DQ0            |           |           |
+| F19/1    | soc_side_wr_mask_port[2]     |            | LVCMOS25_IN   | PR5B  | DQ0            |           |           |
+| F20/1    | soc_side_busy_port           |            | LVCMOS25_OUT  | PR6A  | DQ0            |           |           |
+| G2/5     | ram_side_chip1_data_port[11] |            | LVCMOS25_BIDI | PL6B  | PCLKC5_0       |           |           |
+| G3/5     | soc_side_wr_data_port[27]    |            | LVCMOS25_IN   | PL6A  | PCLKT5_0       |           |           |
+| G4/5     | soc_side_wr_data_port[3]     |            | LVCMOS25_IN   | PL7C  |                |           |           |
+| G5/5     | soc_side_wr_data_port[23]    |            | LVCMOS25_IN   | PL5D  |                |           |           |
+| G16/1    | soc_side_addr_port[18]       |            | LVCMOS25_IN   | PR5D  |                |           |           |
+| G17/1    | ram_side_chip1_ldqm_port     |            | LVCMOS25_OUT  | PR6C  |                |           |           |
+| G18/1    | soc_side_wr_mask_port[3]     |            | LVCMOS25_IN   | PR6B  | DQ0            |           |           |
+| G19/1    | soc_side_ready_port          |            | LVCMOS25_OUT  | PR7A  |                |           |           |
+| G20/1    | soc_side_rd_en_port          |            | LVCMOS25_IN   | PR7B  |                |           |           |
+| H1/5     | ram_side_chip0_data_port[3]  |            | LVCMOS25_BIDI | PL7B  |                |           |           |
+| H2/5     | soc_side_rd_data_port[3]     |            | LVCMOS25_OUT  | PL7A  |                |           |           |
 | H4/5     |     unused, PULL:DOWN        |            |               | PL8C  |                |           |           |
 | H5/5     |     unused, PULL:DOWN        |            |               | PL6D  |                |           |           |
-| H16/1    |     unused, PULL:DOWN        |            |               | PR6D  |                |           |           |
-| H17/1    |     unused, PULL:DOWN        |            |               | PR7C  |                |           |           |
-| H18/1    | ram_side_chip1_data_port[12] |            | LVCMOS25_BIDI | PR8A  | DQ0            |           |           |
-| H19/1    | soc_side_wr_data_port[28]    |            | LVCMOS25_IN   | PR8B  | DQ0            |           |           |
-| H20/1    | soc_side_rd_data_port[3]     |            | LVCMOS25_OUT  | PR9A  | DQS0           |           |           |
-| J1/4     | soc_side_wr_data_port[22]    |            | LVCMOS25_IN   | PL9A  |                |           |           |
-| J2/5     | ram_side_chip1_data_port[0]  |            | LVCMOS25_BIDI | PL8B  |                |           |           |
-| J3/5     | soc_side_rd_data_port[16]    |            | LVCMOS25_OUT  | PL8A  |                |           |           |
-| J4/5     | soc_side_wr_data_port[16]    |            | LVCMOS25_IN   | PL8D  |                |           |           |
+| H16/1    | ram_side_chip1_udqm_port     |            | LVCMOS25_OUT  | PR6D  |                |           |           |
+| H17/1    | ram_side_cas_n_port          |            | LVCMOS25_OUT  | PR7C  |                |           |           |
+| H18/1    | ram_side_chip0_ldqm_port     |            | LVCMOS25_OUT  | PR8A  | DQ0            |           |           |
+| H19/1    | ram_side_chip0_udqm_port     |            | LVCMOS25_OUT  | PR8B  | DQ0            |           |           |
+| H20/1    | ram_side_ras_n_port          |            | LVCMOS25_OUT  | PR9A  | DQS0           |           |           |
+| J1/4     | ram_side_chip0_data_port[9]  |            | LVCMOS25_BIDI | PL9A  |                |           |           |
+| J2/5     | soc_side_rd_data_port[14]    |            | LVCMOS25_OUT  | PL8B  |                |           |           |
+| J3/5     | ram_side_chip0_data_port[14] |            | LVCMOS25_BIDI | PL8A  |                |           |           |
+| J4/5     | soc_side_wr_data_port[14]    |            | LVCMOS25_IN   | PL8D  |                |           |           |
 | J5/5     |     unused, PULL:DOWN        |            |               | PL7D  |                |           |           |
-| J16/1    | soc_side_rd_data_port[9]     |            | LVCMOS25_OUT  | PR7D  |                |           |           |
-| J17/1    |     unused, PULL:DOWN        |            |               | PR8C  |                |           |           |
-| J18/1    | soc_side_wr_data_port[3]     |            | LVCMOS25_IN   | PR9B  | DQS0N          |           |           |
-| J19/1    |     unused, PULL:DOWN        |            |               | PR10A | PCLKT1_0/DQ0   |           |           |
-| J20/1    | soc_side_rd_data_port[20]    |            | LVCMOS25_OUT  | PR10B | PCLKC1_0/DQ0   |           |           |
-| K1/4     | ram_side_chip1_data_port[6]  |            | LVCMOS25_BIDI | PL9D  |                |           |           |
-| K2/4     |     unused, PULL:DOWN        |            |               | PL9C  |                |           |           |
-| K3/4     | soc_side_rd_data_port[22]    |            | LVCMOS25_OUT  | PL9B  |                |           |           |
-| K4/4     | ram_side_chip0_data_port[4]  |            | LVCMOS25_BIDI | PL10A |                |           |           |
-| K16/1    | soc_side_rd_data_port[28]    |            | LVCMOS25_OUT  | PR8D  |                |           |           |
-| K17/1    | soc_side_wr_data_port[20]    |            | LVCMOS25_IN   | PR10C |                |           |           |
-| K18/1    |     unused, PULL:DOWN        |            |               | PR9C  |                |           |           |
-| K19/1    | ram_side_chip0_data_port[3]  |            | LVCMOS25_BIDI | PR9D  |                |           |           |
-| L1/4     | soc_side_rd_data_port[26]    |            | LVCMOS25_OUT  | PL14C |                |           |           |
+| J16/1    | soc_side_wr_mask_port[0]     |            | LVCMOS25_IN   | PR7D  |                |           |           |
+| J17/1    | soc_side_wr_mask_port[1]     |            | LVCMOS25_IN   | PR8C  |                |           |           |
+| J18/1    | ram_side_wr_en_port          |            | LVCMOS25_OUT  | PR9B  | DQS0N          |           |           |
+| J19/1    | soc_side_addr_port[20]       |            | LVCMOS25_IN   | PR10A | PCLKT1_0/DQ0   |           |           |
+| J20/1    | ram_side_bank_addr_port[0]   |            | LVCMOS25_OUT  | PR10B | PCLKC1_0/DQ0   |           |           |
+| K1/4     |     unused, PULL:DOWN        |            |               | PL9D  |                |           |           |
+| K2/4     | soc_side_rd_data_port[9]     |            | LVCMOS25_OUT  | PL9C  |                |           |           |
+| K3/4     | soc_side_wr_data_port[9]     |            | LVCMOS25_IN   | PL9B  |                |           |           |
+| K4/4     | soc_side_wr_data_port[0]     |            | LVCMOS25_IN   | PL10A |                |           |           |
+| K16/1    | ram_side_addr_port[9]        |            | LVCMOS25_OUT  | PR8D  |                |           |           |
+| K17/1    | soc_side_addr_port[21]       |            | LVCMOS25_IN   | PR10C |                |           |           |
+| K18/1    | ram_side_addr_port[10]       |            | LVCMOS25_OUT  | PR9C  |                |           |           |
+| K19/1    | soc_side_addr_port[19]       |            | LVCMOS25_IN   | PR9D  |                |           |           |
+| L1/4     |     unused, PULL:DOWN        |            |               | PL14C |                |           |           |
 | L2/4     |     unused, PULL:DOWN        |            |               | PL13C |                |           |           |
-| L3/4     | soc_side_wr_data_port[27]    |            | LVCMOS25_IN   | PL13D |                |           |           |
-| L4/4     | soc_side_wr_data_port[4]     |            | LVCMOS25_IN   | PL10B |                |           |           |
-| L17/1    | ram_side_chip1_data_port[4]  |            | LVCMOS25_BIDI | PR10D |                |           |           |
-| L18/1    |     unused, PULL:DOWN        |            |               | PR13A | DQS1           |           |           |
-| L19/1    | soc_side_rd_data_port[30]    |            | LVCMOS25_OUT  | PR13D |                |           |           |
-| L20/1    | ram_side_chip1_data_port[14] |            | LVCMOS25_BIDI | PR13C |                |           |           |
+| L3/4     |     unused, PULL:DOWN        |            |               | PL13D |                |           |           |
+| L4/4     | ram_side_chip0_data_port[0]  |            | LVCMOS25_BIDI | PL10B |                |           |           |
+| L17/1    | ram_side_addr_port[11]       |            | LVCMOS25_OUT  | PR10D |                |           |           |
+| L18/1    | soc_side_addr_port[22]       |            | LVCMOS25_IN   | PR13A | DQS1           |           |           |
+| L19/1    | soc_side_addr_port[10]       |            | LVCMOS25_IN   | PR13D |                |           |           |
+| L20/1    | soc_side_addr_port[1]        |            | LVCMOS25_IN   | PR13C |                |           |           |
 | M1/4     | soc_side_wr_en_port          |            | LVCMOS25_IN   | PL10C | PCLKT4_0       |           |           |
-| M2/4     | soc_side_rd_data_port[4]     |            | LVCMOS25_OUT  | PL10D | PCLKC4_0       |           |           |
-| M3/4     | ram_side_chip1_data_port[11] |            | LVCMOS25_BIDI | PL13A |                |           |           |
-| M4/4     |     unused, PULL:DOWN        |            |               | PL14D |                |           |           |
-| M5/3     | soc_side_wr_data_port[18]    |            | LVCMOS25_IN   | PL15C |                |           |           |
-| M16/1    | soc_side_wr_data_port[13]    |            | LVCMOS25_IN   | PR15C | DQ1            |           |           |
-| M17/1    | soc_side_wr_data_port[1]     |            | LVCMOS25_IN   | PR14C |                |           |           |
-| M18/1    |     unused, PULL:DOWN        |            |               | PR14B | DQ1            |           |           |
-| M19/1    | soc_side_rd_data_port[1]     |            | LVCMOS25_OUT  | PR14A | DQ1            |           |           |
-| M20/1    | soc_side_wr_data_port[30]    |            | LVCMOS25_IN   | PR13B | DQS1N          |           |           |
-| N1/4     | soc_side_rd_data_port[27]    |            | LVCMOS25_OUT  | PL13B |                |           |           |
-| N2/4     | ram_side_chip1_data_port[10] |            | LVCMOS25_BIDI | PL14A |                |           |           |
-| N3/4     | soc_side_wr_data_port[26]    |            | LVCMOS25_IN   | PL14B |                |           |           |
-| N4/3     | ram_side_chip1_data_port[2]  |            | LVCMOS25_BIDI | PL15D |                |           |           |
-| N5/3     | soc_side_wr_data_port[10]    |            | LVCMOS25_IN   | PL16C |                |           |           |
-| N16/1    | ram_side_chip1_data_port[13] |            | LVCMOS25_BIDI | PR16C |                |           |           |
-| N17/1    | ram_side_chip0_data_port[1]  |            | LVCMOS25_BIDI | PR14D |                |           |           |
-| N19/1    |     unused, PULL:DOWN        |            |               | PR15B | DQ1            |           |           |
-| N20/1    | soc_side_rd_data_port[13]    |            | LVCMOS25_OUT  | PR15A | DQ1            |           |           |
-| P1/3     |     unused, PULL:DOWN        |            |               | PL15A |                |           |           |
-| P2/3     | soc_side_rd_data_port[18]    |            | LVCMOS25_OUT  | PL15B |                |           |           |
-| P3/3     | ram_side_chip0_data_port[10] |            | LVCMOS25_BIDI | PL16A |                |           |           |
+| M2/4     | soc_side_rd_data_port[0]     |            | LVCMOS25_OUT  | PL10D | PCLKC4_0       |           |           |
+| M3/4     |     unused, PULL:DOWN        |            |               | PL13A |                |           |           |
+| M4/4     | soc_side_wr_data_port[30]    |            | LVCMOS25_IN   | PL14D |                |           |           |
+| M5/3     |     unused, PULL:DOWN        |            |               | PL15C |                |           |           |
+| M16/1    | ram_side_addr_port[4]        |            | LVCMOS25_OUT  | PR15C | DQ1            |           |           |
+| M17/1    | ram_side_addr_port[1]        |            | LVCMOS25_OUT  | PR14C |                |           |           |
+| M18/1    | soc_side_addr_port[14]       |            | LVCMOS25_IN   | PR14B | DQ1            |           |           |
+| M19/1    | soc_side_addr_port[4]        |            | LVCMOS25_IN   | PR14A | DQ1            |           |           |
+| M20/1    | ram_side_bank_addr_port[1]   |            | LVCMOS25_OUT  | PR13B | DQS1N          |           |           |
+| N1/4     |     unused, PULL:DOWN        |            |               | PL13B |                |           |           |
+| N2/4     | soc_side_rd_data_port[30]    |            | LVCMOS25_OUT  | PL14A |                |           |           |
+| N3/4     | ram_side_chip1_data_port[14] |            | LVCMOS25_BIDI | PL14B |                |           |           |
+| N4/3     | soc_side_rd_data_port[28]    |            | LVCMOS25_OUT  | PL15D |                |           |           |
+| N5/3     | soc_side_wr_data_port[18]    |            | LVCMOS25_IN   | PL16C |                |           |           |
+| N16/1    |     unused, PULL:DOWN        |            |               | PR16C |                |           |           |
+| N17/1    | soc_side_addr_port[5]        |            | LVCMOS25_IN   | PR14D |                |           |           |
+| N19/1    | soc_side_addr_port[13]       |            | LVCMOS25_IN   | PR15B | DQ1            |           |           |
+| N20/1    |     unused, PULL:DOWN        |            |               | PR15A | DQ1            |           |           |
+| P1/3     | ram_side_chip1_data_port[12] |            | LVCMOS25_BIDI | PL15A |                |           |           |
+| P2/3     | soc_side_wr_data_port[28]    |            | LVCMOS25_IN   | PL15B |                |           |           |
+| P3/3     | soc_side_rd_data_port[18]    |            | LVCMOS25_OUT  | PL16A |                |           |           |
 | P4/3     |     unused, PULL:DOWN        |            |               | PL16D |                |           |           |
 | P5/3     |     unused, PULL:DOWN        |            |               | PL17C |                |           |           |
-| P16/1    | soc_side_addr_port[8]        |            | LVCMOS25_IN   | PR17C |                |           |           |
-| P17/1    | ram_side_chip0_data_port[13] |            | LVCMOS25_BIDI | PR15D | DQ1            |           |           |
-| P18/1    | soc_side_rd_data_port[29]    |            | LVCMOS25_OUT  | PR16B | DQ1            |           |           |
-| P19/1    |     unused, PULL:DOWN        |            |               | PR16A | DQ1            |           |           |
+| P16/1    |     unused, PULL:DOWN        |            |               | PR17C |                |           |           |
+| P17/1    | ram_side_addr_port[5]        |            | LVCMOS25_OUT  | PR15D | DQ1            |           |           |
+| P18/1    | ram_side_chip1_data_port[9]  |            | LVCMOS25_BIDI | PR16B | DQ1            |           |           |
+| P19/1    | soc_side_rd_data_port[25]    |            | LVCMOS25_OUT  | PR16A | DQ1            |           |           |
 | PB13C/2  |     unused, PULL:DOWN        |            |               | PB13C |                |           |           |
 | PB13D/2  |     unused, PULL:DOWN        |            |               | PB13D |                |           |           |
 | PT10C/0  |     unused, PULL:DOWN        |            |               | PT10C |                |           |           |
 | PT21C/0  |     unused, PULL:DOWN        |            |               | PT21C |                |           |           |
 | PT21D/0  |     unused, PULL:DOWN        |            |               | PT21D |                |           |           |
-| R1/3     | soc_side_rd_data_port[10]    |            | LVCMOS25_OUT  | PL16B |                |           |           |
+| R1/3     | ram_side_chip1_data_port[2]  |            | LVCMOS25_BIDI | PL16B |                |           |           |
 | R2/3     | reset_n_port                 |            | LVCMOS25_IN   | PL17A | PCLKT3_0       |           |           |
 | R3/3     |     unused, PULL:DOWN        |            |               | PL17B | PCLKC3_0       |           |           |
 | R4/3     |     unused, PULL:DOWN        |            |               | PL17D |                |           |           |
-| R5/3     | soc_side_wr_data_port[14]    |            | LVCMOS25_IN   | PL18C |                |           |           |
-| R16/1    | ram_side_addr_port[1]        |            | LVCMOS25_OUT  | PR17D |                |           |           |
-| R17/1    | soc_side_wr_data_port[29]    |            | LVCMOS25_IN   | PR16D |                |           |           |
-| R18/1    | ram_side_addr_port[8]        |            | LVCMOS25_OUT  | PR18A | DQ1            |           |           |
+| R5/3     | soc_side_rd_data_port[4]     |            | LVCMOS25_OUT  | PL18C |                |           |           |
+| R16/1    | soc_side_addr_port[6]        |            | LVCMOS25_IN   | PR17D |                |           |           |
+| R17/1    | soc_side_wr_data_port[25]    |            | LVCMOS25_IN   | PR16D |                |           |           |
+| R18/1    | ram_side_addr_port[7]        |            | LVCMOS25_OUT  | PR18A | DQ1            |           |           |
 | R19/1    |     unused, PULL:DOWN        |            |               | PR17B |                |           |           |
-| R20/1    | soc_side_addr_port[1]        |            | LVCMOS25_IN   | PR17A |                |           |           |
-| T1/3     | soc_side_rd_data_port[14]    |            | LVCMOS25_OUT  | PL18A |                |           |           |
-| T2/3     |     unused, PULL:DOWN        |            |               | PL18B |                |           |           |
-| T3/3     |     unused, PULL:DOWN        |            |               | PL19A |                |           |           |
-| T4/3     | ram_side_chip0_data_port[14] |            | LVCMOS25_BIDI | PL18D |                |           |           |
-| T6/2     | soc_side_rd_data_port[23]    |            | LVCMOS25_OUT  | PB6A  |                |           |           |
+| R20/1    |     unused, PULL:DOWN        |            |               | PR17A |                |           |           |
+| T1/3     |     unused, PULL:DOWN        |            |               | PL18A |                |           |           |
+| T2/3     | soc_side_wr_data_port[4]     |            | LVCMOS25_IN   | PL18B |                |           |           |
+| T3/3     | soc_side_wr_data_port[11]    |            | LVCMOS25_IN   | PL19A |                |           |           |
+| T4/3     | ram_side_chip0_data_port[4]  |            | LVCMOS25_BIDI | PL18D |                |           |           |
+| T6/2     | soc_side_rd_data_port[20]    |            | LVCMOS25_OUT  | PB6A  |                |           |           |
 | T7/2     |     unused, PULL:DOWN        |            |               | PB7D  |                |           |           |
 | T8/2     |     unused, PULL:DOWN        |            |               | PB9D  |                |           |           |
 | T9/2     |     unused, PULL:DOWN        |            |               | PB10D |                |           |           |
-| T11/2    | soc_side_ready_port          |            | LVCMOS25_OUT  | PB20C |                |           |           |
-| T12/2    | ram_side_chip0_data_port[15] |            | LVCMOS25_BIDI | PB21C |                |           |           |
-| T13/2    | ram_side_addr_port[9]        |            | LVCMOS25_OUT  | PB23D |                |           |           |
+| T11/2    |     unused, PULL:DOWN        |            |               | PB20C |                |           |           |
+| T12/2    | ram_side_chip1_data_port[10] |            | LVCMOS25_BIDI | PB21C |                |           |           |
+| T13/2    | ram_side_chip1_data_port[13] |            | LVCMOS25_BIDI | PB23D |                |           |           |
 | T14/2    |     unused, PULL:DOWN        |            |               | PB26B |                |           |           |
-| T15/2    | soc_side_addr_port[0]        |            | LVCMOS25_IN   | PB27D |                |           |           |
-| T17/1    | soc_side_addr_port[17]       |            | LVCMOS25_IN   | PR18D |                |           |           |
-| T18/1    | soc_side_addr_port[16]       |            | LVCMOS25_IN   | PR19B | DQ1            |           |           |
-| T19/1    | ram_side_addr_port[2]        |            | LVCMOS25_OUT  | PR19A | DQ1            |           |           |
-| T20/1    | soc_side_addr_port[10]       |            | LVCMOS25_IN   | PR18B | DQ1            |           |           |
-| U1/3     | soc_side_rd_data_port[19]    |            | LVCMOS25_OUT  | PL19B |                |           |           |
+| T15/2    |     unused, PULL:DOWN        |            |               | PB27D |                |           |           |
+| T17/1    | soc_side_addr_port[7]        |            | LVCMOS25_IN   | PR18D |                |           |           |
+| T18/1    |     unused, PULL:DOWN        |            |               | PR19B | DQ1            |           |           |
+| T19/1    | soc_side_addr_port[15]       |            | LVCMOS25_IN   | PR19A | DQ1            |           |           |
+| T20/1    | ram_side_addr_port[6]        |            | LVCMOS25_OUT  | PR18B | DQ1            |           |           |
+| U1/3     |     unused, PULL:DOWN        |            |               | PL19B |                |           |           |
 | U2/3     |     unused, PULL:DOWN        |            |               | PL20A |                |           |           |
 | U3/3     |     unused, PULL:DOWN        |            |               | PL20B |                |           |           |
-| U4/2     | ram_side_chip1_data_port[8]  |            | LVCMOS25_BIDI | PB7C  |                |           |           |
-| U5/2     |     unused, PULL:DOWN        |            |               | PB6B  |                |           |           |
-| U6/2     | soc_side_rd_data_port[31]    |            | LVCMOS25_OUT  | PB9C  |                |           |           |
+| U4/2     | ram_side_chip0_data_port[10] |            | LVCMOS25_BIDI | PB7C  |                |           |           |
+| U5/2     | soc_side_wr_data_port[20]    |            | LVCMOS25_IN   | PB6B  |                |           |           |
+| U6/2     | soc_side_rd_data_port[21]    |            | LVCMOS25_OUT  | PB9C  |                |           |           |
 | U7/2     |     unused, PULL:DOWN        |            |               | PB10C |                |           |           |
-| U8/2     | soc_side_rd_data_port[2]     |            | LVCMOS25_OUT  | PB12A |                |           |           |
-| U9/2     | ram_side_chip0_data_port[2]  |            | LVCMOS25_BIDI | PB12B |                |           |           |
-| U10/2    | soc_side_wr_mask_port[2]     |            | LVCMOS25_IN   | PB18C |                |           |           |
-| U11/2    | ram_side_addr_port[10]       |            | LVCMOS25_OUT  | PB18D |                |           |           |
-| U12/2    | soc_side_wr_mask_port[3]     |            | LVCMOS25_IN   | PB20D |                |           |           |
-| U13/2    | soc_side_wr_data_port[15]    |            | LVCMOS25_IN   | PB21D |                |           |           |
-| U14/2    | soc_side_addr_port[4]        |            | LVCMOS25_IN   | PB24C |                |           |           |
-| U15/2    | ram_side_addr_port[5]        |            | LVCMOS25_OUT  | PB26A |                |           |           |
-| U16/2    | ram_side_addr_port[0]        |            | LVCMOS25_OUT  | PB27C |                |           |           |
-| U17/1    | soc_side_addr_port[2]        |            | LVCMOS25_IN   | PR18C |                |           |           |
-| U18/1    | soc_side_addr_port[6]        |            | LVCMOS25_IN   | PR20D |                |           |           |
-| U19/1    |     unused, PULL:DOWN        |            |               | PR20B |                |           |           |
+| U8/2     | soc_side_wr_data_port[2]     |            | LVCMOS25_IN   | PB12A |                |           |           |
+| U9/2     |     unused, PULL:DOWN        |            |               | PB12B |                |           |           |
+| U10/2    | soc_side_wr_data_port[31]    |            | LVCMOS25_IN   | PB18C |                |           |           |
+| U11/2    | soc_side_rd_data_port[31]    |            | LVCMOS25_OUT  | PB18D |                |           |           |
+| U12/2    | soc_side_rd_data_port[16]    |            | LVCMOS25_OUT  | PB20D |                |           |           |
+| U13/2    | soc_side_wr_data_port[26]    |            | LVCMOS25_IN   | PB21D |                |           |           |
+| U14/2    | ram_side_ck_en_port          |            | LVCMOS25_OUT  | PB24C |                |           |           |
+| U15/2    | soc_side_wr_data_port[5]     |            | LVCMOS25_IN   | PB26A |                |           |           |
+| U16/2    |     unused, PULL:DOWN        |            |               | PB27C |                |           |           |
+| U17/1    | soc_side_addr_port[16]       |            | LVCMOS25_IN   | PR18C |                |           |           |
+| U18/1    | soc_side_addr_port[17]       |            | LVCMOS25_IN   | PR20D |                |           |           |
+| U19/1    | soc_side_addr_port[12]       |            | LVCMOS25_IN   | PR20B |                |           |           |
 | U20/1    | ram_side_addr_port[3]        |            | LVCMOS25_OUT  | PR20A |                |           |           |
 | V1/3     |     unused, PULL:DOWN        |            |               | PL20D |                |           |           |
 | V2/3     |     unused, PULL:DOWN        |            |               | PL20C |                |           |           |
 | V4/2     |     unused, PULL:DOWN        |            |               | PB3C  |                |           |           |
-| V5/2     | ram_side_chip0_data_port[6]  |            | LVCMOS25_BIDI | PB4A  | CSSPIN         |           |           |
-| V6/2     | soc_side_wr_data_port[23]    |            | LVCMOS25_IN   | PB6D  |                |           |           |
-| V7/2     | soc_side_wr_data_port[31]    |            | LVCMOS25_IN   | PB9A  | MCLK/CCLK      |           |           |
-| V8/2     | ram_side_ck_en_port          |            | LVCMOS25_OUT  | PB10B |                |           |           |
-| V9/2     | ram_side_chip0_ldqm_port     |            | LVCMOS25_OUT  | PB13A | PCLKT2_0       |           |           |
-| V10/2    | ram_side_cas_n_port          |            | LVCMOS25_OUT  | PB15B |                |           |           |
-| V11/2    | soc_side_busy_port           |            | LVCMOS25_OUT  | PB18B |                |           |           |
-| V12/2    | soc_side_rd_data_port[15]    |            | LVCMOS25_OUT  | PB21A |                |           |           |
-| V13/2    | ram_side_addr_port[11]       |            | LVCMOS25_OUT  | PB23C |                |           |           |
-| V14/2    | soc_side_addr_port[19]       |            | LVCMOS25_IN   | PB24B |                |           |           |
-| V15/2    | ram_side_addr_port[4]        |            | LVCMOS25_OUT  | PB24D |                |           |           |
-| V16/2    | ram_side_bank_addr_port[1]   |            | LVCMOS25_OUT  | PB29A |                |           |           |
-| V17/2    | ram_side_addr_port[6]        |            | LVCMOS25_OUT  | PB30B | SI/SISPI       |           |           |
-| V19/1    | soc_side_addr_port[11]       |            | LVCMOS25_IN   | PR19D |                |           |           |
-| V20/1    | soc_side_addr_port[7]        |            | LVCMOS25_IN   | PR20C |                |           |           |
-| W1/3     | soc_side_wr_data_port[19]    |            | LVCMOS25_IN   | PL19D |                |           |           |
-| W2/3     | ram_side_chip1_data_port[3]  |            | LVCMOS25_BIDI | PL19C |                |           |           |
-| W3/2     | soc_side_rd_data_port[6]     |            | LVCMOS25_OUT  | PB4C  |                |           |           |
-| W4/2     |     unused, PULL:DOWN        |            |               | PB3A  |                |           |           |
-| W5/2     | soc_side_wr_data_port[6]     |            | LVCMOS25_IN   | PB4B  |                |           |           |
-| W6/2     | soc_side_wr_data_port[24]    |            | LVCMOS25_IN   | PB7A  |                |           |           |
-| W7/2     | ram_side_chip1_data_port[15] |            | LVCMOS25_BIDI | PB9B  | SO/SPISO       |           |           |
-| W8/2     |     unused, PULL:DOWN        |            |               | PB12C |                |           |           |
-| W9/2     | ram_side_chip0_udqm_port     |            | LVCMOS25_OUT  | PB13B | PCLKC2_0       |           |           |
-| W10/2    | soc_side_wr_mask_port[0]     |            | LVCMOS25_IN   | PB15C |                |           |           |
-| W11/2    | ram_side_ras_n_port          |            | LVCMOS25_OUT  | PB18A |                |           |           |
-| W12/2    | soc_side_rd_en_port          |            | LVCMOS25_IN   | PB20B | PCLKC2_1       |           |           |
-| W13/2    | soc_side_addr_port[20]       |            | LVCMOS25_IN   | PB23A |                |           |           |
-| W14/2    | soc_side_addr_port[14]       |            | LVCMOS25_IN   | PB24A |                |           |           |
-| W15/2    | soc_side_addr_port[13]       |            | LVCMOS25_IN   | PB26D |                |           |           |
-| W16/2    | soc_side_addr_port[9]        |            | LVCMOS25_IN   | PB27B |                |           |           |
-| W17/2    | soc_side_addr_port[12]       |            | LVCMOS25_IN   | PB30A | SN             |           |           |
-| W18/2    | soc_side_addr_port[15]       |            | LVCMOS25_IN   | PB30C |                |           |           |
-| W19/2    | ram_side_bank_addr_port[0]   |            | LVCMOS25_OUT  | PB29C |                |           |           |
-| W20/1    | ram_side_addr_port[7]        |            | LVCMOS25_OUT  | PR19C |                |           |           |
-| Y2/2     |     unused, PULL:DOWN        |            |               | PB4D  |                |           |           |
-| Y3/2     |     unused, PULL:DOWN        |            |               | PB3D  |                |           |           |
-| Y4/2     |     unused, PULL:DOWN        |            |               | PB3B  |                |           |           |
-| Y5/2     | ram_side_chip1_data_port[7]  |            | LVCMOS25_BIDI | PB6C  |                |           |           |
-| Y6/2     | soc_side_rd_data_port[24]    |            | LVCMOS25_OUT  | PB7B  |                |           |           |
-| Y7/2     | ram_side_cs_n_port           |            | LVCMOS25_OUT  | PB10A |                |           |           |
-| Y8/2     | soc_side_wr_data_port[2]     |            | LVCMOS25_IN   | PB12D |                |           |           |
-| Y9/2     | soc_side_wr_mask_port[1]     |            | LVCMOS25_IN   | PB15A |                |           |           |
-| Y10/2    | ram_side_wr_en_port          |            | LVCMOS25_OUT  | PB15D |                |           |           |
-| Y12/2    | ram_side_chip1_ldqm_port     |            | LVCMOS25_OUT  | PB20A | PCLKT2_1       |           |           |
-| Y13/2    | ram_side_chip1_udqm_port     |            | LVCMOS25_OUT  | PB21B |                |           |           |
-| Y14/2    | soc_side_addr_port[18]       |            | LVCMOS25_IN   | PB23B |                |           |           |
-| Y15/2    | soc_side_addr_port[5]        |            | LVCMOS25_IN   | PB26C |                |           |           |
+| V5/2     | ram_side_chip0_data_port[7]  |            | LVCMOS25_BIDI | PB4A  | CSSPIN         |           |           |
+| V6/2     |     unused, PULL:DOWN        |            |               | PB6D  |                |           |           |
+| V7/2     | ram_side_chip1_data_port[5]  |            | LVCMOS25_BIDI | PB9A  | MCLK/CCLK      |           |           |
+| V8/2     | ram_side_cs_n_port           |            | LVCMOS25_OUT  | PB10B |                |           |           |
+| V9/2     |     unused, PULL:DOWN        |            |               | PB13A | PCLKT2_0       |           |           |
+| V10/2    | ram_side_chip0_data_port[15] |            | LVCMOS25_BIDI | PB15B |                |           |           |
+| V11/2    | ram_side_chip1_data_port[15] |            | LVCMOS25_BIDI | PB18B |                |           |           |
+| V12/2    |     unused, PULL:DOWN        |            |               | PB21A |                |           |           |
+| V13/2    | soc_side_rd_data_port[29]    |            | LVCMOS25_OUT  | PB23C |                |           |           |
+| V14/2    |     unused, PULL:DOWN        |            |               | PB24B |                |           |           |
+| V15/2    | soc_side_wr_data_port[13]    |            | LVCMOS25_IN   | PB24D |                |           |           |
+| V16/2    |     unused, PULL:DOWN        |            |               | PB29A |                |           |           |
+| V17/2    | soc_side_addr_port[9]        |            | LVCMOS25_IN   | PB30B | SI/SISPI       |           |           |
+| V19/1    | soc_side_addr_port[3]        |            | LVCMOS25_IN   | PR19D |                |           |           |
+| V20/1    | ram_side_addr_port[8]        |            | LVCMOS25_OUT  | PR20C |                |           |           |
+| W1/3     | ram_side_chip0_data_port[11] |            | LVCMOS25_BIDI | PL19D |                |           |           |
+| W2/3     | soc_side_rd_data_port[11]    |            | LVCMOS25_OUT  | PL19C |                |           |           |
+| W3/2     |     unused, PULL:DOWN        |            |               | PB4C  |                |           |           |
+| W4/2     | soc_side_rd_data_port[1]     |            | LVCMOS25_OUT  | PB3A  |                |           |           |
+| W5/2     | soc_side_rd_data_port[7]     |            | LVCMOS25_OUT  | PB4B  |                |           |           |
+| W6/2     | soc_side_wr_data_port[10]    |            | LVCMOS25_IN   | PB7A  |                |           |           |
+| W7/2     | soc_side_wr_data_port[21]    |            | LVCMOS25_IN   | PB9B  | SO/SPISO       |           |           |
+| W8/2     | ram_side_chip0_data_port[2]  |            | LVCMOS25_BIDI | PB12C |                |           |           |
+| W9/2     |     unused, PULL:DOWN        |            |               | PB13B | PCLKC2_0       |           |           |
+| W10/2    | soc_side_rd_data_port[15]    |            | LVCMOS25_OUT  | PB15C |                |           |           |
+| W11/2    |     unused, PULL:DOWN        |            |               | PB18A |                |           |           |
+| W12/2    | soc_side_wr_data_port[16]    |            | LVCMOS25_IN   | PB20B | PCLKC2_1       |           |           |
+| W13/2    | soc_side_wr_data_port[29]    |            | LVCMOS25_IN   | PB23A |                |           |           |
+| W14/2    | ram_side_chip0_data_port[13] |            | LVCMOS25_BIDI | PB24A |                |           |           |
+| W15/2    | ram_side_chip0_data_port[5]  |            | LVCMOS25_BIDI | PB26D |                |           |           |
+| W16/2    |     unused, PULL:DOWN        |            |               | PB27B |                |           |           |
+| W17/2    | soc_side_addr_port[11]       |            | LVCMOS25_IN   | PB30A | SN             |           |           |
+| W18/2    | soc_side_addr_port[0]        |            | LVCMOS25_IN   | PB30C |                |           |           |
+| W19/2    |     unused, PULL:DOWN        |            |               | PB29C |                |           |           |
+| W20/1    | soc_side_addr_port[8]        |            | LVCMOS25_IN   | PR19C |                |           |           |
+| Y2/2     | soc_side_wr_data_port[7]     |            | LVCMOS25_IN   | PB4D  |                |           |           |
+| Y3/2     | soc_side_wr_data_port[1]     |            | LVCMOS25_IN   | PB3D  |                |           |           |
+| Y4/2     | ram_side_chip0_data_port[1]  |            | LVCMOS25_BIDI | PB3B  |                |           |           |
+| Y5/2     | ram_side_chip1_data_port[4]  |            | LVCMOS25_BIDI | PB6C  |                |           |           |
+| Y6/2     | soc_side_rd_data_port[10]    |            | LVCMOS25_OUT  | PB7B  |                |           |           |
+| Y7/2     |     unused, PULL:DOWN        |            |               | PB10A |                |           |           |
+| Y8/2     | soc_side_rd_data_port[2]     |            | LVCMOS25_OUT  | PB12D |                |           |           |
+| Y9/2     |     unused, PULL:DOWN        |            |               | PB15A |                |           |           |
+| Y10/2    | soc_side_wr_data_port[15]    |            | LVCMOS25_IN   | PB15D |                |           |           |
+| Y12/2    | ram_side_chip1_data_port[0]  |            | LVCMOS25_BIDI | PB20A | PCLKT2_1       |           |           |
+| Y13/2    | soc_side_rd_data_port[26]    |            | LVCMOS25_OUT  | PB21B |                |           |           |
+| Y14/2    | soc_side_rd_data_port[13]    |            | LVCMOS25_OUT  | PB23B |                |           |           |
+| Y15/2    | soc_side_rd_data_port[5]     |            | LVCMOS25_OUT  | PB26C |                |           |           |
 | Y16/2    |     unused, PULL:DOWN        |            |               | PB27A |                |           |           |
-| Y17/2    | soc_side_addr_port[22]       |            | LVCMOS25_IN   | PB29B |                |           |           |
-| Y18/2    | soc_side_addr_port[3]        |            | LVCMOS25_IN   | PB30D |                |           |           |
-| Y19/2    | soc_side_addr_port[21]       |            | LVCMOS25_IN   | PB29D |                |           |           |
+| Y17/2    | ram_side_addr_port[2]        |            | LVCMOS25_OUT  | PB29B |                |           |           |
+| Y18/2    | ram_side_addr_port[0]        |            | LVCMOS25_OUT  | PB30D |                |           |           |
+| Y19/2    | soc_side_addr_port[2]        |            | LVCMOS25_IN   | PB29D |                |           |           |
 +----------+------------------------------+------------+---------------+-------+----------------+-----------+-----------+
 
 sysCONFIG Pins:
@@ -487,157 +487,157 @@ List of All Pins' Locate Preferences Based on Final Placement After PAR
 to Help Users Lock Down ALL the Pins Easily (by Simply Copy & Paste): 
 
 LOCATE  COMP  "clk"  SITE  "B9";
-LOCATE  COMP  "ram_side_addr_port[0]"  SITE  "U16";
-LOCATE  COMP  "ram_side_addr_port[10]"  SITE  "U11";
-LOCATE  COMP  "ram_side_addr_port[11]"  SITE  "V13";
-LOCATE  COMP  "ram_side_addr_port[1]"  SITE  "R16";
-LOCATE  COMP  "ram_side_addr_port[2]"  SITE  "T19";
+LOCATE  COMP  "ram_side_addr_port[0]"  SITE  "Y18";
+LOCATE  COMP  "ram_side_addr_port[10]"  SITE  "K18";
+LOCATE  COMP  "ram_side_addr_port[11]"  SITE  "L17";
+LOCATE  COMP  "ram_side_addr_port[1]"  SITE  "M17";
+LOCATE  COMP  "ram_side_addr_port[2]"  SITE  "Y17";
 LOCATE  COMP  "ram_side_addr_port[3]"  SITE  "U20";
-LOCATE  COMP  "ram_side_addr_port[4]"  SITE  "V15";
-LOCATE  COMP  "ram_side_addr_port[5]"  SITE  "U15";
-LOCATE  COMP  "ram_side_addr_port[6]"  SITE  "V17";
-LOCATE  COMP  "ram_side_addr_port[7]"  SITE  "W20";
-LOCATE  COMP  "ram_side_addr_port[8]"  SITE  "R18";
-LOCATE  COMP  "ram_side_addr_port[9]"  SITE  "T13";
-LOCATE  COMP  "ram_side_bank_addr_port[0]"  SITE  "W19";
-LOCATE  COMP  "ram_side_bank_addr_port[1]"  SITE  "V16";
-LOCATE  COMP  "ram_side_cas_n_port"  SITE  "V10";
-LOCATE  COMP  "ram_side_chip0_data_port[0]"  SITE  "F4";
-LOCATE  COMP  "ram_side_chip0_data_port[10]"  SITE  "P3";
-LOCATE  COMP  "ram_side_chip0_data_port[11]"  SITE  "H1";
-LOCATE  COMP  "ram_side_chip0_data_port[12]"  SITE  "E19";
-LOCATE  COMP  "ram_side_chip0_data_port[13]"  SITE  "P17";
-LOCATE  COMP  "ram_side_chip0_data_port[14]"  SITE  "T4";
-LOCATE  COMP  "ram_side_chip0_data_port[15]"  SITE  "T12";
-LOCATE  COMP  "ram_side_chip0_data_port[1]"  SITE  "N17";
-LOCATE  COMP  "ram_side_chip0_data_port[2]"  SITE  "U9";
-LOCATE  COMP  "ram_side_chip0_data_port[3]"  SITE  "K19";
-LOCATE  COMP  "ram_side_chip0_data_port[4]"  SITE  "K4";
-LOCATE  COMP  "ram_side_chip0_data_port[5]"  SITE  "G5";
-LOCATE  COMP  "ram_side_chip0_data_port[6]"  SITE  "V5";
-LOCATE  COMP  "ram_side_chip0_data_port[7]"  SITE  "F17";
-LOCATE  COMP  "ram_side_chip0_data_port[8]"  SITE  "D19";
-LOCATE  COMP  "ram_side_chip0_data_port[9]"  SITE  "G20";
-LOCATE  COMP  "ram_side_chip0_ldqm_port"  SITE  "V9";
-LOCATE  COMP  "ram_side_chip0_udqm_port"  SITE  "W9";
-LOCATE  COMP  "ram_side_chip1_data_port[0]"  SITE  "J2";
-LOCATE  COMP  "ram_side_chip1_data_port[10]"  SITE  "N2";
-LOCATE  COMP  "ram_side_chip1_data_port[11]"  SITE  "M3";
-LOCATE  COMP  "ram_side_chip1_data_port[12]"  SITE  "H18";
-LOCATE  COMP  "ram_side_chip1_data_port[13]"  SITE  "N16";
-LOCATE  COMP  "ram_side_chip1_data_port[14]"  SITE  "L20";
-LOCATE  COMP  "ram_side_chip1_data_port[15]"  SITE  "W7";
-LOCATE  COMP  "ram_side_chip1_data_port[1]"  SITE  "E4";
-LOCATE  COMP  "ram_side_chip1_data_port[2]"  SITE  "N4";
-LOCATE  COMP  "ram_side_chip1_data_port[3]"  SITE  "W2";
-LOCATE  COMP  "ram_side_chip1_data_port[4]"  SITE  "L17";
-LOCATE  COMP  "ram_side_chip1_data_port[5]"  SITE  "B20";
-LOCATE  COMP  "ram_side_chip1_data_port[6]"  SITE  "K1";
-LOCATE  COMP  "ram_side_chip1_data_port[7]"  SITE  "Y5";
-LOCATE  COMP  "ram_side_chip1_data_port[8]"  SITE  "U4";
-LOCATE  COMP  "ram_side_chip1_data_port[9]"  SITE  "D3";
-LOCATE  COMP  "ram_side_chip1_ldqm_port"  SITE  "Y12";
-LOCATE  COMP  "ram_side_chip1_udqm_port"  SITE  "Y13";
-LOCATE  COMP  "ram_side_ck_en_port"  SITE  "V8";
-LOCATE  COMP  "ram_side_cs_n_port"  SITE  "Y7";
-LOCATE  COMP  "ram_side_ras_n_port"  SITE  "W11";
-LOCATE  COMP  "ram_side_wr_en_port"  SITE  "Y10";
+LOCATE  COMP  "ram_side_addr_port[4]"  SITE  "M16";
+LOCATE  COMP  "ram_side_addr_port[5]"  SITE  "P17";
+LOCATE  COMP  "ram_side_addr_port[6]"  SITE  "T20";
+LOCATE  COMP  "ram_side_addr_port[7]"  SITE  "R18";
+LOCATE  COMP  "ram_side_addr_port[8]"  SITE  "V20";
+LOCATE  COMP  "ram_side_addr_port[9]"  SITE  "K16";
+LOCATE  COMP  "ram_side_bank_addr_port[0]"  SITE  "J20";
+LOCATE  COMP  "ram_side_bank_addr_port[1]"  SITE  "M20";
+LOCATE  COMP  "ram_side_cas_n_port"  SITE  "H17";
+LOCATE  COMP  "ram_side_chip0_data_port[0]"  SITE  "L4";
+LOCATE  COMP  "ram_side_chip0_data_port[10]"  SITE  "U4";
+LOCATE  COMP  "ram_side_chip0_data_port[11]"  SITE  "W1";
+LOCATE  COMP  "ram_side_chip0_data_port[12]"  SITE  "D3";
+LOCATE  COMP  "ram_side_chip0_data_port[13]"  SITE  "W14";
+LOCATE  COMP  "ram_side_chip0_data_port[14]"  SITE  "J3";
+LOCATE  COMP  "ram_side_chip0_data_port[15]"  SITE  "V10";
+LOCATE  COMP  "ram_side_chip0_data_port[1]"  SITE  "Y4";
+LOCATE  COMP  "ram_side_chip0_data_port[2]"  SITE  "W8";
+LOCATE  COMP  "ram_side_chip0_data_port[3]"  SITE  "H1";
+LOCATE  COMP  "ram_side_chip0_data_port[4]"  SITE  "T4";
+LOCATE  COMP  "ram_side_chip0_data_port[5]"  SITE  "W15";
+LOCATE  COMP  "ram_side_chip0_data_port[6]"  SITE  "E18";
+LOCATE  COMP  "ram_side_chip0_data_port[7]"  SITE  "V5";
+LOCATE  COMP  "ram_side_chip0_data_port[8]"  SITE  "E4";
+LOCATE  COMP  "ram_side_chip0_data_port[9]"  SITE  "J1";
+LOCATE  COMP  "ram_side_chip0_ldqm_port"  SITE  "H18";
+LOCATE  COMP  "ram_side_chip0_udqm_port"  SITE  "H19";
+LOCATE  COMP  "ram_side_chip1_data_port[0]"  SITE  "Y12";
+LOCATE  COMP  "ram_side_chip1_data_port[10]"  SITE  "T12";
+LOCATE  COMP  "ram_side_chip1_data_port[11]"  SITE  "G2";
+LOCATE  COMP  "ram_side_chip1_data_port[12]"  SITE  "P1";
+LOCATE  COMP  "ram_side_chip1_data_port[13]"  SITE  "T13";
+LOCATE  COMP  "ram_side_chip1_data_port[14]"  SITE  "N3";
+LOCATE  COMP  "ram_side_chip1_data_port[15]"  SITE  "V11";
+LOCATE  COMP  "ram_side_chip1_data_port[1]"  SITE  "D18";
+LOCATE  COMP  "ram_side_chip1_data_port[2]"  SITE  "R1";
+LOCATE  COMP  "ram_side_chip1_data_port[3]"  SITE  "F18";
+LOCATE  COMP  "ram_side_chip1_data_port[4]"  SITE  "Y5";
+LOCATE  COMP  "ram_side_chip1_data_port[5]"  SITE  "V7";
+LOCATE  COMP  "ram_side_chip1_data_port[6]"  SITE  "C2";
+LOCATE  COMP  "ram_side_chip1_data_port[7]"  SITE  "F5";
+LOCATE  COMP  "ram_side_chip1_data_port[8]"  SITE  "E19";
+LOCATE  COMP  "ram_side_chip1_data_port[9]"  SITE  "P18";
+LOCATE  COMP  "ram_side_chip1_ldqm_port"  SITE  "G17";
+LOCATE  COMP  "ram_side_chip1_udqm_port"  SITE  "H16";
+LOCATE  COMP  "ram_side_ck_en_port"  SITE  "U14";
+LOCATE  COMP  "ram_side_cs_n_port"  SITE  "V8";
+LOCATE  COMP  "ram_side_ras_n_port"  SITE  "H20";
+LOCATE  COMP  "ram_side_wr_en_port"  SITE  "J18";
 LOCATE  COMP  "reset_n_port"  SITE  "R2";
-LOCATE  COMP  "soc_side_addr_port[0]"  SITE  "T15";
-LOCATE  COMP  "soc_side_addr_port[10]"  SITE  "T20";
-LOCATE  COMP  "soc_side_addr_port[11]"  SITE  "V19";
-LOCATE  COMP  "soc_side_addr_port[12]"  SITE  "W17";
-LOCATE  COMP  "soc_side_addr_port[13]"  SITE  "W15";
-LOCATE  COMP  "soc_side_addr_port[14]"  SITE  "W14";
-LOCATE  COMP  "soc_side_addr_port[15]"  SITE  "W18";
-LOCATE  COMP  "soc_side_addr_port[16]"  SITE  "T18";
-LOCATE  COMP  "soc_side_addr_port[17]"  SITE  "T17";
-LOCATE  COMP  "soc_side_addr_port[18]"  SITE  "Y14";
-LOCATE  COMP  "soc_side_addr_port[19]"  SITE  "V14";
-LOCATE  COMP  "soc_side_addr_port[1]"  SITE  "R20";
-LOCATE  COMP  "soc_side_addr_port[20]"  SITE  "W13";
-LOCATE  COMP  "soc_side_addr_port[21]"  SITE  "Y19";
-LOCATE  COMP  "soc_side_addr_port[22]"  SITE  "Y17";
-LOCATE  COMP  "soc_side_addr_port[2]"  SITE  "U17";
-LOCATE  COMP  "soc_side_addr_port[3]"  SITE  "Y18";
-LOCATE  COMP  "soc_side_addr_port[4]"  SITE  "U14";
-LOCATE  COMP  "soc_side_addr_port[5]"  SITE  "Y15";
-LOCATE  COMP  "soc_side_addr_port[6]"  SITE  "U18";
-LOCATE  COMP  "soc_side_addr_port[7]"  SITE  "V20";
-LOCATE  COMP  "soc_side_addr_port[8]"  SITE  "P16";
-LOCATE  COMP  "soc_side_addr_port[9]"  SITE  "W16";
-LOCATE  COMP  "soc_side_busy_port"  SITE  "V11";
-LOCATE  COMP  "soc_side_rd_data_port[0]"  SITE  "G2";
-LOCATE  COMP  "soc_side_rd_data_port[10]"  SITE  "R1";
-LOCATE  COMP  "soc_side_rd_data_port[11]"  SITE  "H2";
-LOCATE  COMP  "soc_side_rd_data_port[12]"  SITE  "F16";
-LOCATE  COMP  "soc_side_rd_data_port[13]"  SITE  "N20";
-LOCATE  COMP  "soc_side_rd_data_port[14]"  SITE  "T1";
-LOCATE  COMP  "soc_side_rd_data_port[15]"  SITE  "V12";
-LOCATE  COMP  "soc_side_rd_data_port[16]"  SITE  "J3";
-LOCATE  COMP  "soc_side_rd_data_port[17]"  SITE  "D4";
-LOCATE  COMP  "soc_side_rd_data_port[18]"  SITE  "P2";
-LOCATE  COMP  "soc_side_rd_data_port[19]"  SITE  "U1";
-LOCATE  COMP  "soc_side_rd_data_port[1]"  SITE  "M19";
-LOCATE  COMP  "soc_side_rd_data_port[20]"  SITE  "J20";
-LOCATE  COMP  "soc_side_rd_data_port[21]"  SITE  "E18";
-LOCATE  COMP  "soc_side_rd_data_port[22]"  SITE  "K3";
-LOCATE  COMP  "soc_side_rd_data_port[23]"  SITE  "T6";
-LOCATE  COMP  "soc_side_rd_data_port[24]"  SITE  "Y6";
-LOCATE  COMP  "soc_side_rd_data_port[25]"  SITE  "D1";
-LOCATE  COMP  "soc_side_rd_data_port[26]"  SITE  "L1";
-LOCATE  COMP  "soc_side_rd_data_port[27]"  SITE  "N1";
-LOCATE  COMP  "soc_side_rd_data_port[28]"  SITE  "K16";
-LOCATE  COMP  "soc_side_rd_data_port[29]"  SITE  "P18";
-LOCATE  COMP  "soc_side_rd_data_port[2]"  SITE  "U8";
-LOCATE  COMP  "soc_side_rd_data_port[30]"  SITE  "L19";
-LOCATE  COMP  "soc_side_rd_data_port[31]"  SITE  "U6";
-LOCATE  COMP  "soc_side_rd_data_port[3]"  SITE  "H20";
-LOCATE  COMP  "soc_side_rd_data_port[4]"  SITE  "M2";
-LOCATE  COMP  "soc_side_rd_data_port[5]"  SITE  "F1";
-LOCATE  COMP  "soc_side_rd_data_port[6]"  SITE  "W3";
-LOCATE  COMP  "soc_side_rd_data_port[7]"  SITE  "G16";
-LOCATE  COMP  "soc_side_rd_data_port[8]"  SITE  "C20";
-LOCATE  COMP  "soc_side_rd_data_port[9]"  SITE  "J16";
-LOCATE  COMP  "soc_side_rd_en_port"  SITE  "W12";
-LOCATE  COMP  "soc_side_ready_port"  SITE  "T11";
-LOCATE  COMP  "soc_side_wr_data_port[0]"  SITE  "G3";
-LOCATE  COMP  "soc_side_wr_data_port[10]"  SITE  "N5";
-LOCATE  COMP  "soc_side_wr_data_port[11]"  SITE  "G4";
-LOCATE  COMP  "soc_side_wr_data_port[12]"  SITE  "E17";
-LOCATE  COMP  "soc_side_wr_data_port[13]"  SITE  "M16";
-LOCATE  COMP  "soc_side_wr_data_port[14]"  SITE  "R5";
-LOCATE  COMP  "soc_side_wr_data_port[15]"  SITE  "U13";
-LOCATE  COMP  "soc_side_wr_data_port[16]"  SITE  "J4";
-LOCATE  COMP  "soc_side_wr_data_port[17]"  SITE  "F3";
-LOCATE  COMP  "soc_side_wr_data_port[18]"  SITE  "M5";
-LOCATE  COMP  "soc_side_wr_data_port[19]"  SITE  "W1";
-LOCATE  COMP  "soc_side_wr_data_port[1]"  SITE  "M17";
-LOCATE  COMP  "soc_side_wr_data_port[20]"  SITE  "K17";
-LOCATE  COMP  "soc_side_wr_data_port[21]"  SITE  "B19";
-LOCATE  COMP  "soc_side_wr_data_port[22]"  SITE  "J1";
-LOCATE  COMP  "soc_side_wr_data_port[23]"  SITE  "V6";
-LOCATE  COMP  "soc_side_wr_data_port[24]"  SITE  "W6";
-LOCATE  COMP  "soc_side_wr_data_port[25]"  SITE  "C1";
-LOCATE  COMP  "soc_side_wr_data_port[26]"  SITE  "N3";
-LOCATE  COMP  "soc_side_wr_data_port[27]"  SITE  "L3";
-LOCATE  COMP  "soc_side_wr_data_port[28]"  SITE  "H19";
-LOCATE  COMP  "soc_side_wr_data_port[29]"  SITE  "R17";
-LOCATE  COMP  "soc_side_wr_data_port[2]"  SITE  "Y8";
-LOCATE  COMP  "soc_side_wr_data_port[30]"  SITE  "M20";
-LOCATE  COMP  "soc_side_wr_data_port[31]"  SITE  "V7";
-LOCATE  COMP  "soc_side_wr_data_port[3]"  SITE  "J18";
-LOCATE  COMP  "soc_side_wr_data_port[4]"  SITE  "L4";
-LOCATE  COMP  "soc_side_wr_data_port[5]"  SITE  "F2";
-LOCATE  COMP  "soc_side_wr_data_port[6]"  SITE  "W5";
-LOCATE  COMP  "soc_side_wr_data_port[7]"  SITE  "F18";
-LOCATE  COMP  "soc_side_wr_data_port[8]"  SITE  "C19";
-LOCATE  COMP  "soc_side_wr_data_port[9]"  SITE  "G19";
+LOCATE  COMP  "soc_side_addr_port[0]"  SITE  "W18";
+LOCATE  COMP  "soc_side_addr_port[10]"  SITE  "L19";
+LOCATE  COMP  "soc_side_addr_port[11]"  SITE  "W17";
+LOCATE  COMP  "soc_side_addr_port[12]"  SITE  "U19";
+LOCATE  COMP  "soc_side_addr_port[13]"  SITE  "N19";
+LOCATE  COMP  "soc_side_addr_port[14]"  SITE  "M18";
+LOCATE  COMP  "soc_side_addr_port[15]"  SITE  "T19";
+LOCATE  COMP  "soc_side_addr_port[16]"  SITE  "U17";
+LOCATE  COMP  "soc_side_addr_port[17]"  SITE  "U18";
+LOCATE  COMP  "soc_side_addr_port[18]"  SITE  "G16";
+LOCATE  COMP  "soc_side_addr_port[19]"  SITE  "K19";
+LOCATE  COMP  "soc_side_addr_port[1]"  SITE  "L20";
+LOCATE  COMP  "soc_side_addr_port[20]"  SITE  "J19";
+LOCATE  COMP  "soc_side_addr_port[21]"  SITE  "K17";
+LOCATE  COMP  "soc_side_addr_port[22]"  SITE  "L18";
+LOCATE  COMP  "soc_side_addr_port[2]"  SITE  "Y19";
+LOCATE  COMP  "soc_side_addr_port[3]"  SITE  "V19";
+LOCATE  COMP  "soc_side_addr_port[4]"  SITE  "M19";
+LOCATE  COMP  "soc_side_addr_port[5]"  SITE  "N17";
+LOCATE  COMP  "soc_side_addr_port[6]"  SITE  "R16";
+LOCATE  COMP  "soc_side_addr_port[7]"  SITE  "T17";
+LOCATE  COMP  "soc_side_addr_port[8]"  SITE  "W20";
+LOCATE  COMP  "soc_side_addr_port[9]"  SITE  "V17";
+LOCATE  COMP  "soc_side_busy_port"  SITE  "F20";
+LOCATE  COMP  "soc_side_rd_data_port[0]"  SITE  "M2";
+LOCATE  COMP  "soc_side_rd_data_port[10]"  SITE  "Y6";
+LOCATE  COMP  "soc_side_rd_data_port[11]"  SITE  "W2";
+LOCATE  COMP  "soc_side_rd_data_port[12]"  SITE  "C1";
+LOCATE  COMP  "soc_side_rd_data_port[13]"  SITE  "Y14";
+LOCATE  COMP  "soc_side_rd_data_port[14]"  SITE  "J2";
+LOCATE  COMP  "soc_side_rd_data_port[15]"  SITE  "W10";
+LOCATE  COMP  "soc_side_rd_data_port[16]"  SITE  "U12";
+LOCATE  COMP  "soc_side_rd_data_port[17]"  SITE  "C20";
+LOCATE  COMP  "soc_side_rd_data_port[18]"  SITE  "P3";
+LOCATE  COMP  "soc_side_rd_data_port[19]"  SITE  "E17";
+LOCATE  COMP  "soc_side_rd_data_port[1]"  SITE  "W4";
+LOCATE  COMP  "soc_side_rd_data_port[20]"  SITE  "T6";
+LOCATE  COMP  "soc_side_rd_data_port[21]"  SITE  "U6";
+LOCATE  COMP  "soc_side_rd_data_port[22]"  SITE  "E2";
+LOCATE  COMP  "soc_side_rd_data_port[23]"  SITE  "F2";
+LOCATE  COMP  "soc_side_rd_data_port[24]"  SITE  "F16";
+LOCATE  COMP  "soc_side_rd_data_port[25]"  SITE  "P19";
+LOCATE  COMP  "soc_side_rd_data_port[26]"  SITE  "Y13";
+LOCATE  COMP  "soc_side_rd_data_port[27]"  SITE  "F4";
+LOCATE  COMP  "soc_side_rd_data_port[28]"  SITE  "N4";
+LOCATE  COMP  "soc_side_rd_data_port[29]"  SITE  "V13";
+LOCATE  COMP  "soc_side_rd_data_port[2]"  SITE  "Y8";
+LOCATE  COMP  "soc_side_rd_data_port[30]"  SITE  "N2";
+LOCATE  COMP  "soc_side_rd_data_port[31]"  SITE  "U11";
+LOCATE  COMP  "soc_side_rd_data_port[3]"  SITE  "H2";
+LOCATE  COMP  "soc_side_rd_data_port[4]"  SITE  "R5";
+LOCATE  COMP  "soc_side_rd_data_port[5]"  SITE  "Y15";
+LOCATE  COMP  "soc_side_rd_data_port[6]"  SITE  "B20";
+LOCATE  COMP  "soc_side_rd_data_port[7]"  SITE  "W5";
+LOCATE  COMP  "soc_side_rd_data_port[8]"  SITE  "F3";
+LOCATE  COMP  "soc_side_rd_data_port[9]"  SITE  "K2";
+LOCATE  COMP  "soc_side_rd_en_port"  SITE  "G20";
+LOCATE  COMP  "soc_side_ready_port"  SITE  "G19";
+LOCATE  COMP  "soc_side_wr_data_port[0]"  SITE  "K4";
+LOCATE  COMP  "soc_side_wr_data_port[10]"  SITE  "W6";
+LOCATE  COMP  "soc_side_wr_data_port[11]"  SITE  "T3";
+LOCATE  COMP  "soc_side_wr_data_port[12]"  SITE  "D1";
+LOCATE  COMP  "soc_side_wr_data_port[13]"  SITE  "V15";
+LOCATE  COMP  "soc_side_wr_data_port[14]"  SITE  "J4";
+LOCATE  COMP  "soc_side_wr_data_port[15]"  SITE  "Y10";
+LOCATE  COMP  "soc_side_wr_data_port[16]"  SITE  "W12";
+LOCATE  COMP  "soc_side_wr_data_port[17]"  SITE  "D19";
+LOCATE  COMP  "soc_side_wr_data_port[18]"  SITE  "N5";
+LOCATE  COMP  "soc_side_wr_data_port[19]"  SITE  "F17";
+LOCATE  COMP  "soc_side_wr_data_port[1]"  SITE  "Y3";
+LOCATE  COMP  "soc_side_wr_data_port[20]"  SITE  "U5";
+LOCATE  COMP  "soc_side_wr_data_port[21]"  SITE  "W7";
+LOCATE  COMP  "soc_side_wr_data_port[22]"  SITE  "E3";
+LOCATE  COMP  "soc_side_wr_data_port[23]"  SITE  "G5";
+LOCATE  COMP  "soc_side_wr_data_port[24]"  SITE  "E20";
+LOCATE  COMP  "soc_side_wr_data_port[25]"  SITE  "R17";
+LOCATE  COMP  "soc_side_wr_data_port[26]"  SITE  "U13";
+LOCATE  COMP  "soc_side_wr_data_port[27]"  SITE  "G3";
+LOCATE  COMP  "soc_side_wr_data_port[28]"  SITE  "P2";
+LOCATE  COMP  "soc_side_wr_data_port[29]"  SITE  "W13";
+LOCATE  COMP  "soc_side_wr_data_port[2]"  SITE  "U8";
+LOCATE  COMP  "soc_side_wr_data_port[30]"  SITE  "M4";
+LOCATE  COMP  "soc_side_wr_data_port[31]"  SITE  "U10";
+LOCATE  COMP  "soc_side_wr_data_port[3]"  SITE  "G4";
+LOCATE  COMP  "soc_side_wr_data_port[4]"  SITE  "T2";
+LOCATE  COMP  "soc_side_wr_data_port[5]"  SITE  "U15";
+LOCATE  COMP  "soc_side_wr_data_port[6]"  SITE  "D20";
+LOCATE  COMP  "soc_side_wr_data_port[7]"  SITE  "Y2";
+LOCATE  COMP  "soc_side_wr_data_port[8]"  SITE  "E1";
+LOCATE  COMP  "soc_side_wr_data_port[9]"  SITE  "K3";
 LOCATE  COMP  "soc_side_wr_en_port"  SITE  "M1";
-LOCATE  COMP  "soc_side_wr_mask_port[0]"  SITE  "W10";
-LOCATE  COMP  "soc_side_wr_mask_port[1]"  SITE  "Y9";
-LOCATE  COMP  "soc_side_wr_mask_port[2]"  SITE  "U10";
-LOCATE  COMP  "soc_side_wr_mask_port[3]"  SITE  "U12";
+LOCATE  COMP  "soc_side_wr_mask_port[0]"  SITE  "J16";
+LOCATE  COMP  "soc_side_wr_mask_port[1]"  SITE  "J17";
+LOCATE  COMP  "soc_side_wr_mask_port[2]"  SITE  "F19";
+LOCATE  COMP  "soc_side_wr_mask_port[3]"  SITE  "G18";
 
 
 
@@ -649,5 +649,5 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Mar 25 12:44:21 2025
+Thu Mar 27 11:03:28 2025
 

@@ -24,19 +24,19 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/25/25  12:44:04
+Mapped on:  03/27/25  11:03:12
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:    131 out of  5145 (3%)
+   Number of registers:    129 out of  5145 (3%)
       PFU registers:           62 out of  4320 (1%)
-      PIO registers:           69 out of   825 (8%)
-   Number of SLICEs:        76 out of  2160 (4%)
-      SLICEs as Logic/ROM:     76 out of  2160 (4%)
+      PIO registers:           67 out of   825 (8%)
+   Number of SLICEs:        77 out of  2160 (4%)
+      SLICEs as Logic/ROM:     77 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        152 out of  4320 (4%)
-      Number used as logic LUTs:        118
+   Number of LUT4s:        153 out of  4320 (4%)
+      Number used as logic LUTs:        119
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -66,31 +66,30 @@ Mapped on:  03/25/25  12:44:04
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 105 loads, 105 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 103 loads, 103 rising, 0 falling (Driver: PIO clk )
 
-   Number of Clock Enables:  3
-     Net state[22]: 32 loads, 0 LSLICEs
+   Number of Clock Enables:  2
+     Net present_state[22]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
-     Net ready_reg_0io_RNO: 1 loads, 0 LSLICEs
    Number of LSRs:  6
-     Net N_553_i: 1 loads, 1 LSLICEs
-     Net N_167_i: 1 loads, 1 LSLICEs
-     Net reset_n_port_c: 76 loads, 7 LSLICEs
-     Net state_RNI0RJIC[14]: 9 loads, 9 LSLICEs
-     Net un1_reset_n_port_3_0: 2 loads, 2 LSLICEs
-     Net un36_0_a2_0_RNIOVE2C: 3 loads, 3 LSLICEs
+     Net N_567_i: 1 loads, 1 LSLICEs
+     Net N_182_i_0: 1 loads, 1 LSLICEs
+     Net reset_n_port_c: 74 loads, 7 LSLICEs
+     Net present_state_RNI20RGF[14]: 9 loads, 9 LSLICEs
+     Net un1_reset_n_port_3_0_0: 2 loads, 2 LSLICEs
+     Net next_delay_counter_f0_i_a2_0_RNIBF0TF[0]: 3 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 105 loads
-     Net next_state_0_sqmuxa_5_i_a2: 47 loads
-     Net state[9]: 39 loads
-     Net soc_side_wr_en_port_c: 36 loads
-     Net state[22]: 36 loads
-     Net N_582: 16 loads
-     Net N_614: 11 loads
-     Net un36_0_a2_1: 11 loads
-     Net N_602: 10 loads
-     Net un36_0_a2_0: 10 loads
+     Net reset_n_port_c: 102 loads
+     Net next_state_0_sqmuxa_7_i_a2: 43 loads
+     Net present_state[9]: 37 loads
+     Net present_state[22]: 35 loads
+     Net soc_side_wr_en_port_c: 35 loads
+     Net N_141: 16 loads
+     Net N_90: 14 loads
+     Net N_103: 13 loads
+     Net N_239: 12 loads
+     Net N_88: 12 loads
 
 
 
@@ -116,7 +115,7 @@ Mapped on:  03/25/25  12:44:04
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[0]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_busy_port  | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_busy_port  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | clk                 | INPUT     | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
@@ -127,8 +126,8 @@ Mapped on:  03/25/25  12:44:04
 | ram_side_cas_n_port | OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | ram_side_ras_n_port | OUTPUT    | LVCMOS25  | OUT        |
-
 +---------------------+-----------+-----------+------------+
+
 | ram_side_cs_n_port  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[15]| BIDIR     | LVCMOS25  |            |
@@ -184,8 +183,8 @@ Mapped on:  03/25/25  12:44:04
 | ram_side_chip0_data_port[8]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[7]| BIDIR     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
+
 | ram_side_chip0_data_port[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[5]| BIDIR     | LVCMOS25  |            |
@@ -241,8 +240,8 @@ Mapped on:  03/25/25  12:44:04
 | soc_side_rd_data_port[28]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[27]| OUTPUT    | LVCMOS25  | OUT        |
-
 +---------------------+-----------+-----------+------------+
+
 | soc_side_rd_data_port[26]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[25]| OUTPUT    | LVCMOS25  | OUT        |
@@ -298,8 +297,8 @@ Mapped on:  03/25/25  12:44:04
 | soc_side_rd_data_port[0]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_en_port | INPUT     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
+
 | soc_side_wr_mask_port[3]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_mask_port[2]| INPUT     | LVCMOS25  |            |
@@ -355,8 +354,8 @@ Mapped on:  03/25/25  12:44:04
 | soc_side_wr_data_port[9]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[8]| INPUT     | LVCMOS25  | IN         |
-
 +---------------------+-----------+-----------+------------+
+
 | soc_side_wr_data_port[7]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[6]| INPUT     | LVCMOS25  | IN         |
@@ -412,15 +411,15 @@ Mapped on:  03/25/25  12:44:04
 | soc_side_addr_port[4]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[3]| INPUT     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
+
 | soc_side_addr_port[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[1]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_ready_port | OUTPUT    | LVCMOS25  | OUT        |
+| soc_side_ready_port | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | reset_n_port        | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -430,7 +429,7 @@ Mapped on:  03/25/25  12:44:04
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
 Block GSR_INST undriven or does not drive anything - clipped.
-Signal state_i[9] was merged into signal state[9]
+Signal present_state_i[9] was merged into signal present_state[9]
 Signal reset_n_port_c_i was merged into signal reset_n_port_c
 Signal next_refresh_counter_s_15_0_S1 undriven or does not drive anything -
      clipped.
@@ -448,7 +447,7 @@ Signal next_refresh_counter_cry_0_0_S1 undriven or does not drive anything -
 Signal next_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_1 undriven or does not drive anything - clipped.
-Block state_RNII85D2[9] was optimized away.
+Block present_state_RNII3TU[9] was optimized away.
 Block reset_n_port_pad_RNI8MMK3 was optimized away.
 
      
@@ -462,6 +461,7 @@ Block reset_n_port_pad_RNI8MMK3 was optimized away.
    Total REAL Time: 0 secs  
    Peak Memory Usage: 52 MB
         
+
 
 
 
