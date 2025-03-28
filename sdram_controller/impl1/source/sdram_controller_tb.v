@@ -42,7 +42,7 @@ module sdram_controller_tb;
     
     // Instantiate the SDRAM controller
     sdram_controller #(
-        .CLK_FREQUENCY_MHZ(75),  // 75MHz clock
+        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
         .REFRESH_TIME_MS(64),
         .REFRESH_COUNT(4096),
         .ROW_WIDTH(12),
@@ -81,7 +81,7 @@ module sdram_controller_tb;
     // Clock generation.
     initial begin
         clk = 0;
-        forever #(CLK_PERIOD/2) clk = ~clk;  // Generate 75MHz clock.
+        forever #(CLK_PERIOD / 2) clk = ~clk;  // Generate 75MHz clock.
     end
     
     // Test sequence.

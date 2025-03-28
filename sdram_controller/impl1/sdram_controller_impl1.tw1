@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Fri Mar 28 20:01:53 2025
+Fri Mar 28 20:44:04 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -37,49 +37,49 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY PORT "clk" 75.000000 MHz ;
-            2053 items scored, 0 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            2000 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 1.120ns
+Passed: The following path meets requirements by 1.041ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              delay_counter[13]  (from clk_c +)
-   Destination:    FF         Data in        command_0io[5]  (to clk_c +)
+   Source:         FF         Q              delay_counter[14]  (from clk_c +)
+   Destination:    FF         Data in        command_0io[3]  (to clk_c +)
 
-   Delay:              12.060ns  (28.4% logic, 71.6% route), 7 logic levels.
+   Delay:              11.306ns  (30.3% logic, 69.7% route), 7 logic levels.
 
  Constraint Details:
 
-     12.060ns physical path delay SLICE_10 to ram_side_ras_n_port_MGIOL meets
-     13.333ns delay constraint less
-      0.153ns DO_SET requirement (totaling 13.180ns) by 1.120ns
+     11.306ns physical path delay SLICE_10 to ram_side_wr_en_port_MGIOL meets
+     12.500ns delay constraint less
+      0.153ns DO_SET requirement (totaling 12.347ns) by 1.041ns
 
  Physical Path Details:
 
-      Data path SLICE_10 to ram_side_ras_n_port_MGIOL:
+      Data path SLICE_10 to ram_side_wr_en_port_MGIOL:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.452   SLICE_10.CLK to    SLICE_10.Q0 SLICE_10 (from clk_c)
-ROUTE         2   e 1.234    SLICE_10.Q0 to    SLICE_73.D0 delay_counter[13]
-CTOF_DEL    ---     0.495    SLICE_73.D0 to    SLICE_73.F0 SLICE_73
-ROUTE         2   e 1.234    SLICE_73.F0 to    SLICE_58.A0 next_state_1_sqmuxa_8_i_a2_2
-CTOF_DEL    ---     0.495    SLICE_58.A0 to    SLICE_58.F0 SLICE_58
-ROUTE         3   e 1.234    SLICE_58.F0 to    SLICE_49.A1 N_616
-CTOF_DEL    ---     0.495    SLICE_49.A1 to    SLICE_49.F1 SLICE_49
-ROUTE         7   e 1.234    SLICE_49.F1 to    SLICE_52.A1 N_621
-CTOF_DEL    ---     0.495    SLICE_52.A1 to    SLICE_52.F1 SLICE_52
-ROUTE         5   e 1.234    SLICE_52.F1 to    SLICE_35.B1 next_state_0_sqmuxa_1
-CTOF_DEL    ---     0.495    SLICE_35.B1 to    SLICE_35.F1 SLICE_35
-ROUTE         2   e 1.234    SLICE_35.F1 to    SLICE_46.B0 N_163
-CTOF_DEL    ---     0.495    SLICE_46.B0 to    SLICE_46.F0 SLICE_46
-ROUTE         1   e 1.234    SLICE_46.F0 to *rt_MGIOL.OPOS N_160_i (to clk_c)
+REG_DEL     ---     0.452   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from clk_c)
+ROUTE         3   e 1.234    SLICE_10.Q1 to    SLICE_78.C0 delay_counter[14]
+CTOF_DEL    ---     0.495    SLICE_78.C0 to    SLICE_78.F0 SLICE_78
+ROUTE         1   e 1.234    SLICE_78.F0 to    SLICE_58.C0 next_state_1_sqmuxa_8_i_a2_0_4
+CTOF_DEL    ---     0.495    SLICE_58.C0 to    SLICE_58.F0 SLICE_58
+ROUTE         5   e 1.234    SLICE_58.F0 to    SLICE_43.B1 N_617
+CTOF_DEL    ---     0.495    SLICE_43.B1 to    SLICE_43.F1 SLICE_43
+ROUTE         5   e 1.234    SLICE_43.F1 to    SLICE_20.A1 N_618
+CTOF_DEL    ---     0.495    SLICE_20.A1 to    SLICE_20.F1 SLICE_20
+ROUTE         6   e 1.234    SLICE_20.F1 to    SLICE_46.A1 N_170_1
+CTOF_DEL    ---     0.495    SLICE_46.A1 to    SLICE_46.F1 SLICE_46
+ROUTE         1   e 0.480    SLICE_46.F1 to    SLICE_46.C0 next_command_i_0[3]
+CTOF_DEL    ---     0.495    SLICE_46.C0 to    SLICE_46.F0 SLICE_46
+ROUTE         1   e 1.234    SLICE_46.F0 to *rt_MGIOL.OPOS N_156_i (to clk_c)
                   --------
-                   12.060   (28.4% logic, 71.6% route), 7 logic levels.
+                   11.306   (30.3% logic, 69.7% route), 7 logic levels.
 
-Report:   81.880MHz is the maximum frequency for this preference.
+Report:   87.268MHz is the maximum frequency for this preference.
 
 Report Summary
 --------------
@@ -87,7 +87,7 @@ Report Summary
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 75.000000 MHz ;    |   75.000 MHz|   81.880 MHz|   7  
+FREQUENCY PORT "clk" 80.000000 MHz ;    |   80.000 MHz|   87.268 MHz|   7  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ Clock Domains Analysis
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 75.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Setup):
@@ -110,11 +110,11 @@ Timing summary (Setup):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 2053 paths, 1 nets, and 501 connections (52.30% coverage)
+Constraints cover 2000 paths, 1 nets, and 521 connections (53.16% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Fri Mar 28 20:01:53 2025
+Fri Mar 28 20:44:04 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -138,8 +138,8 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY PORT "clk" 75.000000 MHz ;
-            2053 items scored, 0 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            2000 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -166,7 +166,7 @@ Passed: The following path meets requirements by 0.447ns
 REG_DEL     ---     0.133    SLICE_1.CLK to     SLICE_1.Q0 SLICE_1 (from clk_c)
 ROUTE         2   e 0.199     SLICE_1.Q0 to     SLICE_1.A0 refresh_counter[15]
 CTOF_DEL    ---     0.101     SLICE_1.A0 to     SLICE_1.F0 SLICE_1
-ROUTE         1   e 0.001     SLICE_1.F0 to    SLICE_1.DI0 refresh_counter_3[15] (to clk_c)
+ROUTE         1   e 0.001     SLICE_1.F0 to    SLICE_1.DI0 un2_refresh_counter[15] (to clk_c)
                   --------
                     0.434   (53.9% logic, 46.1% route), 2 logic levels.
 
@@ -176,7 +176,7 @@ Report Summary
 Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 75.000000 MHz ;    |            -|            -|   2  
+FREQUENCY PORT "clk" 80.000000 MHz ;    |            -|            -|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -190,7 +190,7 @@ Clock Domains Analysis
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 75.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Hold):
@@ -199,7 +199,7 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 2053 paths, 1 nets, and 501 connections (52.30% coverage)
+Constraints cover 2000 paths, 1 nets, and 521 connections (53.16% coverage)
 
 
 

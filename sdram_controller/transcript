@@ -16,8 +16,10 @@
 # do {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/simulation/simulation.mdo}
 # Loading project simulation
 # Compile of sdram_controller.v was successful.
+# Compile of sdram_controller_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
 # vsim -voptargs="+acc" -L work -L pmi_work -L ovi_machxo2 sdram_controller_tb 
-# Start time: 18:50:43 on Mar 28,2025
+# Start time: 20:45:52 on Mar 28,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
@@ -32,11 +34,9 @@ sim:/sdram_controller_tb/dut/present_state
 add wave -position insertpoint  \
 sim:/sdram_controller_tb/dut/command
 add wave -position insertpoint  \
-sim:/sdram_controller_tb/dut/reset_delay_counter
+sim:/sdram_controller_tb/dut/refresh_counter
 add wave -position insertpoint  \
-sim:/sdram_controller_tb/dut/enable_delay_counter
-add wave -position insertpoint  \
-sim:/sdram_controller_tb/dut/delay_counter2
+sim:/sdram_controller_tb/dut/reset_refresh_counter
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt
@@ -46,490 +46,79 @@ restart -f
 run 500us
 # Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
 # Time: 0.007us, present_state: 00001, command: 10111000
-# Time: 300.142us, present_state: 00011, command: 10010001
-# Time: 300.155us, present_state: 00010, command: 10111000
-# Time: 300.182us, present_state: 00110, command: 10001000
-# Time: 300.195us, present_state: 00111, command: 10111000
-# Time: 300.262us, present_state: 00110, command: 10001000
-# Time: 300.275us, present_state: 00111, command: 10111000
-# Time: 300.342us, present_state: 00110, command: 10001000
-# Time: 300.355us, present_state: 00111, command: 10111000
-# Time: 300.422us, present_state: 00110, command: 10001000
-# Time: 300.435us, present_state: 00111, command: 10111000
-# Time: 300.502us, present_state: 00110, command: 10001000
-# Time: 300.515us, present_state: 00111, command: 10111000
-# Time: 300.582us, present_state: 00110, command: 10001000
-# Time: 300.595us, present_state: 00111, command: 10111000
-# Time: 300.662us, present_state: 00110, command: 10001000
-# Time: 300.675us, present_state: 00111, command: 10111000
-# Time: 300.742us, present_state: 00110, command: 10001000
-# Time: 300.755us, present_state: 00111, command: 10111000
-# Time: 300.822us, present_state: 00101, command: 1000000x
-# Time: 300.835us, present_state: 00100, command: 10111000
-# Time: 300.862us, present_state: 00000, command: 10111000
-# Time: 300.875us, present_state: 01100, command: 10010001
-# Time: 300.888us, present_state: 01101, command: 10111000
-# Time: 300.915us, present_state: 01111, command: 10001000
-# Time: 300.928us, present_state: 01110, command: 10111000
-# Time: 300.995us, present_state: 00000, command: 10111000
-# Time: 316.622us, present_state: 01100, command: 10010001
-# Time: 316.636us, present_state: 01101, command: 10111000
-# Time: 316.662us, present_state: 01111, command: 10001000
-# Time: 316.676us, present_state: 01110, command: 10111000
-# Time: 316.743us, present_state: 00000, command: 10111000
-# Time: 332.370us, present_state: 01100, command: 10010001
-# Time: 332.383us, present_state: 01101, command: 10111000
-# Time: 332.410us, present_state: 01111, command: 10001000
-# Time: 332.423us, present_state: 01110, command: 10111000
-# Time: 332.490us, present_state: 00000, command: 10111000
-# Time: 348.117us, present_state: 01100, command: 10010001
-# Time: 348.131us, present_state: 01101, command: 10111000
-# Time: 348.157us, present_state: 01111, command: 10001000
-# Time: 348.171us, present_state: 01110, command: 10111000
-# Time: 348.237us, present_state: 00000, command: 10111000
-# Time: 363.865us, present_state: 01100, command: 10010001
-# Time: 363.878us, present_state: 01101, command: 10111000
-# Time: 363.905us, present_state: 01111, command: 10001000
-# Time: 363.918us, present_state: 01110, command: 10111000
-# Time: 363.985us, present_state: 00000, command: 10111000
-# Time: 379.612us, present_state: 01100, command: 10010001
-# Time: 379.626us, present_state: 01101, command: 10111000
-# Time: 379.652us, present_state: 01111, command: 10001000
-# Time: 379.666us, present_state: 01110, command: 10111000
-# Time: 379.732us, present_state: 00000, command: 10111000
-# Time: 395.360us, present_state: 01100, command: 10010001
-# Time: 395.373us, present_state: 01101, command: 10111000
-# Time: 395.400us, present_state: 01111, command: 10001000
-# Time: 395.413us, present_state: 01110, command: 10111000
-# Time: 395.480us, present_state: 00000, command: 10111000
-# Time: 411.107us, present_state: 01100, command: 10010001
-# Time: 411.121us, present_state: 01101, command: 10111000
-# Time: 411.147us, present_state: 01111, command: 10001000
-# Time: 411.161us, present_state: 01110, command: 10111000
-# Time: 411.227us, present_state: 00000, command: 10111000
-# Time: 426.855us, present_state: 01100, command: 10010001
-# Time: 426.868us, present_state: 01101, command: 10111000
-# Time: 426.895us, present_state: 01111, command: 10001000
-# Time: 426.908us, present_state: 01110, command: 10111000
-# Time: 426.975us, present_state: 00000, command: 10111000
-# Time: 442.602us, present_state: 01100, command: 10010001
-# Time: 442.615us, present_state: 01101, command: 10111000
-# Time: 442.642us, present_state: 01111, command: 10001000
-# Time: 442.655us, present_state: 01110, command: 10111000
-# Time: 442.722us, present_state: 00000, command: 10111000
-# Time: 458.350us, present_state: 01100, command: 10010001
-# Time: 458.363us, present_state: 01101, command: 10111000
-# Time: 458.390us, present_state: 01111, command: 10001000
-# Time: 458.403us, present_state: 01110, command: 10111000
-# Time: 458.470us, present_state: 00000, command: 10111000
-# Time: 474.097us, present_state: 01100, command: 10010001
-# Time: 474.110us, present_state: 01101, command: 10111000
-# Time: 474.137us, present_state: 01111, command: 10001000
-# Time: 474.150us, present_state: 01110, command: 10111000
-# Time: 474.217us, present_state: 00000, command: 10111000
-# Time: 489.844us, present_state: 01100, command: 10010001
-# Time: 489.858us, present_state: 01101, command: 10111000
-# Time: 489.884us, present_state: 01111, command: 10001000
-# Time: 489.898us, present_state: 01110, command: 10111000
-# Time: 489.964us, present_state: 00000, command: 10111000
-# Compile of sdram_controller.v was successful.
-# Compile of sdram_controller_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.sdram_controller_tb(fast)
-# Loading work.sdram_controller(fast)
-# Warning in wave window restart: (vish-4014) No objects found matching '/sdram_controller_tb/dut/enable_delay_counter'. 
-run 500us
-# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
-# Time: 0.007us, present_state: 00001, command: 10111000
-# Time: 300.142us, present_state: 00011, command: 10010001
-# Time: 300.155us, present_state: 00010, command: 10111000
-# Time: 300.182us, present_state: 00110, command: 10001000
-# Time: 300.195us, present_state: 00111, command: 10111000
-# Time: 300.262us, present_state: 00110, command: 10001000
-# Time: 300.275us, present_state: 00111, command: 10111000
-# Time: 300.342us, present_state: 00110, command: 10001000
-# Time: 300.355us, present_state: 00111, command: 10111000
-# Time: 300.422us, present_state: 00110, command: 10001000
-# Time: 300.435us, present_state: 00111, command: 10111000
-# Time: 300.502us, present_state: 00110, command: 10001000
-# Time: 300.515us, present_state: 00111, command: 10111000
-# Time: 300.582us, present_state: 00110, command: 10001000
-# Time: 300.595us, present_state: 00111, command: 10111000
-# Time: 300.662us, present_state: 00110, command: 10001000
-# Time: 300.675us, present_state: 00111, command: 10111000
-# Time: 300.742us, present_state: 00110, command: 10001000
-# Time: 300.755us, present_state: 00111, command: 10111000
-# Time: 300.822us, present_state: 00101, command: 1000000x
-# Time: 300.835us, present_state: 00100, command: 10111000
-# Time: 300.862us, present_state: 00000, command: 10111000
-# Time: 300.875us, present_state: 01100, command: 10010001
-# Time: 300.888us, present_state: 01101, command: 10111000
-# Time: 300.915us, present_state: 01111, command: 10001000
-# Time: 300.928us, present_state: 01110, command: 10111000
-# Time: 300.995us, present_state: 00000, command: 10111000
-# Time: 316.622us, present_state: 01100, command: 10010001
-# Time: 316.636us, present_state: 01101, command: 10111000
-# Time: 316.662us, present_state: 01111, command: 10001000
-# Time: 316.676us, present_state: 01110, command: 10111000
-# Time: 316.743us, present_state: 00000, command: 10111000
-# Time: 332.370us, present_state: 01100, command: 10010001
-# Time: 332.383us, present_state: 01101, command: 10111000
-# Time: 332.410us, present_state: 01111, command: 10001000
-# Time: 332.423us, present_state: 01110, command: 10111000
-# Time: 332.490us, present_state: 00000, command: 10111000
-# Time: 348.117us, present_state: 01100, command: 10010001
-# Time: 348.131us, present_state: 01101, command: 10111000
-# Time: 348.157us, present_state: 01111, command: 10001000
-# Time: 348.171us, present_state: 01110, command: 10111000
-# Time: 348.237us, present_state: 00000, command: 10111000
-# Time: 363.865us, present_state: 01100, command: 10010001
-# Time: 363.878us, present_state: 01101, command: 10111000
-# Time: 363.905us, present_state: 01111, command: 10001000
-# Time: 363.918us, present_state: 01110, command: 10111000
-# Time: 363.985us, present_state: 00000, command: 10111000
-# Time: 379.612us, present_state: 01100, command: 10010001
-# Time: 379.626us, present_state: 01101, command: 10111000
-# Time: 379.652us, present_state: 01111, command: 10001000
-# Time: 379.666us, present_state: 01110, command: 10111000
-# Time: 379.732us, present_state: 00000, command: 10111000
-# Time: 395.360us, present_state: 01100, command: 10010001
-# Time: 395.373us, present_state: 01101, command: 10111000
-# Time: 395.400us, present_state: 01111, command: 10001000
-# Time: 395.413us, present_state: 01110, command: 10111000
-# Time: 395.480us, present_state: 00000, command: 10111000
-# Time: 411.107us, present_state: 01100, command: 10010001
-# Time: 411.121us, present_state: 01101, command: 10111000
-# Time: 411.147us, present_state: 01111, command: 10001000
-# Time: 411.161us, present_state: 01110, command: 10111000
-# Time: 411.227us, present_state: 00000, command: 10111000
-# Time: 426.855us, present_state: 01100, command: 10010001
-# Time: 426.868us, present_state: 01101, command: 10111000
-# Time: 426.895us, present_state: 01111, command: 10001000
-# Time: 426.908us, present_state: 01110, command: 10111000
-# Time: 426.975us, present_state: 00000, command: 10111000
-# Time: 442.602us, present_state: 01100, command: 10010001
-# Time: 442.615us, present_state: 01101, command: 10111000
-# Time: 442.642us, present_state: 01111, command: 10001000
-# Time: 442.655us, present_state: 01110, command: 10111000
-# Time: 442.722us, present_state: 00000, command: 10111000
-# Time: 458.350us, present_state: 01100, command: 10010001
-# Time: 458.363us, present_state: 01101, command: 10111000
-# Time: 458.390us, present_state: 01111, command: 10001000
-# Time: 458.403us, present_state: 01110, command: 10111000
-# Time: 458.470us, present_state: 00000, command: 10111000
-# Time: 474.097us, present_state: 01100, command: 10010001
-# Time: 474.110us, present_state: 01101, command: 10111000
-# Time: 474.137us, present_state: 01111, command: 10001000
-# Time: 474.150us, present_state: 01110, command: 10111000
-# Time: 474.217us, present_state: 00000, command: 10111000
-# Time: 489.844us, present_state: 01100, command: 10010001
-# Time: 489.858us, present_state: 01101, command: 10111000
-# Time: 489.884us, present_state: 01111, command: 10001000
-# Time: 489.898us, present_state: 01110, command: 10111000
-# Time: 489.964us, present_state: 00000, command: 10111000
-# Compile of sdram_controller.v was successful.
-# Compile of sdram_controller_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.sdram_controller_tb(fast)
-# Loading work.sdram_controller(fast)
-run 500us
-# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
-# Time: 0.007us, present_state: 00001, command: 10111000
-# Time: 300.142us, present_state: 00011, command: 10010001
-# Time: 300.155us, present_state: 00010, command: 10111000
-# Time: 300.182us, present_state: 00110, command: 10001000
-# Time: 300.195us, present_state: 00111, command: 10111000
-# Time: 300.262us, present_state: 00110, command: 10001000
-# Time: 300.275us, present_state: 00111, command: 10111000
-# Time: 300.342us, present_state: 00110, command: 10001000
-# Time: 300.355us, present_state: 00111, command: 10111000
-# Time: 300.422us, present_state: 00110, command: 10001000
-# Time: 300.435us, present_state: 00111, command: 10111000
-# Time: 300.502us, present_state: 00110, command: 10001000
-# Time: 300.515us, present_state: 00111, command: 10111000
-# Time: 300.582us, present_state: 00110, command: 10001000
-# Time: 300.595us, present_state: 00111, command: 10111000
-# Time: 300.662us, present_state: 00110, command: 10001000
-# Time: 300.675us, present_state: 00111, command: 10111000
-# Time: 300.742us, present_state: 00110, command: 10001000
-# Time: 300.755us, present_state: 00111, command: 10111000
-# Time: 300.822us, present_state: 00101, command: 1000000x
-# Time: 300.835us, present_state: 00100, command: 10111000
-# Time: 300.862us, present_state: 00000, command: 10111000
-# Time: 300.875us, present_state: 01100, command: 10010001
-# Time: 300.888us, present_state: 01101, command: 10111000
-# Time: 300.915us, present_state: 01111, command: 10001000
-# Time: 300.928us, present_state: 01110, command: 10111000
-# Time: 300.995us, present_state: 00000, command: 10111000
-# Time: 316.622us, present_state: 01100, command: 10010001
-# Time: 316.636us, present_state: 01101, command: 10111000
-# Time: 316.662us, present_state: 01111, command: 10001000
-# Time: 316.676us, present_state: 01110, command: 10111000
-# Time: 316.743us, present_state: 00000, command: 10111000
-# Time: 332.370us, present_state: 01100, command: 10010001
-# Time: 332.383us, present_state: 01101, command: 10111000
-# Time: 332.410us, present_state: 01111, command: 10001000
-# Time: 332.423us, present_state: 01110, command: 10111000
-# Time: 332.490us, present_state: 00000, command: 10111000
-# Time: 348.117us, present_state: 01100, command: 10010001
-# Time: 348.131us, present_state: 01101, command: 10111000
-# Time: 348.157us, present_state: 01111, command: 10001000
-# Time: 348.171us, present_state: 01110, command: 10111000
-# Time: 348.237us, present_state: 00000, command: 10111000
-# Time: 363.865us, present_state: 01100, command: 10010001
-# Time: 363.878us, present_state: 01101, command: 10111000
-# Time: 363.905us, present_state: 01111, command: 10001000
-# Time: 363.918us, present_state: 01110, command: 10111000
-# Time: 363.985us, present_state: 00000, command: 10111000
-# Time: 379.612us, present_state: 01100, command: 10010001
-# Time: 379.626us, present_state: 01101, command: 10111000
-# Time: 379.652us, present_state: 01111, command: 10001000
-# Time: 379.666us, present_state: 01110, command: 10111000
-# Time: 379.732us, present_state: 00000, command: 10111000
-# Time: 395.360us, present_state: 01100, command: 10010001
-# Time: 395.373us, present_state: 01101, command: 10111000
-# Time: 395.400us, present_state: 01111, command: 10001000
-# Time: 395.413us, present_state: 01110, command: 10111000
-# Time: 395.480us, present_state: 00000, command: 10111000
-# Time: 411.107us, present_state: 01100, command: 10010001
-# Time: 411.121us, present_state: 01101, command: 10111000
-# Time: 411.147us, present_state: 01111, command: 10001000
-# Time: 411.161us, present_state: 01110, command: 10111000
-# Time: 411.227us, present_state: 00000, command: 10111000
-# Time: 426.855us, present_state: 01100, command: 10010001
-# Time: 426.868us, present_state: 01101, command: 10111000
-# Time: 426.895us, present_state: 01111, command: 10001000
-# Time: 426.908us, present_state: 01110, command: 10111000
-# Time: 426.975us, present_state: 00000, command: 10111000
-# Time: 442.602us, present_state: 01100, command: 10010001
-# Time: 442.615us, present_state: 01101, command: 10111000
-# Time: 442.642us, present_state: 01111, command: 10001000
-# Time: 442.655us, present_state: 01110, command: 10111000
-# Time: 442.722us, present_state: 00000, command: 10111000
-# Time: 458.350us, present_state: 01100, command: 10010001
-# Time: 458.363us, present_state: 01101, command: 10111000
-# Time: 458.390us, present_state: 01111, command: 10001000
-# Time: 458.403us, present_state: 01110, command: 10111000
-# Time: 458.470us, present_state: 00000, command: 10111000
-# Time: 474.097us, present_state: 01100, command: 10010001
-# Time: 474.110us, present_state: 01101, command: 10111000
-# Time: 474.137us, present_state: 01111, command: 10001000
-# Time: 474.150us, present_state: 01110, command: 10111000
-# Time: 474.217us, present_state: 00000, command: 10111000
-# Time: 489.844us, present_state: 01100, command: 10010001
-# Time: 489.858us, present_state: 01101, command: 10111000
-# Time: 489.884us, present_state: 01111, command: 10001000
-# Time: 489.898us, present_state: 01110, command: 10111000
-# Time: 489.964us, present_state: 00000, command: 10111000
-# Compile of sdram_controller.v was successful.
-# Compile of sdram_controller_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.sdram_controller_tb(fast)
-# Loading work.sdram_controller(fast)
-run 500us
-# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
-# Time: 0.007us, present_state: 00001, command: 10111000
-# Time: 300.142us, present_state: 00011, command: 10010001
-# Time: 300.155us, present_state: 00010, command: 10111000
-# Time: 300.182us, present_state: 00110, command: 10001000
-# Time: 300.195us, present_state: 00111, command: 10111000
-# Time: 300.262us, present_state: 00110, command: 10001000
-# Time: 300.275us, present_state: 00111, command: 10111000
-# Time: 300.342us, present_state: 00110, command: 10001000
-# Time: 300.355us, present_state: 00111, command: 10111000
-# Time: 300.422us, present_state: 00110, command: 10001000
-# Time: 300.435us, present_state: 00111, command: 10111000
-# Time: 300.502us, present_state: 00110, command: 10001000
-# Time: 300.515us, present_state: 00111, command: 10111000
-# Time: 300.582us, present_state: 00110, command: 10001000
-# Time: 300.595us, present_state: 00111, command: 10111000
-# Time: 300.662us, present_state: 00110, command: 10001000
-# Time: 300.675us, present_state: 00111, command: 10111000
-# Time: 300.742us, present_state: 00110, command: 10001000
-# Time: 300.755us, present_state: 00111, command: 10111000
-# Time: 300.822us, present_state: 00101, command: 1000000x
-# Time: 300.835us, present_state: 00100, command: 10111000
-# Time: 300.862us, present_state: 00000, command: 10111000
-# Time: 300.875us, present_state: 01100, command: 10010001
-# Time: 300.888us, present_state: 01101, command: 10111000
-# Time: 300.915us, present_state: 01111, command: 10001000
-# Time: 300.928us, present_state: 01110, command: 10111000
-# Time: 300.995us, present_state: 00000, command: 10111000
-# Time: 316.622us, present_state: 01100, command: 10010001
-# Time: 316.636us, present_state: 01101, command: 10111000
-# Time: 316.662us, present_state: 01111, command: 10001000
-# Time: 316.676us, present_state: 01110, command: 10111000
-# Time: 316.743us, present_state: 00000, command: 10111000
-# Time: 332.370us, present_state: 01100, command: 10010001
-# Time: 332.383us, present_state: 01101, command: 10111000
-# Time: 332.410us, present_state: 01111, command: 10001000
-# Time: 332.423us, present_state: 01110, command: 10111000
-# Time: 332.490us, present_state: 00000, command: 10111000
-# Time: 348.117us, present_state: 01100, command: 10010001
-# Time: 348.131us, present_state: 01101, command: 10111000
-# Time: 348.157us, present_state: 01111, command: 10001000
-# Time: 348.171us, present_state: 01110, command: 10111000
-# Time: 348.237us, present_state: 00000, command: 10111000
-# Time: 363.865us, present_state: 01100, command: 10010001
-# Time: 363.878us, present_state: 01101, command: 10111000
-# Time: 363.905us, present_state: 01111, command: 10001000
-# Time: 363.918us, present_state: 01110, command: 10111000
-# Time: 363.985us, present_state: 00000, command: 10111000
-# Time: 379.612us, present_state: 01100, command: 10010001
-# Time: 379.626us, present_state: 01101, command: 10111000
-# Time: 379.652us, present_state: 01111, command: 10001000
-# Time: 379.666us, present_state: 01110, command: 10111000
-# Time: 379.732us, present_state: 00000, command: 10111000
-# Time: 395.360us, present_state: 01100, command: 10010001
-# Time: 395.373us, present_state: 01101, command: 10111000
-# Time: 395.400us, present_state: 01111, command: 10001000
-# Time: 395.413us, present_state: 01110, command: 10111000
-# Time: 395.480us, present_state: 00000, command: 10111000
-# Time: 411.107us, present_state: 01100, command: 10010001
-# Time: 411.121us, present_state: 01101, command: 10111000
-# Time: 411.147us, present_state: 01111, command: 10001000
-# Time: 411.161us, present_state: 01110, command: 10111000
-# Time: 411.227us, present_state: 00000, command: 10111000
-# Time: 426.855us, present_state: 01100, command: 10010001
-# Time: 426.868us, present_state: 01101, command: 10111000
-# Time: 426.895us, present_state: 01111, command: 10001000
-# Time: 426.908us, present_state: 01110, command: 10111000
-# Time: 426.975us, present_state: 00000, command: 10111000
-# Time: 442.602us, present_state: 01100, command: 10010001
-# Time: 442.615us, present_state: 01101, command: 10111000
-# Time: 442.642us, present_state: 01111, command: 10001000
-# Time: 442.655us, present_state: 01110, command: 10111000
-# Time: 442.722us, present_state: 00000, command: 10111000
-# Time: 458.350us, present_state: 01100, command: 10010001
-# Time: 458.363us, present_state: 01101, command: 10111000
-# Time: 458.390us, present_state: 01111, command: 10001000
-# Time: 458.403us, present_state: 01110, command: 10111000
-# Time: 458.470us, present_state: 00000, command: 10111000
-# Time: 474.097us, present_state: 01100, command: 10010001
-# Time: 474.110us, present_state: 01101, command: 10111000
-# Time: 474.137us, present_state: 01111, command: 10001000
-# Time: 474.150us, present_state: 01110, command: 10111000
-# Time: 474.217us, present_state: 00000, command: 10111000
-# Time: 489.844us, present_state: 01100, command: 10010001
-# Time: 489.858us, present_state: 01101, command: 10111000
-# Time: 489.884us, present_state: 01111, command: 10001000
-# Time: 489.898us, present_state: 01110, command: 10111000
-# Time: 489.964us, present_state: 00000, command: 10111000
-# Compile of sdram_controller.v was successful.
-# Compile of sdram_controller_tb.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading work.sdram_controller_tb(fast)
-# Loading work.sdram_controller(fast)
-run 500us
-# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
-# Time: 0.007us, present_state: 00001, command: 10111000
-# Time: 300.142us, present_state: 00011, command: 10010001
-# Time: 300.155us, present_state: 00010, command: 10111000
-# Time: 300.182us, present_state: 00110, command: 10001000
-# Time: 300.195us, present_state: 00111, command: 10111000
-# Time: 300.262us, present_state: 00110, command: 10001000
-# Time: 300.275us, present_state: 00111, command: 10111000
-# Time: 300.342us, present_state: 00110, command: 10001000
-# Time: 300.355us, present_state: 00111, command: 10111000
-# Time: 300.422us, present_state: 00110, command: 10001000
-# Time: 300.435us, present_state: 00111, command: 10111000
-# Time: 300.502us, present_state: 00110, command: 10001000
-# Time: 300.515us, present_state: 00111, command: 10111000
-# Time: 300.582us, present_state: 00110, command: 10001000
-# Time: 300.595us, present_state: 00111, command: 10111000
-# Time: 300.662us, present_state: 00110, command: 10001000
-# Time: 300.675us, present_state: 00111, command: 10111000
-# Time: 300.742us, present_state: 00110, command: 10001000
-# Time: 300.755us, present_state: 00111, command: 10111000
-# Time: 300.822us, present_state: 00101, command: 1000000x
-# Time: 300.835us, present_state: 00100, command: 10111000
-# Time: 300.862us, present_state: 00000, command: 10111000
-# Time: 300.875us, present_state: 01100, command: 10010001
-# Time: 300.888us, present_state: 01101, command: 10111000
-# Time: 300.915us, present_state: 01111, command: 10001000
-# Time: 300.928us, present_state: 01110, command: 10111000
-# Time: 300.995us, present_state: 00000, command: 10111000
-# Time: 316.622us, present_state: 01100, command: 10010001
-# Time: 316.636us, present_state: 01101, command: 10111000
-# Time: 316.662us, present_state: 01111, command: 10001000
-# Time: 316.676us, present_state: 01110, command: 10111000
-# Time: 316.743us, present_state: 00000, command: 10111000
-# Time: 332.370us, present_state: 01100, command: 10010001
-# Time: 332.383us, present_state: 01101, command: 10111000
-# Time: 332.410us, present_state: 01111, command: 10001000
-# Time: 332.423us, present_state: 01110, command: 10111000
-# Time: 332.490us, present_state: 00000, command: 10111000
-# Time: 348.117us, present_state: 01100, command: 10010001
-# Time: 348.131us, present_state: 01101, command: 10111000
-# Time: 348.157us, present_state: 01111, command: 10001000
-# Time: 348.171us, present_state: 01110, command: 10111000
-# Time: 348.237us, present_state: 00000, command: 10111000
-# Time: 363.865us, present_state: 01100, command: 10010001
-# Time: 363.878us, present_state: 01101, command: 10111000
-# Time: 363.905us, present_state: 01111, command: 10001000
-# Time: 363.918us, present_state: 01110, command: 10111000
-# Time: 363.985us, present_state: 00000, command: 10111000
-# Time: 379.612us, present_state: 01100, command: 10010001
-# Time: 379.626us, present_state: 01101, command: 10111000
-# Time: 379.652us, present_state: 01111, command: 10001000
-# Time: 379.666us, present_state: 01110, command: 10111000
-# Time: 379.732us, present_state: 00000, command: 10111000
-# Time: 395.360us, present_state: 01100, command: 10010001
-# Time: 395.373us, present_state: 01101, command: 10111000
-# Time: 395.400us, present_state: 01111, command: 10001000
-# Time: 395.413us, present_state: 01110, command: 10111000
-# Time: 395.480us, present_state: 00000, command: 10111000
-# Time: 411.107us, present_state: 01100, command: 10010001
-# Time: 411.121us, present_state: 01101, command: 10111000
-# Time: 411.147us, present_state: 01111, command: 10001000
-# Time: 411.161us, present_state: 01110, command: 10111000
-# Time: 411.227us, present_state: 00000, command: 10111000
-# Time: 426.855us, present_state: 01100, command: 10010001
-# Time: 426.868us, present_state: 01101, command: 10111000
-# Time: 426.895us, present_state: 01111, command: 10001000
-# Time: 426.908us, present_state: 01110, command: 10111000
-# Time: 426.975us, present_state: 00000, command: 10111000
-# Time: 442.602us, present_state: 01100, command: 10010001
-# Time: 442.615us, present_state: 01101, command: 10111000
-# Time: 442.642us, present_state: 01111, command: 10001000
-# Time: 442.655us, present_state: 01110, command: 10111000
-# Time: 442.722us, present_state: 00000, command: 10111000
-# Time: 458.350us, present_state: 01100, command: 10010001
-# Time: 458.363us, present_state: 01101, command: 10111000
-# Time: 458.390us, present_state: 01111, command: 10001000
-# Time: 458.403us, present_state: 01110, command: 10111000
-# Time: 458.470us, present_state: 00000, command: 10111000
-# Time: 474.097us, present_state: 01100, command: 10010001
-# Time: 474.110us, present_state: 01101, command: 10111000
-# Time: 474.137us, present_state: 01111, command: 10001000
-# Time: 474.150us, present_state: 01110, command: 10111000
-# Time: 474.217us, present_state: 00000, command: 10111000
-# Time: 489.844us, present_state: 01100, command: 10010001
-# Time: 489.858us, present_state: 01101, command: 10111000
-# Time: 489.884us, present_state: 01111, command: 10001000
-# Time: 489.898us, present_state: 01110, command: 10111000
-# Time: 489.964us, present_state: 00000, command: 10111000
+# Time: 320.143us, present_state: 00011, command: 10010001
+# Time: 320.156us, present_state: 00010, command: 10111000
+# Time: 320.183us, present_state: 00110, command: 10001000
+# Time: 320.196us, present_state: 00111, command: 10111000
+# Time: 320.276us, present_state: 00110, command: 10001000
+# Time: 320.289us, present_state: 00111, command: 10111000
+# Time: 320.369us, present_state: 00110, command: 10001000
+# Time: 320.383us, present_state: 00111, command: 10111000
+# Time: 320.463us, present_state: 00110, command: 10001000
+# Time: 320.476us, present_state: 00111, command: 10111000
+# Time: 320.556us, present_state: 00110, command: 10001000
+# Time: 320.569us, present_state: 00111, command: 10111000
+# Time: 320.649us, present_state: 00110, command: 10001000
+# Time: 320.663us, present_state: 00111, command: 10111000
+# Time: 320.743us, present_state: 00110, command: 10001000
+# Time: 320.756us, present_state: 00111, command: 10111000
+# Time: 320.836us, present_state: 00110, command: 10001000
+# Time: 320.849us, present_state: 00111, command: 10111000
+# Time: 320.929us, present_state: 00101, command: 1000000x
+# Time: 320.943us, present_state: 00100, command: 10111000
+# Time: 320.969us, present_state: 00000, command: 10111000
+# Time: 320.983us, present_state: 01100, command: 10010001
+# Time: 320.996us, present_state: 01101, command: 10111000
+# Time: 321.023us, present_state: 01111, command: 10001000
+# Time: 321.036us, present_state: 01110, command: 10111000
+# Time: 321.116us, present_state: 00000, command: 10111000
+# Time: 337.784us, present_state: 01100, command: 10010001
+# Time: 337.797us, present_state: 01101, command: 10111000
+# Time: 337.824us, present_state: 01111, command: 10001000
+# Time: 337.837us, present_state: 01110, command: 10111000
+# Time: 337.917us, present_state: 00000, command: 10111000
+# Time: 354.584us, present_state: 01100, command: 10010001
+# Time: 354.598us, present_state: 01101, command: 10111000
+# Time: 354.624us, present_state: 01111, command: 10001000
+# Time: 354.638us, present_state: 01110, command: 10111000
+# Time: 354.718us, present_state: 00000, command: 10111000
+# Time: 371.385us, present_state: 01100, command: 10010001
+# Time: 371.399us, present_state: 01101, command: 10111000
+# Time: 371.425us, present_state: 01111, command: 10001000
+# Time: 371.439us, present_state: 01110, command: 10111000
+# Time: 371.519us, present_state: 00000, command: 10111000
+# Time: 388.186us, present_state: 01100, command: 10010001
+# Time: 388.199us, present_state: 01101, command: 10111000
+# Time: 388.226us, present_state: 01111, command: 10001000
+# Time: 388.239us, present_state: 01110, command: 10111000
+# Time: 388.319us, present_state: 00000, command: 10111000
+# Time: 404.987us, present_state: 01100, command: 10010001
+# Time: 405.000us, present_state: 01101, command: 10111000
+# Time: 405.027us, present_state: 01111, command: 10001000
+# Time: 405.040us, present_state: 01110, command: 10111000
+# Time: 405.120us, present_state: 00000, command: 10111000
+# Time: 421.788us, present_state: 01100, command: 10010001
+# Time: 421.801us, present_state: 01101, command: 10111000
+# Time: 421.828us, present_state: 01111, command: 10001000
+# Time: 421.841us, present_state: 01110, command: 10111000
+# Time: 421.921us, present_state: 00000, command: 10111000
+# Time: 438.589us, present_state: 01100, command: 10010001
+# Time: 438.602us, present_state: 01101, command: 10111000
+# Time: 438.629us, present_state: 01111, command: 10001000
+# Time: 438.642us, present_state: 01110, command: 10111000
+# Time: 438.722us, present_state: 00000, command: 10111000
+# Time: 455.389us, present_state: 01100, command: 10010001
+# Time: 455.403us, present_state: 01101, command: 10111000
+# Time: 455.429us, present_state: 01111, command: 10001000
+# Time: 455.443us, present_state: 01110, command: 10111000
+# Time: 455.523us, present_state: 00000, command: 10111000
+# Time: 472.190us, present_state: 01100, command: 10010001
+# Time: 472.204us, present_state: 01101, command: 10111000
+# Time: 472.230us, present_state: 01111, command: 10001000
+# Time: 472.244us, present_state: 01110, command: 10111000
+# Time: 472.324us, present_state: 00000, command: 10111000
+# Time: 488.991us, present_state: 01100, command: 10010001
+# Time: 489.004us, present_state: 01101, command: 10111000
+# Time: 489.031us, present_state: 01111, command: 10001000
+# Time: 489.044us, present_state: 01110, command: 10111000
+# Time: 489.124us, present_state: 00000, command: 10111000

@@ -4,7 +4,7 @@
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
-		CLK_FREQUENCY_MHZ = 100MHz
+		CLK_FREQUENCY_MHZ = 80MHz
 		CAS 3
 
 	Very simple CPU interface
@@ -53,7 +53,7 @@
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 75,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -222,12 +222,17 @@ localparam CMD_READ				= 8'b10101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 
 // Internal state machine registers.
 reg [4:0] present_state, next_state;
-reg [3:0] init_refresh_counter, next_init_refresh_counter;	// Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
-reg [15:0] refresh_counter, next_refresh_counter;			// Contador para seguimiento del momento del próximo refresco.
 reg [7:0] command, next_command;  // Comando SDRAM.
 
-reg [14:0] delay_counter;  // Para retardos de tiempo entre comandos.
+// Contador para retardos de tiempo.
+reg [14:0] delay_counter;
 reg reset_delay_counter;
+
+reg [3:0] init_refresh_counter, next_init_refresh_counter;	// Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
+
+// Contador para seguimiento del momento del próximo refresco.
+reg [15:0] refresh_counter;
+reg reset_refresh_counter;
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] ram_addr_reg;
@@ -293,17 +298,11 @@ always @(posedge clk)
 begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
-			/*
-				Se inicializan todos los registros y contadores para lograr 
-				determinismo y mejorar la robustez.
-			*/
-			
 			present_state <= INIT_PAUSE;
 			command <= CMD_NOP;
 
 			// valores iniciales de contadores.
 			init_refresh_counter <= 0;
-			refresh_counter <= 0;
 
 			// Data.
 			wr_data_reg <= 32'b0;
@@ -319,7 +318,6 @@ begin
 			// Update counters.
 			// ----------------------------
 			init_refresh_counter <= next_init_refresh_counter;
-			refresh_counter <= next_refresh_counter;
 			
 			// Update write data register.
 			// ----------------------------
@@ -336,18 +334,25 @@ begin
 end
 
 //-------------------------------
-// Bloque Secuencial para los contadores
+// Contador de retardos de tiempo
 //-------------------------------
 always @(posedge clk) 
 begin
 	if (~reset_n_port || reset_delay_counter)
-		begin
-			delay_counter <= 0;
-		end
+		delay_counter <= 0;
 	else 
-		begin
-			delay_counter <= delay_counter + 1'b1;
-		end
+		delay_counter <= delay_counter + 1'b1;
+end
+
+//-------------------------------
+// Contador de refresco
+//-------------------------------
+always @(posedge clk) 
+begin
+	if (~reset_n_port || reset_refresh_counter)
+		refresh_counter <= 0;
+	else 
+		refresh_counter <= refresh_counter + 1'b1;
 end
 
 
@@ -446,14 +451,9 @@ begin
 
 	// Estos contadores por defecto mantienen el valor anterior.
 	next_init_refresh_counter = init_refresh_counter;
-
+	
+	reset_refresh_counter = 1'b0;
 	reset_delay_counter = 1'b1;
-
-	/*
-		El contador de auto refresco se incrementa siempre y se resetea al finalizar 
-		la secuencia de auto refresh, en el estado REFRESH_WAIT_TRC.
-	*/
-	next_refresh_counter = refresh_counter + 1'b1;
 
 	/*
 		En este caso aunque las señales se declaren como registros, el compilador las asignará 
@@ -610,13 +610,15 @@ begin
 				ready_signal = 1'b1;
 
 				// ---- Transitions ----
-				if (refresh_counter >= CYCLES_BETWEEN_REFRESH) 
+				if (refresh_counter >= CYCLES_BETWEEN_REFRESH - 1) 
 					begin
-						// Inicia secuencia de auto refresh.
+						/*
+							Inicia secuencia de auto refresh.
+							El contador de auto refresco se incrementa siempre y se resetea al finalizar 
+							la secuencia de auto refresh, en el estado REFRESH_WAIT_TRC.
+						*/
 						next_state = REFRESH_PRECHARGE_ALL;
 						next_command = CMD_PRECHARGE_ALL;
-
-						// No resetear refresh_counter aquí, se hace al final de la secuencia de auto refresco.
 					end
 				else if (soc_side_wr_en_port) 
 					begin
@@ -709,7 +711,8 @@ begin
 						next_state = IDLE;			// Volver al estado IDLE.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
-						next_refresh_counter = 0;  // Resetear el contador de refresco.
+						// Resetear el contador de refresco.
+						reset_refresh_counter = 1'b1;
 					end
 			end
 

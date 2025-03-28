@@ -24,19 +24,19 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/28/25  20:01:53
+Mapped on:  03/28/25  20:44:03
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
    Number of registers:    127 out of  5145 (2%)
       PFU registers:           60 out of  4320 (1%)
       PIO registers:           67 out of   825 (8%)
-   Number of SLICEs:        77 out of  2160 (4%)
-      SLICEs as Logic/ROM:     77 out of  2160 (4%)
+   Number of SLICEs:        81 out of  2160 (4%)
+      SLICEs as Logic/ROM:     81 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        153 out of  4320 (4%)
-      Number used as logic LUTs:        119
+   Number of LUT4s:        161 out of  4320 (4%)
+      Number used as logic LUTs:        127
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -73,21 +73,21 @@ Mapped on:  03/28/25  20:01:53
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
    Number of LSRs:  4
      Net reset_n_port_c: 68 loads, 1 LSLICEs
-     Net present_state_RNIQGBME[14]: 9 loads, 9 LSLICEs
-     Net un1_reset_n_port_1_0: 2 loads, 2 LSLICEs
+     Net refresh_counter7: 9 loads, 9 LSLICEs
+     Net next_state_1_sqmuxa_7_i_a2_0_RNINVJ6E: 2 loads, 2 LSLICEs
      Net delay_counter7: 8 loads, 8 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 98 loads
+     Net reset_n_port_c: 97 loads
      Net present_state[9]: 39 loads
-     Net present_state[22]: 36 loads
+     Net present_state[22]: 37 loads
      Net soc_side_wr_en_port_c: 36 loads
-     Net N_619: 20 loads
-     Net N_628: 11 loads
+     Net N_179: 14 loads
+     Net delay_counter[2]: 11 loads
+     Net N_626: 11 loads
      Net present_state[20]: 10 loads
-     Net N_642: 9 loads
-     Net present_state[0]: 9 loads
-     Net present_state_RNIQGBME[14]: 9 loads
+     Net present_state[11]: 9 loads
+     Net refresh_counter7: 9 loads
 
 
 
@@ -431,14 +431,14 @@ Signal present_state_i[9] was merged into signal present_state[9]
 Signal reset_n_port_c_i was merged into signal reset_n_port_c
 Signal un2_delay_counter_1_cry_13_0_COUT undriven or does not drive anything -
      clipped.
-Signal next_refresh_counter_cry_0_0_S1 undriven or does not drive anything -
+Signal un2_refresh_counter_cry_0_0_S1 undriven or does not drive anything -
      clipped.
-Signal next_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
+Signal un2_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_2 undriven or does not drive anything - clipped.
-Signal next_refresh_counter_s_15_0_S1 undriven or does not drive anything -
+Signal un2_refresh_counter_s_15_0_S1 undriven or does not drive anything -
      clipped.
-Signal next_refresh_counter_s_15_0_COUT undriven or does not drive anything -
+Signal un2_refresh_counter_s_15_0_COUT undriven or does not drive anything -
      clipped.
 Signal un2_delay_counter_1_cry_0_0_S1 undriven or does not drive anything -
      clipped.
