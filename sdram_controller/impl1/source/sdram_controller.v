@@ -63,7 +63,7 @@ module sdram_controller # (
 	parameter BANK_ADDR_WIDTH = 2,		// 2 bits wide for 4 banks.
 	
 	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,
-	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH) ? ROW_WIDTH : COL_WIDTH
+	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH)? ROW_WIDTH : COL_WIDTH
 ) (
 	input wire clk,
 	input wire reset_n_port,
@@ -72,19 +72,19 @@ module sdram_controller # (
 	output wire soc_side_busy_port,
 	output wire soc_side_ready_port,
 
-	// Address
+	// Address.
 	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
 
-	// Write
+	// Read data.
+	output wire [31:0] soc_side_rd_data_port,
+	input wire soc_side_rd_en_port,
+
+	// Write data.
 	input wire [31:0] soc_side_wr_data_port,
 	input wire [3:0] soc_side_wr_mask_port,  // These are the mem_wstrb signals in the PicoRV32 SOC.
 	input wire soc_side_wr_en_port,
 
-	// Read
-	output wire [31:0] soc_side_rd_data_port,
-	input wire soc_side_rd_en_port,
-
-	/* SDRAM side */
+	/* SDRAM interface */
 	output wire [SDRAM_ADDR_WIDTH - 1: 0] ram_side_addr_port,		// SDRAM chips 0 and 1, A0 to A11 pins.  TODO: Ver que el ancho de este bus sea correcto.
 	output wire [BANK_ADDR_WIDTH - 1: 0] ram_side_bank_addr_port,	// SDRAM chips 0 and 1, BS0 and BS1 pins.
 
@@ -97,9 +97,9 @@ module sdram_controller # (
 	inout wire [15:0] ram_side_chip1_data_port,	// SDRAM chip 1, DQ0 to DQ15 pins.
 
 	output wire ram_side_cs_n_port,		// SDRAM chips 0 and 1, CS pin.
-	output wire ram_side_ras_n_port,		// SDRAM chips 0 and 1, RAS pin.
-	output wire ram_side_cas_n_port,		// SDRAM chips 0 and 1, CAS pin.
-	output wire ram_side_wr_en_port,		// SDRAM chips 0 and 1, WE pin.
+	output wire ram_side_ras_n_port,	// SDRAM chips 0 and 1, RAS pin.
+	output wire ram_side_cas_n_port,	// SDRAM chips 0 and 1, CAS pin.
+	output wire ram_side_wr_en_port,	// SDRAM chips 0 and 1, WE pin.
 
 	/*
 		During normal access mode, CKE must be held high enabling the clock.
@@ -228,16 +228,14 @@ reg [15:0] refresh_counter, next_refresh_counter;			// Contador para seguimiento
 reg [2:0] cas_counter, next_cas_counter;
 reg [7:0] command, next_command;  // Comando SDRAM.
 
-// Internal registers for CPU interface.
-reg [31:0] wr_data_reg;
-reg [31:0] rd_data_reg;
-reg busy_reg;
-reg ready_reg;
-
 // Internal registers for SDRAM address generation.
-reg [SDRAM_ADDR_WIDTH - 1: 0] addr_reg;
-reg [BANK_ADDR_WIDTH - 1: 0] bank_addr_reg;
+reg [SDRAM_ADDR_WIDTH - 1: 0] ram_addr_reg;
+reg [BANK_ADDR_WIDTH - 1: 0] ram_bank_addr_reg;
 
+reg busy_signal;
+reg ready_signal;
+reg [31:0] rd_data_reg;
+reg [31:0] wr_data_reg;
 reg [3:0] sdram_side_wr_mask_reg;  // Internal registers for Byte mask signals.
 
 wire in_initialization_cycle;
@@ -251,20 +249,23 @@ wire in_read_cycle;
 
 // Assigns command bits to outputs.
 assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
-assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle) ? bank_addr_reg : command[2:1];
-assign ram_side_addr_port = (in_write_cycle || in_read_cycle || present_state == INIT_MRS) ? addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : command[2:1];
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || present_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
+assign soc_side_busy_port = busy_signal;
+assign soc_side_ready_port = ready_signal;
+
+// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
 assign soc_side_rd_data_port = rd_data_reg;
-assign soc_side_busy_port = busy_reg;
-assign soc_side_ready_port = ready_reg;
+
+// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
+assign ram_side_chip0_data_port = (present_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
+assign ram_side_chip1_data_port = (present_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
 
 assign ram_side_chip0_ldqm_port = sdram_side_wr_mask_reg[0];
 assign ram_side_chip0_udqm_port = sdram_side_wr_mask_reg[1];
 assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
 assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
-
-assign ram_side_chip0_data_port = (present_state == WRITE_CAS) ? wr_data_reg[15:0] : 16'bz;
-assign ram_side_chip1_data_port = (present_state == WRITE_CAS) ? wr_data_reg[31:16] : 16'bz;
 
 // Signal to detect SDRAM initialization cycle states.
 assign in_initialization_cycle = (present_state == INIT_PAUSE) || (present_state == INIT_PRECHARGE_ALL) || 
@@ -274,8 +275,8 @@ assign in_initialization_cycle = (present_state == INIT_PAUSE) || (present_state
 
 // Signal to detect write cycle states.
 assign in_write_cycle = (present_state == WRITE_BANK_ACTIVATE) || (present_state == WRITE_WAIT_TRCD) || 
-							(present_state == WRITE_CAS) || (present_state == WRITE_WAIT_TWR) || 
-							(present_state == WRITE_PRECHARGE) || (present_state == WRITE_WAIT_TRP);
+						(present_state == WRITE_CAS) || (present_state == WRITE_WAIT_TWR) || 
+						(present_state == WRITE_PRECHARGE) || (present_state == WRITE_WAIT_TRP);
 
 // Signal to detect read cycle states.
 assign in_read_cycle = (present_state == READ_BANK_ACTIVATE) || (present_state == READ_WAIT_TRCD)  ||
@@ -289,46 +290,51 @@ assign in_read_cycle = (present_state == READ_BANK_ACTIVATE) || (present_state =
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port) 
+	if (~reset_n_port)  // Reset síncrono.
 		begin
 			/*
 				Se inicializan todos los registros y contadores para lograr 
-				Determinismo y mejorar la robustez.
+				determinismo y mejorar la robustez.
 			*/
 			
 			present_state <= INIT_PAUSE;
 			command <= CMD_NOP;
 
-			// Contadores.
+			// valores iniciales de contadores.
 			delay_counter <= INIT_PAUSE_CYCLES - 1;  // Inicializar contador para la pausa de al menos 200us.
 			init_refresh_counter <= 0;
 			refresh_counter <= 0;
 			cas_counter <= CAS_LATENCY - 1;  // Iniciar contador para latencia CAS.
 
-			// I/O.
+			// Data.
 			wr_data_reg <= 32'b0;
 			rd_data_reg <= 32'b0;
-
-			//ready_reg <= 1'b0;
-			//busy_reg <= 1'b1;  // Controlador ocupado durante el reset.
 		end
 	else 
 		begin
 			// Update state and command.
+			// ----------------------------
 			present_state <= next_state;
 			command <= next_command;
 
 			// Update counters.
+			// ----------------------------
 			delay_counter <= next_delay_counter;
 			init_refresh_counter <= next_init_refresh_counter;
 			refresh_counter <= next_refresh_counter;
 			cas_counter <= next_cas_counter;
 			
+			// Update write data register.
+			// ----------------------------
+			// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
 			if (soc_side_wr_en_port)
-				wr_data_reg <= soc_side_wr_data_port;  // Update write data.
+				wr_data_reg <= soc_side_wr_data_port;  // Update the data to be written from the SOC.
 
-			if (present_state == READ_DATA)  // Update read data.
-				rd_data_reg <= {ram_side_chip1_data_port, ram_side_chip0_data_port};
+			// Update read data register.
+			// ----------------------------
+			// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
+			if (present_state == READ_DATA)
+				rd_data_reg <= {ram_side_chip1_data_port, ram_side_chip0_data_port};  // Updates the data that the SOC will read.
 		end
 end
 
@@ -421,12 +427,7 @@ end
 */
 always @(*) 
 begin
-	/*
-		Valores por defecto para evitar latches en las salidas/señales. De esta manera 
-		aunque las salidas se declaren como registros, el compilador las asignará 
-		inmediatamente en cada estado sin tener que esperar al siguiente estado. 
-		Las señales no estaran retrasadas un ciclo de reloj.
-	*/
+	// Valores por defecto para evitar latches no deseados.
 	next_state = present_state;
 	next_command = CMD_NOP;
 
@@ -441,9 +442,13 @@ begin
 	*/
 	next_refresh_counter = refresh_counter + 1'b1;
 
-	// Controlador ocupado por defecto, solo está desocupado cuando la máquina de estados está en IDLE.
-	ready_reg = 1'b0;
-	busy_reg = 1'b1;
+	/*
+		En este caso aunque las señales se declaren como registros, el compilador las asignará 
+		inmediatamente en cada estado sin tener que esperar al siguiente estado. 
+		Esto es, las señales no estaran retrasadas un ciclo de reloj.
+	*/
+	busy_signal = 1'b1;  // Controlador ocupado por defecto, solo está desocupado cuando la máquina de estados está en IDLE.
+	ready_signal = 1'b0;
 	
 	// Lógica de la máquina de estados.
 	case (present_state)
@@ -596,8 +601,8 @@ begin
 		IDLE: 
 			begin
 				// ---- Outputs ----
-				ready_reg = 1'b1;
-				busy_reg = 1'b0;
+				busy_signal = 1'b0;
+				ready_signal = 1'b1;
 
 				// ---- Transitions ----
 				if (refresh_counter >= CYCLES_BETWEEN_REFRESH) 
@@ -758,14 +763,17 @@ begin
 					begin
 						next_state = WRITE_CAS;
 						next_command = CMD_WRITE;
-						// Los datos ya están en wr_data_reg
 					end
 			end
 
 		WRITE_CAS: 
 			begin
 				// ---- Outputs ----
-				// Comando de escritura emitido en el estado anterior, datos enviados.
+				/*
+					Write command issued in the previous state.
+					The data to be written is already in the wr_data_reg register; it is captured 
+					in wr_data_reg in the sequential block with the rising edge of clk.
+				*/
 
 				// ---- Transitions ----
 				next_state = WRITE_WAIT_TWR;
@@ -777,13 +785,16 @@ begin
 		WRITE_WAIT_TWR: 
 			begin
 				// ---- Outputs ----
+				/*
+					After waiting tWR nanoseconds the data has already been written to the SDRAM memory.
+				*/
 
 				// ---- Transitions ----
 				if (delay_counter != 0)
 					next_delay_counter = delay_counter - 1'b1;
 				else 
 					begin
-						if (addr_reg[10]) 
+						if (ram_addr_reg[10]) 
 							begin
 								/*
 									Si A10=1 durante el comando WRITE, auto-precharge está activo
@@ -924,11 +935,11 @@ begin
 				// ---- Outputs ----
 				/*
 					Luego de esperar CAS_LATENCY ciclos los datos se capturan en el bloque secuencial 
-					en el registro rd_data_reg.
+					en el registro rd_data_reg con el flanco de subida de clk.
 				*/
 
 				// ---- Transitions ----
-				if (addr_reg[10])  // Si A10=1 durante el comando READ, auto-precharge está activo.
+				if (ram_addr_reg[10])  // Si A10=1 durante el comando READ, auto-precharge está activo.
 					begin
 						/*
 							Si A10=1 durante el comando READ, auto-precharge está activo
@@ -986,55 +997,10 @@ begin
 	endcase
 end
 
+
+// Set the writing mask based on the current state.
 always @(*) 
 begin
-	// Send addresses to SDRAM based on the current state.
-	// -----------------------------------------------------
-	bank_addr_reg = 2'b00;
-	addr_reg = {SDRAM_ADDR_WIDTH{1'b0}};
-	
-	if (present_state == READ_BANK_ACTIVATE || present_state == WRITE_BANK_ACTIVATE)
-		begin
-			// TODO: Ver si es correcto capturar el valor de dirección acá o en el bloque secuencial 
-			// cuando alguna de las señales soc_side_wr_en_port o soc_side_rd_en_port son high.
-			bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
-			addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
-		end
-	else if (present_state == READ_CAS || present_state == WRITE_CAS)
-		begin
-			bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
-
-			/*
-									 BANK	 ROW	 COL
-				SOC_SIDE_ADDR_WIDTH   2	  +  12   +   9   = 23 
-				SDRAM_ADDR_WIDTH 13
-			*/
-			addr_reg = { {(SDRAM_ADDR_WIDTH - 11){1'b0}},		/* 0s */
-						1'b1,									/* 1 (A10 is always for auto precharge) */
-						{(10 - COL_WIDTH){1'b0}},				/* 0s */
-						soc_side_addr_port[COL_WIDTH - 1: 0]		/* column address */
-					};
-		end
-	else if (present_state == INIT_MRS)
-		begin
-			/*
-				Configuración del registro de modo (MRS) durante inicialización:
-
-					Burst Length de 1 (sin ráfagas)		-> bits 0-2	= 000
-					Tipo de burst secuencial			-> bit 3	= 0
-					CAS Latency de 3					-> bits 4-6	= 011
-					Modo de operación estándar			-> bits 7-8	= 00
-					Ajuste de "Burst Read/Single Write"	-> bit 9	= 1
-
-					= 10'b 1 00 011 0 000
-			*/
-			addr_reg = { {(SDRAM_ADDR_WIDTH - 10){1'b0}}, 10'b1000110000 };
-		end
-	// -----------------------------------------------------
-
-
-	// Set the writing mask based on the present state.
-	// -------------------------------------------------
 	/*
 		PicoRV32 SOC, mem_wstrb signals:
 			soc_side_wr_mask_port = 0000 --> No write. Read operation.
@@ -1071,7 +1037,50 @@ begin
 	else
 		// If the state is not read or write, mask all bits high so that the SDRAM drives the input/output buffers to HIGH-Z.
 		sdram_side_wr_mask_reg = 4'b1111;
-	// -------------------------------------------------
+end
+
+
+// Send addresses to SDRAM based on the current state.
+always @(*) 
+begin
+	ram_bank_addr_reg = 2'b00;
+	ram_addr_reg = {SDRAM_ADDR_WIDTH{1'b0}};
+	
+	if (present_state == READ_BANK_ACTIVATE || present_state == WRITE_BANK_ACTIVATE)
+		begin
+			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+			ram_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
+		end
+	else if (present_state == READ_CAS || present_state == WRITE_CAS)
+		begin
+			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+
+			/*
+									 BANK	 ROW	 COL
+				SOC_SIDE_ADDR_WIDTH   2	  +  12   +   9   = 23 
+				SDRAM_ADDR_WIDTH 13
+			*/
+			ram_addr_reg = { {(SDRAM_ADDR_WIDTH - 11){1'b0}},		/* 0s */
+							1'b1,									/* 1 (A10 is always for auto precharge) */
+							{(10 - COL_WIDTH){1'b0}},				/* 0s */
+							soc_side_addr_port[COL_WIDTH - 1: 0]	/* column address */
+						};
+		end
+	else if (present_state == INIT_MRS)
+		begin
+			/*
+				Configuración del registro de modo (MRS) durante inicialización:
+
+					Burst Length de 1 (sin ráfagas)		-> bits 0-2	= 000
+					Tipo de burst secuencial			-> bit 3	= 0
+					CAS Latency de 3					-> bits 4-6	= 011
+					Modo de operación estándar			-> bits 7-8	= 00
+					Ajuste de "Burst Read/Single Write"	-> bit 9	= 1
+
+					= 10'b 1 00 011 0 000
+			*/
+			ram_addr_reg = { {(SDRAM_ADDR_WIDTH - 10){1'b0}}, 10'b1000110000 };
+		end
 end
 
 

@@ -16,7 +16,7 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  03/27/25  11:03:12
+Mapped on:  03/28/25  17:39:50
 
 Design Summary
 --------------
@@ -66,7 +66,7 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
 
 Design Summary (cont)
 ---------------------
@@ -77,21 +77,21 @@ Design Summary (cont)
      Net N_567_i: 1 loads, 1 LSLICEs
      Net N_182_i_0: 1 loads, 1 LSLICEs
      Net reset_n_port_c: 74 loads, 7 LSLICEs
+     Net un46_0_a2_0_o2_RNINEOC9: 3 loads, 3 LSLICEs
      Net present_state_RNI20RGF[14]: 9 loads, 9 LSLICEs
      Net un1_reset_n_port_3_0_0: 2 loads, 2 LSLICEs
-     Net next_delay_counter_f0_i_a2_0_RNIBF0TF[0]: 3 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 102 loads
+     Net reset_n_port_c: 103 loads
      Net next_state_0_sqmuxa_7_i_a2: 43 loads
      Net present_state[9]: 37 loads
      Net present_state[22]: 35 loads
      Net soc_side_wr_en_port_c: 35 loads
      Net N_141: 16 loads
-     Net N_90: 14 loads
-     Net N_103: 13 loads
+     Net N_109: 12 loads
      Net N_239: 12 loads
      Net N_88: 12 loads
+     Net present_state[20]: 9 loads
 
 
 
@@ -132,7 +132,7 @@ IO (PIO) Attributes
 
 
 
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -198,7 +198,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -246,94 +246,8 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | ram_side_addr_port[0]| OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| soc_side_rd_en_port | INPUT     | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[31]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[30]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[29]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[28]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[27]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-
-                                    Page 4
-
-
-
-
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
-
-IO (PIO) Attributes (cont)
---------------------------
-| soc_side_rd_data_port[26]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[25]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[24]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[23]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[22]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[21]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[20]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[19]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[18]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[17]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[16]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[15]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[14]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[13]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[12]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[11]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[10]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[9]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[8]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[7]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[6]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[4]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[3]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[2]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[1]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[0]| OUTPUT    | LVCMOS25  | OUT        |
-+---------------------+-----------+-----------+------------+
 | soc_side_wr_en_port | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-
-                                    Page 5
-
-
-
-
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
-
-IO (PIO) Attributes (cont)
---------------------------
 | soc_side_wr_mask_port[3]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_mask_port[2]| INPUT     | LVCMOS25  |            |
@@ -344,6 +258,16 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[31]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
+
+                                    Page 4
+
+
+
+
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
+
+IO (PIO) Attributes (cont)
+--------------------------
 | soc_side_wr_data_port[30]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[29]| INPUT     | LVCMOS25  | IN         |
@@ -390,16 +314,6 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[8]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
-
-                                    Page 6
-
-
-
-
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
-
-IO (PIO) Attributes (cont)
---------------------------
 | soc_side_wr_data_port[7]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[6]| INPUT     | LVCMOS25  | IN         |
@@ -410,11 +324,97 @@ IO (PIO) Attributes (cont)
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[3]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
+
+                                    Page 5
+
+
+
+
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
+
+IO (PIO) Attributes (cont)
+--------------------------
 | soc_side_wr_data_port[2]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[1]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[0]| INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_en_port | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[31]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[30]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[29]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[28]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[27]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[26]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[25]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[24]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[23]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[22]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[21]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[20]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[19]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[18]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[17]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[16]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[15]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[14]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[13]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[12]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[11]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[10]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[9]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[8]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+
+                                    Page 6
+
+
+
+
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
+
+IO (PIO) Attributes (cont)
+--------------------------
+| soc_side_rd_data_port[7]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[6]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[4]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[3]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[2]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[1]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[0]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[22]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -462,7 +462,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  03/27/25  11:03:12
+Design:  sdram_controller                              Date:  03/28/25  17:39:50
 
 IO (PIO) Attributes (cont)
 --------------------------
