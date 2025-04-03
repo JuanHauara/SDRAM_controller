@@ -165,9 +165,8 @@ localparam CAS_LATENCY = 3;
 	Registro de estados de 5 bits: 2^5 = 32 estados máximo.
 */
 
-localparam IDLE						= 5'b00000;
-
 // SDRAM initialization.
+localparam INIT						= 5'b00000;  // Initial state.
 localparam INIT_PAUSE				= 5'b00001;  // Pausa inicial de al menos 200us.
 localparam INIT_PRECHARGE_ALL		= 5'b00011;  // Precargar todos los bancos.
 localparam INIT_WAIT_TRP			= 5'b00010;  // Esperar tRP nanosegundos después de precharge all.
@@ -198,6 +197,9 @@ localparam READ_WAIT_CAS_LATENCY	= 5'b11111;  // Esperar CAS Latency (3 ciclos).
 localparam READ_DATA				= 5'b11101;  // Capturar datos de los pines DQ.
 localparam READ_PRECHARGE			= 5'b11100;  // Precargar banco (si no se usa auto-precharge).
 localparam READ_WAIT_TRP			= 5'b10100;  // NOP después de precharge (esperar tRP).
+
+// IDLE state
+localparam IDLE						= 5'b10101;
 
 
 //-------------------------------
@@ -274,10 +276,10 @@ assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
 assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
 
 // Signal to detect SDRAM initialization cycle states.
-assign in_initialization_cycle = (present_state == INIT_PAUSE) || (present_state == INIT_PRECHARGE_ALL) || 
-								(present_state == INIT_WAIT_TRP) || (present_state == INIT_AUTO_REFRESH) || 
-								(present_state == INIT_WAIT_TRC) || (present_state == INIT_MRS) || 
-								(present_state == INIT_WAIT_TRSC);
+assign in_initialization_cycle = (present_state == INIT) || (present_state == INIT_PAUSE) || 
+								(present_state == INIT_PRECHARGE_ALL) || (present_state == INIT_WAIT_TRP) || 
+								(present_state == INIT_AUTO_REFRESH) || (present_state == INIT_WAIT_TRC) || 
+								(present_state == INIT_MRS) || (present_state == INIT_WAIT_TRSC);
 
 // Signal to detect write cycle states.
 assign in_write_cycle = (present_state == WRITE_BANK_ACTIVATE) || (present_state == WRITE_WAIT_TRCD) || 
@@ -298,7 +300,7 @@ always @(posedge clk)
 begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
-			present_state <= INIT_PAUSE;
+			present_state <= INIT;
 			command <= CMD_NOP;
 
 			// valores iniciales de contadores.
@@ -334,7 +336,7 @@ begin
 end
 
 //-------------------------------
-// Contador de retardos de tiempo
+// Contador para retardos de tiempo
 //-------------------------------
 always @(posedge clk) 
 begin
@@ -345,7 +347,7 @@ begin
 end
 
 //-------------------------------
-// Contador de refresco
+// Contador para ciclo de refresco
 //-------------------------------
 always @(posedge clk) 
 begin
@@ -473,29 +475,40 @@ begin
 
 			The implemented sequence follows the requirements of the W9812G6KH-5I datasheet.
 
-			1. INIT_PAUSE: Wait at least 200us after power-up.
+			1. INIT: Enable delay counter for the next state.
+
+			2. INIT_PAUSE: Wait at least 200us after power-up.
 				- During this pause, DQM and CKE are kept high to prevent data contention.
 
-			2. INIT_PRECHARGE_ALL: Issues the precharge all banks command.
+			3. INIT_PRECHARGE_ALL: Issues the precharge all banks command.
 				- This command prepares all banks for subsequent operations.
 
-			3. INIT_WAIT_TRP: Wait tRP nanoseconds after precharge.
+			4. INIT_WAIT_TRP: Wait tRP nanoseconds after precharge.
 				- Time required for the precharge to complete internally.
 
-			4. INIT_AUTO_REFRESH + INIT_WAIT_TRC: Executes 8 Auto Refresh cycles.
+			5. INIT_AUTO_REFRESH + INIT_WAIT_TRC: Executes 8 Auto Refresh cycles.
 				- Each cycle issues an AUTO_REFRESH command and waits tRC nanoseconds.
 				- All 8 cycles are specifically required by the datasheet for initialization.
 
-			5. INIT_MRS: Mode Register configuration.
+			6. INIT_MRS: Mode Register configuration.
 				- Configures: Burst Length=1, Sequential type, CAS Latency=3, Standard operation.
 
-			6. INIT_WAIT_TRSC: Wait tRSC before transitioning to IDLE.
+			7. INIT_WAIT_TRSC: Wait tRSC before transitioning to IDLE.
 				- Time required for the register configuration to complete.
 		*/
-		INIT_PAUSE: 
+		INIT:
 			begin
 				// ---- Outputs ----
 				enable_delay_counter = 1'b1;
+
+				// ---- Transitions ----
+				next_state = INIT_PAUSE;
+				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+			end
+
+		INIT_PAUSE: 
+			begin
+				// ---- Outputs ----
 
 				// ---- Transitions ----
 				if (delay_counter == INIT_PAUSE_CYCLES - 1)  // Esperar al menos 200us antes de comenzar la inicialización.
