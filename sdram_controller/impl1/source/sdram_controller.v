@@ -4,7 +4,7 @@
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
-		CLK_FREQUENCY_MHZ = 80MHz
+		CLK_FREQUENCY_MHZ = 85MHz
 		CAS 3
 
 	Very simple CPU interface
@@ -53,7 +53,7 @@
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 85,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -228,13 +228,15 @@ reg [7:0] command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
 reg [14:0] delay_counter;
-reg enable_delay_counter;
+reg reset_delay_counter;
+
+// Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
+reg [3:0] init_counter;
+reg enable_init_counter;
 
 // Contador para seguimiento del momento del próximo refresco.
 reg [15:0] refresh_counter;
 reg reset_refresh_counter;
-
-reg [3:0] init_refresh_counter, next_init_refresh_counter;	// Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
 
 // Internal registers for SDRAM address generation.
 reg [SDRAM_ADDR_WIDTH - 1: 0] ram_addr_reg;
@@ -302,10 +304,7 @@ begin
 		begin
 			present_state <= INIT;
 			command <= CMD_NOP;
-
-			// valores iniciales de contadores.
-			init_refresh_counter <= 0;
-
+			
 			// Data.
 			wr_data_reg <= 32'b0;
 			rd_data_reg <= 32'b0;
@@ -316,10 +315,6 @@ begin
 			// ----------------------------
 			present_state <= next_state;
 			command <= next_command;
-
-			// Update counters.
-			// ----------------------------
-			init_refresh_counter <= next_init_refresh_counter;
 			
 			// Update write data register.
 			// ----------------------------
@@ -336,18 +331,29 @@ begin
 end
 
 //-------------------------------
-// Contador para retardos de tiempo
+// Contador para retardos de tiempo.
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port || ~enable_delay_counter)
+	if (~reset_n_port || reset_delay_counter)
 		delay_counter <= 0;
 	else 
 		delay_counter <= delay_counter + 1'b1;
 end
 
 //-------------------------------
-// Contador para ciclo de refresco
+// Contador para los 8 ciclos de refresco al inicio.
+//-------------------------------
+always @(posedge clk) 
+begin
+	if (~reset_n_port)
+		init_counter <= INIT_REFRESH_COUNT;
+	else if (enable_init_counter)
+		init_counter <= init_counter - 1'b1;
+end
+
+//-------------------------------
+// Contador para ciclo de refresco.
 //-------------------------------
 always @(posedge clk) 
 begin
@@ -359,7 +365,7 @@ end
 
 
 //-------------------------------
-// Bloque Combinacional 
+// Bloque Combinacional.
 //-------------------------------
 /*
 	Combinational logic of the state machine.
@@ -451,11 +457,8 @@ begin
 	next_state = present_state;
 	next_command = CMD_NOP;
 
-	enable_delay_counter = 1'b0;
+	reset_delay_counter = 1'b0;
 	reset_refresh_counter = 1'b0;
-
-	// Estos contadores por defecto mantienen el valor anterior.
-	next_init_refresh_counter = init_refresh_counter;
 
 	/*
 		En este caso aunque las señales se declaren como registros, el compilador las asignará 
@@ -499,7 +502,7 @@ begin
 		INIT:
 			begin
 				// ---- Outputs ----
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 
 				// ---- Transitions ----
 				next_state = INIT_PAUSE;
@@ -528,7 +531,7 @@ begin
 				next_state = INIT_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;  // Habilitar el contador de retardos para iniciar la cuenta en el siguiente estado.
+				reset_delay_counter = 1'b1;  // Habilitar el contador de retardos para iniciar la cuenta en el siguiente estado.
 			end
 		
 		INIT_WAIT_TRP: 
@@ -540,9 +543,6 @@ begin
 					begin
 						next_state = INIT_AUTO_REFRESH;
 						next_command = CMD_AUTO_REFRESH;
-
-						// Resetea el contador para los 8 ciclos de auto refresh requeridos durante la inicialización.
-						next_init_refresh_counter = 0;
 					end
 			end
 		
@@ -561,7 +561,8 @@ begin
 				next_state = INIT_WAIT_TRC;		// Esperar tiempo de ciclo de refresco tRC luego de enviar el comando auto refresh.
 				next_command = CMD_NOP;			// Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
+				enable_init_counter = 1'b1;
 			end
 		
 		INIT_WAIT_TRC: 
@@ -572,13 +573,11 @@ begin
 				if (delay_counter == TRC_CYCLES - 1)  // Esperar tRC.
 					begin
 						// Luego de esperar tRC, comprobar si se han completado los 8 ciclos de refresco.
-						if (init_refresh_counter < INIT_REFRESH_COUNT - 1) 
+						if (init_counter == 0) 
 							begin
 								// Aún no completa los 8 ciclos de Auto Refresh.
 								next_state = INIT_AUTO_REFRESH;
 								next_command = CMD_AUTO_REFRESH;
-
-								next_init_refresh_counter = init_refresh_counter + 1'b1;
 							end
 						else 
 							begin
@@ -599,7 +598,7 @@ begin
 				next_state = INIT_WAIT_TRSC;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 		
 		INIT_WAIT_TRSC: 
@@ -611,6 +610,8 @@ begin
 					begin
 						next_state = IDLE;			// Inicialización completada.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						reset_refresh_counter = 1'b1;  // Starts periodic refresh cycles.
 					end
 			end
 		
@@ -681,7 +682,7 @@ begin
 				next_state = REFRESH_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		REFRESH_WAIT_TRP: 
@@ -711,7 +712,7 @@ begin
 				next_state = REFRESH_WAIT_TRC;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		REFRESH_WAIT_TRC:
@@ -763,7 +764,7 @@ begin
 				next_state = WRITE_WAIT_TRCD;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		WRITE_WAIT_TRCD: 
@@ -791,7 +792,7 @@ begin
 				next_state = WRITE_WAIT_TWR;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		WRITE_WAIT_TWR: 
@@ -833,7 +834,7 @@ begin
 				next_state = WRITE_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		WRITE_WAIT_TRP: 
@@ -892,7 +893,7 @@ begin
 				next_state = READ_WAIT_TRCD;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 		
 		READ_WAIT_TRCD:
@@ -918,7 +919,7 @@ begin
 				next_state = READ_WAIT_CAS_LATENCY;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		READ_WAIT_CAS_LATENCY:
@@ -972,7 +973,7 @@ begin
 				next_state = READ_WAIT_TRP;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				enable_delay_counter = 1'b1;
+				reset_delay_counter = 1'b1;
 			end
 
 		READ_WAIT_TRP:

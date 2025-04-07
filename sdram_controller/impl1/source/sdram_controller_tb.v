@@ -2,7 +2,7 @@
 
 module sdram_controller_tb;
     // Parameters
-    parameter CLK_PERIOD = 13.333333;  // 75MHz clock (period = 13.333ns)
+    parameter CLK_PERIOD = 11.7646;  // 85MHz clock
     
     // Test bench signals
     reg clk;
@@ -42,7 +42,7 @@ module sdram_controller_tb;
     
     // Instantiate the SDRAM controller
     sdram_controller #(
-        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
+        .CLK_FREQUENCY_MHZ(85),  // 85MHz clock
         .REFRESH_TIME_MS(64),
         .REFRESH_COUNT(4096),
         .ROW_WIDTH(12),
