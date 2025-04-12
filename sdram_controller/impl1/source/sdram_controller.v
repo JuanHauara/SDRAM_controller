@@ -136,8 +136,8 @@ localparam TRC_CYCLES = ((TRC_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Cantida
 
 localparam TRSC_CYCLES = 2;  // Mode Register Set Cycle Time, tRSC: 2 clock cycles. Tiempo de espera luego de emitir el comando CMD_MRS Mode Register Set (MRS).
 
-// Tiempos para escritura y lectura.
-// ---------------------------------
+// Tiempos de escritura y lectura.
+// -------------------------------
 localparam TRCD_NS = 18;  // Active to Read/Write Command Delay Time, tRCD: 15ns + margen de seguridad. Tiempo de espera luego de emitir el comando CMD_BANK_ACTIVATE.
 localparam TRCD_CYCLES = ((TRCD_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Cantidad de ciclos de espera para cumplir con el tiempo tRCD. Redondeo hacia arriba.
 
@@ -223,7 +223,7 @@ localparam CMD_READ				= 8'b10101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 //-------------------------------
 
 // Internal state machine registers.
-reg [4:0] present_state, next_state;
+reg [4:0] current_state, next_state;
 reg [7:0] command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
@@ -260,7 +260,7 @@ wire in_read_cycle;
 // Assigns command bits to outputs.
 assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
 assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : command[2:1];
-assign ram_side_addr_port = (in_write_cycle || in_read_cycle || present_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
 assign soc_side_busy_port = busy_signal;
 assign soc_side_ready_port = ready_signal;
@@ -269,8 +269,8 @@ assign soc_side_ready_port = ready_signal;
 assign soc_side_rd_data_port = rd_data_reg;
 
 // Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
-assign ram_side_chip0_data_port = (present_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
-assign ram_side_chip1_data_port = (present_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
+assign ram_side_chip0_data_port = (current_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
+assign ram_side_chip1_data_port = (current_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
 
 assign ram_side_chip0_ldqm_port = sdram_side_wr_mask_reg[0];
 assign ram_side_chip0_udqm_port = sdram_side_wr_mask_reg[1];
@@ -278,21 +278,21 @@ assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
 assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
 
 // Signal to detect SDRAM initialization cycle states.
-assign in_initialization_cycle = (present_state == INIT) || (present_state == INIT_PAUSE) || 
-								(present_state == INIT_PRECHARGE_ALL) || (present_state == INIT_WAIT_TRP) || 
-								(present_state == INIT_AUTO_REFRESH) || (present_state == INIT_WAIT_TRC) || 
-								(present_state == INIT_MRS) || (present_state == INIT_WAIT_TRSC);
+assign in_initialization_cycle = (current_state == INIT) || (current_state == INIT_PAUSE) || 
+								(current_state == INIT_PRECHARGE_ALL) || (current_state == INIT_WAIT_TRP) || 
+								(current_state == INIT_AUTO_REFRESH) || (current_state == INIT_WAIT_TRC) || 
+								(current_state == INIT_MRS) || (current_state == INIT_WAIT_TRSC);
 
 // Signal to detect write cycle states.
-assign in_write_cycle = (present_state == WRITE_BANK_ACTIVATE) || (present_state == WRITE_WAIT_TRCD) || 
-						(present_state == WRITE_CAS) || (present_state == WRITE_WAIT_TWR) || 
-						(present_state == WRITE_PRECHARGE) || (present_state == WRITE_WAIT_TRP);
+assign in_write_cycle = (current_state == WRITE_BANK_ACTIVATE) || (current_state == WRITE_WAIT_TRCD) || 
+						(current_state == WRITE_CAS) || (current_state == WRITE_WAIT_TWR) || 
+						(current_state == WRITE_PRECHARGE) || (current_state == WRITE_WAIT_TRP);
 
 // Signal to detect read cycle states.
-assign in_read_cycle = (present_state == READ_BANK_ACTIVATE) || (present_state == READ_WAIT_TRCD)  ||
-					(present_state == READ_CAS) || (present_state == READ_WAIT_CAS_LATENCY)  ||
-					(present_state == READ_DATA) || (present_state == READ_PRECHARGE)  ||
-					(present_state == READ_WAIT_TRP);
+assign in_read_cycle = (current_state == READ_BANK_ACTIVATE) || (current_state == READ_WAIT_TRCD)  ||
+					(current_state == READ_CAS) || (current_state == READ_WAIT_CAS_LATENCY)  ||
+					(current_state == READ_DATA) || (current_state == READ_PRECHARGE)  ||
+					(current_state == READ_WAIT_TRP);
 
 
 //-------------------------------
@@ -302,7 +302,7 @@ always @(posedge clk)
 begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
-			present_state <= INIT;
+			current_state <= INIT;
 			command <= CMD_NOP;
 			
 			// Data.
@@ -313,7 +313,7 @@ begin
 		begin
 			// Update state and command.
 			// ----------------------------
-			present_state <= next_state;
+			current_state <= next_state;
 			command <= next_command;
 			
 			// Update write data register.
@@ -325,7 +325,7 @@ begin
 			// Update read data register.
 			// ----------------------------
 			// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
-			if (present_state == READ_DATA)
+			if (current_state == READ_DATA)
 				rd_data_reg <= {ram_side_chip1_data_port, ram_side_chip0_data_port};  // Updates the data that the SOC will read.
 		end
 end
@@ -349,7 +349,7 @@ end
 always @(posedge clk) 
 begin
 	if (reset_init_counter)
-		init_counter <= INIT_REFRESH_COUNT;
+		init_counter <= INIT_REFRESH_COUNT - 1;
 	else if (init_counter_count_one_cycle)
 		init_counter <= init_counter - 1'b1;
 end
@@ -360,9 +360,9 @@ end
 always @(posedge clk) 
 begin
 	if (~reset_n_port || reset_refresh_counter)
-		refresh_counter <= 0;
-	else 
-		refresh_counter <= refresh_counter + 1'b1;
+		refresh_counter <= CYCLES_BETWEEN_REFRESH - 1;
+	else if (refresh_counter != 0)
+		refresh_counter <= refresh_counter - 1'b1;
 end
 
 
@@ -383,7 +383,7 @@ end
 		output_d = 1'b0;
 
 		// Lógica de la máquina de estados.
-		case (present_state)
+		case (current_state)
 
 			ESTADO_1:
 				begin
@@ -456,7 +456,7 @@ end
 always @(*) 
 begin
 	// Valores por defecto para evitar latches no deseados.
-	next_state = present_state;
+	next_state = current_state;
 	next_command = CMD_NOP;
 
 	delay_cycles = 0;
@@ -473,7 +473,7 @@ begin
 	ready_signal = 1'b0;
 	
 	// Lógica de la máquina de estados.
-	case (present_state)
+	case (current_state)
 
 		// ---- Initialization Sequence ----
 		/*
@@ -520,8 +520,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar al menos 200us antes de comenzar la inicialización.
 					begin
-						next_state = INIT_PRECHARGE_ALL;
 						next_command = CMD_PRECHARGE_ALL;
+
+						next_state = INIT_PRECHARGE_ALL;
 					end
 			end
 		
@@ -545,10 +546,10 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRP nanosegundos después de emitir el comando precharge all.
 					begin
-						next_state = INIT_AUTO_REFRESH;
+						reset_init_counter = 1'b1;
 						next_command = CMD_AUTO_REFRESH;
 
-						reset_init_counter = 1'b1;
+						next_state = INIT_AUTO_REFRESH;
 					end
 			end
 		
@@ -578,18 +579,19 @@ begin
 					begin
 						if (init_counter == 0)  // Comprobar si se han completado los 8 ciclos de refresco.
 							begin
-								// Aún no completa los 8 ciclos de Auto Refresh.
-								next_state = INIT_AUTO_REFRESH;
-								next_command = CMD_AUTO_REFRESH;
+								// Completados los 8 ciclos, configurar registro de modo.
+								next_command = CMD_MRS;
+								
+								next_state = INIT_MRS;
 							end
 						else 
 							begin
-								// Completados los 8 ciclos, configurar registro de modo.
-								next_state = INIT_MRS;
-								next_command = CMD_MRS;
-							end
+								// Aún no completa los 8 ciclos de Auto Refresh.
+								init_counter_count_one_cycle = 1'b1;  // Contar un ciclo de refresco completado.
+								next_command = CMD_AUTO_REFRESH;
 
-						init_counter_count_one_cycle = 1'b1;  // Contar un ciclo de refresco completado.
+								next_state = INIT_AUTO_REFRESH;
+							end
 					end
 			end
 		
@@ -613,10 +615,10 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRSC (Mode Register Set Cycle Time) después del Mode Register Set
 					begin
-						next_state = IDLE;			// Inicialización completada.
-						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+						reset_refresh_counter = 1'b1;	// Starts periodic refresh cycles.
+						next_command = CMD_NOP;			// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
-						reset_refresh_counter = 1'b1;  // Starts periodic refresh cycles.
+						next_state = IDLE;	// Inicialización completada.
 					end
 			end
 		
@@ -629,7 +631,7 @@ begin
 				ready_signal = 1'b1;
 
 				// ---- Transitions ----
-				if (refresh_counter == CYCLES_BETWEEN_REFRESH - 1) 
+				if (refresh_counter == 0) 
 					begin
 						/*
 							Inicia secuencia de auto refresh.
@@ -683,11 +685,11 @@ begin
 				// Precarga de todos los bancos.
 				// Comando CMD_PRECHARGE_ALL emitido en el estado anterior IDLE.
 
+				delay_cycles = TRP_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
 				// ---- Transitions ----
 				next_state = REFRESH_WAIT_TRP;
-				delay_cycles = TRP_CYCLES - 1;
 			end
 
 		REFRESH_WAIT_TRP: 
@@ -697,8 +699,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRP nanosegundos después de emitir el comando precharge all.
 					begin
-						next_state = REFRESH_AUTO_REFRESH;
 						next_command = CMD_AUTO_REFRESH;
+
+						next_state = REFRESH_AUTO_REFRESH;
 					end
 			end
 
@@ -712,12 +715,11 @@ begin
 					El comando CMD_AUTO_REFRESH se activa durante un solo ciclo de reloj, inmediatamente después 
 					la SDRAM espera tRC con comando NOP.
 				*/
-
+				delay_cycles = TRC_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 				
 				// ---- Transitions ----
 				next_state = REFRESH_WAIT_TRC;
-				delay_cycles = TRC_CYCLES - 1;
 			end
 
 		REFRESH_WAIT_TRC:
@@ -727,11 +729,11 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRC nanosegundos después de emitir el comando CMD_AUTO_REFRESH.
 					begin
-						next_state = IDLE;			// Volver al estado IDLE.
-						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
-
 						// Resetear el contador de refresco.
 						reset_refresh_counter = 1'b1;
+						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_state = IDLE;			// Volver al estado IDLE.
 					end
 			end
 
@@ -765,11 +767,11 @@ begin
 				// Activar el banco y fila especificados.
 				// Comando CMD_BANK_ACTIVATE emitido en el estado anterior IDLE.
 
-				// ---- Transitions ----
-				next_state = WRITE_WAIT_TRCD;
+				delay_cycles = TRCD_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				delay_cycles = TRCD_CYCLES - 1;
+				// ---- Transitions ----
+				next_state = WRITE_WAIT_TRCD;
 			end
 
 		WRITE_WAIT_TRCD: 
@@ -779,8 +781,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRCD.
 					begin
-						next_state = WRITE_CAS;
 						next_command = CMD_WRITE;
+
+						next_state = WRITE_CAS;
 					end
 			end
 
@@ -793,11 +796,11 @@ begin
 					in wr_data_reg in the sequential block with the rising edge of clk.
 				*/
 
-				// ---- Transitions ----
-				next_state = WRITE_WAIT_TWR;
+				delay_cycles = TWR_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				delay_cycles = TWR_CYCLES - 1;
+				// ---- Transitions ----
+				next_state = WRITE_WAIT_TWR;
 			end
 
 		WRITE_WAIT_TWR: 
@@ -817,14 +820,15 @@ begin
 									estados WRITE_PRECHARGE y WRITE_WAIT_TRP para futuras mejoras 
 									del controlador.
 								*/
+								next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 								next_state = IDLE;			// Volver a IDLE directamente.
-								next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 							end
 						else 
 							begin
-								next_state = WRITE_PRECHARGE;
 								next_command = CMD_PRECHARGE_BANK;
+
+								next_state = WRITE_PRECHARGE;
 							end
 					end
 			end
@@ -836,10 +840,11 @@ begin
 				// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
 
 				// ---- Transitions ----
-				next_state = WRITE_WAIT_TRP;
-				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
 				delay_cycles = TRP_CYCLES - 1;
+				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+
+				next_state = WRITE_WAIT_TRP;
 			end
 
 		WRITE_WAIT_TRP: 
@@ -849,8 +854,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRP.
 					begin
-						next_state = IDLE;			// Volver a IDLE.
-						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+						next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_state = IDLE;  // Volver a IDLE.
 					end
 			end
 
@@ -894,11 +900,11 @@ begin
 				// Activar el banco y fila especificados.
 				// command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
 
-				// ---- Transitions ----
-				next_state = READ_WAIT_TRCD;
+				delay_cycles = TRCD_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				delay_cycles = TRCD_CYCLES - 1;
+				// ---- Transitions ----
+				next_state = READ_WAIT_TRCD;
 			end
 		
 		READ_WAIT_TRCD:
@@ -909,8 +915,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRCD después de activar el banco.
 					begin
-						next_state = READ_CAS;
 						next_command = CMD_READ;
+
+						next_state = READ_CAS;
 					end
 			end
 
@@ -920,11 +927,11 @@ begin
 				// Emitir comando de lectura.
 				// command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
 
-				// ---- Transitions ----
-				next_state = READ_WAIT_CAS_LATENCY;
+				delay_cycles = CAS_LATENCY - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				delay_cycles = CAS_LATENCY - 1;
+				// ---- Transitions ----
+				next_state = READ_WAIT_CAS_LATENCY;
 			end
 
 		READ_WAIT_CAS_LATENCY:
@@ -934,8 +941,9 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar CAS_LATENCY ciclos antes de que los datos estén disponibles.
 					begin
-						next_state = READ_DATA;
 						next_command = CMD_NOP;
+
+						next_state = READ_DATA;
 					end
 			end
 
@@ -958,13 +966,15 @@ begin
 							controlador.
 						*/
 
-						next_state = IDLE;			// Volver a IDLE directamente.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_state = IDLE;			// Volver a IDLE directamente.
 					end
 				else
 					begin
-						next_state = READ_PRECHARGE;
 						next_command = CMD_PRECHARGE_BANK;
+
+						next_state = READ_PRECHARGE;
 					end
 			end
 
@@ -974,11 +984,11 @@ begin
 				// Precargar el banco específico.
 				// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
 
-				// ---- Transitions ----
-				next_state = READ_WAIT_TRP;
+				delay_cycles = TRP_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
-				delay_cycles = TRP_CYCLES - 1;
+				// ---- Transitions ----
+				next_state = READ_WAIT_TRP;
 			end
 
 		READ_WAIT_TRP:
@@ -988,16 +998,18 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRP después de precargar.
 					begin
-						next_state = IDLE;			// Volver a IDLE.
 						next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+						next_state = IDLE;			// Volver a IDLE.
 					end
 			end
 
 		
 		default: 
 			begin
-				next_state = IDLE;
 				next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+
+				next_state = IDLE;
 			end
 
 	endcase
@@ -1052,12 +1064,12 @@ begin
 	ram_bank_addr_reg = 2'b00;
 	ram_addr_reg = {SDRAM_ADDR_WIDTH{1'b0}};
 	
-	if (present_state == READ_BANK_ACTIVATE || present_state == WRITE_BANK_ACTIVATE)
+	if (current_state == READ_BANK_ACTIVATE || current_state == WRITE_BANK_ACTIVATE)
 		begin
 			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 			ram_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
-	else if (present_state == READ_CAS || present_state == WRITE_CAS)
+	else if (current_state == READ_CAS || current_state == WRITE_CAS)
 		begin
 			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 
@@ -1072,7 +1084,7 @@ begin
 							soc_side_addr_port[COL_WIDTH - 1: 0]	/* column address */
 						};
 		end
-	else if (present_state == INIT_MRS)
+	else if (current_state == INIT_MRS)
 		begin
 			/*
 				Configuración del registro de modo (MRS) durante inicialización:

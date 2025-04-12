@@ -2,8 +2,8 @@ lappend auto_path "C:/lscc/diamond/3.14/data/script"
 package require simulation_generation
 set ::bali::simulation::Para(DEVICEFAMILYNAME) {MachXO2}
 set ::bali::simulation::Para(PROJECT) {simulation}
-set ::bali::simulation::Para(PROJECTPATH) {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller}
-set ::bali::simulation::Para(FILELIST) {"C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v" "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v" }
+set ::bali::simulation::Para(PROJECTPATH) {C:/hdl/SDRAM_controller/sdram_controller}
+set ::bali::simulation::Para(FILELIST) {"C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v" "C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v" }
 set ::bali::simulation::Para(GLBINCLIST) {}
 set ::bali::simulation::Para(INCLIST) {"none" "none"}
 set ::bali::simulation::Para(WORKLIBLIST) {"work" "work" }
