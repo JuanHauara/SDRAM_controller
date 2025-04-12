@@ -1,10 +1,11 @@
 @N: MF916 |Option synthesis_strategy=base is enabled. 
 @N: MF248 |Running in 64-bit mode.
 @N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
-@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
-@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|ROM reset_delay_counter (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|Found ROM reset_delay_counter (in view: work.sdram_controller(verilog)) with 26 words by 1 bit.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|Found ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) with 26 words by 10 bits.
 @N: FX493 |Applying initial value "1" on instance present_state[0].
 @N: FX493 |Applying initial value "0" on instance present_state[1].
 @N: FX493 |Applying initial value "0" on instance present_state[2].
@@ -31,6 +32,8 @@
 @N: FX493 |Applying initial value "0" on instance present_state[23].
 @N: FX493 |Applying initial value "0" on instance present_state[24].
 @N: FX493 |Applying initial value "0" on instance present_state[25].
+@N: FA113 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":354:18:354:37|Pipelining module un1_init_counter_4[3:0]. For more information, search for "pipelining" in Online Help.
+@N: MF169 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":349:0:349:5|Pushed in register init_counter[3:0].
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
 @N: FX1056 |Writing EDF file: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 

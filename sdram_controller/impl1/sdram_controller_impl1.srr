@@ -3,7 +3,7 @@
 #OS: Windows 10 or later
 #Hostname: JH-LAPTOP
 
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:38 2025
 
 #Implementation: impl1
 
@@ -46,20 +46,17 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 202
 @I::"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v" (library work)
 @I::"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller_tb.v" (library work)
 Verilog syntax check successful!
-
-Compiler output is up to date.  No re-compile necessary
-
+File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
 @N: CG364 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Synthesizing module sdram_controller in library work.
 Running optimization stage 1 on sdram_controller .......
-@W: CL207 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|All reachable assignments to enable_init_counter assign 1, register removed by optimization.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[1] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[2] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[6] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[7] is always 1.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 94MB peak: 94MB)
 Running optimization stage 2 on sdram_controller .......
 @N: CL201 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Trying to extract state machine for register present_state.
 Extracted state machine for register present_state
@@ -98,12 +95,12 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 90MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 93MB peak: 94MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:38 2025
 
 ###########################################################]
 ###########################################################[
@@ -124,12 +121,12 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 
 @N|Running in 64-bit mode
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:39 2025
 
 ###########################################################]
 
@@ -144,7 +141,7 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:39 2025
 
 ###########################################################]
 ###########################################################[
@@ -166,15 +163,15 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 @N|Running in 64-bit mode
 File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_comp.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:17 2025
+# Mon Apr  7 18:41:40 2025
 
 ###########################################################]
-# Sat Apr  5 12:47:17 2025
+# Mon Apr  7 18:41:40 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -195,7 +192,7 @@ Synopsys Lattice Technology Pre-mapping, Version map202309lat, Build 191R, Built
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 182MB peak: 182MB)
 
 
-Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 187MB peak: 197MB)
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 197MB)
 
 @A: MF827 |No constraint file specified.
 @L: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1_scck.rpt 
@@ -210,7 +207,7 @@ Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s
 Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 189MB peak: 197MB)
 
 
-Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 202MB peak: 202MB)
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 203MB peak: 203MB)
 
 
 Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 203MB peak: 205MB)
@@ -284,22 +281,22 @@ original code -> new code
 @N: FX493 |Applying initial value "0" on instance present_state[24].
 @N: FX493 |Applying initial value "0" on instance present_state[25].
 
-Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
+Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
-Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 267MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 267MB)
 
 
 
@@ -356,23 +353,23 @@ Summary of user generated gated clocks:
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
 
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 268MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 268MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 271MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 268MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sat Apr  5 12:47:18 2025
+# Mon Apr  7 18:41:41 2025
 
 ###########################################################]
-# Sat Apr  5 12:47:19 2025
+# Mon Apr  7 18:41:41 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -411,10 +408,11 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 252MB peak: 252MB)
 
-@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
-@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|ROM reset_delay_counter (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|Found ROM reset_delay_counter (in view: work.sdram_controller(verilog)) with 26 words by 1 bit.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
+@N: BZ173 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":476:1:476:4|Found ROM delay_cycles[14:5] (in view: work.sdram_controller(verilog)) with 26 words by 10 bits.
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[0] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[1] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[2] has multiple drivers .
@@ -449,6 +447,15 @@ Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapse
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[15] has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net soc_side_ready_port has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net N_37 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[6] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[7] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[8] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[9] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[10] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[11] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[12] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[13] has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net delay_cycles[14] has multiple drivers .
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 257MB peak: 257MB)
 
@@ -493,6 +500,9 @@ NConnInternalConnection caching is on
 
 Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
 
+@N: FA113 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":354:18:354:37|Pipelining module un1_init_counter_4[3:0]. For more information, search for "pipelining" in Online Help.
+@N: MF169 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":349:0:349:5|Pushed in register init_counter[3:0].
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un1_delay_counter_15 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_0 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_1 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_2 has multiple drivers .
@@ -509,41 +519,27 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CP
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_13 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_14 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_15 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_0 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_1 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_2 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_3 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_4 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_5 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_6 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_7 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_8 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_9 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_10 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_11 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_12 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_13 has multiple drivers .
-@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_14 has multiple drivers .
+@W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un1_init_counter_4 has multiple drivers .
 
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 268MB peak: 268MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:00s		     4.12ns		 126 /       129
+   1		0h:00m:00s		     1.57ns		 127 /       130
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 268MB peak: 268MB)
 
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
 @A: BN291 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
@@ -643,38 +639,38 @@ Finished technology timing optimizations and critical path resynthesis (Real Tim
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_30 has multiple drivers .
 @W: BN161 :"c:\lscc\diamond\projects\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_31 has multiple drivers .
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 268MB peak: 268MB)
 
 
-Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 269MB peak: 269MB)
 
 
-Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 271MB)
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 269MB peak: 269MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 215MB peak: 271MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 214MB peak: 269MB)
 
 Writing Analyst data base C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 269MB peak: 269MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 279MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 277MB peak: 277MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 280MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 277MB peak: 277MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 280MB)
+Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 275MB peak: 277MB)
 
 @W: MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Sat Apr  5 12:47:20 2025
+# Timing report written on Mon Apr  7 18:41:43 2025
 #
 
 
@@ -693,12 +689,12 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 4.275
+Worst slack in design: 4.588
 
                          Requested     Estimated     Requested     Estimated               Clock        Clock     
 Starting Clock           Frequency     Frequency     Period        Period        Slack     Type         Group     
 ------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk     80.0 MHz      121.6 MHz     12.500        8.225         4.275     inferred     (multiple)
+sdram_controller|clk     80.0 MHz      126.4 MHz     12.500        7.912         4.588     inferred     (multiple)
 ==================================================================================================================
 
 
@@ -712,7 +708,7 @@ Clocks                                      |    rise  to  rise   |    fall  to 
 ----------------------------------------------------------------------------------------------------------------------------------
 Starting              Ending                |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
 ----------------------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk  sdram_controller|clk  |  12.500      4.275  |  No paths    -      |  No paths    -      |  No paths    -    
+sdram_controller|clk  sdram_controller|clk  |  12.500      4.588  |  No paths    -      |  No paths    -      |  No paths    -    
 ==================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -739,37 +735,37 @@ Starting Points with Worst Slack
 Instance              Reference                Type        Pin     Net                   Time        Slack
                       Clock                                                                               
 ----------------------------------------------------------------------------------------------------------
-delay_counter[3]      sdram_controller|clk     FD1S3IX     Q       delay_counter[3]      1.108       4.275
-delay_counter[8]      sdram_controller|clk     FD1S3IX     Q       delay_counter[8]      1.108       4.275
-delay_counter[13]     sdram_controller|clk     FD1S3IX     Q       delay_counter[13]     1.108       4.275
-delay_counter[14]     sdram_controller|clk     FD1S3IX     Q       delay_counter[14]     1.108       4.275
-delay_counter[5]      sdram_controller|clk     FD1S3IX     Q       delay_counter[5]      1.044       4.299
-delay_counter[6]      sdram_controller|clk     FD1S3IX     Q       delay_counter[6]      1.044       4.299
-delay_counter[4]      sdram_controller|clk     FD1S3IX     Q       delay_counter[4]      1.108       5.292
-delay_counter[7]      sdram_controller|clk     FD1S3IX     Q       delay_counter[7]      1.108       5.292
-delay_counter[9]      sdram_controller|clk     FD1S3IX     Q       delay_counter[9]      1.108       5.292
-delay_counter[10]     sdram_controller|clk     FD1S3IX     Q       delay_counter[10]     1.044       5.316
+present_state[21]     sdram_controller|clk     FD1S3AX     Q       present_state[21]     1.228       4.588
+present_state[10]     sdram_controller|clk     FD1S3AX     Q       present_state[10]     1.204       4.612
+delay_counter[1]      sdram_controller|clk     FD1S3IX     Q       delay_counter[1]      1.044       4.632
+delay_counter[2]      sdram_controller|clk     FD1S3IX     Q       delay_counter[2]      1.044       4.632
+delay_counter[3]      sdram_controller|clk     FD1S3IX     Q       delay_counter[3]      1.044       4.632
+delay_counter[4]      sdram_controller|clk     FD1S3IX     Q       delay_counter[4]      1.044       4.632
+delay_counter[7]      sdram_controller|clk     FD1S3IX     Q       delay_counter[7]      1.044       4.632
+delay_counter[8]      sdram_controller|clk     FD1S3IX     Q       delay_counter[8]      1.044       4.632
+delay_counter[9]      sdram_controller|clk     FD1S3IX     Q       delay_counter[9]      1.044       4.632
+delay_counter[10]     sdram_controller|clk     FD1S3IX     Q       delay_counter[10]     1.044       4.632
 ==========================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                      Starting                                                          Required          
-Instance              Reference                Type         Pin     Net                 Time         Slack
-                      Clock                                                                               
-----------------------------------------------------------------------------------------------------------
-command_0io[3]        sdram_controller|clk     OFS1P3JX     D       next_command[3]     12.589       4.275
-command_0io[5]        sdram_controller|clk     OFS1P3JX     D       N_493_i             12.589       5.396
-command[0]            sdram_controller|clk     FD1S3IX      D       next_command[0]     12.589       6.121
-present_state[2]      sdram_controller|clk     FD1S3AX      D       N_482_i             12.589       6.121
-present_state[4]      sdram_controller|clk     FD1S3AX      D       N_479_i             12.589       6.121
-present_state[11]     sdram_controller|clk     FD1S3AX      D       N_468_i             12.589       6.121
-present_state[13]     sdram_controller|clk     FD1S3AX      D       N_465_i             12.589       6.121
-present_state[16]     sdram_controller|clk     FD1S3AX      D       N_460_i             12.589       6.121
-present_state[19]     sdram_controller|clk     FD1S3AX      D       N_455_i             12.589       6.121
-present_state[20]     sdram_controller|clk     FD1S3AX      D       N_453_i             12.589       6.121
-==========================================================================================================
+                      Starting                                                             Required          
+Instance              Reference                Type        Pin     Net                     Time         Slack
+                      Clock                                                                                  
+-------------------------------------------------------------------------------------------------------------
+delay_counter[0]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[0]      12.589       4.588
+delay_counter[1]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[1]      12.589       4.588
+delay_counter[2]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[2]      12.589       4.588
+delay_counter[3]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[3]      12.589       4.588
+delay_counter[4]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[4]      12.589       4.588
+delay_counter[7]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[7]      12.589       4.588
+delay_counter[8]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[8]      12.589       4.588
+delay_counter[9]      sdram_controller|clk     FD1S3IX     D       delay_counter_4[9]      12.589       4.588
+delay_counter[13]     sdram_controller|clk     FD1S3IX     D       delay_counter_4[13]     12.589       4.588
+delay_counter[14]     sdram_controller|clk     FD1S3IX     D       delay_counter_4[14]     12.589       4.588
+=============================================================================================================
 
 
 
@@ -783,44 +779,41 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         12.589
 
-    - Propagation time:                      8.313
+    - Propagation time:                      8.001
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     4.275
+    = Slack (critical) :                     4.588
 
-    Number of logic level(s):                7
-    Starting point:                          delay_counter[3] / Q
-    Ending point:                            command_0io[3] / D
+    Number of logic level(s):                6
+    Starting point:                          present_state[21] / Q
+    Ending point:                            delay_counter[0] / D
     The start point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
-    The end   point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin SCLK
+    The end   point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
 
-Instance / Net                                                    Pin      Pin               Arrival     No. of    
-Name                                                 Type         Name     Dir     Delay     Time        Fan Out(s)
--------------------------------------------------------------------------------------------------------------------
-delay_counter[3]                                     FD1S3IX      Q        Out     1.108     1.108 r     -         
-delay_counter[3]                                     Net          -        -       -         -           3         
-reset_delay_counter.refresh_counter7_0_a5_i_o2_4     ORCALUT4     A        In      0.000     1.108 r     -         
-reset_delay_counter.refresh_counter7_0_a5_i_o2_4     ORCALUT4     Z        Out     1.017     2.125 r     -         
-reset_delay_counter.refresh_counter7_0_a5_i_o2_4     Net          -        -       -         -           1         
-reset_delay_counter.refresh_counter7_0_a5_i_o2       ORCALUT4     D        In      0.000     2.125 r     -         
-reset_delay_counter.refresh_counter7_0_a5_i_o2       ORCALUT4     Z        Out     1.153     3.277 r     -         
-N_65                                                 Net          -        -       -         -           3         
-reset_delay_counter.refresh_counter7_0_a5_i_o3       ORCALUT4     A        In      0.000     3.277 r     -         
-reset_delay_counter.refresh_counter7_0_a5_i_o3       ORCALUT4     Z        Out     1.297     4.574 r     -         
-N_67                                                 Net          -        -       -         -           13        
-present_state_srsts_i_a5[8]                          ORCALUT4     C        In      0.000     4.574 r     -         
-present_state_srsts_i_a5[8]                          ORCALUT4     Z        Out     1.089     5.663 f     -         
-N_600                                                Net          -        -       -         -           2         
-next_command_a5_0_2[3]                               ORCALUT4     B        In      0.000     5.663 f     -         
-next_command_a5_0_2[3]                               ORCALUT4     Z        Out     1.017     6.680 r     -         
-next_command_a5_0_2[3]                               Net          -        -       -         -           1         
-next_command_tz[3]                                   ORCALUT4     C        In      0.000     6.680 r     -         
-next_command_tz[3]                                   ORCALUT4     Z        Out     1.017     7.697 r     -         
-next_command_tz[3]                                   Net          -        -       -         -           1         
-next_command[3]                                      ORCALUT4     C        In      0.000     7.697 r     -         
-next_command[3]                                      ORCALUT4     Z        Out     0.617     8.313 r     -         
-next_command[3]                                      Net          -        -       -         -           1         
-command_0io[3]                                       OFS1P3JX     D        In      0.000     8.313 r     -         
-===================================================================================================================
+Instance / Net                                              Pin      Pin               Arrival     No. of    
+Name                                           Type         Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------------------------------------
+present_state[21]                              FD1S3AX      Q        Out     1.228     1.228 r     -         
+present_state[21]                              Net          -        -       -         -           9         
+delay_cycles_14_5_.ram_bank_addr_reg6_i_a2     ORCALUT4     B        In      0.000     1.228 r     -         
+delay_cycles_14_5_.ram_bank_addr_reg6_i_a2     ORCALUT4     Z        Out     1.289     2.517 f     -         
+N_628                                          Net          -        -       -         -           12        
+delay_cycles_14_5_.un35_a4[2]                  ORCALUT4     B        In      0.000     2.517 f     -         
+delay_cycles_14_5_.un35_a4[2]                  ORCALUT4     Z        Out     1.233     3.749 f     -         
+N_568                                          Net          -        -       -         -           6         
+delay_cycles_14_5_.un35_i_a4_RNIA81OO_0[1]     ORCALUT4     A        In      0.000     3.749 f     -         
+delay_cycles_14_5_.un35_i_a4_RNIA81OO_0[1]     ORCALUT4     Z        Out     1.265     5.014 r     -         
+delay_cycles[8]                                Net          -        -       -         -           8         
+delay_cycles_14_5_.un35_i_a4_RNI7AFKI1[1]      ORCALUT4     A        In      0.000     5.014 r     -         
+delay_cycles_14_5_.un35_i_a4_RNI7AFKI1[1]      ORCALUT4     Z        Out     1.089     6.103 r     -         
+delay_cycles[6]                                Net          -        -       -         -           2         
+delay_cycles_14_5_.un1_delay_cycles_10_1       ORCALUT4     B        In      0.000     6.103 r     -         
+delay_cycles_14_5_.un1_delay_cycles_10_1       ORCALUT4     Z        Out     1.281     7.384 f     -         
+un1_delay_cycles_10                            Net          -        -       -         -           11        
+delay_cycles_14_5_.delay_counter_4[0]          ORCALUT4     D        In      0.000     7.384 f     -         
+delay_cycles_14_5_.delay_counter_4[0]          ORCALUT4     Z        Out     0.617     8.001 r     -         
+delay_counter_4[0]                             Net          -        -       -         -           1         
+delay_counter[0]                               FD1S3IX      D        In      0.000     8.001 r     -         
+=============================================================================================================
 
 
 
@@ -828,44 +821,43 @@ command_0io[3]                                       OFS1P3JX     D        In   
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 280MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 276MB peak: 277MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 280MB)
+Finished timing report (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 276MB peak: 277MB)
 
 ---------------------------------------
 Resource Usage Report
 Part: lcmxo2_4000hc-4
 
-Register bits: 129 of 4320 (3%)
+Register bits: 130 of 4320 (3%)
 PIC Latch:       0
 I/O cells:       152
 
 
 Details:
 BB:             32
-CCU2D:          17
+CCU2D:          20
 FD1S3AX:        25
 FD1S3AY:        1
-FD1S3IX:        35
+FD1S3IX:        36
 FD1S3JX:        1
 GSR:            1
 IB:             63
 IFS1P3IX:       32
-INV:            5
+INV:            3
 OB:             57
 OFS1P3IX:       32
 OFS1P3JX:       3
-ORCALUT4:       120
-PFUMX:          1
+ORCALUT4:       122
 PUR:            1
 VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 135MB peak: 280MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 132MB peak: 277MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sat Apr  5 12:47:20 2025
+# Mon Apr  7 18:41:43 2025
 
 ###########################################################]

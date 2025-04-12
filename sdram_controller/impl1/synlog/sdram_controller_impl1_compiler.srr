@@ -37,20 +37,17 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 202
 @I::"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v" (library work)
 @I::"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller_tb.v" (library work)
 Verilog syntax check successful!
-
-Compiler output is up to date.  No re-compile necessary
-
+File C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
 @N: CG364 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Synthesizing module sdram_controller in library work.
 Running optimization stage 1 on sdram_controller .......
-@W: CL207 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":472:1:472:4|All reachable assignments to enable_init_counter assign 1, register removed by optimization.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[1] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[2] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[6] is always 0.
 @N: CL189 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[7] is always 1.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL279 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 93MB)
+Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 94MB peak: 94MB)
 Running optimization stage 2 on sdram_controller .......
 @N: CL201 :"C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Trying to extract state machine for register present_state.
 Extracted state machine for register present_state
@@ -89,12 +86,12 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 90MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 93MB peak: 94MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:38 2025
 
 ###########################################################]
 ###########################################################[
@@ -115,12 +112,12 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 
 @N|Running in 64-bit mode
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 90MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:39 2025
 
 ###########################################################]
 
@@ -135,6 +132,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Apr  5 12:47:16 2025
+# Mon Apr  7 18:41:39 2025
 
 ###########################################################]
