@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2025 4 14 0 14 52)
+      (timeStamp 2025 4 14 0 24 25)
       (author "Synopsys, Inc.")
       (program "Synplify Pro" (version "V-2023.09L-2, mapper map202309lat, Build 191R"))
      )
@@ -429,13 +429,13 @@
           (instance (rename rd_data_reg_0io_31 "rd_data_reg_0io[31]") (viewRef PRIM (cellRef OFS1P3IX (libraryRef LUCENT)))
            (property IOB (string "FALSE"))
           )
-          (instance (rename command_0io_3 "command_0io[3]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
+          (instance (rename current_command_0io_3 "current_command_0io[3]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
            (property IOB (string "FALSE"))
           )
-          (instance (rename command_0io_4 "command_0io[4]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
+          (instance (rename current_command_0io_4 "current_command_0io[4]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
            (property IOB (string "FALSE"))
           )
-          (instance (rename command_0io_5 "command_0io[5]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
+          (instance (rename current_command_0io_5 "current_command_0io[5]") (viewRef PRIM (cellRef OFS1P3JX (libraryRef LUCENT)))
            (property IOB (string "FALSE"))
           )
           (instance (rename refresh_counter_0 "refresh_counter[0]") (viewRef PRIM (cellRef FD1S3IX (libraryRef LUCENT)))
@@ -558,7 +558,7 @@
           )
           (instance (rename current_state_25 "current_state[25]") (viewRef PRIM (cellRef FD1S3AX (libraryRef LUCENT)))
           )
-          (instance (rename command_0 "command[0]") (viewRef PRIM (cellRef FD1S3IX (libraryRef LUCENT)))
+          (instance (rename current_command_0 "current_command[0]") (viewRef PRIM (cellRef FD1S3IX (libraryRef LUCENT)))
           )
           (instance ram_side_ck_en_port_pad (viewRef PRIM (cellRef OB (libraryRef LUCENT)))          )
           (instance ram_side_wr_en_port_pad (viewRef PRIM (cellRef OB (libraryRef LUCENT)))          )
@@ -724,10 +724,10 @@
           (instance (rename reset_delay_counter_un35_a5_RNIQ67M71_3 "reset_delay_counter.un35_a5_RNIQ67M71[3]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
            (property lut_function (string "(!D (!B A)+D !C)"))
           )
-          (instance (rename command_0io_RNO_4 "command_0io_RNO[4]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
+          (instance (rename current_command_0io_RNO_4 "current_command_0io_RNO[4]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
            (property lut_function (string "(!C !B+C (!B !A))"))
           )
-          (instance (rename command_0io_RNO_5 "command_0io_RNO[5]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
+          (instance (rename current_command_0io_RNO_5 "current_command_0io_RNO[5]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
            (property lut_function (string "(!D (!C !B+C (!B !A)))"))
           )
           (instance (rename current_state_RNO_19 "current_state_RNO[19]") (viewRef PRIM (cellRef ORCALUT4 (libraryRef LUCENT)))
@@ -1620,13 +1620,13 @@
            (portRef B (instanceRef reset_delay_counter_current_state_srsts_i_a5_14))
            (portRef C (instanceRef reset_delay_counter_current_state_srsts_i_a5_RNI2VF8J_14))
           ))
-          (net (rename command_0 "command[0]") (joined
-           (portRef Q (instanceRef command_0))
+          (net (rename current_command_0 "current_command[0]") (joined
+           (portRef Q (instanceRef current_command_0))
            (portRef A (instanceRef ram_side_addr_port_2_10))
           ))
           (net (rename next_command_0 "next_command[0]") (joined
            (portRef Z (instanceRef next_command_0_0))
-           (portRef D (instanceRef command_0))
+           (portRef D (instanceRef current_command_0))
           ))
           (net reset_refresh_counter (joined
            (portRef Z (instanceRef reset_delay_counter_reset_refresh_counter_0_a5))
@@ -1749,8 +1749,8 @@
            (portRef A (instanceRef reset_delay_counter_reset_refresh_counter_0_a5))
            (portRef A (instanceRef current_state_srsts_0_a2_5))
            (portRef B (instanceRef current_state_RNO_6))
-           (portRef C (instanceRef command_0io_RNO_5))
-           (portRef C (instanceRef command_0io_RNO_4))
+           (portRef C (instanceRef current_command_0io_RNO_5))
+           (portRef C (instanceRef current_command_0io_RNO_4))
           ))
           (net N_521 (joined
            (portRef Z (instanceRef init_counter_count_one_cycle_1_sqmuxa_1_0_o2))
@@ -1788,7 +1788,7 @@
           (net N_618 (joined
            (portRef Z (instanceRef next_command_i_a2_5))
            (portRef A (instanceRef reset_delay_counter_next_command_i_1_3))
-           (portRef B (instanceRef command_0io_RNO_5))
+           (portRef B (instanceRef current_command_0io_RNO_5))
           ))
           (net N_636 (joined
            (portRef Z (instanceRef next_command_i_a2_2_5))
@@ -1846,8 +1846,8 @@
           ))
           (net N_505 (joined
            (portRef Z (instanceRef reset_delay_counter_next_command_i_o2_0_4))
-           (portRef A (instanceRef command_0io_RNO_5))
-           (portRef A (instanceRef command_0io_RNO_4))
+           (portRef A (instanceRef current_command_0io_RNO_5))
+           (portRef A (instanceRef current_command_0io_RNO_4))
           ))
           (net N_686 (joined
            (portRef Z (instanceRef current_state_srsts_0_a2_3))
@@ -1867,7 +1867,7 @@
           (net N_614 (joined
            (portRef Z (instanceRef next_command_i_a5_0_4))
            (portRef A (instanceRef next_command_0_0))
-           (portRef B (instanceRef command_0io_RNO_4))
+           (portRef B (instanceRef current_command_0io_RNO_4))
           ))
           (net N_680 (joined
            (portRef Z (instanceRef un35_a2_2))
@@ -2297,16 +2297,16 @@
            (portRef D (instanceRef current_state_25))
           ))
           (net N_494_i (joined
-           (portRef Z (instanceRef command_0io_RNO_5))
-           (portRef D (instanceRef command_0io_5))
+           (portRef Z (instanceRef current_command_0io_RNO_5))
+           (portRef D (instanceRef current_command_0io_5))
           ))
           (net N_492_i (joined
-           (portRef Z (instanceRef command_0io_RNO_4))
-           (portRef D (instanceRef command_0io_4))
+           (portRef Z (instanceRef current_command_0io_RNO_4))
+           (portRef D (instanceRef current_command_0io_4))
           ))
           (net N_490_i (joined
            (portRef Z (instanceRef reset_delay_counter_next_command_i_1_RNITFJUF_3))
-           (portRef D (instanceRef command_0io_3))
+           (portRef D (instanceRef current_command_0io_3))
           ))
           (net ram_side_addr_port_1_0_a5_1 (joined
            (portRef Z (instanceRef ram_side_addr_port_1_0_a5_1))
@@ -2384,7 +2384,7 @@
           ))
           (net (rename next_command_i_1_5 "next_command_i_1[5]") (joined
            (portRef Z (instanceRef next_command_i_1_5))
-           (portRef D (instanceRef command_0io_RNO_5))
+           (portRef D (instanceRef current_command_0io_RNO_5))
           ))
           (net (rename reset_delay_counter_next_command_i_1_3 "reset_delay_counter.next_command_i_1[3]") (joined
            (portRef Z (instanceRef reset_delay_counter_next_command_i_1_3))
@@ -2420,9 +2420,9 @@
            (portRef B0 (instanceRef un2_delay_counter_1_cry_0_0))
            (portRef B0 (instanceRef un2_refresh_counter_cry_0_0))
            (portRef I (instanceRef ram_side_ck_en_port_pad))
-           (portRef SP (instanceRef command_0io_5))
-           (portRef SP (instanceRef command_0io_4))
-           (portRef SP (instanceRef command_0io_3))
+           (portRef SP (instanceRef current_command_0io_5))
+           (portRef SP (instanceRef current_command_0io_4))
+           (portRef SP (instanceRef current_command_0io_3))
            (portRef GSR (instanceRef GSR_INST))
           ))
           (net GND (joined
@@ -2534,7 +2534,7 @@
           ))
           (net clk_c (joined
            (portRef O (instanceRef clk_pad))
-           (portRef CK (instanceRef command_0))
+           (portRef CK (instanceRef current_command_0))
            (portRef CK (instanceRef current_state_25))
            (portRef CK (instanceRef current_state_24))
            (portRef CK (instanceRef current_state_23))
@@ -2595,9 +2595,9 @@
            (portRef CK (instanceRef refresh_counter_2))
            (portRef CK (instanceRef refresh_counter_1))
            (portRef CK (instanceRef refresh_counter_0))
-           (portRef SCLK (instanceRef command_0io_5))
-           (portRef SCLK (instanceRef command_0io_4))
-           (portRef SCLK (instanceRef command_0io_3))
+           (portRef SCLK (instanceRef current_command_0io_5))
+           (portRef SCLK (instanceRef current_command_0io_4))
+           (portRef SCLK (instanceRef current_command_0io_3))
            (portRef SCLK (instanceRef rd_data_reg_0io_31))
            (portRef SCLK (instanceRef rd_data_reg_0io_30))
            (portRef SCLK (instanceRef rd_data_reg_0io_29))
@@ -3898,7 +3898,7 @@
            (portRef ram_side_cs_n_port)
           ))
           (net ram_side_ras_n_port_c (joined
-           (portRef Q (instanceRef command_0io_5))
+           (portRef Q (instanceRef current_command_0io_5))
            (portRef I (instanceRef ram_side_ras_n_port_pad))
           ))
           (net ram_side_ras_n_port (joined
@@ -3906,7 +3906,7 @@
            (portRef ram_side_ras_n_port)
           ))
           (net ram_side_cas_n_port_c (joined
-           (portRef Q (instanceRef command_0io_4))
+           (portRef Q (instanceRef current_command_0io_4))
            (portRef I (instanceRef ram_side_cas_n_port_pad))
           ))
           (net ram_side_cas_n_port (joined
@@ -3914,7 +3914,7 @@
            (portRef ram_side_cas_n_port)
           ))
           (net ram_side_wr_en_port_c (joined
-           (portRef Q (instanceRef command_0io_3))
+           (portRef Q (instanceRef current_command_0io_3))
            (portRef I (instanceRef ram_side_wr_en_port_pad))
           ))
           (net ram_side_wr_en_port (joined
@@ -3931,14 +3931,14 @@
           ))
           (net reset_n_port_c_i (joined
            (portRef Z (instanceRef reset_n_port_pad_RNI8MMK3))
-           (portRef CD (instanceRef command_0))
+           (portRef CD (instanceRef current_command_0))
            (portRef D (instanceRef current_state_0))
            (portRef CD (instanceRef init_counter_2))
            (portRef CD (instanceRef init_counter_1))
            (portRef CD (instanceRef init_counter_0))
-           (portRef PD (instanceRef command_0io_5))
-           (portRef PD (instanceRef command_0io_4))
-           (portRef PD (instanceRef command_0io_3))
+           (portRef PD (instanceRef current_command_0io_5))
+           (portRef PD (instanceRef current_command_0io_4))
+           (portRef PD (instanceRef current_command_0io_3))
            (portRef CD (instanceRef rd_data_reg_0io_31))
            (portRef CD (instanceRef rd_data_reg_0io_30))
            (portRef CD (instanceRef rd_data_reg_0io_29))

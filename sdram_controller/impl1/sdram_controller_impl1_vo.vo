@@ -2,8 +2,8 @@
 // Verilog netlist produced by program ldbanno, Version Diamond (64-bit) 3.14.0.75.2
 
 // ldbanno -n Verilog -o sdram_controller_impl1_vo.vo -w -neg -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1.ncd 
-// Netlist created on Mon Apr 14 00:14:55 2025
-// Netlist written on Mon Apr 14 00:15:26 2025
+// Netlist created on Mon Apr 14 00:24:27 2025
+// Netlist written on Mon Apr 14 00:24:55 2025
 // Design is for device LCMXO2-4000HC
 // Design is for package CABGA332
 // Design is for performance grade 4
@@ -72,7 +72,7 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
          \un2_delay_counter_1[1] , \current_state[11] , N_638, 
          \current_state[20] , N_686, N_614, \current_state[17] , 
          \current_state_srsts_i_a2[21] , \next_command[0] , reset_n_port_c, 
-         \command[0] , \current_state[0] , \current_state[1] , N_483_i, 
+         \current_command[0] , \current_state[0] , \current_state[1] , N_483_i, 
          reset_n_port_c_i, \current_state[3] , \current_state[2] , 
          \current_state_nss[3] , N_481_i, \current_state_nss_1[5] , 
          \current_state[5] , \current_state[4] , \current_state_nss[5] , 
@@ -291,7 +291,7 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
     .A1(\current_state[20] ), .D0(N_686), .C0(N_614), .B0(\current_state[17] ), 
     .A0(\current_state_srsts_i_a2[21] ), .DI0(\next_command[0] ), 
     .LSR(reset_n_port_c), .CLK(clk_c), .F0(\next_command[0] ), 
-    .Q0(\command[0] ), .F1(N_614));
+    .Q0(\current_command[0] ), .F1(N_614));
   SLICE_18 SLICE_18( .D1(\current_state[0] ), .C1(reset_n_port_c), .B1(N_686), 
     .A1(\current_state[1] ), .B0(reset_n_port_c), .DI1(N_483_i), 
     .DI0(reset_n_port_c_i), .CLK(clk_c), .F0(reset_n_port_c_i), 
@@ -447,7 +447,7 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
   SLICE_52 SLICE_52( .C1(\un35_li_2[1] ), .B1(\current_state[17] ), 
     .A1(\current_state[4] ), .D0(ram_side_addr_port_1_0_a5_1), 
     .C0(ram_side_addr_port_1_0_a5_2), .B0(\ram_addr_reg[10] ), 
-    .A0(\command[0] ), .F0(\ram_side_addr_port_c[10] ), 
+    .A0(\current_command[0] ), .F0(\ram_side_addr_port_c[10] ), 
     .F1(ram_side_addr_port_1_0_a5_2));
   SLICE_53 SLICE_53( .D1(\current_state[4] ), .C1(N_681), 
     .B1(\current_state[5] ), .A1(\reset_delay_counter.un35_a5_3_0[3] ), 
@@ -1875,8 +1875,8 @@ module SLICE_17 ( input C1, B1, A1, D0, C0, B0, A0, DI0, LSR, CLK, output F0,
   lut4 \next_command_i_a5_0[4] ( .A(A1), .B(B1), .C(C1), .D(GNDI), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
   lut40003 \next_command_0[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
-  vmuxregsre \command[0] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q0));
+  vmuxregsre \current_command[0] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
 
@@ -2820,7 +2820,8 @@ module SLICE_42 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
 
   lut40049 \reset_delay_counter.next_command_i_o2_0[4] ( .A(A1), .B(B1), 
     .C(C1), .D(D1), .Z(F1));
-  lut40050 \command_0io_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+  lut40050 \current_command_0io_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(GNDI), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -2851,7 +2852,8 @@ module SLICE_43 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
   lut40051 reset_refresh_counter_0_a2( .A(GNDI), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40052 \command_0io_RNO[5] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40052 \current_command_0io_RNO[5] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3956,7 +3958,7 @@ endmodule
 module ram_side_wr_en_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[3] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[3] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
@@ -3993,7 +3995,7 @@ endmodule
 module ram_side_cas_n_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[4] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[4] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
@@ -4024,7 +4026,7 @@ endmodule
 module ram_side_ras_n_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[5] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[5] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));

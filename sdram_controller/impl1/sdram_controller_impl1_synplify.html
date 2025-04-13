@@ -12,7 +12,7 @@
 #OS: Windows 10 or later
 #Hostname: 5CG407221K
 
-# Mon Apr 14 00:14:45 2025
+# Mon Apr 14 00:24:18 2025
 
 #Implementation: impl1
 
@@ -55,18 +55,16 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 202
 @I::"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v" (library work)
 @I::"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller_tb.v" (library work)
 Verilog syntax check successful!
-
-Compiler output is up to date.  No re-compile necessary
-
+File C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
 @N: CG364 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Synthesizing module sdram_controller in library work.
 Running optimization stage 1 on sdram_controller .......
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[1] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[2] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[6] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit command[7] is always 1.
-@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 7 to 6 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 2 to 1 of command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[1] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[2] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[6] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[7] is always 1.
+@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 7 to 6 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 2 to 1 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 94MB)
 Running optimization stage 2 on sdram_controller .......
 @N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":347:0:347:5|Register bit init_counter[3] is always 0.
@@ -108,12 +106,12 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 90MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 93MB peak: 94MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:14:46 2025
+# Mon Apr 14 00:24:19 2025
 
 ###########################################################]
 ###########################################################[
@@ -139,7 +137,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:14:46 2025
+# Mon Apr 14 00:24:19 2025
 
 ###########################################################]
 
@@ -154,7 +152,7 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:14:46 2025
+# Mon Apr 14 00:24:19 2025
 
 ###########################################################]
 ###########################################################[
@@ -181,10 +179,10 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:14:47 2025
+# Mon Apr 14 00:24:20 2025
 
 ###########################################################]
-# Mon Apr 14 00:14:47 2025
+# Mon Apr 14 00:24:21 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -227,10 +225,10 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 NConnInternalConnection caching is on
 
-Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
 
 
-Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
 
 
 Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
@@ -299,17 +297,17 @@ Starting clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapse
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
 
 
-Starting clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
+Starting clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
 
 
 
@@ -376,13 +374,13 @@ Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:0
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 170MB peak: 271MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 271MB)
 
 Process took 0h:00m:02s realtime, 0h:00m:01s cputime
-# Mon Apr 14 00:14:49 2025
+# Mon Apr 14 00:24:23 2025
 
 ###########################################################]
-# Mon Apr 14 00:14:50 2025
+# Mon Apr 14 00:24:23 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -501,7 +499,7 @@ Available hyper_sources - for debug and ip models
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
 
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_0 has multiple drivers .
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_1 has multiple drivers .
@@ -535,13 +533,13 @@ Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CP
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_13 has multiple drivers .
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_14 has multiple drivers .
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
 Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
 Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
@@ -553,7 +551,7 @@ Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
    1		0h:00m:00s		     3.99ns		 122 /       128
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
 
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
 @A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
@@ -653,20 +651,20 @@ Finished technology timing optimizations and critical path resynthesis (Real Tim
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_30 has multiple drivers .
 @W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_31 has multiple drivers .
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
 
 
-Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 272MB)
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 272MB)
 
 
 Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 272MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 218MB peak: 272MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 218MB peak: 272MB)
 
 Writing Analyst data base C:\hdl\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 272MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 272MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\hdl\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
@@ -678,13 +676,13 @@ Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:02s
 Finished Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 280MB peak: 280MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 280MB)
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 279MB peak: 280MB)
 
 @W: MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Mon Apr 14 00:14:53 2025
+# Timing report written on Mon Apr 14 00:24:26 2025
 #
 
 
@@ -765,21 +763,21 @@ delay_counter[9]      sdram_controller|clk     FD1S3IX     Q       delay_counter
 Ending Points with Worst Slack
 ******************************
 
-                      Starting                                                               Required          
-Instance              Reference                Type         Pin     Net                      Time         Slack
-                      Clock                                                                                    
----------------------------------------------------------------------------------------------------------------
-command_0io[3]        sdram_controller|clk     OFS1P3JX     D       N_490_i                  12.589       5.116
-current_state[5]      sdram_controller|clk     FD1S3AX      D       current_state_nss[5]     12.589       5.116
-current_state[17]     sdram_controller|clk     FD1S3AX      D       N_456_i                  12.589       6.085
-init_counter[0]       sdram_controller|clk     FD1S3IX      D       init_counter_RNO[0]      12.589       6.205
-init_counter[1]       sdram_controller|clk     FD1S3IX      D       init_counter_RNO[1]      12.589       6.205
-init_counter[2]       sdram_controller|clk     FD1S3IX      D       init_counter_RNO[2]      12.589       6.205
-command[0]            sdram_controller|clk     FD1S3IX      D       next_command[0]          12.589       6.253
-command_0io[4]        sdram_controller|clk     OFS1P3JX     D       N_492_i                  12.589       6.253
-current_state[7]      sdram_controller|clk     FD1S3AX      D       N_473_i                  12.589       6.381
-current_state[14]     sdram_controller|clk     FD1S3AX      D       N_461_i                  12.589       6.381
-===============================================================================================================
+                           Starting                                                               Required          
+Instance                   Reference                Type         Pin     Net                      Time         Slack
+                           Clock                                                                                    
+--------------------------------------------------------------------------------------------------------------------
+current_command_0io[3]     sdram_controller|clk     OFS1P3JX     D       N_490_i                  12.589       5.116
+current_state[5]           sdram_controller|clk     FD1S3AX      D       current_state_nss[5]     12.589       5.116
+current_state[17]          sdram_controller|clk     FD1S3AX      D       N_456_i                  12.589       6.085
+init_counter[0]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[0]      12.589       6.205
+init_counter[1]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[1]      12.589       6.205
+init_counter[2]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[2]      12.589       6.205
+current_command[0]         sdram_controller|clk     FD1S3IX      D       next_command[0]          12.589       6.253
+current_command_0io[4]     sdram_controller|clk     OFS1P3JX     D       N_492_i                  12.589       6.253
+current_state[7]           sdram_controller|clk     FD1S3AX      D       N_473_i                  12.589       6.381
+current_state[14]          sdram_controller|clk     FD1S3AX      D       N_461_i                  12.589       6.381
+====================================================================================================================
 
 
 
@@ -835,10 +833,10 @@ current_state[5]                                      FD1S3AX      D        In  
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 280MB peak: 280MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 280MB peak: 280MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 280MB peak: 280MB)
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 280MB peak: 280MB)
 
 ---------------------------------------
 Resource Usage Report
@@ -868,10 +866,10 @@ VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 133MB peak: 280MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 133MB peak: 280MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:01s cputime
-# Mon Apr 14 00:14:53 2025
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Mon Apr 14 00:24:26 2025
 
 ###########################################################]
 

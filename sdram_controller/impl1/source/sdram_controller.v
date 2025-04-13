@@ -224,7 +224,7 @@ localparam CMD_READ				= 8'b10101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 
 // Internal state machine registers.
 reg [4:0] current_state, next_state;
-reg [7:0] command, next_command;  // Comando SDRAM.
+reg [7:0] current_command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
 reg [14:0] delay_counter;
@@ -257,10 +257,10 @@ wire in_read_cycle;
 // Assignments
 //-------------------------------
 
-// Assigns command bits to outputs.
-assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
-assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : command[2:1];
-assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+// Assigns current_command bits to outputs.
+assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = current_command[7:3];
+assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : current_command[2:1];
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, current_command[0], 10'd0 };
 
 assign soc_side_busy_port = busy_signal;
 assign soc_side_ready_port = ready_signal;
@@ -303,7 +303,7 @@ begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
 			current_state <= INIT;
-			command <= CMD_NOP;
+			current_command <= CMD_NOP;
 			
 			// Data.
 			wr_data_reg <= 32'b0;
@@ -311,10 +311,10 @@ begin
 		end
 	else 
 		begin
-			// Update state and command.
+			// Update state and current_command.
 			// ----------------------------
 			current_state <= next_state;
-			command <= next_command;
+			current_command <= next_command;
 			
 			// Update write data register.
 			// ----------------------------
@@ -484,14 +484,14 @@ begin
 			2. INIT_PAUSE: Wait at least 200us after power-up.
 				- During this pause, DQM and CKE are kept high to prevent data contention.
 
-			3. INIT_PRECHARGE_ALL: Issues the precharge all banks command.
-				- This command prepares all banks for subsequent operations.
+			3. INIT_PRECHARGE_ALL: Issues the precharge all banks current_command.
+				- This current_command prepares all banks for subsequent operations.
 
 			4. INIT_WAIT_TRP: Wait tRP nanoseconds after precharge.
 				- Time required for the precharge to complete internally.
 
 			5. INIT_AUTO_REFRESH + INIT_WAIT_TRC: Executes 8 Auto Refresh cycles.
-				- Each cycle issues an AUTO_REFRESH command and waits tRC nanoseconds.
+				- Each cycle issues an AUTO_REFRESH current_command and waits tRC nanoseconds.
 				- All 8 cycles are specifically required by the datasheet for initialization.
 
 			6. INIT_MRS: Mode Register configuration.
@@ -659,12 +659,12 @@ begin
 			The automatic refresh cycle is activated periodically to maintain data in SDRAM:
 
 			1. REFRESH_PRECHARGE_ALL: Precharges all banks before refresh.
-				- Necessary because the AUTO_REFRESH command requires all banks to be inactive.
+				- Necessary because the AUTO_REFRESH current_command requires all banks to be inactive.
 
 			2. REFRESH_WAIT_TRP: Wait tRP nanoseconds after precharge.
 				- Time required for the precharge to complete internally.
 
-			3. REFRESH_AUTO_REFRESH: Issues the AUTO_REFRESH command.
+			3. REFRESH_AUTO_REFRESH: Issues the AUTO_REFRESH current_command.
 				- Refreshes all rows in all banks simultaneously.
 
 			4. REFRESH_WAIT_TRC: Wait tRC nanoseconds after AUTO_REFRESH.
@@ -744,9 +744,9 @@ begin
 				- Selects the memory row containing the address to write.
 
 			2. WRITE_WAIT_TRCD: Wait tRCD nanoseconds after activation.
-				- Time required between activation and column command (Row to Column Delay).
+				- Time required between activation and column current_command (Row to Column Delay).
 
-			3. WRITE_CAS: Issues the write command and sends data.
+			3. WRITE_CAS: Issues the write current_command and sends data.
 				- Column address and data are presented simultaneously.
 				- A10 is configured for auto-precharge if enabled.
 
@@ -785,7 +785,7 @@ begin
 			begin
 				// ---- Outputs ----
 				/*
-					Write command issued in the previous state.
+					Write current_command issued in the previous state.
 					The data to be written is already in the wr_data_reg register; it is captured 
 					in wr_data_reg in the sequential block with the rising edge of clk.
 				*/
@@ -865,10 +865,10 @@ begin
 				- Row address is provided via A0-A11.
 
 			2. READ_WAIT_TRCD: Wait tRCD nanoseconds after activation.
-				- Time required between row activation and column command (Row to Column Delay).
+				- Time required between row activation and column current_command (Row to Column Delay).
 				- tRCD minimum is 15ns for -5/-5I/-5J grade parts.
 
-			3. READ_CAS: Issues the read command.
+			3. READ_CAS: Issues the read current_command.
 				- Column address is presented and CS, CAS are set low, RAS, WE are set high.
 				- A10 is configured for auto-precharge if enabled.
 
@@ -883,13 +883,13 @@ begin
 			6. READ_PRECHARGE/READ_WAIT_TRP (optional if auto-precharge not used):
 				- Precharges the specific bank and waits tRP before new operations.
 				- tRP minimum is 15ns for -5/-5I/-5J grade parts.
-				- Auto-precharge eliminates the need for an explicit precharge command.
+				- Auto-precharge eliminates the need for an explicit precharge current_command.
 		*/
 		READ_BANK_ACTIVATE:
 			begin
 				// ---- Outputs ----
 				// Activar el banco y fila especificados.
-				// command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
+				// current_command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
 
 				// ---- Transitions ----
 				next_state = READ_WAIT_TRCD;
@@ -901,7 +901,7 @@ begin
 		READ_WAIT_TRCD:
 			begin
 				// ---- Outputs ----
-				// command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
+				// current_command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
 
 				// ---- Transitions ----
 				if (delay_counter == TRCD_CYCLES - 1)  // Esperar tRCD después de activar el banco.
@@ -915,7 +915,7 @@ begin
 			begin
 				// ---- Outputs ----
 				// Emitir comando de lectura.
-				// command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
+				// current_command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
 
 				// ---- Transitions ----
 				next_state = READ_WAIT_CAS_LATENCY;
