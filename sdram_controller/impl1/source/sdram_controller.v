@@ -227,11 +227,11 @@ reg [4:0] current_state, next_state;
 reg [7:0] command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
-reg [14:0] delay_counter, delay_cycles;
+reg [14:0] delay_counter;
+reg [14:0] delay_cycles;
 
 // Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
 reg [3:0] init_counter;
-reg reset_init_counter;
 reg init_counter_count_one_cycle;
 
 // Contador para seguimiento del momento del próximo refresco.
@@ -335,11 +335,9 @@ end
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port)
-		delay_counter <= 0;
-	else if (delay_cycles != 0)
-		delay_counter <= delay_cycles;
-	else if (delay_counter != 0)
+	if (delay_cycles != 0)
+		delay_counter <= delay_cycles;  // Load counter.
+	else
 		delay_counter <= delay_counter - 1'b1;
 end
 
@@ -348,7 +346,7 @@ end
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (reset_init_counter)
+	if (~reset_n_port)
 		init_counter <= INIT_REFRESH_COUNT - 1;
 	else if (init_counter_count_one_cycle)
 		init_counter <= init_counter - 1'b1;
@@ -359,9 +357,9 @@ end
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port || reset_refresh_counter)
+	if (reset_refresh_counter)
 		refresh_counter <= CYCLES_BETWEEN_REFRESH - 1;
-	else if (refresh_counter != 0)
+	else
 		refresh_counter <= refresh_counter - 1'b1;
 end
 
@@ -460,7 +458,6 @@ begin
 	next_command = CMD_NOP;
 
 	delay_cycles = 0;
-	reset_init_counter = 1'b0;
 	init_counter_count_one_cycle = 1'b0;
 	reset_refresh_counter = 1'b0;
 
@@ -546,7 +543,6 @@ begin
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRP nanosegundos después de emitir el comando precharge all.
 					begin
-						reset_init_counter = 1'b1;
 						next_command = CMD_AUTO_REFRESH;
 
 						next_state = INIT_AUTO_REFRESH;

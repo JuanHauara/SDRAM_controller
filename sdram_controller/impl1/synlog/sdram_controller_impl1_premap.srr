@@ -1,4 +1,4 @@
-# Sat Apr 12 18:25:20 2025
+# Sun Apr 13 23:44:03 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -108,22 +108,22 @@ original code -> new code
 @N: FX493 |Applying initial value "0" on instance current_state[24].
 @N: FX493 |Applying initial value "0" on instance current_state[25].
 
-Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+Starting clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
 
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 265MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
-Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Starting clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
 
 
 
@@ -133,7 +133,7 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock          Clock
 Level     Clock                    Frequency     Period        Type         Group          Load 
 ------------------------------------------------------------------------------------------------
-0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     125  
+0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     128  
 ================================================================================================
 
 
@@ -144,10 +144,10 @@ Clock Load Summary
                          Clock     Source        Clock Pin               Non-clock Pin     Non-clock Pin
 Clock                    Load      Pin           Seq Example             Seq Example       Comb Example 
 --------------------------------------------------------------------------------------------------------
-sdram_controller|clk     125       clk(port)     wr_data_reg[31:0].C     -                 -            
+sdram_controller|clk     128       clk(port)     wr_data_reg[31:0].C     -                 -            
 ========================================================================================================
 
-@W: MT529 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Found inferred clock sdram_controller|clk which controls 125 sequential elements including current_state[25]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Found inferred clock sdram_controller|clk which controls 128 sequential elements including current_state[25]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
 
 ICG Latch Removal Summary:
 Number of ICG latches removed: 0
@@ -160,14 +160,14 @@ Number of ICG latches not removed:	0
 
 #### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
 
-1 non-gated/non-generated clock tree(s) driving 125 clock pin(s) of sequential element(s)
+1 non-gated/non-generated clock tree(s) driving 128 clock pin(s) of sequential element(s)
 0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
 0 instances converted, 0 sequential instances remain driven by gated/generated clocks
 
 ============================ Non-Gated/Non-Generated Clocks =============================
 Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance  
 -----------------------------------------------------------------------------------------
-@KP:ckid0_0       clk                 port                   125        current_state[25]
+@KP:ckid0_0       clk                 port                   128        current_state[25]
 =========================================================================================
 
 
@@ -180,19 +180,19 @@ Summary of user generated gated clocks:
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 265MB peak: 265MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 267MB peak: 267MB)
 
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 266MB peak: 266MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 170MB peak: 267MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 268MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Sat Apr 12 18:25:21 2025
+# Sun Apr 13 23:44:05 2025
 
 ###########################################################]

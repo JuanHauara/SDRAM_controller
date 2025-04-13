@@ -15,22 +15,22 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  04/12/25  18:25:25
+Mapped on:  04/13/25  23:44:10
 
 Design Summary
 --------------
 
-   Number of registers:    125 out of  5145 (2%)
-      PFU registers:           58 out of  4320 (1%)
+   Number of registers:    128 out of  5145 (2%)
+      PFU registers:           61 out of  4320 (1%)
       PIO registers:           67 out of   825 (8%)
-   Number of SLICEs:        80 out of  2160 (4%)
-      SLICEs as Logic/ROM:     80 out of  2160 (4%)
+   Number of SLICEs:        78 out of  2160 (4%)
+      SLICEs as Logic/ROM:     78 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
-      SLICEs as Carry:         15 out of  2160 (1%)
-   Number of LUT4s:        159 out of  4320 (4%)
-      Number used as logic LUTs:        129
+      SLICEs as Carry:         17 out of  2160 (1%)
+   Number of LUT4s:        156 out of  4320 (4%)
+      Number used as logic LUTs:        122
       Number used as distributed RAM:     0
-      Number used as ripple logic:       30
+      Number used as ripple logic:       34
       Number used as shift registers:     0
    Number of PIO sites used: 152 + 4(JTAG) out of 275 (57%)
    Number of block RAMs:  0 out of 10 (0%)
@@ -58,7 +58,7 @@ Design Summary
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 98 loads, 98 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 100 loads, 100 rising, 0 falling (Driver: PIO clk )
    Number of Clock Enables:  2
 
                                     Page 1
@@ -66,29 +66,27 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 Design Summary (cont)
 ---------------------
      Net current_state[23]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
-   Number of LSRs:  4
-     Net reset_init_counter_0_sqmuxa: 2 loads, 2 LSLICEs
-     Net reset_n_port_c: 73 loads, 6 LSLICEs
-     Net refresh_counter7: 7 loads, 7 LSLICEs
-     Net un1_delay_cycles_10_1_RNIIEA4B: 3 loads, 3 LSLICEs
+   Number of LSRs:  2
+     Net reset_n_port_c: 70 loads, 3 LSLICEs
+     Net reset_refresh_counter: 9 loads, 9 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 100 loads
-     Net current_state[9]: 39 loads
+     Net reset_n_port_c: 96 loads
+     Net current_state[9]: 40 loads
      Net current_state[23]: 37 loads
      Net soc_side_wr_en_port_c: 35 loads
-     Net un1_next_command8_i_a2_11: 26 loads
-     Net un1_next_command8_i_a2_12: 26 loads
-     Net un1_next_state37_i_a2_10: 20 loads
-     Net un1_next_state37_i_a2_9: 20 loads
-     Net un1_next_command8_i_a2: 19 loads
-     Net N_615_i_0: 11 loads
+     Net reset_refresh_counter_0_a2: 32 loads
+     Net un1_delay_cycles_10: 15 loads
+     Net N_623: 12 loads
+     Net current_state[17]: 10 loads
+     Net current_state[21]: 10 loads
+     Net reset_refresh_counter: 9 loads
 
 
 
@@ -126,18 +124,18 @@ IO (PIO) Attributes
 | ram_side_cs_n_port  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[15]| BIDIR     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| ram_side_chip1_data_port[14]| BIDIR     | LVCMOS25  |            |
 
                                     Page 2
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| ram_side_chip1_data_port[14]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[13]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -192,18 +190,18 @@ IO (PIO) Attributes (cont)
 | ram_side_chip0_data_port[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[5]| BIDIR     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| ram_side_chip0_data_port[4]| BIDIR     | LVCMOS25  |            |
 
                                     Page 3
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| ram_side_chip0_data_port[4]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[3]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -258,18 +256,18 @@ IO (PIO) Attributes (cont)
 | soc_side_wr_data_port[30]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[29]| INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| soc_side_wr_data_port[28]| INPUT     | LVCMOS25  | IN         |
 
                                     Page 4
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data_port[28]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[27]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
@@ -324,18 +322,18 @@ IO (PIO) Attributes (cont)
 | soc_side_wr_data_port[2]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[1]| INPUT     | LVCMOS25  | IN         |
++---------------------+-----------+-----------+------------+
+| soc_side_wr_data_port[0]| INPUT     | LVCMOS25  | IN         |
 
                                     Page 5
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| soc_side_wr_data_port[0]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_en_port | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -390,18 +388,18 @@ IO (PIO) Attributes (cont)
 | soc_side_rd_data_port[7]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[6]| OUTPUT    | LVCMOS25  | OUT        |
++---------------------+-----------+-----------+------------+
+| soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
 
                                     Page 6
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[4]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
@@ -456,18 +454,18 @@ IO (PIO) Attributes (cont)
 | soc_side_addr_port[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[1]| INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| soc_side_addr_port[0]| INPUT     | LVCMOS25  |            |
 
                                     Page 7
 
 
 
 
-Design:  sdram_controller                              Date:  04/12/25  18:25:25
+Design:  sdram_controller                              Date:  04/13/25  23:44:10
 
 IO (PIO) Attributes (cont)
 --------------------------
-+---------------------+-----------+-----------+------------+
-| soc_side_addr_port[0]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_ready_port | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -479,19 +477,18 @@ Removed logic
 
 Block GSR_INST undriven or does not drive anything - clipped.
 Signal current_state_i[9] was merged into signal current_state[9]
-Signal un1_delay_counter_15_cry_13_0_COUT undriven or does not drive anything -
+Signal delay_counter_cry_0_COUT[13] undriven or does not drive anything -
      clipped.
-Signal un1_refresh_counter_13_cry_0_0_S1 undriven or does not drive anything -
+Signal un2_refresh_counter_cry_0_0_S1 undriven or does not drive anything -
      clipped.
-Signal un1_refresh_counter_13_cry_0_0_S0 undriven or does not drive anything -
+Signal un2_refresh_counter_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_2 undriven or does not drive anything - clipped.
-Signal un1_refresh_counter_13_cry_11_0_COUT undriven or does not drive anything
-     - clipped.
-Signal un1_delay_counter_15_cry_0_0_S1 undriven or does not drive anything -
+Signal un2_refresh_counter_s_15_0_S1 undriven or does not drive anything -
      clipped.
-Signal un1_delay_counter_15_cry_0_0_S0 undriven or does not drive anything -
+Signal un2_refresh_counter_s_15_0_COUT undriven or does not drive anything -
      clipped.
+Signal delay_counter_cry_0_S0[0] undriven or does not drive anything - clipped.
 Signal N_1 undriven or does not drive anything - clipped.
 Block current_state_RNIK7DD1[9] was optimized away.
 
@@ -504,6 +501,9 @@ Run Time and Memory Usage
    Total REAL Time: 0 secs  
    Peak Memory Usage: 53 MB
         
+
+
+
 
 
 

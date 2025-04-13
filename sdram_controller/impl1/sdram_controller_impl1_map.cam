@@ -2,18 +2,18 @@
 current_state_i[9] current_state[9]
 [ END MERGED ]
 [ START CLIPPED ]
-un1_delay_counter_15_cry_13_0_COUT
-un1_refresh_counter_13_cry_0_0_S1
-un1_refresh_counter_13_cry_0_0_S0
+delay_counter_cry_0_COUT[13]
+un2_refresh_counter_cry_0_0_S1
+un2_refresh_counter_cry_0_0_S0
 N_2
-un1_refresh_counter_13_cry_11_0_COUT
-un1_delay_counter_15_cry_0_0_S1
-un1_delay_counter_15_cry_0_0_S0
+un2_refresh_counter_s_15_0_S1
+un2_refresh_counter_s_15_0_COUT
+delay_counter_cry_0_S0[0]
 N_1
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Sat Apr 12 18:25:25 2025
+# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Sun Apr 13 23:44:10 2025
 
 SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=DISABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE BACKGROUND_RECONFIG=OFF INBUF=ON ;
 LOCATE COMP "clk" SITE "B9" ;
