@@ -223,7 +223,7 @@ localparam CMD_READ				= 8'b10101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 //-------------------------------
 
 // Internal state machine registers.
-reg [4:0] present_state, next_state;
+reg [4:0] current_state, next_state;
 reg [7:0] command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
@@ -246,7 +246,7 @@ reg busy_signal;
 reg ready_signal;
 reg [31:0] rd_data_reg;
 reg [31:0] wr_data_reg;
-reg [3:0] sdram_side_wr_mask_reg;  // Internal registers for Byte mask signals.
+reg [3:0] sdram_side_wr_mask_reg;  // Byte mask signals.
 
 wire in_initialization_cycle;
 wire in_write_cycle;
@@ -260,7 +260,7 @@ wire in_read_cycle;
 // Assigns command bits to outputs.
 assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
 assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : command[2:1];
-assign ram_side_addr_port = (in_write_cycle || in_read_cycle || present_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
 
 assign soc_side_busy_port = busy_signal;
 assign soc_side_ready_port = ready_signal;
@@ -269,8 +269,8 @@ assign soc_side_ready_port = ready_signal;
 assign soc_side_rd_data_port = rd_data_reg;
 
 // Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
-assign ram_side_chip0_data_port = (present_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
-assign ram_side_chip1_data_port = (present_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
+assign ram_side_chip0_data_port = (current_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
+assign ram_side_chip1_data_port = (current_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
 
 assign ram_side_chip0_ldqm_port = sdram_side_wr_mask_reg[0];
 assign ram_side_chip0_udqm_port = sdram_side_wr_mask_reg[1];
@@ -278,21 +278,21 @@ assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
 assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
 
 // Signal to detect SDRAM initialization cycle states.
-assign in_initialization_cycle = (present_state == INIT) || (present_state == INIT_PAUSE) || 
-								(present_state == INIT_PRECHARGE_ALL) || (present_state == INIT_WAIT_TRP) || 
-								(present_state == INIT_AUTO_REFRESH) || (present_state == INIT_WAIT_TRC) || 
-								(present_state == INIT_MRS) || (present_state == INIT_WAIT_TRSC);
+assign in_initialization_cycle = (current_state == INIT) || (current_state == INIT_PAUSE) || 
+								(current_state == INIT_PRECHARGE_ALL) || (current_state == INIT_WAIT_TRP) || 
+								(current_state == INIT_AUTO_REFRESH) || (current_state == INIT_WAIT_TRC) || 
+								(current_state == INIT_MRS) || (current_state == INIT_WAIT_TRSC);
 
 // Signal to detect write cycle states.
-assign in_write_cycle = (present_state == WRITE_BANK_ACTIVATE) || (present_state == WRITE_WAIT_TRCD) || 
-						(present_state == WRITE_CAS) || (present_state == WRITE_WAIT_TWR) || 
-						(present_state == WRITE_PRECHARGE) || (present_state == WRITE_WAIT_TRP);
+assign in_write_cycle = (current_state == WRITE_BANK_ACTIVATE) || (current_state == WRITE_WAIT_TRCD) || 
+						(current_state == WRITE_CAS) || (current_state == WRITE_WAIT_TWR) || 
+						(current_state == WRITE_PRECHARGE) || (current_state == WRITE_WAIT_TRP);
 
 // Signal to detect read cycle states.
-assign in_read_cycle = (present_state == READ_BANK_ACTIVATE) || (present_state == READ_WAIT_TRCD)  ||
-					(present_state == READ_CAS) || (present_state == READ_WAIT_CAS_LATENCY)  ||
-					(present_state == READ_DATA) || (present_state == READ_PRECHARGE)  ||
-					(present_state == READ_WAIT_TRP);
+assign in_read_cycle = (current_state == READ_BANK_ACTIVATE) || (current_state == READ_WAIT_TRCD)  ||
+					(current_state == READ_CAS) || (current_state == READ_WAIT_CAS_LATENCY)  ||
+					(current_state == READ_DATA) || (current_state == READ_PRECHARGE)  ||
+					(current_state == READ_WAIT_TRP);
 
 
 //-------------------------------
@@ -302,7 +302,7 @@ always @(posedge clk)
 begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
-			present_state <= INIT;
+			current_state <= INIT;
 			command <= CMD_NOP;
 			
 			// Data.
@@ -313,7 +313,7 @@ begin
 		begin
 			// Update state and command.
 			// ----------------------------
-			present_state <= next_state;
+			current_state <= next_state;
 			command <= next_command;
 			
 			// Update write data register.
@@ -325,7 +325,7 @@ begin
 			// Update read data register.
 			// ----------------------------
 			// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
-			if (present_state == READ_DATA)
+			if (current_state == READ_DATA)
 				rd_data_reg <= {ram_side_chip1_data_port, ram_side_chip0_data_port};  // Updates the data that the SOC will read.
 		end
 end
@@ -335,7 +335,7 @@ end
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port || reset_delay_counter)
+	if (reset_delay_counter)
 		delay_counter <= 0;
 	else 
 		delay_counter <= delay_counter + 1'b1;
@@ -357,7 +357,7 @@ end
 //-------------------------------
 always @(posedge clk) 
 begin
-	if (~reset_n_port || reset_refresh_counter)
+	if (reset_refresh_counter)
 		refresh_counter <= 0;
 	else 
 		refresh_counter <= refresh_counter + 1'b1;
@@ -381,7 +381,7 @@ end
 		output_d = 1'b0;
 
 		// Lógica de la máquina de estados.
-		case (present_state)
+		case (current_state)
 
 			ESTADO_1:
 				begin
@@ -454,7 +454,7 @@ end
 always @(*) 
 begin
 	// Valores por defecto para evitar latches no deseados.
-	next_state = present_state;
+	next_state = current_state;
 	next_command = CMD_NOP;
 
 	reset_delay_counter = 1'b0;
@@ -470,7 +470,7 @@ begin
 	ready_signal = 1'b0;
 	
 	// Lógica de la máquina de estados.
-	case (present_state)
+	case (current_state)
 
 		// ---- Initialization Sequence ----
 		/*
@@ -1049,12 +1049,12 @@ begin
 	ram_bank_addr_reg = 2'b00;
 	ram_addr_reg = {SDRAM_ADDR_WIDTH{1'b0}};
 	
-	if (present_state == READ_BANK_ACTIVATE || present_state == WRITE_BANK_ACTIVATE)
+	if (current_state == READ_BANK_ACTIVATE || current_state == WRITE_BANK_ACTIVATE)
 		begin
 			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 			ram_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
-	else if (present_state == READ_CAS || present_state == WRITE_CAS)
+	else if (current_state == READ_CAS || current_state == WRITE_CAS)
 		begin
 			ram_bank_addr_reg = soc_side_addr_port[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 
@@ -1069,7 +1069,7 @@ begin
 							soc_side_addr_port[COL_WIDTH - 1: 0]	/* column address */
 						};
 		end
-	else if (present_state == INIT_MRS)
+	else if (current_state == INIT_MRS)
 		begin
 			/*
 				Configuración del registro de modo (MRS) durante inicialización:
