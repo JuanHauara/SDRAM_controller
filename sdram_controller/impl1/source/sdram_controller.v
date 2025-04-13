@@ -232,7 +232,7 @@ reg reset_delay_counter;
 
 // Cuenta los 8 ciclos de auto-refresh necesarios para la inicialización.
 reg [3:0] init_counter;
-reg enable_init_counter;
+reg init_counter_count_one_cycle;
 
 // Contador para seguimiento del momento del próximo refresco.
 reg [15:0] refresh_counter;
@@ -347,9 +347,9 @@ end
 always @(posedge clk) 
 begin
 	if (~reset_n_port)
-		init_counter <= INIT_REFRESH_COUNT;
-	else if (enable_init_counter)
-		init_counter <= init_counter - 1'b1;
+		init_counter <= 0;
+	else if (init_counter_count_one_cycle)
+		init_counter <= init_counter + 1'b1;
 end
 
 //-------------------------------
@@ -458,6 +458,7 @@ begin
 	next_command = CMD_NOP;
 
 	reset_delay_counter = 1'b0;
+	init_counter_count_one_cycle = 1'b0;
 	reset_refresh_counter = 1'b0;
 
 	/*
@@ -562,7 +563,6 @@ begin
 				next_command = CMD_NOP;			// Emitir comando CMD_NOP durante los tiempos de espera.
 
 				reset_delay_counter = 1'b1;
-				enable_init_counter = 1'b1;
 			end
 		
 		INIT_WAIT_TRC: 
@@ -573,17 +573,19 @@ begin
 				if (delay_counter == TRC_CYCLES - 1)  // Esperar tRC.
 					begin
 						// Luego de esperar tRC, comprobar si se han completado los 8 ciclos de refresco.
-						if (init_counter == 0) 
-							begin
-								// Aún no completa los 8 ciclos de Auto Refresh.
-								next_state = INIT_AUTO_REFRESH;
-								next_command = CMD_AUTO_REFRESH;
-							end
-						else 
+						if (init_counter == INIT_REFRESH_COUNT - 1) 
 							begin
 								// Completados los 8 ciclos, configurar registro de modo.
 								next_state = INIT_MRS;
 								next_command = CMD_MRS;
+							end
+						else 
+							begin
+								// Aún no completa los 8 ciclos de Auto Refresh.
+								next_state = INIT_AUTO_REFRESH;
+								next_command = CMD_AUTO_REFRESH;
+
+								init_counter_count_one_cycle = 1'b1;
 							end
 					end
 			end

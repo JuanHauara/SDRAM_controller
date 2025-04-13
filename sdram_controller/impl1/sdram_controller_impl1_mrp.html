@@ -15,28 +15,27 @@
 
 Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA332 -s 4 -oc Commercial
      sdram_controller_impl1.ngd -o sdram_controller_impl1_map.ncd -pr
-     sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/lscc/diam
-     ond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1
-     _synplify.lpf -lpf C:/lscc/diamond/projects/SDRAM_controller/sdram_controll
-     er/sdram_controller.lpf -c 0 -gui -msgset
-     C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml 
+     sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/hdl/SDRAM
+     _controller/sdram_controller/impl1/sdram_controller_impl1_synplify.lpf -lpf
+     C:/hdl/SDRAM_controller/sdram_controller/sdram_controller.lpf -c 0 -gui
+     -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml 
 Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  04/05/25  12:47:22
+Mapped on:  04/12/25  18:39:51
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of registers:    129 out of  5145 (3%)
-      PFU registers:           62 out of  4320 (1%)
+   Number of registers:    128 out of  5145 (2%)
+      PFU registers:           61 out of  4320 (1%)
       PIO registers:           67 out of   825 (8%)
-   Number of SLICEs:        80 out of  2160 (4%)
-      SLICEs as Logic/ROM:     80 out of  2160 (4%)
+   Number of SLICEs:        78 out of  2160 (4%)
+      SLICEs as Logic/ROM:     78 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        160 out of  4320 (4%)
-      Number used as logic LUTs:        126
+   Number of LUT4s:        155 out of  4320 (4%)
+      Number used as logic LUTs:        121
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -66,27 +65,28 @@ Mapped on:  04/05/25  12:47:22
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 101 loads, 101 rising, 0 falling (Driver: PIO clk )
-
+     Net clk_c: 100 loads, 100 rising, 0 falling (Driver: PIO clk )
    Number of Clock Enables:  2
+
      Net present_state[23]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
-   Number of LSRs:  3
-     Net reset_n_port_c: 71 loads, 4 LSLICEs
+   Number of LSRs:  4
+     Net init_counter7: 2 loads, 2 LSLICEs
+     Net reset_n_port_c: 68 loads, 1 LSLICEs
      Net refresh_counter7: 9 loads, 9 LSLICEs
      Net delay_counter7: 8 loads, 8 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 99 loads
-     Net present_state[23]: 38 loads
-     Net present_state[9]: 38 loads
+     Net reset_n_port_c: 98 loads
+     Net present_state[9]: 39 loads
+     Net present_state[23]: 37 loads
      Net soc_side_wr_en_port_c: 36 loads
-     Net delay_counter[2]: 19 loads
-     Net N_67: 13 loads
-     Net present_state[17]: 12 loads
-     Net N_641: 11 loads
-     Net N_638: 10 loads
-     Net N_662_i_0: 10 loads
+     Net delay_counter[2]: 15 loads
+     Net N_39: 13 loads
+     Net N_636_i_0: 12 loads
+     Net present_state[17]: 10 loads
+     Net N_635: 9 loads
+     Net refresh_counter7: 9 loads
 
 
 
@@ -454,7 +454,7 @@ Block present_state_RNII3TU[9] was optimized away.
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 52 MB
+   Peak Memory Usage: 53 MB
         
 
 

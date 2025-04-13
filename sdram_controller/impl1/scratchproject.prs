@@ -1,22 +1,22 @@
 #--  Synopsys, Inc.
 #--  Version V-2023.09L-2
-#--  Project file C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1\scratchproject.prs
+#--  Project file C:\hdl\SDRAM_controller\sdram_controller\impl1\scratchproject.prs
 
 #project files
-add_file -verilog -vlog_std v2001 "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v"
-add_file -verilog -vlog_std v2001 "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v"
+add_file -verilog -vlog_std v2001 "C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v"
+add_file -verilog -vlog_std v2001 "C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v"
 
 
 #implementation: "impl1"
-impl -add C:\lscc\diamond\projects\SDRAM_controller\sdram_controller\impl1 -type fpga
+impl -add C:\hdl\SDRAM_controller\sdram_controller\impl1 -type fpga
 
 #
 #implementation attributes
 
 set_option -vlog_std v2001
 set_option -project_relative_includes 1
-set_option -include_path {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/}
-set_option -include_path {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller}
+set_option -include_path {C:/hdl/SDRAM_controller/sdram_controller/impl1/}
+set_option -include_path {C:/hdl/SDRAM_controller/sdram_controller}
 
 #device options
 set_option -technology MACHXO2
@@ -85,8 +85,8 @@ set_option -auto_infer_blackbox 0
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.edi"
+project -result_file "C:/hdl/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.edi"
 
 #set log file 
-set_option log_file "C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.srf" 
+set_option log_file "C:/hdl/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.srf" 
 impl -active "impl1"

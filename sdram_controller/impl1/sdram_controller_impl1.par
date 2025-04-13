@@ -4,12 +4,12 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Apr 05 12:47:22 2025
+Sat Apr 12 18:39:52 2025
 
 C:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f sdram_controller_impl1.p2t
 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir
 sdram_controller_impl1.prf -gui -msgset
-C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml
+C:/hdl/SDRAM_controller/sdram_controller/promote.xml
 
 
 Preference file: sdram_controller_impl1.prf.
@@ -17,21 +17,21 @@ Preference file: sdram_controller_impl1.prf.
 Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
 Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            1.497        0            0.379        0            17           Completed
+5_1   *      0            1.732        0            0.379        0            16           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 17 secs 
+Total (real) run time for 1-seed: 16 secs 
 
 par done!
 
 Note: user must run 'Trace' for timing closure signoff.
 
 Lattice Place and Route Report for Design "sdram_controller_impl1_map.ncd"
-Sat Apr 05 12:47:22 2025
+Sat Apr 12 18:39:52 2025
 
 PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
-Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir/5_1.ncd sdram_controller_impl1.prf
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF:parASE=1 sdram_controller_impl1_map.ncd sdram_controller_impl1.dir/5_1.ncd sdram_controller_impl1.prf
 Preference file: sdram_controller_impl1.prf.
 Placement level-cost: 5-1.
 Routing Iterations: 6
@@ -56,39 +56,39 @@ Device utilization summary:
                  152+4(JTAG)/275     57% bonded
    IOLOGIC           67/280          23% used
 
-   SLICE             80/2160          3% used
+   SLICE             78/2160          3% used
 
 
 
-Number of Signals: 393
-Number of Connections: 983
+Number of Signals: 388
+Number of Connections: 969
 
 Pin Constraint Summary:
    1 out of 152 pins locked (0% locked).
 
 The following 1 signal is selected to use the primary clock routing resources:
-    clk_c (driver: clk, clk load #: 101)
+    clk_c (driver: clk, clk load #: 100)
 
 
 The following 3 signals are selected to use the secondary clock routing resources:
-    reset_n_port_c (driver: reset_n_port, clk load #: 0, sr load #: 71, ce load #: 0)
-    present_state[23] (driver: SLICE_33, clk load #: 0, sr load #: 0, ce load #: 32)
+    reset_n_port_c (driver: reset_n_port, clk load #: 0, sr load #: 68, ce load #: 0)
+    present_state[23] (driver: SLICE_32, clk load #: 0, sr load #: 0, ce load #: 32)
     soc_side_wr_en_port_c (driver: soc_side_wr_en_port, clk load #: 0, sr load #: 0, ce load #: 32)
 
 No signal is selected as Global Set/Reset.
 .
 Starting Placer Phase 0.
-...........
+............
 Finished Placer Phase 0.  REAL time: 0 secs 
 
 Starting Placer Phase 1.
 .....................
-Placer score = 30290.
+Placer score = 28316.
 Finished Placer Phase 1.  REAL time: 10 secs 
 
 Starting Placer Phase 2.
 .
-Placer score =  29999
+Placer score =  28307
 Finished Placer Phase 2.  REAL time: 10 secs 
 
 
@@ -101,9 +101,9 @@ Global Clock Resources:
   DCC        : 0 out of 8 (0%)
 
 Global Clocks:
-  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B9 (PT18A)", clk load = 101
-  SECONDARY "reset_n_port_c" from comp "reset_n_port" on CLK_PIN site "R2 (PL17A)", clk load = 0, ce load = 0, sr load = 71
-  SECONDARY "present_state[23]" from Q1 on comp "SLICE_33" on site "R12C17A", clk load = 0, ce load = 32, sr load = 0
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B9 (PT18A)", clk load = 100
+  SECONDARY "reset_n_port_c" from comp "reset_n_port" on CLK_PIN site "R2 (PL17A)", clk load = 0, ce load = 0, sr load = 68
+  SECONDARY "present_state[23]" from Q1 on comp "SLICE_32" on site "R12C17D", clk load = 0, ce load = 32, sr load = 0
   SECONDARY "soc_side_wr_en_port_c" from comp "soc_side_wr_en_port" on CLK_PIN site "M1 (PL10C)", clk load = 0, ce load = 32, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
@@ -126,23 +126,23 @@ I/O Bank Usage Summary:
 | I/O Bank | Usage          | Bank Vccio | Bank Vref |
 +----------+----------------+------------+-----------+
 | 0        | 1 / 69 (  1%)  | 3.3V       | -         |
-| 1        | 47 / 68 ( 69%) | 2.5V       | -         |
-| 2        | 48 / 70 ( 68%) | 2.5V       | -         |
-| 3        | 22 / 24 ( 91%) | 2.5V       | -         |
+| 1        | 51 / 68 ( 75%) | 2.5V       | -         |
+| 2        | 58 / 70 ( 82%) | 2.5V       | -         |
+| 3        | 11 / 24 ( 45%) | 2.5V       | -         |
 | 4        | 13 / 16 ( 81%) | 2.5V       | -         |
-| 5        | 21 / 28 ( 75%) | 2.5V       | -         |
+| 5        | 18 / 28 ( 64%) | 2.5V       | -         |
 +----------+----------------+------------+-----------+
 
-Total placer CPU time: 9 secs 
+Total placer CPU time: 6 secs 
 
 Dumping design to file sdram_controller_impl1.dir/5_1.ncd.
 
-0 connections routed; 983 unrouted.
+0 connections routed; 969 unrouted.
 Starting router resource preassignment
 
 Completed router resource preassignment. Real time: 16 secs 
 
-Start NBR router at 12:47:38 04/05/25
+Start NBR router at 18:40:08 04/12/25
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -157,77 +157,56 @@ Note: NBR uses a different method to calculate timing slacks. The
       your design.                                               
 *****************************************************************
 
-Start NBR special constraint process at 12:47:38 04/05/25
+Start NBR special constraint process at 18:40:08 04/12/25
 
-Start NBR section for initial routing at 12:47:38 04/05/25
+Start NBR section for initial routing at 18:40:08 04/12/25
 Level 1, iteration 1
-3(0.00%) conflicts; 588(59.82%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.141ns/0.000ns; real time: 16 secs 
+2(0.00%) conflicts; 577(59.55%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.767ns/0.000ns; real time: 16 secs 
 Level 2, iteration 1
-3(0.00%) conflicts; 557(56.66%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.802ns/0.000ns; real time: 16 secs 
+2(0.00%) conflicts; 570(58.82%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.831ns/0.000ns; real time: 16 secs 
 Level 3, iteration 1
-18(0.01%) conflicts; 414(42.12%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.785ns/0.000ns; real time: 16 secs 
+8(0.00%) conflicts; 408(42.11%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 2.446ns/0.000ns; real time: 16 secs 
 Level 4, iteration 1
-17(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.345ns/0.000ns; real time: 16 secs 
+9(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.733ns/0.000ns; real time: 16 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 12:47:38 04/05/25
+Start NBR section for normal routing at 18:40:08 04/12/25
 Level 1, iteration 1
-8(0.00%) conflicts; 10(1.02%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.762ns/0.000ns; real time: 16 secs 
+1(0.00%) conflict; 7(0.72%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.733ns/0.000ns; real time: 16 secs 
 Level 2, iteration 1
-7(0.00%) conflicts; 13(1.32%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.762ns/0.000ns; real time: 16 secs 
+1(0.00%) conflict; 7(0.72%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.733ns/0.000ns; real time: 16 secs 
 Level 3, iteration 1
-6(0.00%) conflicts; 10(1.02%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.534ns/0.000ns; real time: 16 secs 
+1(0.00%) conflict; 6(0.62%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.733ns/0.000ns; real time: 16 secs 
 Level 4, iteration 1
-8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.534ns/0.000ns; real time: 16 secs 
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 1.734ns/0.000ns; real time: 16 secs 
 Level 4, iteration 2
-5(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.534ns/0.000ns; real time: 16 secs 
-Level 4, iteration 3
-3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.534ns/0.000ns; real time: 16 secs 
-Level 4, iteration 4
-3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.534ns/0.000ns; real time: 16 secs 
-Level 4, iteration 5
 2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 6
+Estimated worst slack/total negative slack<setup>: 1.734ns/0.000ns; real time: 16 secs 
+Level 4, iteration 3
 1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 7
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 8
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 9
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 10
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.499ns/0.000ns; real time: 16 secs 
-Level 4, iteration 11
+Estimated worst slack/total negative slack<setup>: 1.732ns/0.000ns; real time: 16 secs 
+Level 4, iteration 4
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.497ns/0.000ns; real time: 16 secs 
+Estimated worst slack/total negative slack<setup>: 1.732ns/0.000ns; real time: 16 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 12:47:38 04/05/25
+Start NBR section for setup/hold timing optimization with effort level 3 at 18:40:08 04/12/25
 
-Start NBR section for re-routing at 12:47:38 04/05/25
+Start NBR section for re-routing at 18:40:08 04/12/25
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.497ns/0.000ns; real time: 16 secs 
+Estimated worst slack/total negative slack<setup>: 1.732ns/0.000ns; real time: 16 secs 
 
-Start NBR section for post-routing at 12:47:38 04/05/25
+Start NBR section for post-routing at 18:40:08 04/12/25
 
 End NBR router with 0 unrouted connection
 
@@ -235,17 +214,17 @@ NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
   Number of connections with timing violations : 0 (0.00%)
-  Estimated worst slack<setup> : 1.497ns
+  Estimated worst slack<setup> : 1.732ns
   Timing score<setup> : 0
 -----------
 Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
 
 
 
-Total CPU time 16 secs 
-Total REAL time: 17 secs 
+Total CPU time 11 secs 
+Total REAL time: 16 secs 
 Completely routed.
-End of route.  983 routed (100.00%); 0 unrouted.
+End of route.  969 routed (100.00%); 0 unrouted.
 
 Hold time timing score: 0, hold timing errors: 0
 
@@ -259,14 +238,14 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 1.497
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 1.732
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
 PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.379
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  time to completion: 16 secs 
-Total REAL time to completion: 17 secs 
+Total CPU  time to completion: 11 secs 
+Total REAL time to completion: 16 secs 
 
 par done!
 

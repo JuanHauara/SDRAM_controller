@@ -22,7 +22,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Sat Apr 05 12:47:22 2025
+Sat Apr 12 18:39:51 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -32,7 +32,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,4
@@ -41,9 +41,8 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<FONT COLOR=red><LI><A href='#map_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY PORT "clk" 85.000000 MHz (4 errors)</FONT></A></LI>
-</FONT>            1944 items scored, 4 timing errors detected.
-Warning:  80.425MHz is the maximum frequency for this preference.
+<LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY PORT "clk" 85.000000 MHz (0 errors)</A></LI>            1752 items scored, 0 timing errors detected.
+Report:   87.268MHz is the maximum frequency for this preference.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -53,50 +52,48 @@ BLOCK RESETPATHS
 
 ================================================================================
 <A name="map_twr_pref_0_0"></A>Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
-            1944 items scored, 4 timing errors detected.
+            1752 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error: The following path exceeds requirements by 0.669ns
+Passed: The following path meets requirements by 0.306ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              delay_counter[5]  (from clk_c +)
+   Source:         FF         Q              delay_counter[13]  (from clk_c +)
    Destination:    FF         Data in        command_0io[3]  (to clk_c +)
 
-   Delay:              12.281ns  (31.9% logic, 68.1% route), 8 logic levels.
+   Delay:              11.306ns  (30.3% logic, 69.7% route), 7 logic levels.
 
  Constraint Details:
 
-     12.281ns physical path delay SLICE_14 to ram_side_wr_en_port_MGIOL exceeds
+     11.306ns physical path delay SLICE_10 to ram_side_wr_en_port_MGIOL meets
      11.765ns delay constraint less
-      0.153ns DO_SET requirement (totaling 11.612ns) by 0.669ns
+      0.153ns DO_SET requirement (totaling 11.612ns) by 0.306ns
 
  Physical Path Details:
 
-      Data path SLICE_14 to ram_side_wr_en_port_MGIOL:
+      Data path SLICE_10 to ram_side_wr_en_port_MGIOL:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.452   SLICE_14.CLK to    SLICE_14.Q0 SLICE_14 (from clk_c)
-ROUTE         2   e 1.234    SLICE_14.Q0 to    SLICE_18.A1 delay_counter[5]
-CTOF_DEL    ---     0.495    SLICE_18.A1 to    SLICE_18.F1 SLICE_18
-ROUTE         1   e 1.234    SLICE_18.F1 to    SLICE_56.D1 reset_delay_counter.present_state_srsts_i_a2_0_1[25]
-CTOF_DEL    ---     0.495    SLICE_56.D1 to    SLICE_56.F1 SLICE_56
-ROUTE         4   e 1.234    SLICE_56.F1 to    SLICE_40.B1 N_628
-CTOF_DEL    ---     0.495    SLICE_40.B1 to    SLICE_40.F1 SLICE_40
-ROUTE        13   e 0.480    SLICE_40.F1 to    SLICE_40.C0 N_67
-CTOF_DEL    ---     0.495    SLICE_40.C0 to    SLICE_40.F0 SLICE_40
-ROUTE         2   e 1.234    SLICE_40.F0 to    SLICE_39.B1 N_600
-CTOF_DEL    ---     0.495    SLICE_39.B1 to    SLICE_39.F1 SLICE_39
-ROUTE         1   e 0.480    SLICE_39.F1 to    SLICE_39.C0 next_command_a5_0_2[3]
-CTOF_DEL    ---     0.495    SLICE_39.C0 to    SLICE_39.F0 SLICE_39
-ROUTE         1   e 1.234    SLICE_39.F0 to    SLICE_48.C0 next_command_tz[3]
-CTOF_DEL    ---     0.495    SLICE_48.C0 to    SLICE_48.F0 SLICE_48
-ROUTE         1   e 1.234    SLICE_48.F0 to *rt_MGIOL.OPOS next_command[3] (to clk_c)
+REG_DEL     ---     0.452   SLICE_10.CLK to    SLICE_10.Q0 SLICE_10 (from clk_c)
+ROUTE         3   e 1.234    SLICE_10.Q0 to    SLICE_61.D1 delay_counter[13]
+CTOF_DEL    ---     0.495    SLICE_61.D1 to    SLICE_61.F1 SLICE_61
+ROUTE         1   e 0.480    SLICE_61.F1 to    SLICE_61.D0 present_state_srsts_0_a5_4_0_a2_0_0_o2_4[23]
+CTOF_DEL    ---     0.495    SLICE_61.D0 to    SLICE_61.F0 SLICE_61
+ROUTE         2   e 1.234    SLICE_61.F0 to    SLICE_41.A1 N_37
+CTOF_DEL    ---     0.495    SLICE_41.A1 to    SLICE_41.F1 SLICE_41
+ROUTE        13   e 1.234    SLICE_41.F1 to    SLICE_44.C1 N_39
+CTOF_DEL    ---     0.495    SLICE_44.C1 to    SLICE_44.F1 SLICE_44
+ROUTE         7   e 1.234    SLICE_44.F1 to    SLICE_20.A1 N_41
+CTOF_DEL    ---     0.495    SLICE_20.A1 to    SLICE_20.F1 SLICE_20
+ROUTE         2   e 1.234    SLICE_20.F1 to    SLICE_43.C0 N_79
+CTOF_DEL    ---     0.495    SLICE_43.C0 to    SLICE_43.F0 SLICE_43
+ROUTE         1   e 1.234    SLICE_43.F0 to *rt_MGIOL.OPOS N_490_i (to clk_c)
                   --------
-                   12.281   (31.9% logic, 68.1% route), 8 logic levels.
+                   11.306   (30.3% logic, 69.7% route), 7 logic levels.
 
-Warning:  80.425MHz is the maximum frequency for this preference.
+Report:   87.268MHz is the maximum frequency for this preference.
 
 <A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
@@ -104,38 +101,12 @@ Warning:  80.425MHz is the maximum frequency for this preference.
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 85.000000 MHz ;    |   85.000 MHz|   80.425 MHz|   8 *
+FREQUENCY PORT "clk" 85.000000 MHz ;    |   85.000 MHz|   87.268 MHz|   7  
                                         |             |             |
 ----------------------------------------------------------------------------
 
 
-1 preference(marked by "*" above) not met.
-
-----------------------------------------------------------------------------
-Critical Nets                           |   Loads|  Errors| % of total
-----------------------------------------------------------------------------
-reset_delay_counter.present_state_srsts_|        |        |
-i_a2_0_1[25]                            |       1|       4|    100.00%
-                                        |        |        |
-N_628                                   |       4|       4|    100.00%
-                                        |        |        |
-next_command_tz[3]                      |       1|       4|    100.00%
-                                        |        |        |
-next_command[3]                         |       1|       4|    100.00%
-                                        |        |        |
-N_67                                    |      13|       4|    100.00%
-                                        |        |        |
-next_command_a5_0_2[3]                  |       1|       2|     50.00%
-                                        |        |        |
-N_615_i                                 |       2|       2|     50.00%
-                                        |        |        |
-delay_counter[6]                        |       2|       2|     50.00%
-                                        |        |        |
-delay_counter[5]                        |       2|       2|     50.00%
-                                        |        |        |
-N_600                                   |       2|       2|     50.00%
-                                        |        |        |
-----------------------------------------------------------------------------
+All preferences were met.
 
 
 <A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
@@ -143,21 +114,21 @@ N_600                                   |       2|       2|     50.00%
 
 Found 1 clocks:
 
-Clock Domain: clk_c   Source: clk.PAD   Loads: 101
+Clock Domain: clk_c   Source: clk.PAD   Loads: 100
    Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
 
 
 <A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
 ---------------
 
-Timing errors: 4  Score: 2234
-Cumulative negative slack: 2234
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
 
-Constraints cover 1944 paths, 1 nets, and 524 connections (53.31% coverage)
+Constraints cover 1752 paths, 1 nets, and 512 connections (52.84% coverage)
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Sat Apr 05 12:47:22 2025
+Sat Apr 12 18:39:51 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -167,7 +138,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,M
@@ -176,7 +147,7 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY PORT "clk" 85.000000 MHz (0 errors)</A></LI>            1944 items scored, 0 timing errors detected.
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY PORT "clk" 85.000000 MHz (0 errors)</A></LI>            1752 items scored, 0 timing errors detected.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -186,7 +157,7 @@ BLOCK RESETPATHS
 
 ================================================================================
 <A name="map_twr_pref_1_0"></A>Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
-            1944 items scored, 0 timing errors detected.
+            1752 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -236,7 +207,7 @@ All preferences were met.
 
 Found 1 clocks:
 
-Clock Domain: clk_c   Source: clk.PAD   Loads: 101
+Clock Domain: clk_c   Source: clk.PAD   Loads: 100
    Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
 
 
@@ -246,16 +217,16 @@ Clock Domain: clk_c   Source: clk.PAD   Loads: 101
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 1944 paths, 1 nets, and 524 connections (53.31% coverage)
+Constraints cover 1752 paths, 1 nets, and 512 connections (52.84% coverage)
 
 
 
 <A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
 ---------------
 
-Timing errors: 4 (setup), 0 (hold)
-Score: 2234 (setup), 0 (hold)
-Cumulative negative slack: 2234 (2234+0)
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
