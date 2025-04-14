@@ -12,7 +12,7 @@
 #OS: Windows 10 or later
 #Hostname: 5CG407221K
 
-# Mon Apr 14 12:57:27 2025
+# Mon Apr 14 18:34:55 2025
 
 #Implementation: impl1
 
@@ -55,7 +55,9 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 202
 @I::"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v" (library work)
 @I::"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller_tb.v" (library work)
 Verilog syntax check successful!
-File C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
+
+Compiler output is up to date.  No re-compile necessary
+
 Selecting top level module sdram_controller
 @N: CG364 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Synthesizing module sdram_controller in library work.
 Running optimization stage 1 on sdram_controller .......
@@ -101,12 +103,12 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 93MB peak: 95MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 90MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 12:57:27 2025
+# Mon Apr 14 18:34:55 2025
 
 ###########################################################]
 ###########################################################[
@@ -132,7 +134,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 12:57:28 2025
+# Mon Apr 14 18:34:55 2025
 
 ###########################################################]
 
@@ -147,7 +149,7 @@ At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 12:57:28 2025
+# Mon Apr 14 18:34:56 2025
 
 ###########################################################]
 ###########################################################[
@@ -174,10 +176,10 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 12:57:29 2025
+# Mon Apr 14 18:34:57 2025
 
 ###########################################################]
-# Mon Apr 14 12:57:29 2025
+# Mon Apr 14 18:34:57 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -220,16 +222,16 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 NConnInternalConnection caching is on
 
-Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 255MB)
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
 
-Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 255MB)
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
 
-Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 255MB)
+Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
 
 
-Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 255MB)
+Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
 
 Encoding state machine current_state[21:0] (in view: work.sdram_controller(verilog))
 original code -> new code
@@ -284,17 +286,17 @@ Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapse
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 259MB)
 
 
 Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 260MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 260MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
 
 
@@ -351,23 +353,23 @@ Summary of user generated gated clocks:
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
 
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 260MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 175MB peak: 261MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 174MB peak: 261MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Mon Apr 14 12:57:30 2025
+# Mon Apr 14 18:34:58 2025
 
 ###########################################################]
-# Mon Apr 14 12:57:30 2025
+# Mon Apr 14 18:34:58 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -556,13 +558,13 @@ Only the first 100 messages of id 'BN161' are reported. To see all messages use 
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
 Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
@@ -645,32 +647,32 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:
 Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
 
 
-Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 271MB)
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 215MB peak: 271MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 215MB peak: 270MB)
 
 Writing Analyst data base C:\hdl\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 271MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\hdl\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 278MB peak: 278MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 278MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 278MB peak: 279MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 278MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 277MB peak: 279MB)
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 277MB peak: 278MB)
 
 @W: MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Mon Apr 14 12:57:32 2025
+# Timing report written on Mon Apr 14 18:35:01 2025
 #
 
 
@@ -821,10 +823,10 @@ current_state[16]                                   FD1S3AX      D        In    
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:00s; Memory used current: 278MB peak: 279MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 278MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:00s; Memory used current: 278MB peak: 279MB)
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 278MB)
 
 ---------------------------------------
 Resource Usage Report
@@ -854,10 +856,10 @@ VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 279MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 133MB peak: 278MB)
 
 Process took 0h:00m:02s realtime, 0h:00m:01s cputime
-# Mon Apr 14 12:57:33 2025
+# Mon Apr 14 18:35:01 2025
 
 ###########################################################]
 
