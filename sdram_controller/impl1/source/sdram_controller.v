@@ -164,56 +164,56 @@ localparam CAS_LATENCY = 3;
 */
 
 // SDRAM initialization.
-localparam INIT                      = 5'b00000;  // Initial state.
-localparam INIT_PAUSE                = 5'b00001;  // Initial pause of at least 200us.
-localparam INIT_PRECHARGE_ALL        = 5'b00011;  // Precharge all banks.
-localparam INIT_WAIT_TRP             = 5'b00010;  // Wait tRP nanoseconds after precharge all.
-localparam INIT_AUTO_REFRESH         = 5'b00110;  // 8 Auto Refresh cycles.
-localparam INIT_WAIT_TRC             = 5'b00111;  // Wait tRC after each of the 8 auto refresh cycles.
-localparam INIT_MRS                  = 5'b00101;  // Mode Register Set (MRS).
-localparam INIT_WAIT_TRSC            = 5'b00100;  // Wait tRSC nanoseconds after MRS.
+localparam INIT						= 5'b00000;  // Initial state.
+localparam INIT_PAUSE				= 5'b00001;  // Initial pause of at least 200us.
+localparam INIT_PRECHARGE_ALL		= 5'b00011;  // Precharge all banks.
+localparam INIT_WAIT_TRP			= 5'b00010;  // Wait tRP nanoseconds after precharge all.
+localparam INIT_AUTO_REFRESH		= 5'b00110;  // 8 Auto Refresh cycles.
+localparam INIT_WAIT_TRC			= 5'b00111;  // Wait tRC after each of the 8 auto refresh cycles.
+localparam INIT_MRS					= 5'b00101;  // Mode Register Set (MRS).
+localparam INIT_WAIT_TRSC			= 5'b00100;  // Wait tRSC nanoseconds after MRS.
 
 // States for the Auto refresh.
-localparam REFRESH_PRECHARGE_ALL   = 5'b01100;  // Precharge all banks before refresh.
-localparam REFRESH_WAIT_TRP        = 5'b01101;  // Wait tRP nanoseconds after precharge all.
-localparam REFRESH_AUTO_REFRESH    = 5'b01111;  // Issue Auto Refresh command.
-localparam REFRESH_WAIT_TRC        = 5'b01110;  // Wait tRC after Auto Refresh.
+localparam REFRESH_PRECHARGE_ALL	= 5'b01100;  // Precharge all banks before refresh.
+localparam REFRESH_WAIT_TRP			= 5'b01101;  // Wait tRP nanoseconds after precharge all.
+localparam REFRESH_AUTO_REFRESH		= 5'b01111;  // Issue Auto Refresh command.
+localparam REFRESH_WAIT_TRC			= 5'b01110;  // Wait tRC after Auto Refresh.
 
 // States for write operation.
-localparam WRITE_BANK_ACTIVATE     = 5'b01010;  // Activate row/bank (Bank Activate Command).
-localparam WRITE_WAIT_TRCD         = 5'b01011;  // NOP after activation (wait tRCD).
-localparam WRITE_CAS               = 5'b01001;  // Write command and data (Write Command).
-localparam WRITE_WAIT_TWR          = 5'b01000;  // NOP after write (wait tWR).
-//localparam WRITE_PRECHARGE         = 5'b11000;  // Precharge bank (if auto-precharge is not used).
-//localparam WRITE_WAIT_TRP          = 5'b11001;  // NOP after precharge (wait tRP).
+localparam WRITE_BANK_ACTIVATE		= 5'b01010;  // Activate row/bank (Bank Activate Command).
+localparam WRITE_WAIT_TRCD			= 5'b01011;  // NOP after activation (wait tRCD).
+localparam WRITE_CAS				= 5'b01001;  // Write command and data (Write Command).
+localparam WRITE_WAIT_TWR			= 5'b01000;  // NOP after write (wait tWR).
+//localparam WRITE_PRECHARGE		= 5'b11000;  // Precharge bank (if auto-precharge is not used).
+//localparam WRITE_WAIT_TRP			= 5'b11001;  // NOP after precharge (wait tRP).
 
 // States for read operation.
-localparam READ_BANK_ACTIVATE      = 5'b11011;  // Activate row/bank (Bank Activate Command).
-localparam READ_WAIT_TRCD          = 5'b11010;  // NOP after activation (wait tRCD).
-localparam READ_CAS                = 5'b11110;  // Read command (Read Command).
-localparam READ_WAIT_CAS_LATENCY   = 5'b11111;  // Wait CAS Latency (3 cycles).
-localparam READ_DATA               = 5'b11101;  // Capture data from DQ pins.
-//localparam READ_PRECHARGE          = 5'b11100;  // Precharge bank (if auto-precharge is not used).
-//localparam READ_WAIT_TRP           = 5'b10100;  // NOP after precharge (wait tRP).
+localparam READ_BANK_ACTIVATE		= 5'b11011;  // Activate row/bank (Bank Activate Command).
+localparam READ_WAIT_TRCD			= 5'b11010;  // NOP after activation (wait tRCD).
+localparam READ_CAS					= 5'b11110;  // Read command (Read Command).
+localparam READ_WAIT_CAS_LATENCY	= 5'b11111;  // Wait CAS Latency (3 cycles).
+localparam READ_DATA				= 5'b11101;  // Capture data from DQ pins.
+//localparam READ_PRECHARGE			= 5'b11100;  // Precharge bank (if auto-precharge is not used).
+//localparam READ_WAIT_TRP			= 5'b10100;  // NOP after precharge (wait tRP).
 
 // IDLE state
-localparam IDLE                      = 5'b10101;
+localparam IDLE						= 5'b10101;
 
 
 //-------------------------------
 // SDRAM Command Definitions
 //-------------------------------
 
-localparam CMD_PRECHARGE_ALL    = 7'b0010001;  // Precharge All.
-localparam CMD_AUTO_REFRESH     = 7'b0001000;  // Auto Refresh.
-localparam CMD_NOP              = 7'b0111000;  // No Operation.
-localparam CMD_MRS              = 7'b000000x;  // Mode Register Set (MRS).
+localparam CMD_PRECHARGE_ALL	= 7'b0010001;  // Precharge All.
+localparam CMD_AUTO_REFRESH		= 7'b0001000;  // Auto Refresh.
+localparam CMD_NOP				= 7'b0111000;  // No Operation.
+localparam CMD_MRS				= 7'b000000x;  // Mode Register Set (MRS).
 
 // Commands for read/write operations.
-localparam CMD_BANK_ACTIVATE    = 7'b0011xxx;  // Activate bank/row (x = bank address bits).
-localparam CMD_WRITE            = 7'b0100xx1;  // Write command (x = bank address bits).
-localparam CMD_PRECHARGE_BANK   = 7'b0010x00;  // Precharge specific bank (x = a10 for auto-precharge).
-localparam CMD_READ             = 7'b0101xx1;  // CS=L, RAS=H, CAS=L, WE=H
+localparam CMD_BANK_ACTIVATE	= 7'b0011xxx;  // Activate bank/row (x = bank address bits).
+localparam CMD_WRITE			= 7'b0100xx1;  // Write command (x = bank address bits).
+localparam CMD_PRECHARGE_BANK	= 7'b0010x00;  // Precharge specific bank (x = a10 for auto-precharge).
+localparam CMD_READ				= 7'b0101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 
 
 //-------------------------------
