@@ -8,11 +8,11 @@ Tool: Synplify Pro (R)
 Build: V-2023.09L-2
 Install: C:\lscc\diamond\3.14\synpbase
 OS: Windows 10 or later
-Hostname: JH-LAPTOP
+Hostname: 5CG407221K
 
 Implementation : impl1
 
-# Written on Fri Mar 14 14:28:43 2025
+# Written on Mon Apr 14 18:59:05 2025
 
 ##### DESIGN INFO #######################################################
 
@@ -36,7 +36,7 @@ Clock Relationships
 
 Starting                 Ending                   |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk     sdram_controller|clk     |     10.000           |     No paths         |     No paths         |     No paths                         
+sdram_controller|clk     sdram_controller|clk     |     12.500           |     No paths         |     No paths         |     No paths                         
 =============================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -45,189 +45,189 @@ sdram_controller|clk     sdram_controller|clk     |     10.000           |     N
 Unconstrained Start/End Points
 ******************************
 
-p:ram_side_addr[0]
-p:ram_side_addr[1]
-p:ram_side_addr[2]
-p:ram_side_addr[3]
-p:ram_side_addr[4]
-p:ram_side_addr[5]
-p:ram_side_addr[6]
-p:ram_side_addr[7]
-p:ram_side_addr[8]
-p:ram_side_addr[9]
-p:ram_side_addr[10]
-p:ram_side_addr[11]
-p:ram_side_bank_addr[0]
-p:ram_side_bank_addr[1]
-p:ram_side_cas_n
-p:ram_side_clock_enable
-p:ram_side_cs_n
-p:ram_side_data_chip0[0] (bidir end point)
-p:ram_side_data_chip0[0] (bidir start point)
-p:ram_side_data_chip0[1] (bidir end point)
-p:ram_side_data_chip0[1] (bidir start point)
-p:ram_side_data_chip0[2] (bidir end point)
-p:ram_side_data_chip0[2] (bidir start point)
-p:ram_side_data_chip0[3] (bidir end point)
-p:ram_side_data_chip0[3] (bidir start point)
-p:ram_side_data_chip0[4] (bidir end point)
-p:ram_side_data_chip0[4] (bidir start point)
-p:ram_side_data_chip0[5] (bidir end point)
-p:ram_side_data_chip0[5] (bidir start point)
-p:ram_side_data_chip0[6] (bidir end point)
-p:ram_side_data_chip0[6] (bidir start point)
-p:ram_side_data_chip0[7] (bidir end point)
-p:ram_side_data_chip0[7] (bidir start point)
-p:ram_side_data_chip0[8] (bidir end point)
-p:ram_side_data_chip0[8] (bidir start point)
-p:ram_side_data_chip0[9] (bidir end point)
-p:ram_side_data_chip0[9] (bidir start point)
-p:ram_side_data_chip0[10] (bidir end point)
-p:ram_side_data_chip0[10] (bidir start point)
-p:ram_side_data_chip0[11] (bidir end point)
-p:ram_side_data_chip0[11] (bidir start point)
-p:ram_side_data_chip0[12] (bidir end point)
-p:ram_side_data_chip0[12] (bidir start point)
-p:ram_side_data_chip0[13] (bidir end point)
-p:ram_side_data_chip0[13] (bidir start point)
-p:ram_side_data_chip0[14] (bidir end point)
-p:ram_side_data_chip0[14] (bidir start point)
-p:ram_side_data_chip0[15] (bidir end point)
-p:ram_side_data_chip0[15] (bidir start point)
-p:ram_side_data_chip1[0] (bidir end point)
-p:ram_side_data_chip1[0] (bidir start point)
-p:ram_side_data_chip1[1] (bidir end point)
-p:ram_side_data_chip1[1] (bidir start point)
-p:ram_side_data_chip1[2] (bidir end point)
-p:ram_side_data_chip1[2] (bidir start point)
-p:ram_side_data_chip1[3] (bidir end point)
-p:ram_side_data_chip1[3] (bidir start point)
-p:ram_side_data_chip1[4] (bidir end point)
-p:ram_side_data_chip1[4] (bidir start point)
-p:ram_side_data_chip1[5] (bidir end point)
-p:ram_side_data_chip1[5] (bidir start point)
-p:ram_side_data_chip1[6] (bidir end point)
-p:ram_side_data_chip1[6] (bidir start point)
-p:ram_side_data_chip1[7] (bidir end point)
-p:ram_side_data_chip1[7] (bidir start point)
-p:ram_side_data_chip1[8] (bidir end point)
-p:ram_side_data_chip1[8] (bidir start point)
-p:ram_side_data_chip1[9] (bidir end point)
-p:ram_side_data_chip1[9] (bidir start point)
-p:ram_side_data_chip1[10] (bidir end point)
-p:ram_side_data_chip1[10] (bidir start point)
-p:ram_side_data_chip1[11] (bidir end point)
-p:ram_side_data_chip1[11] (bidir start point)
-p:ram_side_data_chip1[12] (bidir end point)
-p:ram_side_data_chip1[12] (bidir start point)
-p:ram_side_data_chip1[13] (bidir end point)
-p:ram_side_data_chip1[13] (bidir start point)
-p:ram_side_data_chip1[14] (bidir end point)
-p:ram_side_data_chip1[14] (bidir start point)
-p:ram_side_data_chip1[15] (bidir end point)
-p:ram_side_data_chip1[15] (bidir start point)
-p:ram_side_ldqm_pin_chip0
-p:ram_side_ldqm_pin_chip1
-p:ram_side_ras_n
-p:ram_side_udqm_pin_chip0
-p:ram_side_udqm_pin_chip1
-p:ram_side_wr_enable
-p:soc_side_addr[0]
-p:soc_side_addr[1]
-p:soc_side_addr[2]
-p:soc_side_addr[3]
-p:soc_side_addr[4]
-p:soc_side_addr[5]
-p:soc_side_addr[6]
-p:soc_side_addr[7]
-p:soc_side_addr[8]
-p:soc_side_addr[9]
-p:soc_side_addr[10]
-p:soc_side_addr[11]
-p:soc_side_addr[12]
-p:soc_side_addr[13]
-p:soc_side_addr[14]
-p:soc_side_addr[15]
-p:soc_side_addr[16]
-p:soc_side_addr[17]
-p:soc_side_addr[18]
-p:soc_side_addr[19]
-p:soc_side_addr[20]
-p:soc_side_addr[21]
-p:soc_side_addr[22]
-p:soc_side_busy
-p:soc_side_rd_data[0]
-p:soc_side_rd_data[1]
-p:soc_side_rd_data[2]
-p:soc_side_rd_data[3]
-p:soc_side_rd_data[4]
-p:soc_side_rd_data[5]
-p:soc_side_rd_data[6]
-p:soc_side_rd_data[7]
-p:soc_side_rd_data[8]
-p:soc_side_rd_data[9]
-p:soc_side_rd_data[10]
-p:soc_side_rd_data[11]
-p:soc_side_rd_data[12]
-p:soc_side_rd_data[13]
-p:soc_side_rd_data[14]
-p:soc_side_rd_data[15]
-p:soc_side_rd_data[16]
-p:soc_side_rd_data[17]
-p:soc_side_rd_data[18]
-p:soc_side_rd_data[19]
-p:soc_side_rd_data[20]
-p:soc_side_rd_data[21]
-p:soc_side_rd_data[22]
-p:soc_side_rd_data[23]
-p:soc_side_rd_data[24]
-p:soc_side_rd_data[25]
-p:soc_side_rd_data[26]
-p:soc_side_rd_data[27]
-p:soc_side_rd_data[28]
-p:soc_side_rd_data[29]
-p:soc_side_rd_data[30]
-p:soc_side_rd_data[31]
-p:soc_side_rd_enable
-p:soc_side_rd_ready
-p:soc_side_rst_n
-p:soc_side_wr_data[0]
-p:soc_side_wr_data[1]
-p:soc_side_wr_data[2]
-p:soc_side_wr_data[3]
-p:soc_side_wr_data[4]
-p:soc_side_wr_data[5]
-p:soc_side_wr_data[6]
-p:soc_side_wr_data[7]
-p:soc_side_wr_data[8]
-p:soc_side_wr_data[9]
-p:soc_side_wr_data[10]
-p:soc_side_wr_data[11]
-p:soc_side_wr_data[12]
-p:soc_side_wr_data[13]
-p:soc_side_wr_data[14]
-p:soc_side_wr_data[15]
-p:soc_side_wr_data[16]
-p:soc_side_wr_data[17]
-p:soc_side_wr_data[18]
-p:soc_side_wr_data[19]
-p:soc_side_wr_data[20]
-p:soc_side_wr_data[21]
-p:soc_side_wr_data[22]
-p:soc_side_wr_data[23]
-p:soc_side_wr_data[24]
-p:soc_side_wr_data[25]
-p:soc_side_wr_data[26]
-p:soc_side_wr_data[27]
-p:soc_side_wr_data[28]
-p:soc_side_wr_data[29]
-p:soc_side_wr_data[30]
-p:soc_side_wr_data[31]
-p:soc_side_wr_enable
-p:soc_side_wr_mask[0]
-p:soc_side_wr_mask[1]
-p:soc_side_wr_mask[2]
-p:soc_side_wr_mask[3]
+p:ram_side_addr_port[0]
+p:ram_side_addr_port[1]
+p:ram_side_addr_port[2]
+p:ram_side_addr_port[3]
+p:ram_side_addr_port[4]
+p:ram_side_addr_port[5]
+p:ram_side_addr_port[6]
+p:ram_side_addr_port[7]
+p:ram_side_addr_port[8]
+p:ram_side_addr_port[9]
+p:ram_side_addr_port[10]
+p:ram_side_addr_port[11]
+p:ram_side_bank_addr_port[0]
+p:ram_side_bank_addr_port[1]
+p:ram_side_cas_n_port
+p:ram_side_chip0_data_port[0] (bidir end point)
+p:ram_side_chip0_data_port[0] (bidir start point)
+p:ram_side_chip0_data_port[1] (bidir end point)
+p:ram_side_chip0_data_port[1] (bidir start point)
+p:ram_side_chip0_data_port[2] (bidir end point)
+p:ram_side_chip0_data_port[2] (bidir start point)
+p:ram_side_chip0_data_port[3] (bidir end point)
+p:ram_side_chip0_data_port[3] (bidir start point)
+p:ram_side_chip0_data_port[4] (bidir end point)
+p:ram_side_chip0_data_port[4] (bidir start point)
+p:ram_side_chip0_data_port[5] (bidir end point)
+p:ram_side_chip0_data_port[5] (bidir start point)
+p:ram_side_chip0_data_port[6] (bidir end point)
+p:ram_side_chip0_data_port[6] (bidir start point)
+p:ram_side_chip0_data_port[7] (bidir end point)
+p:ram_side_chip0_data_port[7] (bidir start point)
+p:ram_side_chip0_data_port[8] (bidir end point)
+p:ram_side_chip0_data_port[8] (bidir start point)
+p:ram_side_chip0_data_port[9] (bidir end point)
+p:ram_side_chip0_data_port[9] (bidir start point)
+p:ram_side_chip0_data_port[10] (bidir end point)
+p:ram_side_chip0_data_port[10] (bidir start point)
+p:ram_side_chip0_data_port[11] (bidir end point)
+p:ram_side_chip0_data_port[11] (bidir start point)
+p:ram_side_chip0_data_port[12] (bidir end point)
+p:ram_side_chip0_data_port[12] (bidir start point)
+p:ram_side_chip0_data_port[13] (bidir end point)
+p:ram_side_chip0_data_port[13] (bidir start point)
+p:ram_side_chip0_data_port[14] (bidir end point)
+p:ram_side_chip0_data_port[14] (bidir start point)
+p:ram_side_chip0_data_port[15] (bidir end point)
+p:ram_side_chip0_data_port[15] (bidir start point)
+p:ram_side_chip0_ldqm_port
+p:ram_side_chip0_udqm_port
+p:ram_side_chip1_data_port[0] (bidir end point)
+p:ram_side_chip1_data_port[0] (bidir start point)
+p:ram_side_chip1_data_port[1] (bidir end point)
+p:ram_side_chip1_data_port[1] (bidir start point)
+p:ram_side_chip1_data_port[2] (bidir end point)
+p:ram_side_chip1_data_port[2] (bidir start point)
+p:ram_side_chip1_data_port[3] (bidir end point)
+p:ram_side_chip1_data_port[3] (bidir start point)
+p:ram_side_chip1_data_port[4] (bidir end point)
+p:ram_side_chip1_data_port[4] (bidir start point)
+p:ram_side_chip1_data_port[5] (bidir end point)
+p:ram_side_chip1_data_port[5] (bidir start point)
+p:ram_side_chip1_data_port[6] (bidir end point)
+p:ram_side_chip1_data_port[6] (bidir start point)
+p:ram_side_chip1_data_port[7] (bidir end point)
+p:ram_side_chip1_data_port[7] (bidir start point)
+p:ram_side_chip1_data_port[8] (bidir end point)
+p:ram_side_chip1_data_port[8] (bidir start point)
+p:ram_side_chip1_data_port[9] (bidir end point)
+p:ram_side_chip1_data_port[9] (bidir start point)
+p:ram_side_chip1_data_port[10] (bidir end point)
+p:ram_side_chip1_data_port[10] (bidir start point)
+p:ram_side_chip1_data_port[11] (bidir end point)
+p:ram_side_chip1_data_port[11] (bidir start point)
+p:ram_side_chip1_data_port[12] (bidir end point)
+p:ram_side_chip1_data_port[12] (bidir start point)
+p:ram_side_chip1_data_port[13] (bidir end point)
+p:ram_side_chip1_data_port[13] (bidir start point)
+p:ram_side_chip1_data_port[14] (bidir end point)
+p:ram_side_chip1_data_port[14] (bidir start point)
+p:ram_side_chip1_data_port[15] (bidir end point)
+p:ram_side_chip1_data_port[15] (bidir start point)
+p:ram_side_chip1_ldqm_port
+p:ram_side_chip1_udqm_port
+p:ram_side_ck_en_port
+p:ram_side_cs_n_port
+p:ram_side_ras_n_port
+p:ram_side_wr_en_port
+p:reset_n_port
+p:soc_side_addr_port[0]
+p:soc_side_addr_port[1]
+p:soc_side_addr_port[2]
+p:soc_side_addr_port[3]
+p:soc_side_addr_port[4]
+p:soc_side_addr_port[5]
+p:soc_side_addr_port[6]
+p:soc_side_addr_port[7]
+p:soc_side_addr_port[8]
+p:soc_side_addr_port[9]
+p:soc_side_addr_port[10]
+p:soc_side_addr_port[11]
+p:soc_side_addr_port[12]
+p:soc_side_addr_port[13]
+p:soc_side_addr_port[14]
+p:soc_side_addr_port[15]
+p:soc_side_addr_port[16]
+p:soc_side_addr_port[17]
+p:soc_side_addr_port[18]
+p:soc_side_addr_port[19]
+p:soc_side_addr_port[20]
+p:soc_side_addr_port[21]
+p:soc_side_addr_port[22]
+p:soc_side_busy_port
+p:soc_side_rd_data_port[0]
+p:soc_side_rd_data_port[1]
+p:soc_side_rd_data_port[2]
+p:soc_side_rd_data_port[3]
+p:soc_side_rd_data_port[4]
+p:soc_side_rd_data_port[5]
+p:soc_side_rd_data_port[6]
+p:soc_side_rd_data_port[7]
+p:soc_side_rd_data_port[8]
+p:soc_side_rd_data_port[9]
+p:soc_side_rd_data_port[10]
+p:soc_side_rd_data_port[11]
+p:soc_side_rd_data_port[12]
+p:soc_side_rd_data_port[13]
+p:soc_side_rd_data_port[14]
+p:soc_side_rd_data_port[15]
+p:soc_side_rd_data_port[16]
+p:soc_side_rd_data_port[17]
+p:soc_side_rd_data_port[18]
+p:soc_side_rd_data_port[19]
+p:soc_side_rd_data_port[20]
+p:soc_side_rd_data_port[21]
+p:soc_side_rd_data_port[22]
+p:soc_side_rd_data_port[23]
+p:soc_side_rd_data_port[24]
+p:soc_side_rd_data_port[25]
+p:soc_side_rd_data_port[26]
+p:soc_side_rd_data_port[27]
+p:soc_side_rd_data_port[28]
+p:soc_side_rd_data_port[29]
+p:soc_side_rd_data_port[30]
+p:soc_side_rd_data_port[31]
+p:soc_side_rd_en_port
+p:soc_side_ready_port
+p:soc_side_wr_data_port[0]
+p:soc_side_wr_data_port[1]
+p:soc_side_wr_data_port[2]
+p:soc_side_wr_data_port[3]
+p:soc_side_wr_data_port[4]
+p:soc_side_wr_data_port[5]
+p:soc_side_wr_data_port[6]
+p:soc_side_wr_data_port[7]
+p:soc_side_wr_data_port[8]
+p:soc_side_wr_data_port[9]
+p:soc_side_wr_data_port[10]
+p:soc_side_wr_data_port[11]
+p:soc_side_wr_data_port[12]
+p:soc_side_wr_data_port[13]
+p:soc_side_wr_data_port[14]
+p:soc_side_wr_data_port[15]
+p:soc_side_wr_data_port[16]
+p:soc_side_wr_data_port[17]
+p:soc_side_wr_data_port[18]
+p:soc_side_wr_data_port[19]
+p:soc_side_wr_data_port[20]
+p:soc_side_wr_data_port[21]
+p:soc_side_wr_data_port[22]
+p:soc_side_wr_data_port[23]
+p:soc_side_wr_data_port[24]
+p:soc_side_wr_data_port[25]
+p:soc_side_wr_data_port[26]
+p:soc_side_wr_data_port[27]
+p:soc_side_wr_data_port[28]
+p:soc_side_wr_data_port[29]
+p:soc_side_wr_data_port[30]
+p:soc_side_wr_data_port[31]
+p:soc_side_wr_en_port
+p:soc_side_wr_mask_port[0]
+p:soc_side_wr_mask_port[1]
+p:soc_side_wr_mask_port[2]
+p:soc_side_wr_mask_port[3]
 
 
 Inapplicable constraints

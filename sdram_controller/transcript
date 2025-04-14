@@ -1,0 +1,154 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do {C:/lscc/diamond/projects/SDRAM_controller/sdram_controller/simulation/simulation.mdo}
+# Loading project simulation
+# Compile of sdram_controller.v was successful.
+# vsim -voptargs="+acc" -L work -L pmi_work -L ovi_machxo2 sdram_controller_tb 
+# Start time: 12:30:19 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
+# Time: 0.006us, present_state: 00000, command: 10111000
+# Time: 0.124us, present_state: 00001, command: 10111000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
+# Time: 0.006us, present_state: 00000, command: 10111000
+# Time: 0.124us, present_state: 00001, command: 10111000
+# Time: 300.106us, present_state: 00011, command: 10010001
+# Time: 300.117us, present_state: 00010, command: 10111000
+# Time: 300.141us, present_state: 00110, command: 10001000
+# Time: 300.153us, present_state: 00111, command: 10111000
+# Time: 300.223us, present_state: 00101, command: 1000000x
+# Time: 300.235us, present_state: 00100, command: 10111000
+# Time: 300.258us, present_state: 10101, command: 10111000
+add wave -position insertpoint  \
+sim:/sdram_controller_tb/dut/present_state
+add wave -position insertpoint  \
+sim:/sdram_controller_tb/dut/command
+add wave -position insertpoint  \
+sim:/sdram_controller_tb/dut/delay_counter
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
+# Time: 0.006us, present_state: 00000, command: 10111000
+# Time: 0.124us, present_state: 00001, command: 10111000
+# Time: 300.106us, present_state: 00011, command: 10010001
+# Time: 300.117us, present_state: 00010, command: 10111000
+# Time: 300.141us, present_state: 00110, command: 10001000
+# Time: 300.153us, present_state: 00111, command: 10111000
+# Time: 300.223us, present_state: 00101, command: 1000000x
+# Time: 300.235us, present_state: 00100, command: 10111000
+# Time: 300.258us, present_state: 10101, command: 10111000
+# Compile of sdram_controller.v was successful.
+# Compile of sdram_controller_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.sdram_controller_tb(fast)
+# Loading work.sdram_controller(fast)
+run 500us
+# Time: 0.000us, present_state: xxxxx, command: xxxxxxxx
+# Time: 0.006us, present_state: 00000, command: 10111000
+# Time: 0.124us, present_state: 00001, command: 10111000
+# Time: 300.106us, present_state: 00011, command: 10010001
+# Time: 300.117us, present_state: 00010, command: 10111000
+# Time: 300.141us, present_state: 00110, command: 10001000
+# Time: 300.153us, present_state: 00111, command: 10111000
+# Time: 300.223us, present_state: 00101, command: 1000000x
+# Time: 300.235us, present_state: 00100, command: 10111000
+# Time: 300.258us, present_state: 10101, command: 10111000
+# Time: 315.881us, present_state: 01100, command: 10010001
+# Time: 315.893us, present_state: 01101, command: 10111000
+# Time: 315.916us, present_state: 01111, command: 10001000
+# Time: 315.928us, present_state: 01110, command: 10111000
+# Time: 315.999us, present_state: 10101, command: 10111000
+# Time: 331.621us, present_state: 01100, command: 10010001
+# Time: 331.633us, present_state: 01101, command: 10111000
+# Time: 331.657us, present_state: 01111, command: 10001000
+# Time: 331.668us, present_state: 01110, command: 10111000
+# Time: 331.739us, present_state: 10101, command: 10111000
+# Time: 347.362us, present_state: 01100, command: 10010001
+# Time: 347.373us, present_state: 01101, command: 10111000
+# Time: 347.397us, present_state: 01111, command: 10001000
+# Time: 347.409us, present_state: 01110, command: 10111000
+# Time: 347.479us, present_state: 10101, command: 10111000
+# Time: 363.102us, present_state: 01100, command: 10010001
+# Time: 363.114us, present_state: 01101, command: 10111000
+# Time: 363.137us, present_state: 01111, command: 10001000
+# Time: 363.149us, present_state: 01110, command: 10111000
+# Time: 363.219us, present_state: 10101, command: 10111000
+# Time: 378.842us, present_state: 01100, command: 10010001
+# Time: 378.854us, present_state: 01101, command: 10111000
+# Time: 378.877us, present_state: 01111, command: 10001000
+# Time: 378.889us, present_state: 01110, command: 10111000
+# Time: 378.960us, present_state: 10101, command: 10111000
+# Time: 394.582us, present_state: 01100, command: 10010001
+# Time: 394.594us, present_state: 01101, command: 10111000
+# Time: 394.617us, present_state: 01111, command: 10001000
+# Time: 394.629us, present_state: 01110, command: 10111000
+# Time: 394.700us, present_state: 10101, command: 10111000
+# Time: 410.322us, present_state: 01100, command: 10010001
+# Time: 410.334us, present_state: 01101, command: 10111000
+# Time: 410.358us, present_state: 01111, command: 10001000
+# Time: 410.369us, present_state: 01110, command: 10111000
+# Time: 410.440us, present_state: 10101, command: 10111000
+# Time: 426.063us, present_state: 01100, command: 10010001
+# Time: 426.074us, present_state: 01101, command: 10111000
+# Time: 426.098us, present_state: 01111, command: 10001000
+# Time: 426.110us, present_state: 01110, command: 10111000
+# Time: 426.180us, present_state: 10101, command: 10111000
+# Time: 441.803us, present_state: 01100, command: 10010001
+# Time: 441.815us, present_state: 01101, command: 10111000
+# Time: 441.838us, present_state: 01111, command: 10001000
+# Time: 441.850us, present_state: 01110, command: 10111000
+# Time: 441.921us, present_state: 10101, command: 10111000
+# Time: 457.543us, present_state: 01100, command: 10010001
+# Time: 457.555us, present_state: 01101, command: 10111000
+# Time: 457.578us, present_state: 01111, command: 10001000
+# Time: 457.590us, present_state: 01110, command: 10111000
+# Time: 457.661us, present_state: 10101, command: 10111000
+# Time: 473.283us, present_state: 01100, command: 10010001
+# Time: 473.295us, present_state: 01101, command: 10111000
+# Time: 473.319us, present_state: 01111, command: 10001000
+# Time: 473.330us, present_state: 01110, command: 10111000
+# Time: 473.401us, present_state: 10101, command: 10111000
+# Time: 489.024us, present_state: 01100, command: 10010001
+# Time: 489.035us, present_state: 01101, command: 10111000
+# Time: 489.059us, present_state: 01111, command: 10001000
+# Time: 489.071us, present_state: 01110, command: 10111000
+# Time: 489.141us, present_state: 10101, command: 10111000
+# End time: 12:49:23 on Apr 05,2025, Elapsed time: 0:19:04
+# Errors: 0, Warnings: 2

@@ -8,11 +8,11 @@ Tool: Synplify Pro (R)
 Build: V-2023.09L-2
 Install: C:\lscc\diamond\3.14\synpbase
 OS: Windows 10 or later
-Hostname: JH-LAPTOP
+Hostname: 5CG407221K
 
 Implementation : impl1
 
-# Written on Fri Mar 14 14:28:42 2025
+# Written on Mon Apr 14 18:59:04 2025
 
 ##### FILES SYNTAX CHECKED ##############################################
 Constraint File(s):      (none)
@@ -32,15 +32,15 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock          Clock
 Level     Clock                    Frequency     Period        Type         Group          Load 
 ------------------------------------------------------------------------------------------------
-0 -       sdram_controller|clk     100.0 MHz     10.000        inferred     (multiple)     108  
+0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     124  
 ================================================================================================
 
 
 Clock Load Summary
 ******************
 
-                         Clock     Source        Clock Pin             Non-clock Pin     Non-clock Pin
-Clock                    Load      Pin           Seq Example           Seq Example       Comb Example 
-------------------------------------------------------------------------------------------------------
-sdram_controller|clk     108       clk(port)     wr_data_r[31:0].C     -                 -            
-======================================================================================================
+                         Clock     Source        Clock Pin               Non-clock Pin     Non-clock Pin
+Clock                    Load      Pin           Seq Example             Seq Example       Comb Example 
+--------------------------------------------------------------------------------------------------------
+sdram_controller|clk     124       clk(port)     wr_data_reg[31:0].C     -                 -            
+========================================================================================================

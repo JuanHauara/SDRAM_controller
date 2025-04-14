@@ -4,7 +4,7 @@ Design name: sdram_controller
 NCD version: 3.3
 Vendor:      LATTICE
 Device:      LCMXO2-4000HC
-Package:     CABGA256
+Package:     CABGA332
 Performance: 4
 Loading device for application trce from file 'xo2c4000.nph' in environment: C:/lscc/diamond/3.14/ispfpga.
 Package Status:                     Final          Version 1.44.
@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Fri Mar 14 14:28:48 2025
+Mon Apr 14 18:59:10 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -23,14 +23,13 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 Report Information
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,4
 Report level:    verbose report, limited to 1 item per preference
 --------------------------------------------------------------------------------
 
-Report Type:     based on TRACE automatically generated preferences
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
 --------------------------------------------------------------------------------
@@ -38,51 +37,49 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY NET "clk_c" 148.082000 MHz ;
-            4096 items scored, 4096 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            1722 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error: The following path exceeds requirements by 5.215ns
+Passed: The following path meets requirements by 1.507ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              state[16]  (from clk_c +)
-   Destination:    FF         Data in        state[3]  (to clk_c +)
+   Source:         FF         Q              delay_counter[12]  (from clk_c +)
+   Destination:    FF         Data in        current_state[16]  (to clk_c +)
 
-   Delay:              11.802ns  (33.2% logic, 66.8% route), 8 logic levels.
+   Delay:              10.827ns  (31.6% logic, 68.4% route), 7 logic levels.
 
  Constraint Details:
 
-     11.802ns physical path delay SLICE_10 to SLICE_4 exceeds
-      6.753ns delay constraint less
-      0.166ns DIN_SET requirement (totaling 6.587ns) by 5.215ns
+     10.827ns physical path delay SLICE_11 to SLICE_26 meets
+     12.500ns delay constraint less
+      0.166ns DIN_SET requirement (totaling 12.334ns) by 1.507ns
 
  Physical Path Details:
 
-      Data path SLICE_10 to SLICE_4:
+      Data path SLICE_11 to SLICE_26:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.452   SLICE_10.CLK to    SLICE_10.Q0 SLICE_10 (from clk_c)
-ROUTE         6   e 1.234    SLICE_10.Q0 to    SLICE_50.A1 state[16]
-CTOF_DEL    ---     0.495    SLICE_50.A1 to    SLICE_50.F1 SLICE_50
-ROUTE        11   e 1.234    SLICE_50.F1 to    SLICE_42.B1 N_1344
-CTOF_DEL    ---     0.495    SLICE_42.B1 to    SLICE_42.F1 SLICE_42
-ROUTE        17   e 1.234    SLICE_42.F1 to    SLICE_53.D1 un35_li[4]
-CTOF_DEL    ---     0.495    SLICE_53.D1 to    SLICE_53.F1 SLICE_53
-ROUTE         1   e 1.234    SLICE_53.F1 to    SLICE_46.B0 N_1437
-CTOF_DEL    ---     0.495    SLICE_46.B0 to    SLICE_46.F0 SLICE_46
-ROUTE         6   e 0.480    SLICE_46.F0 to    SLICE_46.A1 next_3_li[1]
-CTOF_DEL    ---     0.495    SLICE_46.A1 to    SLICE_46.F1 SLICE_46
-ROUTE         7   e 1.234    SLICE_46.F1 to    SLICE_66.A1 N_1361
-CTOF_DEL    ---     0.495    SLICE_66.A1 to    SLICE_66.F1 SLICE_66
-ROUTE         1   e 1.234    SLICE_66.F1 to     SLICE_4.D1 state_ns_0_d_0_1_0[3]
-CTOF_DEL    ---     0.495     SLICE_4.D1 to     SLICE_4.F1 SLICE_4
-ROUTE         1   e 0.001     SLICE_4.F1 to    SLICE_4.DI1 state_nss[3] (to clk_c)
+REG_DEL     ---     0.452   SLICE_11.CLK to    SLICE_11.Q1 SLICE_11 (from clk_c)
+ROUTE         3   e 1.234    SLICE_11.Q1 to    SLICE_59.C0 delay_counter[12]
+CTOF_DEL    ---     0.495    SLICE_59.C0 to    SLICE_59.F0 SLICE_59
+ROUTE         1   e 1.234    SLICE_59.F0 to    SLICE_56.A0 current_state_srsts_i_a2_2_4[21]
+CTOF_DEL    ---     0.495    SLICE_56.A0 to    SLICE_56.F0 SLICE_56
+ROUTE         4   e 1.234    SLICE_56.F0 to    SLICE_40.B1 N_134
+CTOF_DEL    ---     0.495    SLICE_40.B1 to    SLICE_40.F1 SLICE_40
+ROUTE        15   e 1.234    SLICE_40.F1 to    SLICE_61.C0 next_command16
+CTOF_DEL    ---     0.495    SLICE_61.C0 to    SLICE_61.F0 SLICE_61
+ROUTE         1   e 1.234    SLICE_61.F0 to    SLICE_45.A0 N_502
+CTOF_DEL    ---     0.495    SLICE_45.A0 to    SLICE_45.F0 SLICE_45
+ROUTE         1   e 1.234    SLICE_45.F0 to    SLICE_26.C0 reset_delay_counter.current_state_srsts_217_1
+CTOF_DEL    ---     0.495    SLICE_26.C0 to    SLICE_26.F0 SLICE_26
+ROUTE         1   e 0.001    SLICE_26.F0 to   SLICE_26.DI0 current_state_nss[16] (to clk_c)
                   --------
-                   11.802   (33.2% logic, 66.8% route), 8 logic levels.
+                   10.827   (31.6% logic, 68.4% route), 7 logic levels.
 
-Warning:  83.556MHz is the maximum frequency for this preference.
+Report:   90.967MHz is the maximum frequency for this preference.
 
 Report Summary
 --------------
@@ -90,51 +87,12 @@ Report Summary
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY NET "clk_c" 148.082000 MHz ;  |  148.082 MHz|   83.556 MHz|   8 *
+FREQUENCY PORT "clk" 80.000000 MHz ;    |   80.000 MHz|   90.967 MHz|   7  
                                         |             |             |
 ----------------------------------------------------------------------------
 
 
-1 preference(marked by "*" above) not met.
-
-----------------------------------------------------------------------------
-Critical Nets                           |   Loads|  Errors| % of total
-----------------------------------------------------------------------------
-next_3_li[1]                            |       6|    1646|     40.19%
-                                        |        |        |
-next_3_i_0_N_3_mux                      |      10|    1166|     28.47%
-                                        |        |        |
-un35_li[3]                              |      16|     948|     23.14%
-                                        |        |        |
-un35_li[1]                              |      13|     866|     21.14%
-                                        |        |        |
-un35_li[0]                              |      13|     832|     20.31%
-                                        |        |        |
-N_1330                                  |      16|     783|     19.12%
-                                        |        |        |
-N_1426                                  |       3|     761|     18.58%
-                                        |        |        |
-N_1354                                  |       6|     652|     15.92%
-                                        |        |        |
-N_1361                                  |       7|     645|     15.75%
-                                        |        |        |
-next_3_i_0[1]                           |       1|     612|     14.94%
-                                        |        |        |
-N_1362                                  |       7|     609|     14.87%
-                                        |        |        |
-N_1437                                  |       1|     606|     14.79%
-                                        |        |        |
-N_1347                                  |       3|     579|     14.14%
-                                        |        |        |
-next_3_i_0_m1_e_0                       |       1|     483|     11.79%
-                                        |        |        |
-un35_li[4]                              |      17|     476|     11.62%
-                                        |        |        |
-un35_i_a2_2[1]                          |       1|     456|     11.13%
-                                        |        |        |
-un35_i_a2_1[2]                          |       1|     417|     10.18%
-                                        |        |        |
-----------------------------------------------------------------------------
+All preferences were met.
 
 
 Clock Domains Analysis
@@ -142,21 +100,21 @@ Clock Domains Analysis
 
 Found 1 clocks:
 
-Clock Domain: clk_c   Source: clk.PAD   Loads: 84
-   Covered under: FREQUENCY NET "clk_c" 148.082000 MHz ;
+Clock Domain: clk_c   Source: clk.PAD   Loads: 98
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Setup):
 ---------------
 
-Timing errors: 4096  Score: 15124409
-Cumulative negative slack: 15124409
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
 
-Constraints cover 6791 paths, 1 nets, and 520 connections (52.58% coverage)
+Constraints cover 1722 paths, 1 nets, and 474 connections (51.35% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Fri Mar 14 14:28:48 2025
+Mon Apr 14 18:59:10 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -166,7 +124,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 Report Information
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,M
@@ -180,8 +138,8 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY NET "clk_c" 148.082000 MHz ;
-            4096 items scored, 0 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            1722 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -189,8 +147,8 @@ Passed: The following path meets requirements by 0.447ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              state_cnt[3]  (from clk_c +)
-   Destination:    FF         Data in        state_cnt[3]  (to clk_c +)
+   Source:         FF         Q              refresh_counter[15]  (from clk_c +)
+   Destination:    FF         Data in        refresh_counter[15]  (to clk_c +)
 
    Delay:               0.434ns  (53.9% logic, 46.1% route), 2 logic levels.
 
@@ -206,9 +164,9 @@ Passed: The following path meets requirements by 0.447ns
 
    Name    Fanout   Delay (ns)          Site               Resource
 REG_DEL     ---     0.133    SLICE_1.CLK to     SLICE_1.Q0 SLICE_1 (from clk_c)
-ROUTE         2   e 0.199     SLICE_1.Q0 to     SLICE_1.C0 ANB3
-CTOF_DEL    ---     0.101     SLICE_1.C0 to     SLICE_1.F0 SLICE_1
-ROUTE         1   e 0.001     SLICE_1.F0 to    SLICE_1.DI0 state_cnt_5[3] (to clk_c)
+ROUTE         2   e 0.199     SLICE_1.Q0 to     SLICE_1.A0 refresh_counter[15]
+CTOF_DEL    ---     0.101     SLICE_1.A0 to     SLICE_1.F0 SLICE_1
+ROUTE         1   e 0.001     SLICE_1.F0 to    SLICE_1.DI0 un2_refresh_counter[15] (to clk_c)
                   --------
                     0.434   (53.9% logic, 46.1% route), 2 logic levels.
 
@@ -218,7 +176,7 @@ Report Summary
 Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY NET "clk_c" 148.082000 MHz ;  |     0.000 ns|     0.447 ns|   2  
+FREQUENCY PORT "clk" 80.000000 MHz ;    |            -|            -|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -231,8 +189,8 @@ Clock Domains Analysis
 
 Found 1 clocks:
 
-Clock Domain: clk_c   Source: clk.PAD   Loads: 84
-   Covered under: FREQUENCY NET "clk_c" 148.082000 MHz ;
+Clock Domain: clk_c   Source: clk.PAD   Loads: 98
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Hold):
@@ -241,16 +199,16 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 6791 paths, 1 nets, and 555 connections (56.12% coverage)
+Constraints cover 1722 paths, 1 nets, and 474 connections (51.35% coverage)
 
 
 
 Timing summary (Setup and Hold):
 ---------------
 
-Timing errors: 4096 (setup), 0 (hold)
-Score: 15124409 (setup), 0 (hold)
-Cumulative negative slack: 15124409 (15124409+0)
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
