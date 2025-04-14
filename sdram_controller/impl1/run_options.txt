@@ -1,12 +1,12 @@
 #--  Synopsys, Inc.
 #--  Version V-2023.09L-2
-#--  Project file C:\hdl\SDRAM_controller\sdram_controller\impl1\run_options.txt
-#--  Written on Sun Apr 13 23:44:01 2025
+#--  Project file C:\hdl\controller_down_counter_borrar\SDRAM_controller\sdram_controller\impl1\run_options.txt
+#--  Written on Mon Apr 14 11:26:05 2025
 
 
 #project files
-add_file -verilog -vlog_std v2001 "C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v"
-add_file -verilog -vlog_std v2001 "C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v"
+add_file -verilog -vlog_std v2001 "C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v"
+add_file -verilog -vlog_std v2001 "C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v"
 
 
 #implementation: "impl1"
@@ -17,7 +17,7 @@ impl -add impl1 -type fpga
 
 set_option -vlog_std v2001
 set_option -project_relative_includes 1
-set_option -include_path {C:/hdl/SDRAM_controller/sdram_controller}
+set_option -include_path {C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller}
 
 #device options
 set_option -technology MACHXO2
@@ -89,5 +89,5 @@ set_option -write_apr_constraint 1
 project -result_file "./sdram_controller_impl1.edi"
 
 #set log file 
-set_option log_file "C:/hdl/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.srf" 
+set_option log_file "C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.srf" 
 impl -active "impl1"

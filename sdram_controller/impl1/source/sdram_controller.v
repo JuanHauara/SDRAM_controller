@@ -4,7 +4,7 @@
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
-		CLK_FREQUENCY_MHZ = 85MHz
+		CLK_FREQUENCY_MHZ = 80MHz
 		CAS 3
 
 	Very simple CPU interface
@@ -34,10 +34,8 @@
 		Write data:
 			- soc_side_wr_data_port: Data for writing, latched in on clk posedge if soc_side_wr_en_port is high.
 
-			// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
-
-			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port and 
-			soc_side_addr_port will be latched in, after a few clocks data will be written to the SDRAM.
+			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port will be 
+			latched in, after a few clocks data will be written to the SDRAM.
 
 			- soc_side_ready_port: This signal is used to notify the CPU when read data is available on the 
 			soc_side_rd_data_port bus and also when a data write to memory has finished.
@@ -46,14 +44,14 @@
 			- soc_side_rd_data_port: Data for reading, comes available a few clocks after 
 			soc_side_rd_en_port and soc_side_addr_port are presented on the bus.
 
-			- soc_side_rd_en_port: On clk posedge soc_side_addr_port will be latched in, after a 
-			few clocks data will be available on the soc_side_rd_data_port port.
+			- soc_side_rd_en_port: If asserted (high), soc_side_addr_port is sampled during the READ_CAS and 
+			READ_BANK_ACTIVATE states. Data becomes available on soc_side_rd_data_port after a few clock cycles.
  */
 
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 85,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -62,7 +60,7 @@ module sdram_controller # (
 	parameter COL_WIDTH = 9,
 	parameter BANK_ADDR_WIDTH = 2,		// 2 bits wide for 4 banks.
 	
-	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,
+	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
 	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH)? ROW_WIDTH : COL_WIDTH
 ) (
 	input wire clk,
@@ -73,7 +71,7 @@ module sdram_controller # (
 	output wire soc_side_ready_port,
 
 	// Address.
-	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
+	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,
 
 	// Read data.
 	output wire [31:0] soc_side_rd_data_port,
@@ -224,7 +222,7 @@ localparam CMD_READ				= 8'b10101xx1;  // CS=L, RAS=H, CAS=L, WE=H
 
 // Internal state machine registers.
 reg [4:0] current_state, next_state;
-reg [7:0] command, next_command;  // Comando SDRAM.
+reg [7:0] current_command, next_command;  // Comando SDRAM.
 
 // Contador para retardos de tiempo.
 reg [14:0] delay_counter;
@@ -246,7 +244,7 @@ reg busy_signal;
 reg ready_signal;
 reg [31:0] rd_data_reg;
 reg [31:0] wr_data_reg;
-reg [3:0] sdram_side_wr_mask_reg;  // Internal registers for Byte mask signals.
+reg [3:0] sdram_side_wr_mask_reg;  // Byte mask signals.
 
 wire in_initialization_cycle;
 wire in_write_cycle;
@@ -257,18 +255,18 @@ wire in_read_cycle;
 // Assignments
 //-------------------------------
 
-// Assigns command bits to outputs.
-assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = command[7:3];
-assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : command[2:1];
-assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, command[0], 10'd0 };
+// Assigns current_command bits to outputs.
+assign {ram_side_ck_en_port, ram_side_cs_n_port, ram_side_ras_n_port, ram_side_cas_n_port, ram_side_wr_en_port} = current_command[7:3];
+assign ram_side_bank_addr_port = (in_write_cycle || in_read_cycle)? ram_bank_addr_reg : current_command[2:1];
+assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state == INIT_MRS)? ram_addr_reg : { {(SDRAM_ADDR_WIDTH - 11){1'b0}}, current_command[0], 10'd0 };
 
 assign soc_side_busy_port = busy_signal;
 assign soc_side_ready_port = ready_signal;
 
-// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
+// Read data: From ram_side_chip0_data_port and ram_side_chip1_data_port --> rd_data_reg --> soc_side_rd_data_port.
 assign soc_side_rd_data_port = rd_data_reg;
 
-// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
+// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port and ram_side_chip1_data_port.
 assign ram_side_chip0_data_port = (current_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
 assign ram_side_chip1_data_port = (current_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
 
@@ -295,15 +293,15 @@ assign in_read_cycle = (current_state == READ_BANK_ACTIVATE) || (current_state =
 					(current_state == READ_WAIT_TRP);
 
 
-//-------------------------------
-// Bloque Secuencial para el registro de estado
-//-------------------------------
+//-------------------------------------------------------
+// Sequential block for updating state machine registers.
+//-------------------------------------------------------
 always @(posedge clk) 
 begin
 	if (~reset_n_port)  // Reset síncrono.
 		begin
 			current_state <= INIT;
-			command <= CMD_NOP;
+			current_command <= CMD_NOP;
 			
 			// Data.
 			wr_data_reg <= 32'b0;
@@ -311,14 +309,14 @@ begin
 		end
 	else 
 		begin
-			// Update state and command.
+			// Update state and current_command.
 			// ----------------------------
 			current_state <= next_state;
-			command <= next_command;
+			current_command <= next_command;
 			
 			// Update write data register.
 			// ----------------------------
-			// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
+			// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port and ram_side_chip1_data_port.
 			if (soc_side_wr_en_port)
 				wr_data_reg <= soc_side_wr_data_port;  // Update the data to be written from the SOC.
 
@@ -330,9 +328,9 @@ begin
 		end
 end
 
-//-------------------------------
-// Contador para retardos de tiempo.
-//-------------------------------
+//-------------------------
+// Counter for time delays.
+//-------------------------
 always @(posedge clk) 
 begin
 	if (delay_cycles != 0)
@@ -341,9 +339,9 @@ begin
 		delay_counter <= delay_counter - 1'b1;
 end
 
-//-------------------------------
-// Contador para los 8 ciclos de refresco al inicio.
-//-------------------------------
+//---------------------------------------------
+// Counter for the 8 refresh cycles at startup.
+//---------------------------------------------
 always @(posedge clk) 
 begin
 	if (~reset_n_port)
@@ -352,9 +350,9 @@ begin
 		init_counter <= init_counter - 1'b1;
 end
 
-//-------------------------------
-// Contador para ciclo de refresco.
-//-------------------------------
+//---------------------------
+// Counter for refresh cycle.
+//---------------------------
 always @(posedge clk) 
 begin
 	if (reset_refresh_counter)
@@ -364,9 +362,9 @@ begin
 end
 
 
-//-------------------------------
-// Bloque Combinacional.
-//-------------------------------
+//------------------------------------------
+// Combinational block for next-state logic.
+//------------------------------------------
 /*
 	Combinational logic of the state machine.
 
@@ -484,14 +482,14 @@ begin
 			2. INIT_PAUSE: Wait at least 200us after power-up.
 				- During this pause, DQM and CKE are kept high to prevent data contention.
 
-			3. INIT_PRECHARGE_ALL: Issues the precharge all banks command.
-				- This command prepares all banks for subsequent operations.
+			3. INIT_PRECHARGE_ALL: Issues the precharge all banks current_command.
+				- This current_command prepares all banks for subsequent operations.
 
 			4. INIT_WAIT_TRP: Wait tRP nanoseconds after precharge.
 				- Time required for the precharge to complete internally.
 
 			5. INIT_AUTO_REFRESH + INIT_WAIT_TRC: Executes 8 Auto Refresh cycles.
-				- Each cycle issues an AUTO_REFRESH command and waits tRC nanoseconds.
+				- Each cycle issues an AUTO_REFRESH current_command and waits tRC nanoseconds.
 				- All 8 cycles are specifically required by the datasheet for initialization.
 
 			6. INIT_MRS: Mode Register configuration.
@@ -634,20 +632,23 @@ begin
 							El contador de auto refresco se incrementa siempre y se resetea al finalizar 
 							la secuencia de auto refresh, en el estado REFRESH_WAIT_TRC.
 						*/
-						next_state = REFRESH_PRECHARGE_ALL;
 						next_command = CMD_PRECHARGE_ALL;
+
+						next_state = REFRESH_PRECHARGE_ALL;
 					end
 				else if (soc_side_wr_en_port) 
 					begin
 						// Inicia secuencia de escritura.
-						next_state = WRITE_BANK_ACTIVATE;
 						next_command = CMD_BANK_ACTIVATE;
+
+						next_state = WRITE_BANK_ACTIVATE;
 					end
 				else if (soc_side_rd_en_port) 
 					begin
 						// Inicia secuencia de lectura.
-						next_state = READ_BANK_ACTIVATE;
 						next_command = CMD_BANK_ACTIVATE;
+
+						next_state = READ_BANK_ACTIVATE;
 					end
 			end
 
@@ -660,12 +661,12 @@ begin
 			The automatic refresh cycle is activated periodically to maintain data in SDRAM:
 
 			1. REFRESH_PRECHARGE_ALL: Precharges all banks before refresh.
-				- Necessary because the AUTO_REFRESH command requires all banks to be inactive.
+				- Necessary because the AUTO_REFRESH current_command requires all banks to be inactive.
 
 			2. REFRESH_WAIT_TRP: Wait tRP nanoseconds after precharge.
 				- Time required for the precharge to complete internally.
 
-			3. REFRESH_AUTO_REFRESH: Issues the AUTO_REFRESH command.
+			3. REFRESH_AUTO_REFRESH: Issues the AUTO_REFRESH current_command.
 				- Refreshes all rows in all banks simultaneously.
 
 			4. REFRESH_WAIT_TRC: Wait tRC nanoseconds after AUTO_REFRESH.
@@ -745,9 +746,9 @@ begin
 				- Selects the memory row containing the address to write.
 
 			2. WRITE_WAIT_TRCD: Wait tRCD nanoseconds after activation.
-				- Time required between activation and column command (Row to Column Delay).
+				- Time required between activation and column current_command (Row to Column Delay).
 
-			3. WRITE_CAS: Issues the write command and sends data.
+			3. WRITE_CAS: Issues the write current_command and sends data.
 				- Column address and data are presented simultaneously.
 				- A10 is configured for auto-precharge if enabled.
 
@@ -762,6 +763,12 @@ begin
 				// ---- Outputs ----
 				// Activar el banco y fila especificados.
 				// Comando CMD_BANK_ACTIVATE emitido en el estado anterior IDLE.
+
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
 
 				delay_cycles = TRCD_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
@@ -787,11 +794,17 @@ begin
 			begin
 				// ---- Outputs ----
 				/*
-					Write command issued in the previous state.
+					WRITE_CAS command emitted in the previous state.
 					The data to be written is already in the wr_data_reg register; it is captured 
 					in wr_data_reg in the sequential block with the rising edge of clk.
 				*/
 
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
+				
 				delay_cycles = TWR_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
@@ -816,6 +829,7 @@ begin
 									estados WRITE_PRECHARGE y WRITE_WAIT_TRP para futuras mejoras 
 									del controlador.
 								*/
+
 								next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 								next_state = IDLE;			// Volver a IDLE directamente.
@@ -870,10 +884,10 @@ begin
 				- Row address is provided via A0-A11.
 
 			2. READ_WAIT_TRCD: Wait tRCD nanoseconds after activation.
-				- Time required between row activation and column command (Row to Column Delay).
+				- Time required between row activation and column current_command (Row to Column Delay).
 				- tRCD minimum is 15ns for -5/-5I/-5J grade parts.
 
-			3. READ_CAS: Issues the read command.
+			3. READ_CAS: Issues the read current_command.
 				- Column address is presented and CS, CAS are set low, RAS, WE are set high.
 				- A10 is configured for auto-precharge if enabled.
 
@@ -888,14 +902,20 @@ begin
 			6. READ_PRECHARGE/READ_WAIT_TRP (optional if auto-precharge not used):
 				- Precharges the specific bank and waits tRP before new operations.
 				- tRP minimum is 15ns for -5/-5I/-5J grade parts.
-				- Auto-precharge eliminates the need for an explicit precharge command.
+				- Auto-precharge eliminates the need for an explicit precharge current_command.
 		*/
 		READ_BANK_ACTIVATE:
 			begin
 				// ---- Outputs ----
-				// Activar el banco y fila especificados.
-				// command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
+				// Activar el banco y fila necesarios.
+				// current_command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
 
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
+				
 				delay_cycles = TRCD_CYCLES - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
 
@@ -906,7 +926,7 @@ begin
 		READ_WAIT_TRCD:
 			begin
 				// ---- Outputs ----
-				// command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
+				// current_command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
 
 				// ---- Transitions ----
 				if (delay_counter == 0)  // Esperar tRCD después de activar el banco.
@@ -921,7 +941,13 @@ begin
 			begin
 				// ---- Outputs ----
 				// Emitir comando de lectura.
-				// command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
+				// current_command = CMD_READ, emitido en el estado anterior.
+
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
 
 				delay_cycles = CAS_LATENCY - 1;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
@@ -1011,8 +1037,10 @@ begin
 	endcase
 end
 
-
-// Set the writing mask based on the current state.
+//--------------------------------------------------------
+// Combinational logic block to set the writing mask based 
+// on the current state.
+//--------------------------------------------------------
 always @(*) 
 begin
 	/*
@@ -1053,8 +1081,10 @@ begin
 		sdram_side_wr_mask_reg = 4'b1111;
 end
 
-
-// Send addresses to SDRAM based on the current state.
+//----------------------------------------------------------
+// Combinational logic block for generating bank address and 
+// word address for the SDRAM based on the current state.
+//----------------------------------------------------------
 always @(*) 
 begin
 	ram_bank_addr_reg = 2'b00;

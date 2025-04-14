@@ -22,7 +22,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Sun Apr 13 23:44:11 2025
+Mon Apr 14 11:26:13 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -32,7 +32,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,4
@@ -41,9 +41,9 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<FONT COLOR=red><LI><A href='#map_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY PORT "clk" 85.000000 MHz (4096 errors)</FONT></A></LI>
-</FONT>            4096 items scored, 4096 timing errors detected.
-Warning:  69.716MHz is the maximum frequency for this preference.
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY PORT "clk" 80.000000 MHz (482 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 482 timing errors detected.
+Warning:  76.086MHz is the maximum frequency for this preference.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -52,45 +52,43 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
-            4096 items scored, 4096 timing errors detected.
+<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            4096 items scored, 482 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error: The following path exceeds requirements by 2.579ns
+Error: The following path exceeds requirements by 0.643ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              current_state[0]  (from clk_c +)
+   Source:         FF         Q              current_state[3]  (from clk_c +)
    Destination:    FF         Data in        delay_counter[14]  (to clk_c +)
 
-   Delay:              14.178ns  (44.3% logic, 55.7% route), 15 logic levels.
+   Delay:              12.977ns  (42.9% logic, 57.1% route), 14 logic levels.
 
  Constraint Details:
 
-     14.178ns physical path delay SLICE_18 to SLICE_10 exceeds
-     11.765ns delay constraint less
-      0.166ns DIN_SET requirement (totaling 11.599ns) by 2.579ns
+     12.977ns physical path delay SLICE_19 to SLICE_10 exceeds
+     12.500ns delay constraint less
+      0.166ns DIN_SET requirement (totaling 12.334ns) by 0.643ns
 
  Physical Path Details:
 
-      Data path SLICE_18 to SLICE_10:
+      Data path SLICE_19 to SLICE_10:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.452   SLICE_18.CLK to    SLICE_18.Q0 SLICE_18 (from clk_c)
-ROUTE         4   e 1.234    SLICE_18.Q0 to    SLICE_56.A0 current_state[0]
-CTOF_DEL    ---     0.495    SLICE_56.A0 to    SLICE_56.F0 SLICE_56
-ROUTE         1   e 0.480    SLICE_56.F0 to    SLICE_56.C1 delay_cycles_14_5_.un37_a4_1[2]
-CTOF_DEL    ---     0.495    SLICE_56.C1 to    SLICE_56.F1 SLICE_56
-ROUTE         1   e 1.234    SLICE_56.F1 to    SLICE_45.D1 delay_cycles_14_5_.un37_a4_1_0[2]
-CTOF_DEL    ---     0.495    SLICE_45.D1 to    SLICE_45.F1 SLICE_45
-ROUTE         7   e 1.234    SLICE_45.F1 to    SLICE_52.A0 N_563
-CTOF_DEL    ---     0.495    SLICE_52.A0 to    SLICE_52.F0 SLICE_52
-ROUTE         2   e 1.234    SLICE_52.F0 to *]/SLICE_35.C0 delay_cycles_14_5_.N_9
-CTOOFX_DEL  ---     0.721 *]/SLICE_35.C0 to *SLICE_35.OFX0 delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35
-ROUTE         3   e 1.234 *SLICE_35.OFX0 to    SLICE_60.A1 un37_i_a4_RNIJIG3D2[4]
-CTOF_DEL    ---     0.495    SLICE_60.A1 to    SLICE_60.F1 SLICE_60
-ROUTE         1   e 1.234    SLICE_60.F1 to     SLICE_0.B0 delay_counter
+REG_DEL     ---     0.452   SLICE_19.CLK to    SLICE_19.Q1 SLICE_19 (from clk_c)
+ROUTE         4   e 1.234    SLICE_19.Q1 to    SLICE_57.A1 current_state[3]
+CTOF_DEL    ---     0.495    SLICE_57.A1 to    SLICE_57.F1 SLICE_57
+ROUTE         2   e 1.234    SLICE_57.F1 to    SLICE_42.A1 N_73
+CTOF_DEL    ---     0.495    SLICE_42.A1 to    SLICE_42.F1 SLICE_42
+ROUTE         3   e 1.234    SLICE_42.F1 to    SLICE_46.D1 un37_li_3[1]
+CTOF_DEL    ---     0.495    SLICE_46.D1 to    SLICE_46.F1 SLICE_46
+ROUTE         5   e 1.234    SLICE_46.F1 to    SLICE_44.D1 un37_li[1]
+CTOF_DEL    ---     0.495    SLICE_44.D1 to    SLICE_44.F1 SLICE_44
+ROUTE         3   e 1.234    SLICE_44.F1 to    SLICE_35.C0 delay_cycles_14_3_.i4_mux
+CTOF_DEL    ---     0.495    SLICE_35.C0 to    SLICE_35.F0 SLICE_35
+ROUTE         1   e 1.234    SLICE_35.F0 to     SLICE_0.B0 delay_counter
 C0TOFCO_DE  ---     1.023     SLICE_0.B0 to    SLICE_0.FCO SLICE_0
 ROUTE         1   e 0.001    SLICE_0.FCO to   SLICE_16.FCI delay_counter_cry[0]
 FCITOFCO_D  ---     0.162   SLICE_16.FCI to   SLICE_16.FCO SLICE_16
@@ -108,9 +106,9 @@ ROUTE         1   e 0.001   SLICE_11.FCO to   SLICE_10.FCI delay_counter_cry[12]
 FCITOF1_DE  ---     0.643   SLICE_10.FCI to    SLICE_10.F1 SLICE_10
 ROUTE         1   e 0.001    SLICE_10.F1 to   SLICE_10.DI1 delay_counter_s[14] (to clk_c)
                   --------
-                   14.178   (44.3% logic, 55.7% route), 15 logic levels.
+                   12.977   (42.9% logic, 57.1% route), 14 logic levels.
 
-Warning:  69.716MHz is the maximum frequency for this preference.
+Warning:  76.086MHz is the maximum frequency for this preference.
 
 <A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
@@ -118,7 +116,7 @@ Warning:  69.716MHz is the maximum frequency for this preference.
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 85.000000 MHz ;    |   85.000 MHz|   69.716 MHz|  15 *
+FREQUENCY PORT "clk" 80.000000 MHz ;    |   80.000 MHz|   76.086 MHz|  14 *
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -128,61 +126,59 @@ FREQUENCY PORT "clk" 85.000000 MHz ;    |   85.000 MHz|   69.716 MHz|  15 *
 ----------------------------------------------------------------------------
 Critical Nets                           |   Loads|  Errors| % of total
 ----------------------------------------------------------------------------
-un37_i_a4_RNIJIG3D2[4]                  |       3|    3175|     77.51%
+delay_counter_cry[6]                    |       1|     482|    100.00%
                                         |        |        |
-delay_counter_cry[6]                    |       1|    3086|     75.34%
+un37_li_3[1]                            |       3|     474|     98.34%
                                         |        |        |
-un1_delay_cycles_10                     |      15|    3054|     74.56%
+un37_li[1]                              |       5|     474|     98.34%
                                         |        |        |
-delay_counter_cry[4]                    |       1|    2966|     72.41%
+delay_counter_cry[4]                    |       1|     458|     95.02%
                                         |        |        |
-delay_counter_cry[8]                    |       1|    2822|     68.90%
+delay_counter_cry[8]                    |       1|     440|     91.29%
                                         |        |        |
-delay_counter_cry[2]                    |       1|    2356|     57.52%
+delay_counter_cry[2]                    |       1|     386|     80.08%
                                         |        |        |
-delay_counter_cry[10]                   |       1|    2168|     52.93%
+delay_counter_cry[10]                   |       1|     344|     71.37%
                                         |        |        |
-delay_counter_cry[0]                    |       1|    1492|     36.43%
+un37_i_a4_3_N_2L1                       |       1|     316|     65.56%
                                         |        |        |
-un37_li_3[1]                            |       4|    1469|     35.86%
+un1_delay_cycles_12                     |      15|     294|     61.00%
                                         |        |        |
-un37_li[1]                              |       4|    1457|     35.57%
+delay_counter_cry[0]                    |       1|     266|     55.19%
                                         |        |        |
-N_564_4                                 |       4|    1411|     34.45%
+delay_cycles_14_3_.i4_mux_0_i           |       3|     216|     44.81%
                                         |        |        |
-N_564                                   |       5|    1411|     34.45%
+delay_counter_cry[12]                   |       1|     200|     41.49%
                                         |        |        |
-N_563                                   |       7|    1216|     29.69%
+delay_cycles[4]                         |       3|     176|     36.51%
                                         |        |        |
-delay_counter_cry[12]                   |       1|    1206|     29.44%
+N_73                                    |       2|     166|     34.44%
                                         |        |        |
-delay_cycles_14_5_.N_9                  |       2|    1204|     29.39%
+delay_counter                           |       1|     146|     30.29%
                                         |        |        |
-delay_cycles_14_5_.un37_i_a4_3_0[1]     |       1|     980|     23.93%
+delay_counter_s[14]                     |       1|     106|     21.99%
                                         |        |        |
-N_502                                   |       3|     956|     23.34%
+delay_counter_s[13]                     |       1|      94|     19.50%
                                         |        |        |
-delay_cycles_14_5_.un37_a4_4_0[3]       |       1|     944|     23.05%
+delay_cycles_14_3_.i4_mux               |       3|      90|     18.67%
                                         |        |        |
-delay_cycles[6]                         |       3|     879|     21.46%
+current_state[6]                        |       2|      83|     17.22%
                                         |        |        |
-delay_cycles_14_5_.un37_a4_1_0[2]       |       1|     724|     17.68%
+current_state[3]                        |       4|      83|     17.22%
                                         |        |        |
-delay_counter                           |       1|     624|     15.23%
+current_state[15]                       |       4|      79|     16.39%
                                         |        |        |
-current_state[2]                        |       5|     619|     15.11%
+current_state[14]                       |       5|      79|     16.39%
                                         |        |        |
-delay_counter_s[14]                     |       1|     610|     14.89%
+current_state[2]                        |       6|      79|     16.39%
                                         |        |        |
-delay_counter_s[13]                     |       1|     600|     14.65%
+current_state[7]                        |       9|      79|     16.39%
                                         |        |        |
-delay_cycles_14_5_.un37_a4_1[2]         |       1|     560|     13.67%
+delay_counter_s[12]                     |       1|      78|     16.18%
                                         |        |        |
-delay_counter_s[12]                     |       1|     496|     12.11%
+delay_counter_s[11]                     |       1|      66|     13.69%
                                         |        |        |
-delay_counter_s[11]                     |       1|     486|     11.87%
-                                        |        |        |
-current_state[7]                        |       8|     477|     11.65%
+delay_counter_s[10]                     |       1|      54|     11.20%
                                         |        |        |
 ----------------------------------------------------------------------------
 
@@ -193,20 +189,20 @@ current_state[7]                        |       8|     477|     11.65%
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 <A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
 ---------------
 
-Timing errors: 4096  Score: 4609180
-Cumulative negative slack: 4609180
+Timing errors: 482  Score: 115084
+Cumulative negative slack: 115084
 
-Constraints cover 35765 paths, 1 nets, and 470 connections (47.76% coverage)
+Constraints cover 36739 paths, 1 nets, and 482 connections (48.93% coverage)
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Sun Apr 13 23:44:11 2025
+Mon Apr 14 11:26:13 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -216,7 +212,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o sdram_controller_impl1.tw1 -gui -msgset C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1_map.ncd sdram_controller_impl1.prf 
 Design file:     sdram_controller_impl1_map.ncd
 Preference file: sdram_controller_impl1.prf
 Device,speed:    LCMXO2-4000HC,M
@@ -225,7 +221,7 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY PORT "clk" 85.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY PORT "clk" 80.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -234,7 +230,7 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
+<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
             4096 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
@@ -272,7 +268,7 @@ ROUTE         1   e 0.001     SLICE_0.F1 to    SLICE_0.DI1 delay_counter_s[0] (t
 Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 85.000000 MHz ;    |            -|            -|   2  
+FREQUENCY PORT "clk" 80.000000 MHz ;    |            -|            -|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -286,7 +282,7 @@ All preferences were met.
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 <A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
@@ -295,16 +291,16 @@ Clock Domain: clk_c   Source: clk.PAD   Loads: 100
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 35765 paths, 1 nets, and 520 connections (52.85% coverage)
+Constraints cover 36739 paths, 1 nets, and 529 connections (53.71% coverage)
 
 
 
 <A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
 ---------------
 
-Timing errors: 4096 (setup), 0 (hold)
-Score: 4609180 (setup), 0 (hold)
-Cumulative negative slack: 4609180 (4609180+0)
+Timing errors: 482 (setup), 0 (hold)
+Score: 115084 (setup), 0 (hold)
+Cumulative negative slack: 115084 (115084+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------

@@ -45,15 +45,15 @@ set_option -resolve_multiple_driver 0
 set_option -seqshift_no_replicate 0
 
 #-- add_file options
-set_option -include_path {C:/hdl/SDRAM_controller/sdram_controller}
-add_file -verilog -vlog_std v2001 {C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v}
-add_file -verilog -vlog_std v2001 {C:/hdl/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v}
+set_option -include_path {C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller}
+add_file -verilog -vlog_std v2001 {C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/source/sdram_controller.v}
+add_file -verilog -vlog_std v2001 {C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v}
 
 #-- top module name
 set_option -top_module sdram_controller
 
 #-- set result format/file last
-project -result_file {C:/hdl/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.edi}
+project -result_file {C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/sdram_controller_impl1.edi}
 
 #-- error message log file
 project -log_file {sdram_controller_impl1.srf}

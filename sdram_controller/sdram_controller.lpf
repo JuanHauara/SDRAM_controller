@@ -10,5 +10,5 @@ IOBUF PORT 		"clk"			IO_TYPE=LVCMOS33	PULLMODE=NONE	CLAMP=OFF	HYSTERESIS=SMALL;
 
 # Asignación de pines
 LOCATE COMP		"clk"			SITE "b9";		# Se puede seleccionar cualquier pin del tipo PCLKTx_x en la ventana Spreadsheet View -> Pestaña Pin Assignments.
-FREQUENCY PORT	"clk"			85.000000 MHz;	# Frecuencia de clock máxima del pin.
+FREQUENCY PORT	"clk"			80.000000 MHz;	# Frecuencia de clock máxima del pin.
 USE PRIMARY NET	"clk_c";						# Conecta el pin a una de las 8 redes primarias para clock.

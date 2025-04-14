@@ -15,15 +15,17 @@
 
 Command line:   map -a MachXO2 -p LCMXO2-4000HC -t CABGA332 -s 4 -oc Commercial
      sdram_controller_impl1.ngd -o sdram_controller_impl1_map.ncd -pr
-     sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/hdl/SDRAM
-     _controller/sdram_controller/impl1/sdram_controller_impl1_synplify.lpf -lpf
-     C:/hdl/SDRAM_controller/sdram_controller/sdram_controller.lpf -c 0 -gui
-     -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml 
+     sdram_controller_impl1.prf -mp sdram_controller_impl1.mrp -lpf C:/hdl/contr
+     oller_down_counter_borrar/SDRAM_controller/sdram_controller/impl1/sdram_con
+     troller_impl1_synplify.lpf -lpf C:/hdl/controller_down_counter_borrar/SDRAM
+     _controller/sdram_controller/sdram_controller.lpf -c 0 -gui -msgset C:/hdl/
+     controller_down_counter_borrar/SDRAM_controller/sdram_controller/promote.xm
+     l 
 Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  04/13/25  23:44:10
+Mapped on:  04/14/25  11:26:12
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
@@ -34,8 +36,8 @@ Mapped on:  04/13/25  23:44:10
       SLICEs as Logic/ROM:     78 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        156 out of  4320 (4%)
-      Number used as logic LUTs:        122
+   Number of LUT4s:        155 out of  4320 (4%)
+      Number used as logic LUTs:        121
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -65,26 +67,26 @@ Mapped on:  04/13/25  23:44:10
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
+
      Net clk_c: 100 loads, 100 rising, 0 falling (Driver: PIO clk )
    Number of Clock Enables:  2
-
      Net current_state[23]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
    Number of LSRs:  2
      Net reset_n_port_c: 70 loads, 3 LSLICEs
-     Net reset_refresh_counter: 9 loads, 9 LSLICEs
+     Net N_59_i: 9 loads, 9 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
      Net reset_n_port_c: 96 loads
-     Net current_state[9]: 40 loads
      Net current_state[23]: 37 loads
+     Net current_state[9]: 37 loads
      Net soc_side_wr_en_port_c: 35 loads
-     Net reset_refresh_counter_0_a2: 32 loads
-     Net un1_delay_cycles_10: 15 loads
-     Net N_623: 12 loads
-     Net current_state[17]: 10 loads
-     Net current_state[21]: 10 loads
-     Net reset_refresh_counter: 9 loads
+     Net reset_refresh_counter_0_a2: 30 loads
+     Net un1_delay_cycles_12: 15 loads
+     Net current_state[21]: 12 loads
+     Net N_65: 12 loads
+     Net current_state[10]: 10 loads
+     Net current_state[17]: 9 loads
 
 
 
@@ -125,9 +127,9 @@ Mapped on:  04/13/25  23:44:10
 | ram_side_cs_n_port  | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[15]| BIDIR     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[14]| BIDIR     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
 | ram_side_chip1_data_port[13]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -182,9 +184,9 @@ Mapped on:  04/13/25  23:44:10
 | ram_side_chip0_data_port[6]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[5]| BIDIR     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[4]| BIDIR     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
 | ram_side_chip0_data_port[3]| BIDIR     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -239,9 +241,9 @@ Mapped on:  04/13/25  23:44:10
 | soc_side_wr_data_port[30]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[29]| INPUT     | LVCMOS25  | IN         |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[28]| INPUT     | LVCMOS25  | IN         |
-
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[27]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
@@ -296,9 +298,9 @@ Mapped on:  04/13/25  23:44:10
 | soc_side_wr_data_port[2]| INPUT     | LVCMOS25  | IN         |
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[1]| INPUT     | LVCMOS25  | IN         |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_wr_data_port[0]| INPUT     | LVCMOS25  | IN         |
-
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_en_port | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -353,9 +355,9 @@ Mapped on:  04/13/25  23:44:10
 | soc_side_rd_data_port[7]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[6]| OUTPUT    | LVCMOS25  | OUT        |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[5]| OUTPUT    | LVCMOS25  | OUT        |
-
 +---------------------+-----------+-----------+------------+
 | soc_side_rd_data_port[4]| OUTPUT    | LVCMOS25  | OUT        |
 +---------------------+-----------+-----------+------------+
@@ -410,9 +412,9 @@ Mapped on:  04/13/25  23:44:10
 | soc_side_addr_port[2]| INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[1]| INPUT     | LVCMOS25  |            |
+
 +---------------------+-----------+-----------+------------+
 | soc_side_addr_port[0]| INPUT     | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
 | soc_side_ready_port | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -451,8 +453,6 @@ Block current_state_RNIK7DD1[9] was optimized away.
    Total REAL Time: 0 secs  
    Peak Memory Usage: 53 MB
         
-
-
 
 
 

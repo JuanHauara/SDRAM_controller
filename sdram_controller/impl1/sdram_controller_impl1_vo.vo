@@ -1,9 +1,9 @@
 
 // Verilog netlist produced by program ldbanno, Version Diamond (64-bit) 3.14.0.75.2
 
-// ldbanno -n Verilog -o sdram_controller_impl1_vo.vo -w -neg -gui -msgset C:/hdl/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1.ncd 
-// Netlist created on Sun Apr 13 23:44:10 2025
-// Netlist written on Sun Apr 13 23:44:39 2025
+// ldbanno -n Verilog -o sdram_controller_impl1_vo.vo -w -neg -gui -msgset C:/hdl/controller_down_counter_borrar/SDRAM_controller/sdram_controller/promote.xml sdram_controller_impl1.ncd 
+// Netlist created on Mon Apr 14 11:26:12 2025
+// Netlist written on Mon Apr 14 11:26:31 2025
 // Design is for device LCMXO2-4000HC
 // Design is for package CABGA332
 // Design is for performance grade 4
@@ -37,10 +37,10 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
          ram_side_wr_en_port, ram_side_ck_en_port;
   inout  [15:0] ram_side_chip0_data_port;
   inout  [15:0] ram_side_chip1_data_port;
-  wire   \delay_counter[0] , \delay_cycles_14_5_.N_8_i , un1_delay_cycles_10, 
-         delay_counter, \delay_counter_s[0] , clk_c, \delay_counter_cry[0] , 
-         \refresh_counter_i[15] , \un2_refresh_counter[15] , 
-         reset_refresh_counter, un2_refresh_counter_cry_14, 
+  wire   \delay_counter[0] , un1_delay_cycles_12, 
+         \delay_cycles_14_3_.i3_mux_i , delay_counter, \delay_counter_s[0] , 
+         clk_c, \delay_counter_cry[0] , \refresh_counter_i[15] , 
+         \un2_refresh_counter[15] , N_59_i, un2_refresh_counter_cry_14, 
          \refresh_counter[15] , \refresh_counter[14] , \refresh_counter[13] , 
          \un2_refresh_counter[14] , \un2_refresh_counter[13] , 
          un2_refresh_counter_cry_12, \refresh_counter[12] , 
@@ -57,7 +57,7 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
          un2_refresh_counter_cry_2, \refresh_counter[2] , \refresh_counter[1] , 
          \un2_refresh_counter[2] , \un2_refresh_counter[1] , 
          un2_refresh_counter_cry_0, \refresh_counter[0] , \delay_counter[14] , 
-         \delay_cycles[8] , \delay_counter[13] , \delay_counter_s[14] , 
+         \delay_cycles[6] , \delay_counter[13] , \delay_counter_s[14] , 
          \delay_counter_s[13] , \delay_counter_cry[12] , \delay_counter[12] , 
          \delay_counter[11] , \delay_counter_s[12] , \delay_counter_s[11] , 
          \delay_counter_cry[10] , \delay_counter[10] , \delay_counter[9] , 
@@ -67,75 +67,67 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
          \delay_counter[5] , \delay_counter_s[6] , \delay_counter_s[5] , 
          \delay_counter_cry[4] , \delay_counter[4] , \delay_counter[3] , 
          \delay_counter_s[4] , \delay_counter_s[3] , \delay_counter_cry[2] , 
-         \delay_counter[2] , \delay_cycles[7] , \delay_counter[1] , 
-         \delay_cycles[6] , \delay_counter_s[2] , \delay_counter_s[1] , 
-         \current_state[17] , N_645, \current_state[1] , N_569, 
-         reset_refresh_counter_0_a2, N_501, \next_command[0] , reset_n_port_c, 
-         \command[0] , \current_state[0] , N_486_i, reset_n_port_c_i, 
-         \current_state[3] , \current_state[2] , \current_state_nss[3] , 
-         N_484_i, \current_state_srsts_0_a4_0[5] , \current_state[4] , 
-         \current_state[5] , \current_state_nss[5] , N_481_i, 
-         \current_state[6] , \current_state[7] , 
-         \current_state_srsts_0_a4_0[6] , N_477_i, \current_state_nss[6] , 
-         \current_state[11] , \current_state[9] , \current_state[8] , 
-         \current_state_nss[9] , N_475_i, \current_state[10] , 
-         soc_side_wr_en_port_c, N_470_i, N_472_i, \current_state[12] , 
-         \current_state[13] , N_467_i, \current_state_nss[12] , 
-         \current_state[15] , \current_state[14] , \current_state_nss[15] , 
-         N_465_i, N_521, N_525, N_657, \current_state[22] , 
-         \current_state[16] , N_460_i, N_462_i, \current_state[18] , 
-         \current_state[19] , N_457_i, \current_state_nss[18] , N_524, 
-         soc_side_rd_en_port_c, \current_state[21] , \current_state[20] , 
-         N_453_i, N_455_i, \current_state[25] , \current_state[23] , 
-         \current_state_nss[23] , N_451_i, \current_state[24] , N_447_i, 
-         \current_state_nss[24] , init_counter_count_one_cycle_1_sqmuxa_1_fc_0, 
-         \init_counter[1] , \init_counter[0] , \init_counter_RNO[1] , 
-         \init_counter_RNO[0] , \init_counter[2] , CO1, \init_counter_RNO[2] , 
-         \refresh_counter_i[0] , 
-         \delay_cycles_14_5_.current_state_srsts_i_a2_8[21] , N_563, 
-         \un37_li[1] , N_561, N_564_4, \un37_li_3[1] , N_564, \un37_li[4] , 
-         \delay_cycles_14_5_.N_9 , \un37_i_a4_RNIJIG3D2[4] , N_503, 
-         \delay_cycles_14_5_.next_command_i_1[3] , N_489_i, N_504, 
-         \delay_cycles_14_5_.N_493_i_1 , N_642, \soc_side_addr_port_m[14] , 
-         \soc_side_addr_port_c[5] , \soc_side_addr_port_c[14] , 
-         \ram_side_addr_port_c[5] , \soc_side_addr_port_m[13] , 
-         \soc_side_addr_port_c[4] , \soc_side_addr_port_c[13] , 
-         \ram_side_addr_port_c[4] , \soc_side_addr_port_c[19] , N_623, 
-         \ram_addr_reg[10] , \delay_cycles_14_5_.un37_i_a4_7[0] , 
-         \delay_cycles_14_5_.un37_i_a4_1[0] , 
-         \delay_cycles_14_5_.un37_i_a4_8[0] , 
-         \delay_cycles_14_5_.ready_signal_i_a2_0[0] , N_502, N_602_i, 
-         \delay_cycles_14_5_.un37_a4_1_0[2] , soc_side_ready_port_c_i, 
-         \delay_cycles_14_5_.un37_a4_4_0[3] , 
-         \delay_cycles_14_5_.un37_i_a4_1[4] , N_653, 
-         \delay_cycles_14_5_.N_23_mux , soc_side_ready_port_c, 
-         ram_side_addr_port_1_0_a4_1, ram_side_addr_port_1_0_a4_4, 
-         ram_side_addr_port_1_0_a4_3, \ram_side_addr_port_c[10] , 
-         in_write_cycle_i_a4_0, \soc_side_wr_mask_port_c[3] , N_566, N_560, 
-         ram_side_chip1_udqm_port_c, \soc_side_wr_mask_port_c[2] , 
-         ram_side_chip1_ldqm_port_c, \delay_cycles_14_5_.un37_i_a4_3_0[1] , 
-         reset_refresh_counter_0_a2_9, reset_refresh_counter_0_a2_7, 
-         reset_refresh_counter_0_a2_10, reset_refresh_counter_0_a2_8, 
-         \delay_cycles_14_5_.current_state_srsts_i_a2_9[21] , 
-         \delay_cycles_14_5_.current_state_srsts_i_a2_10[21] , 
-         \delay_cycles_14_5_.current_state_srsts_i_a2_11[21] , N_493_i, 
-         \soc_side_addr_port_c[1] , \soc_side_addr_port_c[10] , 
-         \ram_side_addr_port_c[1] , \delay_cycles_14_5_.un37_a4_1[2] , 
-         \soc_side_addr_port_c[22] , \soc_side_addr_port_c[21] , 
-         \ram_side_bank_addr_port_c[0] , \ram_side_bank_addr_port_c[1] , 
-         \soc_side_addr_port_c[18] , \soc_side_addr_port_c[20] , 
-         \ram_side_addr_port_c[11] , \ram_side_addr_port_c[9] , 
+         \delay_counter[2] , \delay_cycles[5] , \delay_counter[1] , 
+         \delay_cycles[4] , \delay_counter_s[2] , \delay_counter_s[1] , 
+         \current_state_srsts_i_a2[21] , \current_state[1] , 
+         \current_state[17] , reset_refresh_counter_0_a2, \current_state[20] , 
+         N_68, \current_state[11] , \next_command[0] , reset_n_port_c, 
+         \current_command[0] , \current_state[0] , 
+         \current_state_srsts_i_i[1] , reset_n_port_c_i, \current_state[3] , 
+         \current_state[2] , \current_state_nss[3] , N_484_i, N_500_i_0, 
+         \current_state[7] , \current_state[4] , \current_state[5] , 
+         \current_state_nss[5] , \current_state_srsts_i_i[4] , 
+         \current_state[6] , N_622, N_31, \current_state_nss[6] , 
+         \current_state[8] , \current_state[9] , \current_state_nss[9] , N_33, 
+         \current_state[10] , soc_side_wr_en_port_c, N_470_i, N_472_i, 
+         \current_state[12] , \current_state[13] , N_467_i, 
+         \current_state_nss[12] , \current_state[14] , \current_state[15] , 
+         \current_state_nss[15] , N_36, N_525, N_521, N_657, 
+         \current_state[22] , \current_state[16] , N_460_i, N_462_i, 
+         \current_state[18] , \current_state[19] , N_457_i, 
+         \current_state_nss[18] , soc_side_rd_en_port_c, N_524, 
+         \current_state[21] , N_453_i, N_455_i, \current_state[25] , 
+         \current_state[23] , \current_state_nss[23] , N_131, 
+         \current_state[24] , \current_state_srsts_i_i[25] , 
+         \current_state_nss[24] , N_69, \init_counter[2] , \init_counter[0] , 
+         \init_counter[1] , \init_counter_RNO[1] , N_206_i, N_205_i, 
+         \refresh_counter_i[0] , \current_state_srsts_i_a2_8[21] , N_564, 
+         \un37_li[4] , N_563, N_561, \un37_li[1] , un37_i_a4_N_2L1, N_653, 
+         \delay_cycles_14_3_.i4_mux_0_i , \delay_cycles_14_3_.i4_mux , 
+         \soc_side_addr_port_c[5] , N_65, N_111, \soc_side_addr_port_c[14] , 
+         \ram_side_addr_port_c[5] , N_113, \soc_side_addr_port_c[4] , 
+         \soc_side_addr_port_c[13] , \ram_side_addr_port_c[4] , N_85, N_66, 
+         \soc_side_addr_port_c[19] , N_64_i, \soc_side_addr_port_c[21] , 
+         \ram_side_bank_addr_port_c[0] , reset_refresh_counter_0_a2_9, 
+         reset_refresh_counter_0_a2_8, reset_refresh_counter_0_a2_10, 
+         reset_refresh_counter_0_a2_7, \next_command_i_0_0[3] , N_144, N_489_i, 
+         un37_i_a4_3_N_2L1, N_73, \un37_a4_RNI8VRC6[2] , \un37_li_3[1] , 
+         soc_side_ready_port_c_i, N_70, N_81, 
+         \delay_cycles_14_3_.next_command_i_0_0[5] , N_493_i, N_623, 
+         \delay_cycles_14_3_.N_24_mux , \delay_cycles_14_3_.N_23_mux , 
+         \un37_i_a4_7[0] , \un37_i_a4_1[0] , \un37_i_a4_8[0] , 
+         soc_side_ready_port_c, N_602_i, N_633, N_646, N_560, N_566, 
+         \soc_side_wr_mask_port_c[3] , ram_side_chip1_udqm_port_c, 
+         \soc_side_wr_mask_port_c[2] , ram_side_chip1_ldqm_port_c, 
+         \delay_cycles_14_3_.un37_a4_2[2] , \delay_cycles_14_3_.un37_a4_1[2] , 
+         N_79, \ram_side_addr_port_2_i_o2_0_1[10] , \un37_a4_0_a3_1[3] , 
+         \current_state_srsts_i_a2_10[21] , \current_state_srsts_i_a2_9[21] , 
+         \current_state_srsts_i_a2_11[21] , \soc_side_addr_port_c[9] , 
+         \soc_side_addr_port_c[0] , \ram_side_addr_port_c[0] , 
+         \soc_side_addr_port_c[22] , \soc_side_addr_port_c[20] , 
+         \ram_side_addr_port_c[11] , \ram_side_bank_addr_port_c[1] , 
          \soc_side_wr_mask_port_c[0] , \soc_side_wr_mask_port_c[1] , 
          ram_side_chip0_udqm_port_c, ram_side_chip0_ldqm_port_c, 
-         \soc_side_addr_port_c[0] , \soc_side_addr_port_c[9] , 
-         \soc_side_addr_port_c[11] , \soc_side_addr_port_c[2] , 
-         \ram_side_addr_port_c[2] , \ram_side_addr_port_c[0] , 
          \soc_side_addr_port_c[8] , \soc_side_addr_port_c[17] , 
-         \soc_side_addr_port_c[3] , \soc_side_addr_port_c[12] , 
-         \ram_side_addr_port_c[3] , \ram_side_addr_port_c[8] , 
-         \soc_side_addr_port_c[16] , \soc_side_addr_port_c[7] , 
-         \soc_side_addr_port_c[15] , \soc_side_addr_port_c[6] , 
-         \ram_side_addr_port_c[6] , \ram_side_addr_port_c[7] , VCC, GND, 
+         \soc_side_addr_port_c[10] , \soc_side_addr_port_c[1] , 
+         \ram_side_addr_port_c[1] , \ram_side_addr_port_c[8] , 
+         \soc_side_addr_port_c[7] , \soc_side_addr_port_c[16] , 
+         \soc_side_addr_port_c[2] , \soc_side_addr_port_c[11] , 
+         \ram_side_addr_port_c[2] , \ram_side_addr_port_c[7] , 
+         \soc_side_addr_port_c[6] , \soc_side_addr_port_c[15] , 
+         \soc_side_addr_port_c[12] , \soc_side_addr_port_c[3] , 
+         \ram_side_addr_port_c[3] , \ram_side_addr_port_c[6] , 
+         \soc_side_addr_port_c[18] , \ram_side_addr_port_c[9] , VCC, GND, 
          \ram_side_chip0_data_port_in[0] , \wr_data_reg[0] , 
          ram_side_wr_en_port_c, ram_side_cas_n_port_c, ram_side_ras_n_port_c, 
          \ram_side_chip1_data_port_in[15] , \wr_data_reg[31] , 
@@ -202,379 +194,374 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
          \soc_side_rd_data_port_c[3] , \soc_side_rd_data_port_c[2] , 
          \soc_side_rd_data_port_c[1] , \soc_side_rd_data_port_c[0] , VCCI;
 
-  SLICE_0 SLICE_0( .C1(\delay_counter[0] ), .B1(\delay_cycles_14_5_.N_8_i ), 
-    .A1(un1_delay_cycles_10), .A0(delay_counter), .DI1(\delay_counter_s[0] ), 
-    .CLK(clk_c), .F1(\delay_counter_s[0] ), .Q1(\delay_counter[0] ), 
-    .FCO(\delay_counter_cry[0] ));
+  SLICE_0 SLICE_0( .C1(\delay_counter[0] ), .B1(un1_delay_cycles_12), 
+    .A1(\delay_cycles_14_3_.i3_mux_i ), .B0(delay_counter), 
+    .DI1(\delay_counter_s[0] ), .CLK(clk_c), .F1(\delay_counter_s[0] ), 
+    .Q1(\delay_counter[0] ), .FCO(\delay_counter_cry[0] ));
   SLICE_1 SLICE_1( .B0(\refresh_counter_i[15] ), 
-    .DI0(\un2_refresh_counter[15] ), .LSR(reset_refresh_counter), .CLK(clk_c), 
+    .DI0(\un2_refresh_counter[15] ), .LSR(N_59_i), .CLK(clk_c), 
     .FCI(un2_refresh_counter_cry_14), .F0(\un2_refresh_counter[15] ), 
     .Q0(\refresh_counter[15] ));
   SLICE_2 SLICE_2( .A1(\refresh_counter[14] ), .A0(\refresh_counter[13] ), 
     .DI1(\un2_refresh_counter[14] ), .DI0(\un2_refresh_counter[13] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_12), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_12), 
     .F0(\un2_refresh_counter[13] ), .Q0(\refresh_counter[13] ), 
     .F1(\un2_refresh_counter[14] ), .Q1(\refresh_counter[14] ), 
     .FCO(un2_refresh_counter_cry_14));
   SLICE_3 SLICE_3( .A1(\refresh_counter[12] ), .A0(\refresh_counter[11] ), 
     .DI1(\un2_refresh_counter[12] ), .DI0(\un2_refresh_counter[11] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_10), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_10), 
     .F0(\un2_refresh_counter[11] ), .Q0(\refresh_counter[11] ), 
     .F1(\un2_refresh_counter[12] ), .Q1(\refresh_counter[12] ), 
     .FCO(un2_refresh_counter_cry_12));
   SLICE_4 SLICE_4( .A1(\refresh_counter[10] ), .A0(\refresh_counter[9] ), 
     .DI1(\un2_refresh_counter[10] ), .DI0(\un2_refresh_counter[9] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_8), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_8), 
     .F0(\un2_refresh_counter[9] ), .Q0(\refresh_counter[9] ), 
     .F1(\un2_refresh_counter[10] ), .Q1(\refresh_counter[10] ), 
     .FCO(un2_refresh_counter_cry_10));
   SLICE_5 SLICE_5( .A1(\refresh_counter[8] ), .A0(\refresh_counter[7] ), 
     .DI1(\un2_refresh_counter[8] ), .DI0(\un2_refresh_counter[7] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_6), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_6), 
     .F0(\un2_refresh_counter[7] ), .Q0(\refresh_counter[7] ), 
     .F1(\un2_refresh_counter[8] ), .Q1(\refresh_counter[8] ), 
     .FCO(un2_refresh_counter_cry_8));
   SLICE_6 SLICE_6( .A1(\refresh_counter[6] ), .A0(\refresh_counter[5] ), 
     .DI1(\un2_refresh_counter[6] ), .DI0(\un2_refresh_counter[5] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_4), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_4), 
     .F0(\un2_refresh_counter[5] ), .Q0(\refresh_counter[5] ), 
     .F1(\un2_refresh_counter[6] ), .Q1(\refresh_counter[6] ), 
     .FCO(un2_refresh_counter_cry_6));
   SLICE_7 SLICE_7( .A1(\refresh_counter[4] ), .A0(\refresh_counter[3] ), 
     .DI1(\un2_refresh_counter[4] ), .DI0(\un2_refresh_counter[3] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_2), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_2), 
     .F0(\un2_refresh_counter[3] ), .Q0(\refresh_counter[3] ), 
     .F1(\un2_refresh_counter[4] ), .Q1(\refresh_counter[4] ), 
     .FCO(un2_refresh_counter_cry_4));
   SLICE_8 SLICE_8( .A1(\refresh_counter[2] ), .A0(\refresh_counter[1] ), 
     .DI1(\un2_refresh_counter[2] ), .DI0(\un2_refresh_counter[1] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .FCI(un2_refresh_counter_cry_0), 
+    .LSR(N_59_i), .CLK(clk_c), .FCI(un2_refresh_counter_cry_0), 
     .F0(\un2_refresh_counter[1] ), .Q0(\refresh_counter[1] ), 
     .F1(\un2_refresh_counter[2] ), .Q1(\refresh_counter[2] ), 
     .FCO(un2_refresh_counter_cry_2));
   SLICE_9 SLICE_9( .B1(\refresh_counter[0] ), .FCO(un2_refresh_counter_cry_0));
-  SLICE_10 SLICE_10( .C1(\delay_counter[14] ), .B1(\delay_cycles[8] ), 
-    .A1(un1_delay_cycles_10), .C0(\delay_counter[13] ), .B0(\delay_cycles[8] ), 
-    .A0(un1_delay_cycles_10), .DI1(\delay_counter_s[14] ), 
+  SLICE_10 SLICE_10( .C1(\delay_counter[14] ), .B1(\delay_cycles[6] ), 
+    .A1(un1_delay_cycles_12), .B0(\delay_counter[13] ), 
+    .A0(un1_delay_cycles_12), .DI1(\delay_counter_s[14] ), 
     .DI0(\delay_counter_s[13] ), .CLK(clk_c), .FCI(\delay_counter_cry[12] ), 
     .F0(\delay_counter_s[13] ), .Q0(\delay_counter[13] ), 
     .F1(\delay_counter_s[14] ), .Q1(\delay_counter[14] ));
-  SLICE_11 SLICE_11( .B1(un1_delay_cycles_10), .A1(\delay_counter[12] ), 
-    .B0(un1_delay_cycles_10), .A0(\delay_counter[11] ), 
-    .DI1(\delay_counter_s[12] ), .DI0(\delay_counter_s[11] ), .CLK(clk_c), 
-    .FCI(\delay_counter_cry[10] ), .F0(\delay_counter_s[11] ), 
-    .Q0(\delay_counter[11] ), .F1(\delay_counter_s[12] ), 
-    .Q1(\delay_counter[12] ), .FCO(\delay_counter_cry[12] ));
-  SLICE_12 SLICE_12( .B1(\delay_counter[10] ), .A1(un1_delay_cycles_10), 
-    .C0(\delay_counter[9] ), .B0(\delay_cycles[8] ), .A0(un1_delay_cycles_10), 
-    .DI1(\delay_counter_s[10] ), .DI0(\delay_counter_s[9] ), .CLK(clk_c), 
-    .FCI(\delay_counter_cry[8] ), .F0(\delay_counter_s[9] ), 
-    .Q0(\delay_counter[9] ), .F1(\delay_counter_s[10] ), 
-    .Q1(\delay_counter[10] ), .FCO(\delay_counter_cry[10] ));
-  SLICE_13 SLICE_13( .C1(\delay_counter[8] ), .B1(un1_delay_cycles_10), 
-    .A1(\delay_cycles[8] ), .C0(\delay_counter[7] ), .B0(un1_delay_cycles_10), 
-    .A0(\delay_cycles[8] ), .DI1(\delay_counter_s[8] ), 
+  SLICE_11 SLICE_11( .C1(\delay_counter[12] ), .B1(\delay_cycles[6] ), 
+    .A1(un1_delay_cycles_12), .C0(\delay_counter[11] ), .B0(\delay_cycles[6] ), 
+    .A0(un1_delay_cycles_12), .DI1(\delay_counter_s[12] ), 
+    .DI0(\delay_counter_s[11] ), .CLK(clk_c), .FCI(\delay_counter_cry[10] ), 
+    .F0(\delay_counter_s[11] ), .Q0(\delay_counter[11] ), 
+    .F1(\delay_counter_s[12] ), .Q1(\delay_counter[12] ), 
+    .FCO(\delay_counter_cry[12] ));
+  SLICE_12 SLICE_12( .C1(\delay_counter[10] ), .B1(\delay_cycles[6] ), 
+    .A1(un1_delay_cycles_12), .B0(\delay_counter[9] ), 
+    .A0(un1_delay_cycles_12), .DI1(\delay_counter_s[10] ), 
+    .DI0(\delay_counter_s[9] ), .CLK(clk_c), .FCI(\delay_counter_cry[8] ), 
+    .F0(\delay_counter_s[9] ), .Q0(\delay_counter[9] ), 
+    .F1(\delay_counter_s[10] ), .Q1(\delay_counter[10] ), 
+    .FCO(\delay_counter_cry[10] ));
+  SLICE_13 SLICE_13( .C1(\delay_counter[8] ), .B1(\delay_cycles[6] ), 
+    .A1(un1_delay_cycles_12), .C0(\delay_counter[7] ), .B0(\delay_cycles[6] ), 
+    .A0(un1_delay_cycles_12), .DI1(\delay_counter_s[8] ), 
     .DI0(\delay_counter_s[7] ), .CLK(clk_c), .FCI(\delay_counter_cry[6] ), 
     .F0(\delay_counter_s[7] ), .Q0(\delay_counter[7] ), 
     .F1(\delay_counter_s[8] ), .Q1(\delay_counter[8] ), 
     .FCO(\delay_counter_cry[8] ));
-  SLICE_14 SLICE_14( .B1(un1_delay_cycles_10), .A1(\delay_counter[6] ), 
-    .B0(un1_delay_cycles_10), .A0(\delay_counter[5] ), 
+  SLICE_14 SLICE_14( .B1(\delay_counter[6] ), .A1(un1_delay_cycles_12), 
+    .C0(\delay_counter[5] ), .B0(\delay_cycles[6] ), .A0(un1_delay_cycles_12), 
     .DI1(\delay_counter_s[6] ), .DI0(\delay_counter_s[5] ), .CLK(clk_c), 
     .FCI(\delay_counter_cry[4] ), .F0(\delay_counter_s[5] ), 
     .Q0(\delay_counter[5] ), .F1(\delay_counter_s[6] ), 
     .Q1(\delay_counter[6] ), .FCO(\delay_counter_cry[6] ));
-  SLICE_15 SLICE_15( .C1(\delay_counter[4] ), .B1(\delay_cycles[8] ), 
-    .A1(un1_delay_cycles_10), .C0(\delay_counter[3] ), .B0(\delay_cycles[8] ), 
-    .A0(un1_delay_cycles_10), .DI1(\delay_counter_s[4] ), 
+  SLICE_15 SLICE_15( .C1(\delay_counter[4] ), .B1(un1_delay_cycles_12), 
+    .A1(\delay_cycles[6] ), .C0(\delay_counter[3] ), .B0(un1_delay_cycles_12), 
+    .A0(\delay_cycles[6] ), .DI1(\delay_counter_s[4] ), 
     .DI0(\delay_counter_s[3] ), .CLK(clk_c), .FCI(\delay_counter_cry[2] ), 
     .F0(\delay_counter_s[3] ), .Q0(\delay_counter[3] ), 
     .F1(\delay_counter_s[4] ), .Q1(\delay_counter[4] ), 
     .FCO(\delay_counter_cry[4] ));
-  SLICE_16 SLICE_16( .C1(\delay_counter[2] ), .B1(un1_delay_cycles_10), 
-    .A1(\delay_cycles[7] ), .C0(\delay_counter[1] ), .B0(un1_delay_cycles_10), 
-    .A0(\delay_cycles[6] ), .DI1(\delay_counter_s[2] ), 
+  SLICE_16 SLICE_16( .C1(\delay_counter[2] ), .B1(\delay_cycles[5] ), 
+    .A1(un1_delay_cycles_12), .C0(\delay_counter[1] ), .B0(\delay_cycles[4] ), 
+    .A0(un1_delay_cycles_12), .DI1(\delay_counter_s[2] ), 
     .DI0(\delay_counter_s[1] ), .CLK(clk_c), .FCI(\delay_counter_cry[0] ), 
     .F0(\delay_counter_s[1] ), .Q0(\delay_counter[1] ), 
     .F1(\delay_counter_s[2] ), .Q1(\delay_counter[2] ), 
     .FCO(\delay_counter_cry[2] ));
-  SLICE_17 SLICE_17( .C1(\current_state[17] ), .B1(N_645), 
-    .D0(\current_state[1] ), .C0(N_569), .B0(reset_refresh_counter_0_a2), 
-    .A0(N_501), .DI0(\next_command[0] ), .LSR(reset_n_port_c), .CLK(clk_c), 
-    .F0(\next_command[0] ), .Q0(\command[0] ), .F1(N_569));
-  SLICE_18 SLICE_18( .D1(\current_state[0] ), .C1(reset_n_port_c), 
-    .B1(reset_refresh_counter_0_a2), .A1(\current_state[1] ), 
-    .B0(reset_n_port_c), .DI1(N_486_i), .DI0(reset_n_port_c_i), .CLK(clk_c), 
-    .F0(reset_n_port_c_i), .Q0(\current_state[0] ), .F1(N_486_i), 
-    .Q1(\current_state[1] ));
-  SLICE_19 SLICE_19( .D1(reset_n_port_c), .C1(\current_state[1] ), 
-    .A1(reset_refresh_counter_0_a2), .D0(reset_refresh_counter_0_a2), 
-    .C0(\current_state[3] ), .B0(\current_state[2] ), .A0(reset_n_port_c), 
+  SLICE_17 SLICE_17( .D1(\current_state_srsts_i_a2[21] ), 
+    .C1(\current_state[1] ), .B1(\current_state[17] ), 
+    .A1(reset_refresh_counter_0_a2), .D0(\current_state[20] ), .C0(N_68), 
+    .B0(reset_refresh_counter_0_a2), .A0(\current_state[11] ), 
+    .DI0(\next_command[0] ), .LSR(reset_n_port_c), .CLK(clk_c), 
+    .F0(\next_command[0] ), .Q0(\current_command[0] ), .F1(N_68));
+  SLICE_18 SLICE_18( .D1(reset_refresh_counter_0_a2), .C1(reset_n_port_c), 
+    .B1(\current_state[0] ), .A1(\current_state[1] ), .A0(reset_n_port_c), 
+    .DI1(\current_state_srsts_i_i[1] ), .DI0(reset_n_port_c_i), .CLK(clk_c), 
+    .F0(reset_n_port_c_i), .Q0(\current_state[0] ), 
+    .F1(\current_state_srsts_i_i[1] ), .Q1(\current_state[1] ));
+  SLICE_19 SLICE_19( .D1(reset_refresh_counter_0_a2), .B1(reset_n_port_c), 
+    .A1(\current_state[1] ), .D0(reset_refresh_counter_0_a2), 
+    .C0(\current_state[3] ), .B0(reset_n_port_c), .A0(\current_state[2] ), 
     .DI1(\current_state_nss[3] ), .DI0(N_484_i), .CLK(clk_c), .F0(N_484_i), 
     .Q0(\current_state[2] ), .F1(\current_state_nss[3] ), 
     .Q1(\current_state[3] ));
-  SLICE_20 SLICE_20( .D1(reset_n_port_c), .B1(\current_state_srsts_0_a4_0[5] ), 
-    .A1(reset_refresh_counter_0_a2), .D0(reset_n_port_c), 
-    .C0(\current_state[4] ), .B0(reset_refresh_counter_0_a2), 
-    .A0(\current_state[5] ), .DI1(\current_state_nss[5] ), .DI0(N_481_i), 
-    .CLK(clk_c), .F0(N_481_i), .Q0(\current_state[4] ), 
+  SLICE_20 SLICE_20( .D1(reset_refresh_counter_0_a2), .C1(reset_n_port_c), 
+    .B1(N_500_i_0), .A1(\current_state[7] ), .D0(reset_refresh_counter_0_a2), 
+    .C0(reset_n_port_c), .B0(\current_state[4] ), .A0(\current_state[5] ), 
+    .DI1(\current_state_nss[5] ), .DI0(\current_state_srsts_i_i[4] ), 
+    .CLK(clk_c), .F0(\current_state_srsts_i_i[4] ), .Q0(\current_state[4] ), 
     .F1(\current_state_nss[5] ), .Q1(\current_state[5] ));
-  SLICE_21 SLICE_21( .D1(\current_state[6] ), .C1(reset_refresh_counter_0_a2), 
-    .B1(reset_n_port_c), .A1(\current_state[7] ), .D0(reset_n_port_c), 
-    .C0(reset_refresh_counter_0_a2), .B0(\current_state[2] ), 
-    .A0(\current_state_srsts_0_a4_0[6] ), .DI1(N_477_i), 
+  SLICE_21 SLICE_21( .D1(reset_refresh_counter_0_a2), .C1(\current_state[6] ), 
+    .B1(reset_n_port_c), .A1(\current_state[7] ), .D0(N_622), .C0(N_500_i_0), 
+    .B0(\current_state[2] ), .A0(\current_state[7] ), .DI1(N_31), 
     .DI0(\current_state_nss[6] ), .CLK(clk_c), .F0(\current_state_nss[6] ), 
-    .Q0(\current_state[6] ), .F1(N_477_i), .Q1(\current_state[7] ));
-  SLICE_22 SLICE_22( .D1(\current_state[11] ), .B1(reset_n_port_c), 
-    .A1(reset_refresh_counter_0_a2), .D0(reset_refresh_counter_0_a2), 
-    .C0(\current_state[9] ), .B0(reset_n_port_c), .A0(\current_state[8] ), 
-    .DI1(\current_state_nss[9] ), .DI0(N_475_i), .CLK(clk_c), .F0(N_475_i), 
+    .Q0(\current_state[6] ), .F1(N_31), .Q1(\current_state[7] ));
+  SLICE_22 SLICE_22( .D1(\current_state[11] ), .B1(reset_refresh_counter_0_a2), 
+    .A1(reset_n_port_c), .D0(reset_n_port_c), .C0(\current_state[8] ), 
+    .B0(reset_refresh_counter_0_a2), .A0(\current_state[9] ), 
+    .DI1(\current_state_nss[9] ), .DI0(N_33), .CLK(clk_c), .F0(N_33), 
     .Q0(\current_state[8] ), .F1(\current_state_nss[9] ), 
     .Q1(\current_state[9] ));
-  SLICE_23 SLICE_23( .D1(reset_n_port_c), .C1(reset_refresh_counter_0_a2), 
-    .B1(\current_state[10] ), .A1(\current_state[11] ), .D0(reset_n_port_c), 
-    .C0(\current_state[17] ), .B0(N_645), .A0(soc_side_wr_en_port_c), 
-    .DI1(N_470_i), .DI0(N_472_i), .CLK(clk_c), .F0(N_472_i), 
-    .Q0(\current_state[10] ), .F1(N_470_i), .Q1(\current_state[11] ));
+  SLICE_23 SLICE_23( .D1(\current_state[10] ), .C1(reset_n_port_c), 
+    .B1(reset_refresh_counter_0_a2), .A1(\current_state[11] ), 
+    .D0(reset_n_port_c), .C0(\current_state[17] ), .B0(soc_side_wr_en_port_c), 
+    .A0(\current_state_srsts_i_a2[21] ), .DI1(N_470_i), .DI0(N_472_i), 
+    .CLK(clk_c), .F0(N_472_i), .Q0(\current_state[10] ), .F1(N_470_i), 
+    .Q1(\current_state[11] ));
   SLICE_24 SLICE_24( .D1(reset_refresh_counter_0_a2), .C1(\current_state[12] ), 
-    .B1(reset_n_port_c), .A1(\current_state[13] ), .D0(\current_state[17] ), 
-    .C0(N_645), .B0(reset_n_port_c), .DI1(N_467_i), 
-    .DI0(\current_state_nss[12] ), .CLK(clk_c), .F0(\current_state_nss[12] ), 
-    .Q0(\current_state[12] ), .F1(N_467_i), .Q1(\current_state[13] ));
-  SLICE_25 SLICE_25( .D1(reset_n_port_c), .C1(\current_state[13] ), 
-    .B1(reset_refresh_counter_0_a2), .D0(\current_state[15] ), 
-    .C0(reset_n_port_c), .B0(reset_refresh_counter_0_a2), 
-    .A0(\current_state[14] ), .DI1(\current_state_nss[15] ), .DI0(N_465_i), 
-    .CLK(clk_c), .F0(N_465_i), .Q0(\current_state[14] ), 
+    .B1(reset_n_port_c), .A1(\current_state[13] ), .C0(reset_n_port_c), 
+    .B0(\current_state[17] ), .A0(\current_state_srsts_i_a2[21] ), 
+    .DI1(N_467_i), .DI0(\current_state_nss[12] ), .CLK(clk_c), 
+    .F0(\current_state_nss[12] ), .Q0(\current_state[12] ), .F1(N_467_i), 
+    .Q1(\current_state[13] ));
+  SLICE_25 SLICE_25( .D1(reset_refresh_counter_0_a2), .C1(\current_state[13] ), 
+    .B1(reset_n_port_c), .D0(\current_state[14] ), 
+    .C0(reset_refresh_counter_0_a2), .B0(reset_n_port_c), 
+    .A0(\current_state[15] ), .DI1(\current_state_nss[15] ), .DI0(N_36), 
+    .CLK(clk_c), .F0(N_36), .Q0(\current_state[14] ), 
     .F1(\current_state_nss[15] ), .Q1(\current_state[15] ));
-  SLICE_26 SLICE_26( .D1(N_521), .C1(N_525), .B1(N_645), .A1(N_657), 
-    .D0(reset_n_port_c), .C0(\current_state[22] ), 
-    .B0(reset_refresh_counter_0_a2), .A0(\current_state[16] ), .DI1(N_460_i), 
-    .DI0(N_462_i), .CLK(clk_c), .F0(N_462_i), .Q0(\current_state[16] ), 
-    .F1(N_460_i), .Q1(\current_state[17] ));
-  SLICE_27 SLICE_27( .D1(reset_refresh_counter_0_a2), .C1(\current_state[18] ), 
-    .B1(reset_n_port_c), .A1(\current_state[19] ), .C0(\current_state[8] ), 
-    .B0(reset_n_port_c), .A0(reset_refresh_counter_0_a2), .DI1(N_457_i), 
+  SLICE_26 SLICE_26( .D1(N_525), .C1(\current_state_srsts_i_a2[21] ), 
+    .B1(N_521), .A1(N_657), .D0(reset_refresh_counter_0_a2), 
+    .C0(reset_n_port_c), .B0(\current_state[22] ), .A0(\current_state[16] ), 
+    .DI1(N_460_i), .DI0(N_462_i), .CLK(clk_c), .F0(N_462_i), 
+    .Q0(\current_state[16] ), .F1(N_460_i), .Q1(\current_state[17] ));
+  SLICE_27 SLICE_27( .D1(\current_state[18] ), .C1(reset_n_port_c), 
+    .B1(reset_refresh_counter_0_a2), .A1(\current_state[19] ), 
+    .D0(reset_n_port_c), .C0(\current_state[8] ), 
+    .B0(reset_refresh_counter_0_a2), .DI1(N_457_i), 
     .DI0(\current_state_nss[18] ), .CLK(clk_c), .F0(\current_state_nss[18] ), 
     .Q0(\current_state[18] ), .F1(N_457_i), .Q1(\current_state[19] ));
-  SLICE_28 SLICE_28( .D1(N_524), .C1(soc_side_rd_en_port_c), .B1(N_645), 
-    .A1(soc_side_wr_en_port_c), .D0(reset_refresh_counter_0_a2), 
-    .C0(reset_n_port_c), .B0(\current_state[21] ), .A0(\current_state[20] ), 
-    .DI1(N_453_i), .DI0(N_455_i), .CLK(clk_c), .F0(N_455_i), 
-    .Q0(\current_state[20] ), .F1(N_453_i), .Q1(\current_state[21] ));
-  SLICE_29 SLICE_29( .D1(reset_refresh_counter_0_a2), .B1(reset_n_port_c), 
-    .A1(\current_state[25] ), .B0(reset_n_port_c), .A0(\current_state[23] ), 
-    .DI1(\current_state_nss[23] ), .DI0(N_451_i), .CLK(clk_c), .F0(N_451_i), 
+  SLICE_28 SLICE_28( .D1(soc_side_wr_en_port_c), .C1(soc_side_rd_en_port_c), 
+    .B1(N_524), .A1(\current_state_srsts_i_a2[21] ), .D0(reset_n_port_c), 
+    .C0(reset_refresh_counter_0_a2), .B0(\current_state[21] ), 
+    .A0(\current_state[20] ), .DI1(N_453_i), .DI0(N_455_i), .CLK(clk_c), 
+    .F0(N_455_i), .Q0(\current_state[20] ), .F1(N_453_i), 
+    .Q1(\current_state[21] ));
+  SLICE_29 SLICE_29( .C1(reset_refresh_counter_0_a2), .B1(reset_n_port_c), 
+    .A1(\current_state[25] ), .C0(\current_state[23] ), .A0(reset_n_port_c), 
+    .DI1(\current_state_nss[23] ), .DI0(N_131), .CLK(clk_c), .F0(N_131), 
     .Q0(\current_state[22] ), .F1(\current_state_nss[23] ), 
     .Q1(\current_state[23] ));
-  SLICE_30 SLICE_30( .D1(\current_state[24] ), .C1(reset_n_port_c), 
-    .B1(reset_refresh_counter_0_a2), .A1(\current_state[25] ), 
-    .C0(reset_n_port_c), .B0(reset_refresh_counter_0_a2), 
-    .A0(\current_state[20] ), .DI1(N_447_i), .DI0(\current_state_nss[24] ), 
-    .CLK(clk_c), .F0(\current_state_nss[24] ), .Q0(\current_state[24] ), 
-    .F1(N_447_i), .Q1(\current_state[25] ));
-  SLICE_31 SLICE_31( .D1(\current_state_srsts_0_a4_0[6] ), 
-    .C1(init_counter_count_one_cycle_1_sqmuxa_1_fc_0), .B1(\init_counter[1] ), 
-    .A1(reset_refresh_counter_0_a2), .D0(\init_counter[0] ), 
-    .C0(\current_state_srsts_0_a4_0[6] ), .A0(reset_refresh_counter_0_a2), 
-    .DI1(\init_counter_RNO[1] ), .DI0(\init_counter_RNO[0] ), 
-    .LSR(reset_n_port_c), .CLK(clk_c), .F0(\init_counter_RNO[0] ), 
-    .Q0(\init_counter[0] ), .F1(\init_counter_RNO[1] ), .Q1(\init_counter[1] ));
-  SLICE_32 SLICE_32( .D1(\init_counter[0] ), .C1(\current_state[7] ), 
-    .B1(\init_counter[1] ), .A1(reset_refresh_counter_0_a2), 
-    .D0(\init_counter[2] ), .C0(CO1), .B0(\current_state_srsts_0_a4_0[6] ), 
-    .A0(reset_refresh_counter_0_a2), .DI0(\init_counter_RNO[2] ), 
-    .LSR(reset_n_port_c), .CLK(clk_c), .F0(\init_counter_RNO[2] ), 
-    .Q0(\init_counter[2] ), .F1(CO1));
+  SLICE_30 SLICE_30( .D1(reset_refresh_counter_0_a2), .C1(\current_state[24] ), 
+    .B1(reset_n_port_c), .A1(\current_state[25] ), 
+    .D0(reset_refresh_counter_0_a2), .B0(\current_state[20] ), 
+    .A0(reset_n_port_c), .DI1(\current_state_srsts_i_i[25] ), 
+    .DI0(\current_state_nss[24] ), .CLK(clk_c), .F0(\current_state_nss[24] ), 
+    .Q0(\current_state[24] ), .F1(\current_state_srsts_i_i[25] ), 
+    .Q1(\current_state[25] ));
+  SLICE_31 SLICE_31( .D1(N_69), .C1(\init_counter[2] ), .B1(\init_counter[0] ), 
+    .A1(\init_counter[1] ), .D0(\init_counter[1] ), .C0(N_69), 
+    .B0(\init_counter[2] ), .A0(\init_counter[0] ), 
+    .DI1(\init_counter_RNO[1] ), .DI0(N_206_i), .LSR(reset_n_port_c), 
+    .CLK(clk_c), .F0(N_206_i), .Q0(\init_counter[0] ), 
+    .F1(\init_counter_RNO[1] ), .Q1(\init_counter[1] ));
+  SLICE_32 SLICE_32( .D1(\current_state[7] ), .B1(reset_refresh_counter_0_a2), 
+    .D0(\init_counter[1] ), .C0(N_69), .B0(\init_counter[0] ), 
+    .A0(\init_counter[2] ), .DI0(N_205_i), .LSR(reset_n_port_c), .CLK(clk_c), 
+    .F0(N_205_i), .Q0(\init_counter[2] ), .F1(N_69));
   SLICE_33 SLICE_33( .D1(\refresh_counter[14] ), .C1(\refresh_counter[15] ), 
-    .B1(\refresh_counter[0] ), .A1(\refresh_counter[13] ), 
-    .A0(\refresh_counter[0] ), .DI0(\refresh_counter_i[0] ), 
-    .LSR(reset_refresh_counter), .CLK(clk_c), .F0(\refresh_counter_i[0] ), 
-    .Q0(\refresh_counter[0] ), 
-    .F1(\delay_cycles_14_5_.current_state_srsts_i_a2_8[21] ));
-  delay_cycles_14_5__un37_i_a4_RNIP1LSK1_4__SLICE_34 
-    \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34 ( .D1(N_563), 
-    .C1(\un37_li[1] ), .B1(N_561), .A1(N_564_4), .D0(\un37_li_3[1] ), 
-    .C0(N_564), .B0(N_561), .A0(N_563), .M0(\un37_li[4] ), 
-    .OFX0(\delay_cycles[6] ));
-  delay_cycles_14_5__un37_i_a4_RNIJIG3D2_4__SLICE_35 
-    \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35 ( .D1(\un37_li[1] ), 
-    .C1(N_564), .B1(N_561), .A1(N_563), .D0(\delay_cycles_14_5_.N_9 ), 
-    .C0(N_564), .B0(N_561), .A0(\un37_li[1] ), .M0(\un37_li[4] ), 
-    .OFX0(\un37_i_a4_RNIJIG3D2[4] ));
-  SLICE_36 SLICE_36( .D1(\current_state[11] ), .C1(N_503), .B1(N_569), 
-    .A1(reset_refresh_counter_0_a2), .D0(\current_state_srsts_0_a4_0[5] ), 
-    .C0(\delay_cycles_14_5_.next_command_i_1[3] ), .B0(\current_state[23] ), 
-    .A0(reset_refresh_counter_0_a2), .F0(N_489_i), 
-    .F1(\delay_cycles_14_5_.next_command_i_1[3] ));
-  SLICE_37 SLICE_37( .D1(N_504), .C1(N_503), .B1(reset_refresh_counter_0_a2), 
-    .A1(\current_state[23] ), .D0(\current_state[13] ), 
-    .C0(\current_state[7] ), .A0(\current_state[2] ), .F0(N_504), 
-    .F1(\delay_cycles_14_5_.N_493_i_1 ));
-  SLICE_38 SLICE_38( .D1(N_642), .C1(\soc_side_addr_port_m[14] ), 
-    .B1(\soc_side_addr_port_c[5] ), .A1(\current_state[5] ), 
-    .C0(\soc_side_addr_port_c[14] ), .B0(\current_state[10] ), 
-    .A0(\current_state[21] ), .F0(\soc_side_addr_port_m[14] ), 
+    .B1(\refresh_counter[1] ), .A1(\refresh_counter[0] ), 
+    .A0(\refresh_counter[0] ), .DI0(\refresh_counter_i[0] ), .LSR(N_59_i), 
+    .CLK(clk_c), .F0(\refresh_counter_i[0] ), .Q0(\refresh_counter[0] ), 
+    .F1(\current_state_srsts_i_a2_8[21] ));
+  delay_cycles_14_3__delay_counter_4_m_0__SLICE_34 
+    \delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34 ( .D1(N_564), 
+    .C1(\un37_li[4] ), .B1(N_563), .A1(N_561), .D0(N_564), .C0(\un37_li[4] ), 
+    .B0(N_563), .A0(N_561), .M0(\un37_li[1] ), .OFX0(\delay_cycles[4] ));
+  SLICE_35 SLICE_35( .D1(un37_i_a4_N_2L1), .C1(N_653), 
+    .B1(\current_state[18] ), .A1(\current_state[19] ), 
+    .D0(\delay_cycles_14_3_.i4_mux_0_i ), .C0(\delay_cycles_14_3_.i4_mux ), 
+    .B0(\un37_li[4] ), .A0(\delay_cycles[4] ), .F0(delay_counter), 
+    .F1(\un37_li[4] ));
+  SLICE_36 SLICE_36( .D1(\current_state[5] ), .C1(\soc_side_addr_port_c[5] ), 
+    .B1(N_65), .A1(N_111), .D0(\soc_side_addr_port_c[14] ), 
+    .B0(\current_state[21] ), .A0(\current_state[10] ), .F0(N_111), 
     .F1(\ram_side_addr_port_c[5] ));
-  SLICE_39 SLICE_39( .D1(\soc_side_addr_port_m[13] ), 
-    .C1(\soc_side_addr_port_c[4] ), .B1(N_642), .A1(\current_state[5] ), 
-    .C0(\current_state[10] ), .B0(\soc_side_addr_port_c[13] ), 
-    .A0(\current_state[21] ), .F0(\soc_side_addr_port_m[13] ), 
+  SLICE_37 SLICE_37( .D1(N_113), .C1(\current_state[5] ), .B1(N_65), 
+    .A1(\soc_side_addr_port_c[4] ), .D0(\soc_side_addr_port_c[13] ), 
+    .B0(\current_state[21] ), .A0(\current_state[10] ), .F0(N_113), 
     .F1(\ram_side_addr_port_c[4] ));
-  SLICE_40 SLICE_40( .D1(\current_state[10] ), .C1(\current_state[21] ), 
-    .D0(\soc_side_addr_port_c[19] ), .C0(\current_state[24] ), .B0(N_623), 
-    .A0(\current_state[9] ), .F0(\ram_addr_reg[10] ), .F1(N_623));
-  SLICE_41 SLICE_41( .D1(\current_state[11] ), .C1(\current_state[20] ), 
-    .D0(\un37_li_3[1] ), .C0(N_501), .B0(\current_state[21] ), 
-    .A0(\current_state[10] ), .F0(\un37_li[1] ), .F1(N_501));
-  SLICE_42 SLICE_42( .D1(\delay_cycles_14_5_.un37_i_a4_7[0] ), 
-    .C1(\delay_cycles_14_5_.un37_i_a4_1[0] ), .B1(\current_state[23] ), 
-    .A1(\delay_cycles_14_5_.un37_i_a4_8[0] ), .D0(N_501), .C0(\un37_li_3[1] ), 
-    .B0(N_561), .A0(N_623), .F0(\delay_cycles_14_5_.ready_signal_i_a2_0[0] ), 
-    .F1(N_561));
-  SLICE_43 SLICE_43( .D1(\current_state[7] ), .C1(\current_state[2] ), 
-    .D0(\current_state[13] ), .C0(N_501), .B0(N_502), 
-    .A0(reset_refresh_counter_0_a2), .F0(N_602_i), .F1(N_502));
-  SLICE_44 SLICE_44( .D1(\current_state[4] ), .C1(\current_state[14] ), 
-    .B1(\current_state[16] ), .A1(\current_state[19] ), .D0(reset_n_port_c), 
-    .C0(reset_refresh_counter_0_a2), .B0(N_525), .A0(\current_state[17] ), 
-    .F0(N_657), .F1(N_525));
-  SLICE_45 SLICE_45( .D1(N_623), .C1(N_501), 
-    .B1(\delay_cycles_14_5_.un37_a4_1_0[2] ), .A1(N_503), 
-    .D0(\delay_cycles_14_5_.ready_signal_i_a2_0[0] ), .C0(N_564), .B0(N_563), 
-    .A0(\un37_li[4] ), .F0(soc_side_ready_port_c_i), .F1(N_563));
-  SLICE_46 SLICE_46( .D1(\delay_cycles_14_5_.un37_a4_4_0[3] ), .C1(N_502), 
-    .B1(\current_state[1] ), .A1(\current_state[0] ), .D0(N_561), 
-    .C0(\delay_cycles_14_5_.N_9 ), .B0(N_564_4), .A0(\un37_li[4] ), 
-    .F0(\delay_cycles[7] ), .F1(N_564_4));
-  SLICE_47 SLICE_47( .D1(\delay_cycles_14_5_.un37_i_a4_1[4] ), 
-    .C1(\current_state[21] ), .B1(\current_state[20] ), .A1(N_653), 
-    .D0(\delay_cycles_14_5_.N_23_mux ), .B0(\un37_li[4] ), 
-    .F0(\delay_cycles[8] ), .F1(\un37_li[4] ));
-  SLICE_48 SLICE_48( .D1(N_564_4), .B1(\current_state[17] ), 
-    .A1(\current_state[16] ), .D0(N_563), .C0(N_564), 
-    .B0(\delay_cycles_14_5_.ready_signal_i_a2_0[0] ), .A0(\un37_li[4] ), 
-    .F0(soc_side_ready_port_c), .F1(N_564));
-  SLICE_49 SLICE_49( .D1(\current_state[12] ), .C1(\current_state[17] ), 
-    .B1(ram_side_addr_port_1_0_a4_1), .D0(\ram_addr_reg[10] ), 
-    .C0(\command[0] ), .B0(ram_side_addr_port_1_0_a4_4), 
-    .A0(ram_side_addr_port_1_0_a4_3), .F0(\ram_side_addr_port_c[10] ), 
-    .F1(ram_side_addr_port_1_0_a4_4));
-  SLICE_50 SLICE_50( .C1(\current_state[10] ), .B1(in_write_cycle_i_a4_0), 
-    .A1(\current_state[11] ), .D0(\soc_side_wr_mask_port_c[3] ), .C0(N_566), 
-    .B0(N_560), .F0(ram_side_chip1_udqm_port_c), .F1(N_566));
-  SLICE_51 SLICE_51( .D1(\current_state[21] ), .C1(\current_state[16] ), 
-    .B1(\current_state[20] ), .A1(N_653), .D0(N_566), .C0(N_560), 
-    .B0(\soc_side_wr_mask_port_c[2] ), .F0(ram_side_chip1_ldqm_port_c), 
-    .F1(N_560));
-  SLICE_52 SLICE_52( .D1(\delay_cycles_14_5_.un37_i_a4_3_0[1] ), .C1(N_502), 
-    .B1(\current_state[6] ), .A1(\current_state[3] ), .D0(N_563), 
-    .C0(\un37_li_3[1] ), .F0(\delay_cycles_14_5_.N_9 ), .F1(\un37_li_3[1] ));
-  SLICE_53 SLICE_53( .D1(reset_refresh_counter_0_a2_9), 
-    .C1(reset_refresh_counter_0_a2_7), .B1(reset_refresh_counter_0_a2_10), 
-    .A1(reset_refresh_counter_0_a2_8), .D0(\current_state[4] ), 
-    .C0(reset_refresh_counter_0_a2), .A0(\current_state[14] ), 
-    .F0(reset_refresh_counter), .F1(reset_refresh_counter_0_a2));
-  SLICE_54 SLICE_54( .D1(N_645), .C1(\current_state[17] ), .B1(N_521), 
-    .A1(\delay_cycles_14_5_.N_493_i_1 ), 
-    .D0(\delay_cycles_14_5_.current_state_srsts_i_a2_9[21] ), 
-    .C0(\delay_cycles_14_5_.current_state_srsts_i_a2_10[21] ), 
-    .B0(\delay_cycles_14_5_.current_state_srsts_i_a2_11[21] ), 
-    .A0(\delay_cycles_14_5_.current_state_srsts_i_a2_8[21] ), .F0(N_645), 
-    .F1(N_493_i));
-  SLICE_55 SLICE_55( .C1(\current_state[9] ), .B1(\current_state[24] ), 
-    .D0(\soc_side_addr_port_c[1] ), .C0(N_642), .B0(N_623), 
-    .A0(\soc_side_addr_port_c[10] ), .F0(\ram_side_addr_port_c[1] ), 
-    .F1(N_642));
-  SLICE_56 SLICE_56( .D1(\current_state[18] ), 
-    .C1(\delay_cycles_14_5_.un37_a4_1[2] ), .B1(\current_state[19] ), 
-    .D0(\current_state[0] ), .C0(\current_state[9] ), .B0(\current_state[2] ), 
-    .A0(\current_state[3] ), .F0(\delay_cycles_14_5_.un37_a4_1[2] ), 
-    .F1(\delay_cycles_14_5_.un37_a4_1_0[2] ));
-  SLICE_57 SLICE_57( .D1(\init_counter[0] ), .C1(\current_state[7] ), 
-    .B1(\init_counter[1] ), .A1(\init_counter[2] ), .D0(\init_counter[0] ), 
-    .C0(\current_state[7] ), .B0(\init_counter[1] ), .A0(\init_counter[2] ), 
-    .F0(\current_state_srsts_0_a4_0[6] ), .F1(\current_state_srsts_0_a4_0[5] ));
-  SLICE_58 SLICE_58( .D1(N_623), .C1(\current_state[24] ), 
-    .B1(\current_state[9] ), .A1(\soc_side_addr_port_c[22] ), .D0(N_623), 
-    .C0(\current_state[24] ), .B0(\current_state[9] ), 
+  SLICE_38 SLICE_38( .D1(N_85), .C1(N_66), .B1(\current_command[0] ), 
+    .A1(N_65), .D0(\current_state[21] ), .B0(\soc_side_addr_port_c[19] ), 
+    .A0(\current_state[10] ), .F0(N_66), .F1(N_64_i));
+  SLICE_39 SLICE_39( .B1(\current_state[24] ), .A1(\current_state[9] ), 
+    .D0(N_65), .C0(\current_state[10] ), .B0(\current_state[21] ), 
     .A0(\soc_side_addr_port_c[21] ), .F0(\ram_side_bank_addr_port_c[0] ), 
+    .F1(N_65));
+  SLICE_40 SLICE_40( .D1(reset_refresh_counter_0_a2_9), 
+    .C1(reset_refresh_counter_0_a2_8), .B1(reset_refresh_counter_0_a2_10), 
+    .A1(reset_refresh_counter_0_a2_7), .D0(\current_state[23] ), 
+    .C0(reset_refresh_counter_0_a2), .B0(\current_state[11] ), 
+    .A0(\current_state[8] ), .F0(\next_command_i_0_0[3] ), 
+    .F1(reset_refresh_counter_0_a2));
+  SLICE_41 SLICE_41( .D1(N_68), .C1(\init_counter[2] ), 
+    .B1(\next_command_i_0_0[3] ), .A1(N_144), .D0(reset_refresh_counter_0_a2), 
+    .C0(\current_state[7] ), .B0(\init_counter[0] ), .A0(\init_counter[1] ), 
+    .F0(N_144), .F1(N_489_i));
+  SLICE_42 SLICE_42( .D1(un37_i_a4_3_N_2L1), .C1(N_73), 
+    .B1(\current_state[24] ), .A1(\current_state[25] ), .D0(N_564), 
+    .C0(\un37_a4_RNI8VRC6[2] ), .B0(\un37_li_3[1] ), .A0(N_561), 
+    .F0(soc_side_ready_port_c_i), .F1(\un37_li_3[1] ));
+  SLICE_43 SLICE_43( .D1(N_561), .C1(N_563), .B1(\un37_li[1] ), .A1(N_564), 
+    .D0(\delay_cycles_14_3_.i4_mux ), .C0(\delay_cycles_14_3_.i4_mux_0_i ), 
+    .B0(\un37_li[4] ), .F0(\delay_cycles_14_3_.i3_mux_i ), 
+    .F1(\delay_cycles_14_3_.i4_mux_0_i ));
+  SLICE_44 SLICE_44( .D1(N_561), .C1(N_564), .B1(\un37_li[1] ), .A1(N_563), 
+    .D0(\delay_cycles[4] ), .C0(\delay_cycles_14_3_.i4_mux ), 
+    .B0(\un37_li[4] ), .A0(\delay_cycles_14_3_.i4_mux_0_i ), 
+    .F0(un1_delay_cycles_12), .F1(\delay_cycles_14_3_.i4_mux ));
+  SLICE_45 SLICE_45( .D1(\current_state[17] ), .C1(N_70), 
+    .B1(reset_refresh_counter_0_a2), .A1(N_521), .D0(N_68), .C0(N_81), 
+    .B0(\delay_cycles_14_3_.next_command_i_0_0[5] ), .F0(N_493_i), 
+    .F1(\delay_cycles_14_3_.next_command_i_0_0[5] ));
+  SLICE_46 SLICE_46( .D1(\un37_li_3[1] ), .C1(\current_state[11] ), 
+    .B1(\current_state[20] ), .A1(N_623), .D0(\delay_cycles_14_3_.N_24_mux ), 
+    .C0(\un37_li[1] ), .B0(\delay_cycles_14_3_.N_23_mux ), 
+    .F0(\delay_cycles[5] ), .F1(\un37_li[1] ));
+  SLICE_47 SLICE_47( .D1(N_561), .C1(N_564), .B1(\un37_li[4] ), .A1(N_563), 
+    .C0(\delay_cycles_14_3_.N_23_mux ), .B0(\un37_li[1] ), 
+    .F0(\delay_cycles[6] ), .F1(\delay_cycles_14_3_.N_23_mux ));
+  SLICE_48 SLICE_48( .D1(\un37_i_a4_7[0] ), .C1(\current_state[23] ), 
+    .B1(\un37_i_a4_1[0] ), .A1(\un37_i_a4_8[0] ), .D0(N_564), .C0(N_561), 
+    .B0(\un37_li_3[1] ), .A0(\un37_a4_RNI8VRC6[2] ), 
+    .F0(soc_side_ready_port_c), .F1(N_561));
+  SLICE_49 SLICE_49( .D1(\current_state[7] ), .C1(\current_state[2] ), 
+    .A1(\current_state[13] ), .D0(\current_state[11] ), 
+    .C0(reset_refresh_counter_0_a2), .B0(N_70), .A0(\current_state[20] ), 
+    .F0(N_602_i), .F1(N_70));
+  SLICE_50 SLICE_50( .D1(\current_state[8] ), .C1(\current_state[9] ), 
+    .B1(N_633), .A1(N_646), .D0(N_560), .C0(N_566), 
+    .A0(\soc_side_wr_mask_port_c[3] ), .F0(ram_side_chip1_udqm_port_c), 
+    .F1(N_566));
+  SLICE_51 SLICE_51( .D1(\current_state[21] ), .C1(\current_state[20] ), 
+    .B1(N_653), .A1(\current_state[16] ), .D0(\soc_side_wr_mask_port_c[2] ), 
+    .C0(N_566), .B0(N_560), .F0(ram_side_chip1_ldqm_port_c), .F1(N_560));
+  SLICE_52 SLICE_52( .D1(N_623), .C1(\delay_cycles_14_3_.un37_a4_2[2] ), 
+    .B1(N_633), .A1(\delay_cycles_14_3_.un37_a4_1[2] ), .D0(N_564), 
+    .C0(\un37_li[4] ), .B0(N_561), .A0(N_563), 
+    .F0(\delay_cycles_14_3_.N_24_mux ), .F1(N_563));
+  SLICE_53 SLICE_53( .D1(\current_state[4] ), .B1(\current_state[12] ), 
+    .A1(\current_state[14] ), .D0(N_79), 
+    .C0(\ram_side_addr_port_2_i_o2_0_1[10] ), .B0(\current_state[15] ), 
+    .A0(N_70), .F0(N_85), .F1(\ram_side_addr_port_2_i_o2_0_1[10] ));
+  SLICE_54 SLICE_54( .D1(\current_state[16] ), .C1(\current_state[4] ), 
+    .B1(\current_state[5] ), .D0(N_79), .C0(\current_state[2] ), 
+    .B0(\current_state[7] ), .A0(\un37_a4_0_a3_1[3] ), .F0(N_564), 
+    .F1(\un37_a4_0_a3_1[3] ));
+  SLICE_55 SLICE_55( .D1(\refresh_counter[13] ), .C1(\refresh_counter[11] ), 
+    .B1(\refresh_counter[10] ), .A1(\refresh_counter[12] ), 
+    .D0(\current_state_srsts_i_a2_10[21] ), 
+    .C0(\current_state_srsts_i_a2_9[21] ), 
+    .B0(\current_state_srsts_i_a2_8[21] ), 
+    .A0(\current_state_srsts_i_a2_11[21] ), 
+    .F0(\current_state_srsts_i_a2[21] ), 
+    .F1(\current_state_srsts_i_a2_11[21] ));
+  SLICE_56 SLICE_56( .D1(\current_state[21] ), .C1(\current_state[10] ), 
+    .D0(\soc_side_addr_port_c[9] ), .C0(N_623), .B0(\soc_side_addr_port_c[0] ), 
+    .A0(N_65), .F0(\ram_side_addr_port_c[0] ), .F1(N_623));
+  SLICE_57 SLICE_57( .D1(\current_state[3] ), .C1(\current_state[6] ), 
+    .D0(N_73), .C0(\current_state[17] ), .B0(\current_state[0] ), 
+    .A0(\current_state[1] ), .F0(N_79), .F1(N_73));
+  SLICE_58 SLICE_58( .D1(reset_refresh_counter_0_a2), .C1(\current_state[17] ), 
+    .B1(reset_n_port_c), .A1(N_525), .D0(\current_state[14] ), 
+    .C0(\current_state[19] ), .B0(\current_state[16] ), 
+    .A0(\current_state[4] ), .F0(N_525), .F1(N_657));
+  SLICE_59 SLICE_59( .D1(\current_state[21] ), .C1(N_65), 
+    .B1(\soc_side_addr_port_c[22] ), .A1(\current_state[10] ), 
+    .D0(\current_state[21] ), .B0(\soc_side_addr_port_c[20] ), 
+    .A0(\current_state[10] ), .F0(\ram_side_addr_port_c[11] ), 
     .F1(\ram_side_bank_addr_port_c[1] ));
-  SLICE_59 SLICE_59( .D1(\current_state[21] ), .C1(\current_state[10] ), 
-    .B1(\current_state[5] ), .A1(\soc_side_addr_port_c[18] ), 
-    .D0(\current_state[21] ), .C0(\current_state[10] ), 
-    .B0(\soc_side_addr_port_c[20] ), .F0(\ram_side_addr_port_c[11] ), 
-    .F1(\ram_side_addr_port_c[9] ));
-  SLICE_60 SLICE_60( .D1(\delay_cycles[6] ), .C1(\un37_i_a4_RNIJIG3D2[4] ), 
-    .D0(\delay_cycles[6] ), .C0(\un37_i_a4_RNIJIG3D2[4] ), 
-    .F0(un1_delay_cycles_10), .F1(delay_counter));
-  SLICE_61 SLICE_61( .D1(N_560), .C1(\soc_side_wr_mask_port_c[0] ), .B1(N_566), 
-    .D0(N_560), .C0(\soc_side_wr_mask_port_c[1] ), .B0(N_566), 
+  SLICE_60 SLICE_60( .C1(\soc_side_wr_mask_port_c[0] ), .B1(N_560), .A1(N_566), 
+    .C0(\soc_side_wr_mask_port_c[1] ), .B0(N_560), .A0(N_566), 
     .F0(ram_side_chip0_udqm_port_c), .F1(ram_side_chip0_ldqm_port_c));
-  SLICE_62 SLICE_62( .D1(\current_state[14] ), .C1(\current_state[25] ), 
-    .B1(\current_state[24] ), .A1(\current_state[15] ), .D0(N_504), 
-    .C0(\current_state[4] ), .B0(\current_state[14] ), 
-    .A0(\current_state[15] ), .F0(ram_side_addr_port_1_0_a4_3), 
-    .F1(\delay_cycles_14_5_.un37_i_a4_3_0[1] ));
-  SLICE_63 SLICE_63( .D1(N_623), .C1(\soc_side_addr_port_c[0] ), 
-    .B1(\soc_side_addr_port_c[9] ), .A1(N_642), .D0(N_623), 
-    .C0(\soc_side_addr_port_c[11] ), .B0(\soc_side_addr_port_c[2] ), 
-    .A0(N_642), .F0(\ram_side_addr_port_c[2] ), .F1(\ram_side_addr_port_c[0] ));
-  SLICE_64 SLICE_64( .D1(N_623), .C1(N_642), .B1(\soc_side_addr_port_c[8] ), 
-    .A1(\soc_side_addr_port_c[17] ), .D0(N_623), .C0(N_642), 
-    .B0(\soc_side_addr_port_c[3] ), .A0(\soc_side_addr_port_c[12] ), 
-    .F0(\ram_side_addr_port_c[3] ), .F1(\ram_side_addr_port_c[8] ));
-  SLICE_65 SLICE_65( .D1(\soc_side_addr_port_c[16] ), .C1(N_623), .B1(N_642), 
-    .A1(\soc_side_addr_port_c[7] ), .D0(\soc_side_addr_port_c[15] ), 
-    .C0(N_623), .B0(N_642), .A0(\soc_side_addr_port_c[6] ), 
-    .F0(\ram_side_addr_port_c[6] ), .F1(\ram_side_addr_port_c[7] ));
-  SLICE_66 SLICE_66( .D1(\current_state[25] ), .C1(\current_state[17] ), 
-    .B1(\current_state[9] ), .A1(\current_state[19] ), .D0(\current_state[9] ), 
-    .C0(\current_state[18] ), .B0(\current_state[8] ), 
-    .A0(\current_state[19] ), .F0(in_write_cycle_i_a4_0), 
-    .F1(\delay_cycles_14_5_.un37_i_a4_1[0] ));
-  SLICE_67 SLICE_67( .D1(\current_state[4] ), .C1(\current_state[3] ), 
-    .B1(\current_state[6] ), .A1(\current_state[5] ), .D0(\current_state[6] ), 
-    .C0(\current_state[3] ), .B0(\current_state[1] ), .A0(\current_state[0] ), 
-    .F0(ram_side_addr_port_1_0_a4_1), .F1(\delay_cycles_14_5_.un37_a4_4_0[3] ));
-  SLICE_68 SLICE_68( .D1(\current_state[11] ), .C1(\current_state[5] ), 
-    .B1(\current_state[1] ), .A1(\current_state[7] ), .D0(\init_counter[0] ), 
-    .C0(\current_state[7] ), .A0(reset_refresh_counter_0_a2), 
-    .F0(init_counter_count_one_cycle_1_sqmuxa_1_fc_0), 
-    .F1(\delay_cycles_14_5_.un37_i_a4_8[0] ));
-  SLICE_69 SLICE_69( .D1(\current_state[17] ), .C1(reset_n_port_c), 
-    .D0(\current_state[17] ), .C0(\current_state[19] ), 
-    .B0(\current_state[16] ), .A0(\current_state[18] ), 
-    .F0(\delay_cycles_14_5_.un37_i_a4_1[4] ), .F1(N_524));
-  SLICE_70 SLICE_70( .D1(\delay_counter[8] ), .C1(\delay_counter[6] ), 
+  SLICE_61 SLICE_61( .D1(\soc_side_addr_port_c[8] ), .C1(N_623), .B1(N_65), 
+    .A1(\soc_side_addr_port_c[17] ), .D0(\soc_side_addr_port_c[10] ), 
+    .C0(N_623), .B0(N_65), .A0(\soc_side_addr_port_c[1] ), 
+    .F0(\ram_side_addr_port_c[1] ), .F1(\ram_side_addr_port_c[8] ));
+  SLICE_62 SLICE_62( .D1(\soc_side_addr_port_c[7] ), 
+    .C1(\soc_side_addr_port_c[16] ), .B1(N_65), .A1(N_623), .D0(N_65), 
+    .C0(\soc_side_addr_port_c[2] ), .B0(\soc_side_addr_port_c[11] ), 
+    .A0(N_623), .F0(\ram_side_addr_port_c[2] ), .F1(\ram_side_addr_port_c[7] ));
+  SLICE_63 SLICE_63( .D1(N_623), .C1(N_65), .B1(\soc_side_addr_port_c[6] ), 
+    .A1(\soc_side_addr_port_c[15] ), .D0(N_623), 
+    .C0(\soc_side_addr_port_c[12] ), .B0(N_65), .A0(\soc_side_addr_port_c[3] ), 
+    .F0(\ram_side_addr_port_c[3] ), .F1(\ram_side_addr_port_c[6] ));
+  SLICE_64 SLICE_64( .D1(\current_state[17] ), .C1(\current_state[20] ), 
+    .B1(\current_state[21] ), .A1(\current_state[16] ), 
+    .D0(\current_state[10] ), .C0(\soc_side_addr_port_c[18] ), 
+    .B0(\current_state[21] ), .A0(\current_state[5] ), 
+    .F0(\ram_side_addr_port_c[9] ), .F1(un37_i_a4_N_2L1));
+  SLICE_65 SLICE_65( .D1(\current_state[1] ), .C1(\current_state[8] ), 
+    .B1(\current_state[0] ), .A1(\current_state[9] ), 
+    .D0(reset_refresh_counter_0_a2), .C0(\current_state[23] ), 
+    .A0(\current_state[8] ), .F0(N_81), .F1(\delay_cycles_14_3_.un37_a4_2[2] ));
+  SLICE_66 SLICE_66( .D1(\current_state[14] ), .C1(\current_state[2] ), 
+    .B1(\current_state[15] ), .A1(\current_state[7] ), 
+    .D0(\current_state[14] ), .C0(reset_refresh_counter_0_a2), 
+    .B0(\current_state[4] ), .F0(N_59_i), .F1(un37_i_a4_3_N_2L1));
+  SLICE_67 SLICE_67( .D1(reset_n_port_c), .B1(\current_state[17] ), 
+    .D0(reset_refresh_counter_0_a2), .C0(reset_n_port_c), .F0(N_622), 
+    .F1(N_524));
+  SLICE_68 SLICE_68( .D1(\current_state[7] ), .C1(\current_state[1] ), 
+    .B1(\current_state[5] ), .A1(\current_state[25] ), 
+    .D0(\current_state[22] ), .C0(\current_state[23] ), 
+    .B0(\current_state[25] ), .A0(\current_state[24] ), .F0(N_653), 
+    .F1(\un37_i_a4_8[0] ));
+  SLICE_69 SLICE_69( .D1(\current_state[20] ), .C1(\current_state[11] ), 
+    .B1(\current_state[3] ), .A1(\current_state[2] ), .D0(\current_state[11] ), 
+    .C0(\current_state[21] ), .B0(\current_state[13] ), 
+    .A0(\current_state[15] ), .F0(\un37_i_a4_7[0] ), 
+    .F1(\delay_cycles_14_3_.un37_a4_1[2] ));
+  SLICE_70 SLICE_70( .D1(\current_state[3] ), .C1(\current_state[17] ), 
+    .B1(\current_state[9] ), .A1(\current_state[19] ), 
+    .D0(\current_state[18] ), .A0(\current_state[19] ), .F0(N_633), 
+    .F1(\un37_i_a4_1[0] ));
+  SLICE_71 SLICE_71( .D1(\delay_counter[8] ), .C1(\delay_counter[6] ), 
     .B1(\delay_counter[7] ), .A1(\delay_counter[9] ), .D0(\delay_counter[13] ), 
     .C0(\delay_counter[11] ), .B0(\delay_counter[12] ), 
     .A0(\delay_counter[10] ), .F0(reset_refresh_counter_0_a2_10), 
     .F1(reset_refresh_counter_0_a2_9));
-  SLICE_71 SLICE_71( .D1(\delay_counter[14] ), .B1(\delay_counter[0] ), 
+  SLICE_72 SLICE_72( .D1(\delay_counter[14] ), .B1(\delay_counter[0] ), 
     .A1(\delay_counter[1] ), .D0(\delay_counter[4] ), .C0(\delay_counter[3] ), 
     .B0(\delay_counter[2] ), .A0(\delay_counter[5] ), 
     .F0(reset_refresh_counter_0_a2_8), .F1(reset_refresh_counter_0_a2_7));
-  SLICE_72 SLICE_72( .D1(\refresh_counter[5] ), .C1(\refresh_counter[7] ), 
-    .B1(\refresh_counter[6] ), .A1(\refresh_counter[8] ), 
-    .D0(\refresh_counter[4] ), .C0(\refresh_counter[2] ), 
-    .B0(\refresh_counter[3] ), .A0(\refresh_counter[1] ), 
-    .F0(\delay_cycles_14_5_.current_state_srsts_i_a2_11[21] ), 
-    .F1(\delay_cycles_14_5_.current_state_srsts_i_a2_10[21] ));
-  SLICE_73 SLICE_73( .D1(\current_state[13] ), .C1(\current_state[21] ), 
-    .B1(\current_state[15] ), .A1(\current_state[3] ), .D0(\un37_li[1] ), 
-    .C0(N_563), .B0(N_564_4), .A0(N_561), .F0(\delay_cycles_14_5_.N_23_mux ), 
-    .F1(\delay_cycles_14_5_.un37_i_a4_7[0] ));
-  SLICE_74 SLICE_74( .D1(\current_state[25] ), .C1(\current_state[22] ), 
-    .B1(\current_state[23] ), .A1(\current_state[24] ), 
-    .C0(\current_state[1] ), .B0(\current_state[8] ), .F0(N_503), .F1(N_653));
-  SLICE_75 SLICE_75( .B1(soc_side_rd_en_port_c), .A1(soc_side_wr_en_port_c), 
-    .D0(\refresh_counter[12] ), .C0(\refresh_counter[9] ), 
-    .B0(\refresh_counter[10] ), .A0(\refresh_counter[11] ), 
-    .F0(\delay_cycles_14_5_.current_state_srsts_i_a2_9[21] ), .F1(N_521));
+  SLICE_73 SLICE_73( .D1(\refresh_counter[4] ), .C1(\refresh_counter[5] ), 
+    .B1(\refresh_counter[2] ), .A1(\refresh_counter[3] ), 
+    .D0(\refresh_counter[8] ), .C0(\refresh_counter[7] ), 
+    .B0(\refresh_counter[6] ), .A0(\refresh_counter[9] ), 
+    .F0(\current_state_srsts_i_a2_10[21] ), 
+    .F1(\current_state_srsts_i_a2_9[21] ));
+  SLICE_74 SLICE_74( .D1(\init_counter[0] ), .C1(\init_counter[2] ), 
+    .A1(\init_counter[1] ), .C0(\un37_li[4] ), .B0(N_563), 
+    .F0(\un37_a4_RNI8VRC6[2] ), .F1(N_500_i_0));
+  SLICE_75 SLICE_75( .C1(soc_side_wr_en_port_c), .A1(soc_side_rd_en_port_c), 
+    .C0(\current_state[11] ), .B0(\current_state[10] ), .F0(N_646), .F1(N_521));
   SLICE_76 SLICE_76( .F0(VCC), .F1(GND));
-  SLICE_77 SLICE_77( .B1(\refresh_counter[15] ), .D0(\un37_i_a4_RNIJIG3D2[4] ), 
-    .F0(\delay_cycles_14_5_.N_8_i ), .F1(\refresh_counter_i[15] ));
+  SLICE_77 SLICE_77( .D0(\refresh_counter[15] ), .F0(\refresh_counter_i[15] ));
   ram_side_chip0_data_port_0_ \ram_side_chip0_data_port[0]_I ( 
     .PADDI(\ram_side_chip0_data_port_in[0] ), .PADDT(\current_state[9] ), 
     .PADDO(\wr_data_reg[0] ), 
@@ -746,8 +733,7 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
   ram_side_addr_port_11_ \ram_side_addr_port[11]_I ( 
     .PADDO(\ram_side_addr_port_c[11] ), 
     .ramsideaddrport11(ram_side_addr_port[11]));
-  ram_side_addr_port_10_ \ram_side_addr_port[10]_I ( 
-    .PADDO(\ram_side_addr_port_c[10] ), 
+  ram_side_addr_port_10_ \ram_side_addr_port[10]_I ( .PADDO(N_64_i), 
     .ramsideaddrport10(ram_side_addr_port[10]));
   ram_side_addr_port_9_ \ram_side_addr_port[9]_I ( 
     .PADDO(\ram_side_addr_port_c[9] ), 
@@ -1289,14 +1275,14 @@ module sdram_controller ( clk, reset_n_port, soc_side_busy_port,
   GSR GSR_INST( .GSR(VCCI));
 endmodule
 
-module SLICE_0 ( input C1, B1, A1, A0, DI1, CLK, output F1, Q1, FCO );
+module SLICE_0 ( input C1, B1, A1, B0, DI1, CLK, output F1, Q1, FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly;
 
   vmuxregsre \delay_counter[0] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
   gnd DRIVEGND( .PWR0(GNDI));
-  ccu2 \delay_counter_cry_0[0] ( .A0(A0), .B0(GNDI), .C0(GNDI), .D0(GNDI), 
+  ccu2 \delay_counter_cry_0[0] ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(GNDI), 
     .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(GNDI), .S0(), .S1(F1), .CO1(FCO));
 
   specify
@@ -1306,8 +1292,8 @@ module SLICE_0 ( input C1, B1, A1, A0, DI1, CLK, output F1, Q1, FCO );
     (B1 => FCO) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (A1 => FCO) = (0:0:0,0:0:0);
-    (A0 => F1) = (0:0:0,0:0:0);
-    (A0 => FCO) = (0:0:0,0:0:0);
+    (B0 => F1) = (0:0:0,0:0:0);
+    (B0 => FCO) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $width (posedge CLK, 0:0:0);
@@ -1336,8 +1322,8 @@ module ccu2 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
 
   CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
     .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h500C;
-  defparam inst1.INIT1 = 16'h001B;
+  defparam inst1.INIT0 = 16'h300A;
+  defparam inst1.INIT1 = 16'h001D;
   defparam inst1.INJECT1_0 = "NO";
   defparam inst1.INJECT1_1 = "NO";
 endmodule
@@ -1521,10 +1507,10 @@ module SLICE_5 ( input A1, A0, DI1, DI0, LSR, CLK, FCI, output F0, Q0, F1, Q1,
     FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  vmuxregsre0005 \refresh_counter[8] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
+  vmuxregsre0001 \refresh_counter[8] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
-  vmuxregsre0001 \refresh_counter[7] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
+  vmuxregsre0005 \refresh_counter[7] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   ccu20004 un2_refresh_counter_cry_7_0( .A0(A0), .B0(GNDI), .C0(GNDI), 
     .D0(GNDI), .A1(A1), .B1(GNDI), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), 
@@ -1557,7 +1543,7 @@ module SLICE_6 ( input A1, A0, DI1, DI0, LSR, CLK, FCI, output F0, Q0, F1, Q1,
     FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  vmuxregsre0001 \refresh_counter[6] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
+  vmuxregsre0005 \refresh_counter[6] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
   vmuxregsre0005 \refresh_counter[5] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
@@ -1596,7 +1582,7 @@ module SLICE_7 ( input A1, A0, DI1, DI0, LSR, CLK, FCI, output F0, Q0, F1, Q1,
   vmuxregsre0001 \refresh_counter[4] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
-  vmuxregsre0005 \refresh_counter[3] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
+  vmuxregsre0001 \refresh_counter[3] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   ccu20004 un2_refresh_counter_cry_3_0( .A0(A0), .B0(GNDI), .C0(GNDI), 
     .D0(GNDI), .A1(A1), .B1(GNDI), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), 
@@ -1629,10 +1615,10 @@ module SLICE_8 ( input A1, A0, DI1, DI0, LSR, CLK, FCI, output F0, Q0, F1, Q1,
     FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  vmuxregsre0005 \refresh_counter[2] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
+  vmuxregsre0001 \refresh_counter[2] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
-  vmuxregsre0005 \refresh_counter[1] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
+  vmuxregsre0001 \refresh_counter[1] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   ccu20004 un2_refresh_counter_cry_1_0( .A0(A0), .B0(GNDI), .C0(GNDI), 
     .D0(GNDI), .A1(A1), .B1(GNDI), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), 
@@ -1685,8 +1671,8 @@ module ccu20006 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 )
   defparam inst1.INJECT1_1 = "NO";
 endmodule
 
-module SLICE_10 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, 
-    Q0, F1, Q1 );
+module SLICE_10 ( input C1, B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, 
+    F1, Q1 );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
   vmuxregsre \delay_counter[14] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
@@ -1695,15 +1681,13 @@ module SLICE_10 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0,
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \delay_counter[13] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20007 \delay_counter_cry_0[13] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
+  ccu20007 \delay_counter_cry_0[13] ( .A0(A0), .B0(B0), .C0(GNDI), .D0(GNDI), 
     .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), .CO1());
 
   specify
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => F1) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (B0 => F1) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
@@ -1724,14 +1708,14 @@ module ccu20007 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 )
 
   CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
     .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h001B;
+  defparam inst1.INIT0 = 16'h0007;
   defparam inst1.INIT1 = 16'h501B;
   defparam inst1.INJECT1_0 = "NO";
   defparam inst1.INJECT1_1 = "NO";
 endmodule
 
-module SLICE_11 ( input B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, F1, 
-    Q1, FCO );
+module SLICE_11 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, 
+    Q0, F1, Q1, FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
   vmuxregsre \delay_counter[12] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
@@ -1740,106 +1724,7 @@ module SLICE_11 ( input B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, F1,
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \delay_counter[11] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20008 \delay_counter_cry_0[11] ( .A0(A0), .B0(B0), .C0(GNDI), .D0(GNDI), 
-    .A1(A1), .B1(B1), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
-    .CO1(FCO));
-
-  specify
-    (B1 => F1) = (0:0:0,0:0:0);
-    (B1 => FCO) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (A1 => FCO) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (B0 => F1) = (0:0:0,0:0:0);
-    (B0 => FCO) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-    (A0 => F1) = (0:0:0,0:0:0);
-    (A0 => FCO) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (FCI => F0) = (0:0:0,0:0:0);
-    (FCI => F1) = (0:0:0,0:0:0);
-    (FCI => FCO) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $width (posedge CLK, 0:0:0);
-    $width (negedge CLK, 0:0:0);
-  endspecify
-
-endmodule
-
-module ccu20008 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
-
-  CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
-    .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h0007;
-  defparam inst1.INIT1 = 16'h0007;
-  defparam inst1.INJECT1_0 = "NO";
-  defparam inst1.INJECT1_1 = "NO";
-endmodule
-
-module SLICE_12 ( input B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, 
-    F1, Q1, FCO );
-  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
-
-  vmuxregsre \delay_counter[10] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  gnd DRIVEGND( .PWR0(GNDI));
-  vmuxregsre \delay_counter[9] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20009 \delay_counter_cry_0[9] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
-    .A1(A1), .B1(B1), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
-    .CO1(FCO));
-
-  specify
-    (B1 => F1) = (0:0:0,0:0:0);
-    (B1 => FCO) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (A1 => FCO) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => F1) = (0:0:0,0:0:0);
-    (C0 => FCO) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (B0 => F1) = (0:0:0,0:0:0);
-    (B0 => FCO) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-    (A0 => F1) = (0:0:0,0:0:0);
-    (A0 => FCO) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (FCI => F0) = (0:0:0,0:0:0);
-    (FCI => F1) = (0:0:0,0:0:0);
-    (FCI => FCO) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $width (posedge CLK, 0:0:0);
-    $width (negedge CLK, 0:0:0);
-  endspecify
-
-endmodule
-
-module ccu20009 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
-
-  CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
-    .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h001B;
-  defparam inst1.INIT1 = 16'h0007;
-  defparam inst1.INJECT1_0 = "NO";
-  defparam inst1.INJECT1_1 = "NO";
-endmodule
-
-module SLICE_13 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, 
-    Q0, F1, Q1, FCO );
-  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
-
-  vmuxregsre \delay_counter[8] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  gnd DRIVEGND( .PWR0(GNDI));
-  vmuxregsre \delay_counter[7] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20010 \delay_counter_cry_0[7] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
+  ccu20008 \delay_counter_cry_0[11] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
     .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
     .CO1(FCO));
 
@@ -1872,31 +1757,33 @@ module SLICE_13 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0,
 
 endmodule
 
-module ccu20010 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
+module ccu20008 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
 
   CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
     .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h001D;
-  defparam inst1.INIT1 = 16'h001D;
+  defparam inst1.INIT0 = 16'h001B;
+  defparam inst1.INIT1 = 16'h001B;
   defparam inst1.INJECT1_0 = "NO";
   defparam inst1.INJECT1_1 = "NO";
 endmodule
 
-module SLICE_14 ( input B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, F1, 
-    Q1, FCO );
+module SLICE_12 ( input C1, B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, 
+    F1, Q1, FCO );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
-  vmuxregsre \delay_counter[6] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vmuxregsre \delay_counter[10] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
   gnd DRIVEGND( .PWR0(GNDI));
-  vmuxregsre \delay_counter[5] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
+  vmuxregsre \delay_counter[9] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20008 \delay_counter_cry_0[5] ( .A0(A0), .B0(B0), .C0(GNDI), .D0(GNDI), 
-    .A1(A1), .B1(B1), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
+  ccu20009 \delay_counter_cry_0[9] ( .A0(A0), .B0(B0), .C0(GNDI), .D0(GNDI), 
+    .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
     .CO1(FCO));
 
   specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => FCO) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (B1 => FCO) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
@@ -1918,6 +1805,110 @@ module SLICE_14 ( input B1, A1, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, F1,
     $width (negedge CLK, 0:0:0);
   endspecify
 
+endmodule
+
+module ccu20009 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
+
+  CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
+  defparam inst1.INIT0 = 16'h0007;
+  defparam inst1.INIT1 = 16'h001B;
+  defparam inst1.INJECT1_0 = "NO";
+  defparam inst1.INJECT1_1 = "NO";
+endmodule
+
+module SLICE_13 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, 
+    Q0, F1, Q1, FCO );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  vmuxregsre \delay_counter[8] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vmuxregsre \delay_counter[7] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ccu20008 \delay_counter_cry_0[7] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
+    .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
+    .CO1(FCO));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => FCO) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => FCO) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (A1 => FCO) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => F1) = (0:0:0,0:0:0);
+    (C0 => FCO) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => F1) = (0:0:0,0:0:0);
+    (B0 => FCO) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (A0 => F1) = (0:0:0,0:0:0);
+    (A0 => FCO) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (FCI => F0) = (0:0:0,0:0:0);
+    (FCI => F1) = (0:0:0,0:0:0);
+    (FCI => FCO) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $width (posedge CLK, 0:0:0);
+    $width (negedge CLK, 0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_14 ( input B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, Q0, 
+    F1, Q1, FCO );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
+
+  vmuxregsre \delay_counter[6] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vmuxregsre \delay_counter[5] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ccu20010 \delay_counter_cry_0[5] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
+    .A1(A1), .B1(B1), .C1(GNDI), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
+    .CO1(FCO));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => FCO) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (A1 => FCO) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => F1) = (0:0:0,0:0:0);
+    (C0 => FCO) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => F1) = (0:0:0,0:0:0);
+    (B0 => FCO) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (A0 => F1) = (0:0:0,0:0:0);
+    (A0 => FCO) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (FCI => F0) = (0:0:0,0:0:0);
+    (FCI => F1) = (0:0:0,0:0:0);
+    (FCI => FCO) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $width (posedge CLK, 0:0:0);
+    $width (negedge CLK, 0:0:0);
+  endspecify
+
+endmodule
+
+module ccu20010 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 );
+
+  CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
+  defparam inst1.INIT0 = 16'h001B;
+  defparam inst1.INIT1 = 16'h0007;
+  defparam inst1.INJECT1_0 = "NO";
+  defparam inst1.INJECT1_1 = "NO";
 endmodule
 
 module SLICE_15 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0, 
@@ -1967,8 +1958,8 @@ module ccu20011 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI, output S0, S1, CO1 )
 
   CCU2D inst1( .CIN(CI), .A0(A0), .B0(B0), .C0(C0), .D0(D0), .A1(A1), .B1(B1), 
     .C1(C1), .D1(D1), .S0(S0), .S1(S1), .COUT(CO1));
-  defparam inst1.INIT0 = 16'h001B;
-  defparam inst1.INIT1 = 16'h001B;
+  defparam inst1.INIT0 = 16'h001D;
+  defparam inst1.INIT1 = 16'h001D;
   defparam inst1.INJECT1_0 = "NO";
   defparam inst1.INJECT1_1 = "NO";
 endmodule
@@ -1983,7 +1974,7 @@ module SLICE_16 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0,
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \delay_counter[1] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  ccu20010 \delay_counter_cry_0[1] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
+  ccu20008 \delay_counter_cry_0[1] ( .A0(A0), .B0(B0), .C0(C0), .D0(GNDI), 
     .A1(A1), .B1(B1), .C1(C1), .D1(GNDI), .CI(FCI), .S0(F0), .S1(F1), 
     .CO1(FCO));
 
@@ -2016,22 +2007,22 @@ module SLICE_16 ( input C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, FCI, output F0,
 
 endmodule
 
-module SLICE_17 ( input C1, B1, D0, C0, B0, A0, DI0, LSR, CLK, output F0, Q0, 
-    F1 );
-  wire   GNDI, VCCI, LSR_NOTIN, DI0_dly, CLK_dly, LSR_dly;
+module SLICE_17 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI0, LSR, CLK, output 
+    F0, Q0, F1 );
+  wire   VCCI, LSR_NOTIN, DI0_dly, CLK_dly, LSR_dly;
 
-  lut4 \delay_cycles_14_5_.next_command_0_a4[0] ( .A(GNDI), .B(B1), .C(C1), 
-    .D(GNDI), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40012 \next_command_0[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
-  vmuxregsre0001 \command[0] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q0));
+  lut4 \next_command_i_0_o3[3] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40012 \next_command_0_0[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  vmuxregsre0001 \current_command[0] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2049,7 +2040,7 @@ endmodule
 
 module lut4 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC0C0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hECA0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40012 ( input A, B, C, D, output Z );
@@ -2062,13 +2053,13 @@ module inverter ( input I, output Z );
   INV INST1( .A(I), .Z(Z));
 endmodule
 
-module SLICE_18 ( input D1, C1, B1, A1, B0, DI1, DI0, CLK, output F0, Q0, F1, 
+module SLICE_18 ( input D1, C1, B1, A1, A0, DI1, DI0, CLK, output F0, Q0, F1, 
     Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40013 \delay_cycles_14_5_.N_486_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40014 reset_n_port_pad_RNI8MMK3( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), 
+  lut40013 \delay_cycles_14_3_.current_state_srsts_i_i[1] ( .A(A1), .B(B1), 
+    .C(C1), .D(D1), .Z(F1));
+  lut40014 reset_n_port_pad_RNI8MMK3( .A(A0), .B(GNDI), .C(GNDI), .D(GNDI), 
     .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \current_state[1] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
@@ -2082,7 +2073,7 @@ module SLICE_18 ( input D1, C1, B1, A1, B0, DI1, DI0, CLK, output F0, Q0, F1,
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
@@ -2095,12 +2086,12 @@ endmodule
 
 module lut40013 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF020) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40014 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h3333) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h5555) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module vmuxregsre0015 ( input D0, D1, SD, SP, CK, LSR, output Q );
@@ -2109,14 +2100,13 @@ module vmuxregsre0015 ( input D0, D1, SD, SP, CK, LSR, output Q );
   defparam INST01.GSR = "DISABLED";
 endmodule
 
-module SLICE_19 ( input D1, C1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output F0, 
+module SLICE_19 ( input D1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40016 \delay_cycles_14_5_.current_state_srsts_0_a4[3] ( .A(A1), .B(GNDI), 
-    .C(C1), .D(D1), .Z(F1));
+  lut40016 \current_state_RNO[3] ( .A(A1), .B(B1), .C(GNDI), .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40017 \delay_cycles_14_5_.N_484_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40017 \delay_cycles_14_3_.N_484_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
   vmuxregsre \current_state[3] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2126,7 +2116,7 @@ module SLICE_19 ( input D1, C1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output F0,
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
@@ -2144,30 +2134,31 @@ endmodule
 
 module lut40016 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hA000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40017 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h20A8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h40C8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_20 ( input D1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output F0, 
-    Q0, F1, Q1 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module SLICE_20 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output 
+    F0, Q0, F1, Q1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40018 \current_state_srsts_0_a4[5] ( .A(A1), .B(B1), .C(GNDI), .D(D1), 
-    .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40019 \current_state_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40018 \current_state_RNO[5] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40019 \current_state_srsts_i_i[4] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
   vmuxregsre \current_state[5] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \current_state[4] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
@@ -2186,21 +2177,22 @@ endmodule
 
 module lut40018 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40019 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hBA00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hA0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_21 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output 
     F0, Q0, F1, Q1 );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40020 \delay_cycles_14_5_.N_477_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40020 \current_state_srsts_i_i[7] ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40021 \current_state_srsts_0[6] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40021 \delay_cycles_14_3_.current_state_srsts_0[6] ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
   vmuxregsre \current_state[7] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2229,22 +2221,21 @@ endmodule
 
 module lut40020 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hCC08) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC0C8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40021 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hE000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hCE00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_22 ( input D1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40022 \delay_cycles_14_5_.current_state_srsts_0_a4[9] ( .A(A1), .B(B1), 
-    .C(GNDI), .D(D1), .Z(F1));
+  lut40022 \current_state_RNO[9] ( .A(A1), .B(B1), .C(GNDI), .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40023 \delay_cycles_14_5_.N_475_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40023 \current_state_srsts_i_i[8] ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
   vmuxregsre \current_state[9] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2277,7 +2268,7 @@ endmodule
 
 module lut40023 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC0C8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hBA00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_23 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output 
@@ -2285,8 +2276,7 @@ module SLICE_23 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
   lut40024 \current_state_RNO[11] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40025 \delay_cycles_14_5_.current_state_srsts_i_a2_RNII539D[21] ( .A(A0), 
-    .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40025 \current_state_RNO[10] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
   vmuxregsre \current_state[11] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2315,22 +2305,20 @@ endmodule
 
 module lut40024 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hCE00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hF020) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40025 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h2000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h4000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_24 ( input D1, C1, B1, A1, D0, C0, B0, DI1, DI0, CLK, output F0, 
+module SLICE_24 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40026 \delay_cycles_14_5_.N_467_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40027 \delay_cycles_14_5_.current_state_srsts_i_a2_RNINLFJC[21] ( 
-    .A(GNDI), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40020 \current_state_RNO[13] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40026 \current_state_RNO[12] ( .A(A0), .B(B0), .C(C0), .D(GNDI), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \current_state[13] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2343,9 +2331,9 @@ module SLICE_24 ( input D1, C1, B1, A1, D0, C0, B0, DI1, DI0, CLK, output F0,
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
@@ -2358,22 +2346,16 @@ endmodule
 
 module lut40026 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC0C8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40027 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hC000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_25 ( input D1, C1, B1, D0, C0, B0, A0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40028 \delay_cycles_14_5_.current_state_srsts_0_a4[15] ( .A(GNDI), .B(B1), 
-    .C(C1), .D(D1), .Z(F1));
+  lut40027 \current_state_RNO[15] ( .A(GNDI), .B(B1), .C(C1), .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40029 \delay_cycles_14_5_.N_465_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40028 \current_state_srsts_i_i[14] ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
   vmuxregsre \current_state[15] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2399,24 +2381,22 @@ module SLICE_25 ( input D1, C1, B1, D0, C0, B0, A0, DI1, DI0, CLK, output F0,
 
 endmodule
 
-module lut40028 ( input A, B, C, D, output Z );
+module lut40027 ( input A, B, C, D, output Z );
 
   ROM16X1A #(16'hC000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40029 ( input A, B, C, D, output Z );
+module lut40028 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF020) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8C88) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_26 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output 
     F0, Q0, F1, Q1 );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40030 \delay_cycles_14_5_.current_state_srsts_i_o2_0_RNIKO4971[17] ( 
-    .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40031 \delay_cycles_14_5_.N_462_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40029 \current_state_RNO[17] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40030 \current_state_RNO[16] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
   vmuxregsre \current_state[17] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2443,24 +2423,23 @@ module SLICE_26 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output
 
 endmodule
 
+module lut40029 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hAA02) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40030 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hA0A2) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40031 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hF200) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_27 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0, 
+module SLICE_27 ( input D1, C1, B1, A1, D0, C0, B0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40026 \delay_cycles_14_5_.N_457_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40024 \delay_cycles_14_3_.N_457_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40032 \delay_cycles_14_5_.current_state_srsts_0_a4[18] ( .A(A0), .B(B0), 
-    .C(C0), .D(GNDI), .Z(F0));
+  lut40031 \current_state_RNO[18] ( .A(GNDI), .B(B0), .C(C0), .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \current_state[19] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2473,9 +2452,9 @@ module SLICE_27 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0,
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
@@ -2486,18 +2465,18 @@ module SLICE_27 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0,
 
 endmodule
 
-module lut40032 ( input A, B, C, D, output Z );
+module lut40031 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_28 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output 
     F0, Q0, F1, Q1 );
   wire   VCCI, GNDI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40033 \delay_cycles_14_5_.current_state_srsts_i_o4_RNIBLJ5B[21] ( .A(A1), 
-    .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40034 \current_state_RNO[20] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40032 \current_state_RNO[21] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40033 \delay_cycles_14_3_.N_455_i ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
   vmuxregsre \current_state[21] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2524,24 +2503,24 @@ module SLICE_28 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, CLK, output
 
 endmodule
 
-module lut40033 ( input A, B, C, D, output Z );
+module lut40032 ( input A, B, C, D, output Z );
 
   ROM16X1A #(16'h0010) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40034 ( input A, B, C, D, output Z );
+module lut40033 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hCE00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_29 ( input D1, B1, A1, B0, A0, DI1, DI0, CLK, output F0, Q0, F1, 
+module SLICE_29 ( input C1, B1, A1, C0, A0, DI1, DI0, CLK, output F0, Q0, F1, 
     Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40035 \delay_cycles_14_5_.current_state_srsts_0_a4[23] ( .A(A1), .B(B1), 
-    .C(GNDI), .D(D1), .Z(F1));
+  lut40034 \current_state_RNO[23] ( .A(A1), .B(B1), .C(C1), .D(GNDI), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40036 \current_state_RNO[22] ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  lut40035 \delay_cycles_14_3_.current_state_srsts_i_i_a3[22] ( .A(A0), 
+    .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
   vmuxregsre \current_state[23] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2549,10 +2528,10 @@ module SLICE_29 ( input D1, B1, A1, B0, A0, DI1, DI0, CLK, output F0, Q0, F1,
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
 
   specify
-    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
@@ -2564,24 +2543,23 @@ module SLICE_29 ( input D1, B1, A1, B0, A0, DI1, DI0, CLK, output F0, Q0, F1,
 
 endmodule
 
+module lut40034 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h8080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40035 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hA0A0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40036 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h8888) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_30 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0, 
+module SLICE_30 ( input D1, C1, B1, A1, D0, B0, A0, DI1, DI0, CLK, output F0, 
     Q0, F1, Q1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40013 \delay_cycles_14_5_.N_447_i ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40020 \current_state_srsts_i_i[25] ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40037 \delay_cycles_14_5_.current_state_srsts_0_a4[24] ( .A(A0), .B(B0), 
-    .C(C0), .D(GNDI), .Z(F0));
+  lut40036 \current_state_RNO[24] ( .A(A0), .B(B0), .C(GNDI), .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre \current_state[25] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -2594,7 +2572,7 @@ module SLICE_30 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0,
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
@@ -2607,18 +2585,17 @@ module SLICE_30 ( input D1, C1, B1, A1, C0, B0, A0, DI1, DI0, CLK, output F0,
 
 endmodule
 
-module lut40037 ( input A, B, C, D, output Z );
+module lut40036 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_31 ( input D1, C1, B1, A1, D0, C0, A0, DI1, DI0, LSR, CLK, 
+module SLICE_31 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI1, DI0, LSR, CLK, 
     output F0, Q0, F1, Q1 );
-  wire   GNDI, VCCI, LSR_NOTIN, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+  wire   VCCI, LSR_NOTIN, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  lut40038 \init_counter_RNO[1] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40039 \init_counter_RNO[0] ( .A(A0), .B(GNDI), .C(C0), .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
+  lut40037 \init_counter_RNO[1] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40038 \init_counter_RNO[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
   vmuxregsre0005 \init_counter[1] ( .D0(VCCI), .D1(DI1_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2633,6 +2610,7 @@ module SLICE_31 ( input D1, C1, B1, A1, D0, C0, A0, DI1, DI0, LSR, CLK,
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CLK => Q1) = (0:0:0,0:0:0);
@@ -2647,22 +2625,24 @@ module SLICE_31 ( input D1, C1, B1, A1, D0, C0, A0, DI1, DI0, LSR, CLK,
 
 endmodule
 
+module lut40037 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hAA98) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40038 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h963C) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hA5A4) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40039 ( input A, B, C, D, output Z );
+module SLICE_32 ( input D1, B1, D0, C0, B0, A0, DI0, LSR, CLK, output F0, Q0, 
+    F1 );
+  wire   GNDI, VCCI, LSR_NOTIN, DI0_dly, CLK_dly, LSR_dly;
 
-  ROM16X1A #(16'h5FA0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_32 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI0, LSR, CLK, output 
-    F0, Q0, F1 );
-  wire   VCCI, LSR_NOTIN, DI0_dly, CLK_dly, LSR_dly;
-
-  lut40040 \init_counter_RNO_0[2] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40041 \init_counter_RNO[2] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40039 \current_state_RNI3V6F5[7] ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40040 \init_counter_RNO[2] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
   vmuxregsre0005 \init_counter[2] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
     .SP(VCCI), .CK(CLK_dly), .LSR(LSR_NOTIN), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
@@ -2670,9 +2650,7 @@ module SLICE_32 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI0, LSR, CLK, output
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2688,22 +2666,22 @@ module SLICE_32 ( input D1, C1, B1, A1, D0, C0, B0, A0, DI0, LSR, CLK, output
 
 endmodule
 
-module lut40040 ( input A, B, C, D, output Z );
+module lut40039 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hA080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h33FF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40041 ( input A, B, C, D, output Z );
+module lut40040 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8778) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hAAA8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_33 ( input D1, C1, B1, A1, A0, DI0, LSR, CLK, output F0, Q0, F1 );
   wire   GNDI, VCCI, DI0_dly, CLK_dly, LSR_dly;
 
-  lut40042 \delay_cycles_14_5_.current_state_srsts_i_a2_8[21] ( .A(A1), .B(B1), 
-    .C(C1), .D(D1), .Z(F1));
-  lut40043 \refresh_counter_RNO[0] ( .A(A0), .B(GNDI), .C(GNDI), .D(GNDI), 
+  lut40041 \current_state_srsts_i_a2_8[21] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40014 \refresh_counter_RNO[0] ( .A(A0), .B(GNDI), .C(GNDI), .D(GNDI), 
     .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
   vmuxregsre0005 \refresh_counter[0] ( .D0(VCCI), .D1(DI0_dly), .SD(VCCI), 
@@ -2727,36 +2705,31 @@ module SLICE_33 ( input D1, C1, B1, A1, A0, DI0, LSR, CLK, output F0, Q0, F1 );
 
 endmodule
 
-module lut40042 ( input A, B, C, D, output Z );
+module lut40041 ( input A, B, C, D, output Z );
 
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40043 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h5555) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module delay_cycles_14_5__un37_i_a4_RNIP1LSK1_4__SLICE_34 ( input D1, C1, B1, 
-    A1, D0, C0, B0, A0, M0, output OFX0 );
+module delay_cycles_14_3__delay_counter_4_m_0__SLICE_34 ( input D1, C1, B1, A1, 
+    D0, C0, B0, A0, M0, output OFX0 );
   wire   
-         \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34_K1_H1 
+         \delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34_K1_H1 
          , 
-         \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/GATE_H0 
+         \delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/GATE_H0 
          ;
 
-  lut40044 \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34_K1 ( .A(A1), 
+  lut40042 \delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34_K1 ( .A(A1), 
     .B(B1), .C(C1), .D(D1), 
-    .Z(\delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34_K1_H1 )
+    .Z(\delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34_K1_H1 )
     );
-  lut40045 \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/GATE ( .A(A0), .B(B0), 
+  lut40043 \delay_cycles_14_3_.delay_counter_4_m[0]/GATE ( .A(A0), .B(B0), 
     .C(C0), .D(D0), 
-    .Z(\delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/GATE_H0 )
+    .Z(\delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/GATE_H0 )
     );
-  selmux2 \delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34_K0K1MUX ( 
-    .D0(\delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/GATE_H0 )
+  selmux2 \delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34_K0K1MUX ( 
+    .D0(\delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/GATE_H0 )
     , 
-    .D1(\delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34/delay_cycles_14_5_.un37_i_a4_RNIP1LSK1[4]/SLICE_34_K1_H1 )
+    .D1(\delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34/delay_cycles_14_3_.delay_counter_4_m[0]/SLICE_34_K1_H1 )
     , .SD(M0), .Z(OFX0));
 
   specify
@@ -2773,14 +2746,14 @@ module delay_cycles_14_5__un37_i_a4_RNIP1LSK1_4__SLICE_34 ( input D1, C1, B1,
 
 endmodule
 
-module lut40044 ( input A, B, C, D, output Z );
+module lut40042 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0040) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0020) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40045 ( input A, B, C, D, output Z );
+module lut40043 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module selmux2 ( input D0, D1, SD, output Z );
@@ -2788,57 +2761,11 @@ module selmux2 ( input D0, D1, SD, output Z );
   MUX21 INST1( .D0(D0), .D1(D1), .SD(SD), .Z(Z));
 endmodule
 
-module delay_cycles_14_5__un37_i_a4_RNIJIG3D2_4__SLICE_35 ( input D1, C1, B1, 
-    A1, D0, C0, B0, A0, M0, output OFX0 );
-  wire   
-         \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35_K1_H1 
-         , 
-         \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/GATE_H0 
-         ;
+module SLICE_35 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40046 \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35_K1 ( .A(A1), 
-    .B(B1), .C(C1), .D(D1), 
-    .Z(\delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35_K1_H1 )
-    );
-  lut40047 \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/GATE ( .A(A0), .B(B0), 
-    .C(C0), .D(D0), 
-    .Z(\delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/GATE_H0 )
-    );
-  selmux2 \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35_K0K1MUX ( 
-    .D0(\delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/GATE_H0 )
-    , 
-    .D1(\delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35/delay_cycles_14_5_.un37_i_a4_RNIJIG3D2[4]/SLICE_35_K1_H1 )
-    , .SD(M0), .Z(OFX0));
-
-  specify
-    (D1 => OFX0) = (0:0:0,0:0:0);
-    (C1 => OFX0) = (0:0:0,0:0:0);
-    (B1 => OFX0) = (0:0:0,0:0:0);
-    (A1 => OFX0) = (0:0:0,0:0:0);
-    (D0 => OFX0) = (0:0:0,0:0:0);
-    (C0 => OFX0) = (0:0:0,0:0:0);
-    (B0 => OFX0) = (0:0:0,0:0:0);
-    (A0 => OFX0) = (0:0:0,0:0:0);
-    (M0 => OFX0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40046 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h6996) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40047 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hFF6F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_36 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40048 \delay_cycles_14_5_.next_command_i_1[3] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40049 \delay_cycles_14_5_.next_command_i_1_RNI79UCJ[3] ( .A(A0), .B(B0), 
+  lut40044 \delay_cycles_14_3_.un37_i_a4[4] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40045 \delay_cycles_14_3_.delay_counter_4_m_RNIQ03NM[0] ( .A(A0), .B(B0), 
     .C(C0), .D(D0), .Z(F0));
 
   specify
@@ -2854,23 +2781,22 @@ module SLICE_36 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
 endmodule
 
-module lut40048 ( input A, B, C, D, output Z );
+module lut40044 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hEEEC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h1000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40049 ( input A, B, C, D, output Z );
+module lut40045 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0103) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hABEF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_37 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+module SLICE_36 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40050 \delay_cycles_14_5_.un37_o2_RNISKEUQ[2] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40051 \delay_cycles_14_5_.ram_side_addr_port_1_0_o2 ( .A(A0), .B(GNDI), 
-    .C(C0), .D(D0), .Z(F0));
+  lut40046 \ram_addr_reg_iv_0[5] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40047 \ram_addr_reg_iv_0_RNO[5] ( .A(A0), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -2879,27 +2805,28 @@ module SLICE_37 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
-module lut40050 ( input A, B, C, D, output Z );
+module lut40046 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h1115) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFEA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40051 ( input A, B, C, D, output Z );
+module lut40047 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFFFA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hEE00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_38 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
+module SLICE_37 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40052 \ram_addr_reg_iv[5] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40053 \ram_addr_reg_iv_RNO[5] ( .A(A0), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+  lut40048 \ram_addr_reg_iv_0[4] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40047 \ram_addr_reg_iv_0_RNO[4] ( .A(A0), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -2907,6 +2834,86 @@ module SLICE_38 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40048 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hFFF8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_38 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40049 \ram_side_addr_port_pad_RNO[10] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40050 \ram_side_addr_port_pad_RNO_0[10] ( .A(A0), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40049 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hCCAF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module lut40050 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h3377) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_39 ( input B1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40051 \ram_addr_reg_iv_0_o2[5] ( .A(A1), .B(B1), .C(GNDI), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40040 \ram_side_bank_addr_port_pad_RNO[0] ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40051 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hEEEE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_40 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40052 reset_refresh_counter_0_a2( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40053 \current_command_0io_RNO_1[3] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
@@ -2916,26 +2923,27 @@ endmodule
 
 module lut40052 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFAFE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40053 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hE0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFE0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_39 ( input D1, C1, B1, A1, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
+module SLICE_41 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40054 \ram_addr_reg_iv[4] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40055 \ram_addr_reg_iv_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(GNDI), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
+  lut40054 \current_command_0io_RNO[3] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40055 \current_command_0io_RNO_0[3] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
@@ -2945,25 +2953,26 @@ endmodule
 
 module lut40054 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFFBA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0031) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40055 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC8C8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h1000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_40 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
+module SLICE_42 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40056 ram_bank_addr_reg6_i_a2( .A(GNDI), .B(GNDI), .C(C1), .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40057 \ram_side_addr_port_2_RNO[10] ( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40056 \delay_cycles_14_3_.un37_i_a4_3[1] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40057 \delay_cycles_14_3_.un37_i_a4_3_RNIVCQVD[1] ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2974,50 +2983,51 @@ endmodule
 
 module lut40056 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h000F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0100) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40057 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFBFA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFBF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_41 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_43 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40058 un2_ram_side_bank_addr_port_i_o2( .A(GNDI), .B(GNDI), .C(C1), 
+  lut40058 \delay_cycles_14_3_.un37_i_a4_RNI4TM58[1] ( .A(A1), .B(B1), .C(C1), 
     .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40059 \delay_cycles_14_5_.un37_i_a4_3_RNIDRGSH[1] ( .A(A0), .B(B0), 
+  lut40059 \delay_cycles_14_3_.un37_i_a4_RNIHMQVJ[4] ( .A(GNDI), .B(B0), 
     .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40058 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFFF0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h6996) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40059 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0100) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0C3F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_42 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_44 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40060 \delay_cycles_14_5_.un37_i_a4[0] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40061 \delay_cycles_14_5_.un37_i_a4_3_RNIS5H3D[1] ( .A(A0), .B(B0), 
-    .C(C0), .D(D0), .Z(F0));
+  lut40060 \delay_cycles_14_3_.un37_i_a4_RNI4TM58_0[1] ( .A(A1), .B(B1), 
+    .C(C1), .D(D1), .Z(F1));
+  lut40061 \delay_cycles_14_3_.un1_delay_cycles_12 ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3034,49 +3044,53 @@ endmodule
 
 module lut40060 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h2000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h3FEF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40061 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0020) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h00B8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_43 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_45 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40062 \delay_cycles_14_5_.un37_i_o2[1] ( .A(GNDI), .B(GNDI), .C(C1), 
+  lut40062 \delay_cycles_14_3_.next_command_i_0_0[5] ( .A(A1), .B(B1), .C(C1), 
     .D(D1), .Z(F1));
+  lut40063 \delay_cycles_14_3_.next_command_i_0_0_RNIJLVQC[5] ( .A(GNDI), 
+    .B(B0), .C(C0), .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40063 \command_0io_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40062 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFFF0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hEAC0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40063 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h5557) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0003) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_44 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_46 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
 
-  lut40064 \delay_cycles_14_5_.current_state_srsts_i_o2_1[17] ( .A(A1), .B(B1), 
-    .C(C1), .D(D1), .Z(F1));
-  lut40065 \delay_cycles_14_5_.current_state_srsts_i_o2_1_RNIBR6EM[17] ( 
-    .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40064 \delay_cycles_14_3_.un37_i_a4[1] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40065 \delay_cycles_14_3_.delay_counter_4_m[1] ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3086,37 +3100,36 @@ module SLICE_44 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40064 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFFFE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0200) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40065 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hEA00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hCFC0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_45 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_47 ( input D1, C1, B1, A1, C0, B0, output F0, F1 );
+  wire   GNDI;
 
-  lut40066 \delay_cycles_14_5_.un37_a4[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40067 \delay_cycles_14_5_.un37_a4_RNIALSUU[3] ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
+  lut40066 \delay_cycles_14_3_.un37_a4_RNI70N58[2] ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40067 \delay_cycles_14_3_.delay_counter_4_m[2] ( .A(GNDI), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
@@ -3128,14 +3141,13 @@ endmodule
 
 module lut40067 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hFBFF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC0C0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_46 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_48 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40068 \delay_cycles_14_5_.un37_a4_4[3] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40069 \delay_cycles_14_5_.delay_counter_4_v[0] ( .A(A0), .B(B0), .C(C0), 
+  lut40068 \un37_i_a4[0] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40069 \delay_cycles_14_3_.ready_signal_i_a2[0] ( .A(A0), .B(B0), .C(C0), 
     .D(D0), .Z(F0));
 
   specify
@@ -3153,21 +3165,50 @@ endmodule
 
 module lut40068 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0100) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0800) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40069 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h2080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0008) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_47 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
+module SLICE_49 ( input D1, C1, A1, D0, C0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40070 \delay_cycles_14_5_.un37_i_a4[4] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40071 \delay_cycles_14_5_.delay_counter_4_v[1] ( .A(GNDI), .B(B0), 
-    .C(GNDI), .D(D0), .Z(F0));
+  lut40070 \next_command_i_0_o2[5] ( .A(A1), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40071 \current_command_0io_RNO[4] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40070 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hFFFA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module lut40071 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h0F1F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_50 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40072 in_write_cycle_i_a4( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40073 ram_side_chip1_udqm_port_pad_RNO( .A(A0), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -3176,37 +3217,7 @@ module SLICE_47 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40070 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h0200) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40071 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hCC00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_48 ( input D1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
-
-  lut40072 \delay_cycles_14_5_.un37_a4[3] ( .A(A1), .B(B1), .C(GNDI), .D(D1), 
-    .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40073 \delay_cycles_14_5_.ready_signal_i_a2[0] ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
@@ -3214,230 +3225,175 @@ endmodule
 
 module lut40072 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h1100) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0008) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40073 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0400) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hF500) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_49 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_51 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40074 ram_side_addr_port_1_0_a4_4( .A(GNDI), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
+  lut40074 \delay_cycles_14_3_.in_read_cycle_i_a4 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40075 ram_side_chip1_ldqm_port_pad_RNO( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40075 \ram_side_addr_port_2[10] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40074 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h000C) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0004) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40075 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF870) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hC0CC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_50 ( input C1, B1, A1, D0, C0, B0, output F0, F1 );
-  wire   GNDI;
+module SLICE_52 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40076 in_write_cycle_i_a4( .A(A1), .B(B1), .C(C1), .D(GNDI), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40077 ram_side_chip1_udqm_port_pad_RNO( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40076 \delay_cycles_14_3_.un37_a4[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40077 \delay_cycles_14_3_.delay_counter_4_m_RNO[1] ( .A(A0), .B(B0), 
+    .C(C0), .D(D0), .Z(F0));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40076 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0404) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40077 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hC0CC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h2080) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_51 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+module SLICE_53 ( input D1, B1, A1, D0, C0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40078 \delay_cycles_14_5_.in_read_cycle_i_a4 ( .A(A1), .B(B1), .C(C1), 
+  lut40078 \ram_side_addr_port_2_i_o2_0_1[10] ( .A(A1), .B(B1), .C(GNDI), 
     .D(D1), .Z(F1));
-  lut40079 ram_side_chip1_ldqm_port_pad_RNO( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
+  lut40079 \ram_side_addr_port_2_i_o2_0[10] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40078 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0002) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFEE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40079 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF030) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFFE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_52 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+module SLICE_54 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40068 \delay_cycles_14_5_.un37_i_a4_3[1] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40080 \delay_cycles_14_5_.un37_i_a4_3_RNIR78M7[1] ( .A(GNDI), .B(GNDI), 
-    .C(C0), .D(D0), .Z(F0));
+  lut40080 \un37_a4_0_a3_1[3] ( .A(GNDI), .B(B1), .C(C1), .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
+  lut40081 \un37_a4_0_a3[3] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40080 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0F00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_53 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
-  wire   GNDI;
-
-  lut40081 reset_refresh_counter_0_a2( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40082 \delay_cycles_14_5_.reset_refresh_counter_0_a4 ( .A(A0), .B(GNDI), 
-    .C(C0), .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  ROM16X1A #(16'h0003) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40081 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h8000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0002) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_55 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40082 \current_state_srsts_i_a2_11[21] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40083 \current_state_srsts_i_a2[21] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
 endmodule
 
 module lut40082 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF0A0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_54 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40083 \delay_cycles_14_5_.current_state_srsts_i_o2_0_RNIBTNOC1[17] ( 
-    .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40084 \delay_cycles_14_5_.current_state_srsts_i_a2[21] ( .A(A0), .B(B0), 
-    .C(C0), .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40083 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0A2A) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40084 ( input A, B, C, D, output Z );
-
   ROM16X1A #(16'h8000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_55 ( input C1, B1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_56 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
   wire   GNDI;
 
-  lut40085 ram_bank_addr_reg7_i_a2( .A(GNDI), .B(B1), .C(C1), .D(GNDI), .Z(F1));
+  lut40084 ram_bank_addr_reg6_i_a2( .A(GNDI), .B(GNDI), .C(C1), .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40086 \ram_addr_reg_0_iv[1] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
-
-  specify
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40085 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h0303) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40086 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h2F22) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_56 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
-
-  lut40087 \delay_cycles_14_5_.un37_a4_1_0[2] ( .A(GNDI), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40088 \delay_cycles_14_5_.un37_a4_1[2] ( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40085 \ram_addr_reg_0_iv_0[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -3446,21 +3402,51 @@ module SLICE_56 ( input D1, C1, B1, D0, C0, B0, A0, output F0, F1 );
 
 endmodule
 
+module lut40084 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h000F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module lut40085 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h8F88) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_57 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40086 \delay_cycles_14_3_.un37_i_a4_2_0_o3[1] ( .A(GNDI), .B(GNDI), 
+    .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40087 \delay_cycles_14_3_.un37_a4_0_o3_0[3] ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40086 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hFFF0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40087 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0030) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFFFE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40088 ( input A, B, C, D, output Z );
+module SLICE_58 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_57 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40089 \current_state_srsts_0_a4_0[5] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40090 \current_state_srsts_0_a4_0_0[6] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40088 \delay_cycles_14_3_.current_state_srsts_i_o2[17] ( .A(A1), .B(B1), 
+    .C(C1), .D(D1), .Z(F1));
+  lut40079 \current_state_srsts_i_o2_1[17] ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
 
   specify
@@ -3470,6 +3456,32 @@ module SLICE_57 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40088 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hC8C0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_59 ( input D1, C1, B1, A1, D0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40089 \ram_side_bank_addr_port_pad_RNO[1] ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40090 \ram_side_addr_port_pad_RNO[11] ( .A(A0), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
@@ -3478,27 +3490,27 @@ endmodule
 
 module lut40089 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0010) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hCCC8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40090 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hF0E0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hCC88) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_58 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_60 ( input C1, B1, A1, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
 
-  lut40091 \ram_side_bank_addr_port_pad_RNO[1] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40091 \ram_side_bank_addr_port_pad_RNO[0] ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
+  lut40091 ram_side_chip0_ldqm_port_pad_RNO( .A(A1), .B(B1), .C(C1), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40091 ram_side_chip0_udqm_port_pad_RNO( .A(A0), .B(B0), .C(C0), .D(GNDI), 
+    .Z(F0));
 
   specify
-    (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
@@ -3508,98 +3520,13 @@ endmodule
 
 module lut40091 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hA8AA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h8C8C) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_59 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
-  wire   GNDI;
+module SLICE_61 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40092 \delay_cycles_14_5_.ram_addr_reg_0_iv[9] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40093 \ram_side_addr_port_pad_RNO[11] ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40092 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hEEEC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40093 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hCCC0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_60 ( input D1, C1, D0, C0, output F0, F1 );
-  wire   GNDI;
-
-  lut40094 \delay_cycles_14_5_.un37_i_a4_RNICK5024[4] ( .A(GNDI), .B(GNDI), 
-    .C(C1), .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40095 \delay_cycles_14_5_.un1_delay_cycles_10 ( .A(GNDI), .B(GNDI), 
-    .C(C0), .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40094 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hFF0F) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40095 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h00F0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_61 ( input D1, C1, B1, D0, C0, B0, output F0, F1 );
-  wire   GNDI;
-
-  lut40096 ram_side_chip0_ldqm_port_pad_RNO( .A(GNDI), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40096 ram_side_chip0_udqm_port_pad_RNO( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40096 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hCF00) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_62 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40097 \delay_cycles_14_5_.un37_i_a4_3_0[1] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40098 ram_side_addr_port_1_0_a4_3( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40092 \ram_addr_reg_0_iv_0[8] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40093 \ram_addr_reg_0_iv_0[1] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3614,9 +3541,90 @@ module SLICE_62 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
 endmodule
 
+module lut40092 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hCE0A) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module lut40093 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h8F88) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_62 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40094 \ram_addr_reg_0_iv_0[7] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40095 \ram_addr_reg_0_iv_0[2] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40094 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hDC50) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module lut40095 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hF444) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_63 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40096 \ram_addr_reg_0_iv_0[6] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40097 \ram_addr_reg_0_iv_0[3] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40096 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hC0EA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40097 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h88F8) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_64 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40098 \delay_cycles_14_3_.un37_i_a4_N_2L1 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40099 \ram_side_addr_port_pad_RNO[9] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
 endmodule
 
 module lut40098 ( input A, B, C, D, output Z );
@@ -3624,11 +3632,19 @@ module lut40098 ( input A, B, C, D, output Z );
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_63 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module lut40099 ( input A, B, C, D, output Z );
 
-  lut40099 \delay_cycles_14_5_.ram_addr_reg_0_iv[0] ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40100 \ram_addr_reg_0_iv[2] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ROM16X1A #(16'hFAEA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_65 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40100 \delay_cycles_14_3_.un37_a4_2[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40101 \next_command_i_0_o3_0[3] ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3637,49 +3653,29 @@ module SLICE_63 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
-endmodule
-
-module lut40099 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h50DC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40100 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h44F4) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_64 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40101 \ram_addr_reg_0_iv[8] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40101 \ram_addr_reg_0_iv[3] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40101 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0CAE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hFAF0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_65 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_66 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
 
-  lut40102 \ram_addr_reg_0_iv[7] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40102 \ram_addr_reg_0_iv[6] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40102 \delay_cycles_14_3_.un37_i_a4_3_N_2L1 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40103 \current_state_RNI00I9C[4] ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3689,50 +3685,47 @@ module SLICE_65 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40102 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h2F22) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_66 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40103 \delay_cycles_14_5_.un37_i_a4_1[0] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40104 in_write_cycle_i_a4_0( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40103 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hF0C0) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_67 ( input D1, B1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40039 \current_state_srsts_i_o4[21] ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40104 \current_state_srsts_0_a2[24] ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
 endmodule
 
 module lut40104 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'hF000) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_67 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_68 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40105 \delay_cycles_14_5_.un37_a4_4_0[3] ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40106 ram_side_addr_port_1_0_a4_1( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40105 \un37_i_a4_8[0] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40106 in_read_cycle_i_a2_0_a3( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3757,38 +3750,17 @@ module lut40106 ( input A, B, C, D, output Z );
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_68 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
-  wire   GNDI;
+module SLICE_69 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40103 \delay_cycles_14_5_.un37_i_a4_8[0] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40107 \delay_cycles_14_3_.un37_a4_1[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40016 \init_counter_RNO_0[1] ( .A(A0), .B(GNDI), .C(C0), .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
+  lut40108 \un37_i_a4_7[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module SLICE_69 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
-
-  lut40107 \delay_cycles_14_5_.current_state_srsts_i_o4[21] ( .A(GNDI), 
-    .B(GNDI), .C(C1), .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40108 \delay_cycles_14_5_.un37_i_a4_1[4] ( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -3799,7 +3771,7 @@ endmodule
 
 module lut40107 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0FFF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40108 ( input A, B, C, D, output Z );
@@ -3807,12 +3779,13 @@ module lut40108 ( input A, B, C, D, output Z );
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_70 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_70 ( input D1, C1, B1, A1, D0, A0, output F0, F1 );
+  wire   GNDI;
 
-  lut40109 reset_refresh_counter_0_a2_9( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40110 reset_refresh_counter_0_a2_10( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40109 \un37_i_a4_1[0] ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40110 \delay_cycles_14_3_.current_state_srsts_i_a2[19] ( .A(A0), .B(GNDI), 
+    .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3820,8 +3793,6 @@ module SLICE_70 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
@@ -3834,46 +3805,15 @@ endmodule
 
 module lut40110 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0055) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_71 ( input D1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-  wire   GNDI;
+module SLICE_71 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40111 reset_refresh_counter_0_a2_7( .A(A1), .B(B1), .C(GNDI), .D(D1), 
+  lut40105 reset_refresh_counter_0_a2_9( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40112 reset_refresh_counter_0_a2_8( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40111 reset_refresh_counter_0_a2_10( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40111 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h0011) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module lut40112 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_72 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
-
-  lut40113 \delay_cycles_14_5_.current_state_srsts_i_a2_10[21] ( .A(A1), 
-    .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40110 \delay_cycles_14_5_.current_state_srsts_i_a2_11[21] ( .A(A0), 
-    .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3888,6 +3828,37 @@ module SLICE_72 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
 endmodule
 
+module lut40111 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
+module SLICE_72 ( input D1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40112 reset_refresh_counter_0_a2_7( .A(A1), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40113 reset_refresh_counter_0_a2_8( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40112 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h0011) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40113 ( input A, B, C, D, output Z );
 
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
@@ -3895,10 +3866,10 @@ endmodule
 
 module SLICE_73 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
 
-  lut40114 \delay_cycles_14_5_.un37_i_a4_7[0] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40114 \current_state_srsts_i_a2_9[21] ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40115 \delay_cycles_14_5_.delay_counter_4_v_RNO[1] ( .A(A0), .B(B0), 
-    .C(C0), .D(D0), .Z(F0));
+  lut40113 \current_state_srsts_i_a2_10[21] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -3918,64 +3889,61 @@ module lut40114 ( input A, B, C, D, output Z );
   ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40115 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'h0200) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_74 ( input D1, C1, B1, A1, C0, B0, output F0, F1 );
+module SLICE_74 ( input D1, C1, A1, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40116 \delay_cycles_14_5_.in_read_cycle_i_a2 ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40117 \delay_cycles_14_5_.un37_o2[2] ( .A(GNDI), .B(B0), .C(C0), .D(GNDI), 
-    .Z(F0));
+  lut40115 \init_counter_RNIKICP8[0] ( .A(A1), .B(GNDI), .C(C1), .D(D1), 
+    .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
+  lut40116 \delay_cycles_14_3_.un37_a4_RNI8VRC6[2] ( .A(GNDI), .B(B0), .C(C0), 
+    .D(GNDI), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
   endspecify
 
+endmodule
+
+module lut40115 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'h0005) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module lut40116 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'h0001) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0C0C) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module lut40117 ( input A, B, C, D, output Z );
-
-  ROM16X1A #(16'hFCFC) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
-endmodule
-
-module SLICE_75 ( input B1, A1, D0, C0, B0, A0, output F0, F1 );
+module SLICE_75 ( input C1, A1, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40118 \delay_cycles_14_5_.current_state_srsts_i_o2_0[17] ( .A(A1), .B(B1), 
-    .C(GNDI), .D(GNDI), .Z(F1));
+  lut40117 \delay_cycles_14_3_.current_state_srsts_i_o2_0[17] ( .A(A1), 
+    .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40116 \delay_cycles_14_5_.current_state_srsts_i_a2_9[21] ( .A(A0), .B(B0), 
-    .C(C0), .D(D0), .Z(F0));
+  lut40118 \current_state_srsts_i_a2[11] ( .A(GNDI), .B(B0), .C(C0), .D(GNDI), 
+    .Z(F0));
 
   specify
-    (B1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
+module lut40117 ( input A, B, C, D, output Z );
+
+  ROM16X1A #(16'hFAFA) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+endmodule
+
 module lut40118 ( input A, B, C, D, output Z );
 
-  ROM16X1A #(16'hEEEE) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
+  ROM16X1A #(16'h0303) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
 module SLICE_76 ( output F0, F1 );
@@ -4000,17 +3968,14 @@ module lut40120 ( input A, B, C, D, output Z );
   ROM16X1A #(16'hFFFF) INST10( .AD0(A), .AD1(B), .AD2(C), .AD3(D), .DO0(Z));
 endmodule
 
-module SLICE_77 ( input B1, D0, output F0, F1 );
+module SLICE_77 ( input D0, output F0 );
   wire   GNDI;
 
-  lut40014 un2_refresh_counter_s_15_0_RNO( .A(GNDI), .B(B1), .C(GNDI), 
-    .D(GNDI), .Z(F1));
+  lut40121 un2_refresh_counter_s_15_0_RNO( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40121 \delay_cycles_14_5_.un37_i_a4_RNIJIG3D2_0[4] ( .A(GNDI), .B(GNDI), 
-    .C(GNDI), .D(D0), .Z(F0));
 
   specify
-    (B1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
   endspecify
 
@@ -4109,7 +4074,7 @@ endmodule
 module ram_side_wr_en_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[3] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[3] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
@@ -4146,7 +4111,7 @@ endmodule
 module ram_side_cas_n_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[4] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[4] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
@@ -4177,7 +4142,7 @@ endmodule
 module ram_side_ras_n_port_MGIOL ( output IOLDO, input OPOS, LSR, CLK );
   wire   VCCI, LSR_NOTIN, OPOS_dly, CLK_dly, LSR_dly;
 
-  mfflsre \command_0io[5] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
+  mfflsre \current_command_0io[5] ( .D0(OPOS_dly), .SP(VCCI), .CK(CLK_dly), 
     .LSR(LSR_NOTIN), .Q(IOLDO));
   vcc DRIVEVCC( .PWR1(VCCI));
   inverter LSR_INVERTERIN( .I(LSR_dly), .Z(LSR_NOTIN));
