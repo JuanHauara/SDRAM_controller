@@ -12,7 +12,7 @@
 #OS: Windows 10 or later
 #Hostname: 5CG407221K
 
-# Mon Apr 14 00:24:18 2025
+# Mon Apr 14 10:38:10 2025
 
 #Implementation: impl1
 
@@ -57,19 +57,19 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 349R, Built Sep 17 202
 Verilog syntax check successful!
 File C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v changed - recompiling
 Selecting top level module sdram_controller
-@N: CG364 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Synthesizing module sdram_controller in library work.
+@N: CG364 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Synthesizing module sdram_controller in library work.
 Running optimization stage 1 on sdram_controller .......
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[1] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[2] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[6] is always 0.
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Register bit current_command[7] is always 1.
-@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 7 to 6 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Pruning register bits 2 to 1 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Register bit current_command[1] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Register bit current_command[2] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Register bit current_command[6] is always 0.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Register bit current_command[7] is always 1.
+@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Pruning register bits 7 to 6 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Pruning register bits 2 to 1 of current_command[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 Finished optimization stage 1 on sdram_controller (CPU Time 0h:00m:00s, Memory Used current: 93MB peak: 94MB)
 Running optimization stage 2 on sdram_controller .......
-@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":347:0:347:5|Register bit init_counter[3] is always 0.
-@W: CL260 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":347:0:347:5|Pruning register bit 3 of init_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL201 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Trying to extract state machine for register current_state.
+@N: CL189 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":345:0:345:5|Register bit init_counter[3] is always 0.
+@W: CL260 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":345:0:345:5|Pruning register bit 3 of init_counter[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"C:\hdl\SDRAM_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Trying to extract state machine for register current_state.
 Extracted state machine for register current_state
 State machine has 26 reachable states with original encodings of:
    00000
@@ -111,7 +111,7 @@ At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:24:19 2025
+# Mon Apr 14 10:38:11 2025
 
 ###########################################################]
 ###########################################################[
@@ -132,12 +132,12 @@ Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 349R, Built Sep
 
 @N|Running in 64-bit mode
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 91MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 91MB peak: 92MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:24:19 2025
+# Mon Apr 14 10:38:11 2025
 
 ###########################################################]
 
@@ -147,12 +147,12 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 22MB peak: 23MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 23MB peak: 23MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:24:19 2025
+# Mon Apr 14 10:38:11 2025
 
 ###########################################################]
 ###########################################################[
@@ -179,10 +179,10 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 00:24:20 2025
+# Mon Apr 14 10:38:12 2025
 
 ###########################################################]
-# Mon Apr 14 00:24:21 2025
+# Mon Apr 14 10:38:12 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -225,10 +225,10 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 NConnInternalConnection caching is on
 
-Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
 
-Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 254MB)
 
 
 Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
@@ -292,22 +292,22 @@ original code -> new code
 @N: FX493 |Applying initial value "0" on instance current_state[24].
 @N: FX493 |Applying initial value "0" on instance current_state[25].
 
-Starting clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
+Starting clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
 
 
 mixed edge conversion for GCC is OFF
 
-Finished clock optimization phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
+Finished clock optimization phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 269MB)
 
 
-Starting clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
+Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
 
 
-Finished clock optimization report phase (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 269MB peak: 270MB)
 
 @N: FX1184 |Applying syn_allowed_resources blockrams=10 on top level netlist sdram_controller 
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
 
 
 
@@ -331,7 +331,7 @@ Clock                    Load      Pin           Seq Example             Seq Exa
 sdram_controller|clk     128       clk(port)     wr_data_reg[31:0].C     -                 -            
 ========================================================================================================
 
-@W: MT529 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Found inferred clock sdram_controller|clk which controls 128 sequential elements including current_state[25]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Found inferred clock sdram_controller|clk which controls 128 sequential elements including current_state[25]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
 
 ICG Latch Removal Summary:
 Number of ICG latches removed: 0
@@ -364,23 +364,23 @@ Summary of user generated gated clocks:
 @N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
 Finished Pre Mapping Phase.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 270MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
 
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 270MB peak: 271MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 271MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 171MB peak: 271MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 171MB peak: 271MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:01s cputime
-# Mon Apr 14 00:24:23 2025
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon Apr 14 10:38:13 2025
 
 ###########################################################]
-# Mon Apr 14 00:24:23 2025
+# Mon Apr 14 10:38:14 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -407,7 +407,7 @@ Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:0
 Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 198MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 198MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 185MB peak: 198MB)
 
 
 Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 198MB peak: 198MB)
@@ -419,44 +419,44 @@ Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h
 
 Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 253MB peak: 253MB)
 
-@N: BZ173 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":473:1:473:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":473:1:473:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
-@N: BZ173 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":473:1:473:4|ROM reset_delay_counter (in view: work.sdram_controller(verilog)) mapped in logic.
-@N: MO106 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":473:1:473:4|Found ROM reset_delay_counter (in view: work.sdram_controller(verilog)) with 26 words by 1 bit.
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[0] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[1] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[2] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[3] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[4] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[5] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[6] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[7] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[8] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[9] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[10] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[11] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[12] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[13] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[14] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip0_data_port[15] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[0] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[1] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[2] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[3] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[4] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[5] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[6] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[7] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[8] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[9] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[10] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[11] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[12] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[13] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[14] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net ram_side_chip1_data_port[15] has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net soc_side_ready_port has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net N_37 has multiple drivers .
+@N: BZ173 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":471:1:471:4|ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":471:1:471:4|Found ROM ready_signal[1:0] (in view: work.sdram_controller(verilog)) with 26 words by 2 bits.
+@N: BZ173 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":471:1:471:4|ROM reset_delay_counter (in view: work.sdram_controller(verilog)) mapped in logic.
+@N: MO106 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":471:1:471:4|Found ROM reset_delay_counter (in view: work.sdram_controller(verilog)) with 26 words by 1 bit.
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[0] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[1] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[2] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[3] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[4] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[5] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[6] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[7] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[8] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[9] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[10] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[11] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[12] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[13] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[14] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip0_data_port[15] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[0] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[1] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[2] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[3] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[4] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[5] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[6] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[7] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[8] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[9] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[10] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[11] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[12] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[13] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[14] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net ram_side_chip1_data_port[15] has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net soc_side_ready_port has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net N_37 has multiple drivers .
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
 
@@ -488,7 +488,7 @@ Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00
 @N: FX493 |Applying initial value "0" on instance current_state[24].
 @N: FX493 |Applying initial value "0" on instance current_state[25].
 
-Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 259MB peak: 259MB)
 
 
 Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
@@ -499,190 +499,190 @@ Available hyper_sources - for debug and ip models
 
 NConnInternalConnection caching is on
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_0 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_1 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_2 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_3 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_4 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_5 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_6 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_7 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_8 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_9 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_10 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_11 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_12 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_13 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_14 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_refresh_counter_axb_15 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_0 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_1 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_2 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_3 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_4 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_5 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_6 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_7 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_8 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_9 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_10 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_11 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_12 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_13 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net un2_delay_counter_1_axb_14 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_0 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_1 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_2 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_3 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_4 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_5 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_6 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_7 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_8 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_9 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_10 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_11 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_12 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_13 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_14 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_refresh_counter_axb_15 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_0 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_1 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_2 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_3 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_4 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_5 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_6 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_7 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_8 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_9 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_10 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_11 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_12 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_13 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net un2_delay_counter_1_axb_14 has multiple drivers .
 
 Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 262MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 262MB peak: 263MB)
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 270MB)
 
 Pass		 CPU time		Worst Slack		Luts / Registers
 ------------------------------------------------------------
-   1		0h:00m:00s		     3.99ns		 122 /       128
+   1		0h:00m:00s		     4.29ns		 124 /       128
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 270MB peak: 271MB)
 
 @N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register wr_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":301:0:301:5|Boundary register rd_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_0 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_1 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_2 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_3 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_4 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_5 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_6 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_7 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_8 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_9 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_10 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_11 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_12 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_13 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_14 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_15 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_16 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_17 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_18 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_19 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_20 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_21 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_22 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_23 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_24 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_25 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_26 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_27 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_28 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_29 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_30 has multiple drivers .
-@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":54:7:54:22|Net reset_n_port_c_i_31 has multiple drivers .
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register wr_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_31_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_30_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_29_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_28_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_27_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_26_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_25_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_24_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_23_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_22_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_21_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_20_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_19_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_18_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_17_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_16_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_15_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_14_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_13_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_12_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_11_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_10_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_9_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_8_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_7_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_6_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_5_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_4_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_3_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_2_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_1_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":299:0:299:5|Boundary register rd_data_reg_0_.fb (in view: work.sdram_controller(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_0 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_1 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_2 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_3 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_4 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_5 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_6 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_7 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_8 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_9 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_10 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_11 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_12 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_13 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_14 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_15 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_16 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_17 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_18 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_19 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_20 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_21 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_22 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_23 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_24 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_25 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_26 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_27 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_28 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_29 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_30 has multiple drivers .
+@W: BN161 :"c:\hdl\sdram_controller\sdram_controller\impl1\source\sdram_controller.v":52:7:52:22|Net reset_n_port_c_i_31 has multiple drivers .
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 271MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
 
 
-Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 272MB)
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 271MB peak: 271MB)
 
 
 Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 272MB)
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 218MB peak: 272MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 216MB peak: 272MB)
 
 Writing Analyst data base C:\hdl\SDRAM_controller\sdram_controller\impl1\synwork\sdram_controller_impl1_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 272MB peak: 272MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 271MB peak: 272MB)
 
 Writing EDIF Netlist and constraint files
 @N: FX1056 |Writing EDF file: C:\hdl\SDRAM_controller\sdram_controller\impl1\sdram_controller_impl1.edi
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 280MB peak: 280MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 279MB)
 
 
-Finished Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 280MB peak: 280MB)
+Finished Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 280MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 279MB peak: 280MB)
+Start final timing analysis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 278MB peak: 280MB)
 
 @W: MT420 |Found inferred clock sdram_controller|clk with period 12.50ns. Please declare a user-defined clock on port clk.
 
 
 ##### START OF TIMING REPORT #####[
-# Timing report written on Mon Apr 14 00:24:26 2025
+# Timing report written on Mon Apr 14 10:38:16 2025
 #
 
 
@@ -701,12 +701,12 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 5.116
+Worst slack in design: 6.133
 
                          Requested     Estimated     Requested     Estimated               Clock        Clock     
 Starting Clock           Frequency     Frequency     Period        Period        Slack     Type         Group     
 ------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk     80.0 MHz      135.4 MHz     12.500        7.384         5.116     inferred     (multiple)
+sdram_controller|clk     80.0 MHz      157.1 MHz     12.500        6.367         6.133     inferred     (multiple)
 ==================================================================================================================
 
 
@@ -720,7 +720,7 @@ Clocks                                      |    rise  to  rise   |    fall  to 
 ----------------------------------------------------------------------------------------------------------------------------------
 Starting              Ending                |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
 ----------------------------------------------------------------------------------------------------------------------------------
-sdram_controller|clk  sdram_controller|clk  |  12.500      5.116  |  No paths    -      |  No paths    -      |  No paths    -    
+sdram_controller|clk  sdram_controller|clk  |  12.500      6.133  |  No paths    -      |  No paths    -      |  No paths    -    
 ==================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -747,37 +747,37 @@ Starting Points with Worst Slack
 Instance              Reference                Type        Pin     Net                   Time        Slack
                       Clock                                                                               
 ----------------------------------------------------------------------------------------------------------
-delay_counter[10]     sdram_controller|clk     FD1S3IX     Q       delay_counter[10]     1.044       5.116
-delay_counter[11]     sdram_controller|clk     FD1S3IX     Q       delay_counter[11]     1.044       5.116
-delay_counter[12]     sdram_controller|clk     FD1S3IX     Q       delay_counter[12]     1.044       5.116
-delay_counter[3]      sdram_controller|clk     FD1S3IX     Q       delay_counter[3]      1.108       5.124
-delay_counter[7]      sdram_controller|clk     FD1S3IX     Q       delay_counter[7]      1.108       5.124
-delay_counter[8]      sdram_controller|clk     FD1S3IX     Q       delay_counter[8]      1.108       5.124
-delay_counter[14]     sdram_controller|clk     FD1S3IX     Q       delay_counter[14]     1.108       5.124
-current_state[1]      sdram_controller|clk     FD1S3AX     Q       current_state[1]      1.148       5.596
-delay_counter[4]      sdram_controller|clk     FD1S3IX     Q       delay_counter[4]      1.108       5.636
-delay_counter[9]      sdram_controller|clk     FD1S3IX     Q       delay_counter[9]      1.108       5.636
+delay_counter[3]      sdram_controller|clk     FD1S3IX     Q       delay_counter[3]      1.108       6.133
+delay_counter[4]      sdram_controller|clk     FD1S3IX     Q       delay_counter[4]      1.108       6.133
+delay_counter[5]      sdram_controller|clk     FD1S3IX     Q       delay_counter[5]      1.108       6.133
+delay_counter[7]      sdram_controller|clk     FD1S3IX     Q       delay_counter[7]      1.108       6.133
+delay_counter[8]      sdram_controller|clk     FD1S3IX     Q       delay_counter[8]      1.108       6.133
+delay_counter[10]     sdram_controller|clk     FD1S3IX     Q       delay_counter[10]     1.108       6.133
+delay_counter[14]     sdram_controller|clk     FD1S3IX     Q       delay_counter[14]     1.108       6.133
+delay_counter[0]      sdram_controller|clk     FD1S3IX     Q       delay_counter[0]      1.180       6.341
+delay_counter[6]      sdram_controller|clk     FD1S3IX     Q       delay_counter[6]      1.108       6.413
+delay_counter[9]      sdram_controller|clk     FD1S3IX     Q       delay_counter[9]      1.108       6.413
 ==========================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                           Starting                                                               Required          
-Instance                   Reference                Type         Pin     Net                      Time         Slack
-                           Clock                                                                                    
---------------------------------------------------------------------------------------------------------------------
-current_command_0io[3]     sdram_controller|clk     OFS1P3JX     D       N_490_i                  12.589       5.116
-current_state[5]           sdram_controller|clk     FD1S3AX      D       current_state_nss[5]     12.589       5.116
-current_state[17]          sdram_controller|clk     FD1S3AX      D       N_456_i                  12.589       6.085
-init_counter[0]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[0]      12.589       6.205
-init_counter[1]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[1]      12.589       6.205
-init_counter[2]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[2]      12.589       6.205
-current_command[0]         sdram_controller|clk     FD1S3IX      D       next_command[0]          12.589       6.253
-current_command_0io[4]     sdram_controller|clk     OFS1P3JX     D       N_492_i                  12.589       6.253
-current_state[7]           sdram_controller|clk     FD1S3AX      D       N_473_i                  12.589       6.381
-current_state[14]          sdram_controller|clk     FD1S3AX      D       N_461_i                  12.589       6.381
-====================================================================================================================
+                           Starting                                                                  Required          
+Instance                   Reference                Type         Pin     Net                         Time         Slack
+                           Clock                                                                                       
+-----------------------------------------------------------------------------------------------------------------------
+current_state[17]          sdram_controller|clk     FD1S3AX      D       N_456_i                     12.589       6.133
+current_command_0io[3]     sdram_controller|clk     OFS1P3JX     D       N_490_i                     12.589       6.221
+current_state[5]           sdram_controller|clk     FD1S3AX      D       current_state_nss[5]        12.589       6.221
+init_counter[0]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[0]         12.589       6.221
+init_counter[1]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[1]         12.589       6.221
+init_counter[2]            sdram_controller|clk     FD1S3IX      D       init_counter_RNO[2]         12.589       6.221
+current_command_0io[5]     sdram_controller|clk     OFS1P3JX     D       N_494_i                     12.589       6.341
+current_state[7]           sdram_controller|clk     FD1S3AX      D       N_473_i                     12.589       6.429
+current_state[14]          sdram_controller|clk     FD1S3AX      D       N_461_i                     12.589       6.429
+refresh_counter[15]        sdram_controller|clk     FD1S3IX      D       un2_refresh_counter[15]     12.394       7.194
+=======================================================================================================================
 
 
 
@@ -791,41 +791,38 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         12.589
 
-    - Propagation time:                      7.473
+    - Propagation time:                      6.456
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     5.116
+    = Slack (critical) :                     6.133
 
-    Number of logic level(s):                6
-    Starting point:                          delay_counter[10] / Q
-    Ending point:                            current_state[5] / D
+    Number of logic level(s):                5
+    Starting point:                          delay_counter[3] / Q
+    Ending point:                            current_state[17] / D
     The start point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
     The end   point is clocked by            sdram_controller|clk [rising] (rise=0.000 fall=6.250 period=12.500) on pin CK
 
-Instance / Net                                                     Pin      Pin               Arrival     No. of    
-Name                                                  Type         Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------------------------
-delay_counter[10]                                     FD1S3IX      Q        Out     1.044     1.044 r     -         
-delay_counter[10]                                     Net          -        -       -         -           2         
-current_state_srsts_i_a2_1_2[25]                      ORCALUT4     A        In      0.000     1.044 r     -         
-current_state_srsts_i_a2_1_2[25]                      ORCALUT4     Z        Out     1.089     2.133 f     -         
-current_state_srsts_i_a2_1_2[25]                      Net          -        -       -         -           2         
-next_command_i_a2_2[5]                                ORCALUT4     A        In      0.000     2.133 f     -         
-next_command_i_a2_2[5]                                ORCALUT4     Z        Out     1.193     3.325 f     -         
-N_636                                                 Net          -        -       -         -           4         
-reset_refresh_counter_0_a2                            ORCALUT4     B        In      0.000     3.325 f     -         
-reset_refresh_counter_0_a2                            ORCALUT4     Z        Out     1.249     4.574 f     -         
-N_637                                                 Net          -        -       -         -           7         
-current_state_srsts_0_a2[5]                           ORCALUT4     A        In      0.000     4.574 f     -         
-current_state_srsts_0_a2[5]                           ORCALUT4     Z        Out     1.193     5.767 f     -         
-N_664                                                 Net          -        -       -         -           4         
-reset_delay_counter.current_state_srsts_0_a5_1[5]     ORCALUT4     A        In      0.000     5.767 f     -         
-reset_delay_counter.current_state_srsts_0_a5_1[5]     ORCALUT4     Z        Out     1.089     6.856 f     -         
-current_state_nss_1[5]                                Net          -        -       -         -           2         
-reset_delay_counter.current_state_srsts_0_a5[5]       ORCALUT4     A        In      0.000     6.856 f     -         
-reset_delay_counter.current_state_srsts_0_a5[5]       ORCALUT4     Z        Out     0.617     7.473 f     -         
-current_state_nss[5]                                  Net          -        -       -         -           1         
-current_state[5]                                      FD1S3AX      D        In      0.000     7.473 f     -         
-====================================================================================================================
+Instance / Net                                    Pin      Pin               Arrival     No. of    
+Name                                 Type         Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------
+delay_counter[3]                     FD1S3IX      Q        Out     1.108     1.108 r     -         
+delay_counter[3]                     Net          -        -       -         -           3         
+current_state_srsts_i_a2_1_4[25]     ORCALUT4     A        In      0.000     1.108 r     -         
+current_state_srsts_i_a2_1_4[25]     ORCALUT4     Z        Out     1.017     2.125 f     -         
+current_state_srsts_i_a2_1_4[25]     Net          -        -       -         -           1         
+current_state_srsts_i_a2_1[25]       ORCALUT4     A        In      0.000     2.125 f     -         
+current_state_srsts_i_a2_1[25]       ORCALUT4     Z        Out     1.153     3.277 f     -         
+N_634                                Net          -        -       -         -           3         
+reset_refresh_counter_0_a2           ORCALUT4     B        In      0.000     3.277 f     -         
+reset_refresh_counter_0_a2           ORCALUT4     Z        Out     1.249     4.526 f     -         
+N_635                                Net          -        -       -         -           7         
+reset_refresh_counter_0_a5           ORCALUT4     A        In      0.000     4.526 f     -         
+reset_refresh_counter_0_a5           ORCALUT4     Z        Out     1.313     5.839 f     -         
+reset_refresh_counter                Net          -        -       -         -           17        
+current_state_RNO[17]                ORCALUT4     D        In      0.000     5.839 f     -         
+current_state_RNO[17]                ORCALUT4     Z        Out     0.617     6.456 f     -         
+N_456_i                              Net          -        -       -         -           1         
+current_state[17]                    FD1S3AX      D        In      0.000     6.456 f     -         
+===================================================================================================
 
 
 
@@ -833,10 +830,10 @@ current_state[5]                                      FD1S3AX      D        In  
 
 Timing exceptions that could not be applied
 
-Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 280MB peak: 280MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 280MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 280MB peak: 280MB)
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 279MB peak: 280MB)
 
 ---------------------------------------
 Resource Usage Report
@@ -856,20 +853,21 @@ FD1S3IX:        35
 GSR:            1
 IB:             63
 IFS1P3IX:       32
-INV:            4
+INV:            5
 OB:             57
 OFS1P3IX:       32
 OFS1P3JX:       3
-ORCALUT4:       117
+ORCALUT4:       119
+PFUMX:          1
 PUR:            1
 VHI:            1
 VLO:            1
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 133MB peak: 280MB)
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 133MB peak: 280MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
-# Mon Apr 14 00:24:26 2025
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+# Mon Apr 14 10:38:16 2025
 
 ###########################################################]
 

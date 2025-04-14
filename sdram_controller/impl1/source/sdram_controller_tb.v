@@ -2,7 +2,7 @@
 
 module sdram_controller_tb;
     // Parameters
-    parameter CLK_PERIOD = 11.7646;  // 85MHz clock
+    parameter CLK_PERIOD_NS = 12.5;  // 80MHz clock
     
     // Test bench signals
     reg clk;
@@ -42,7 +42,7 @@ module sdram_controller_tb;
     
     // Instantiate the SDRAM controller
     sdram_controller #(
-        .CLK_FREQUENCY_MHZ(85),  // 85MHz clock
+        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
         .REFRESH_TIME_MS(64),
         .REFRESH_COUNT(4096),
         .ROW_WIDTH(12),
@@ -81,7 +81,7 @@ module sdram_controller_tb;
     // Clock generation.
     initial begin
         clk = 0;
-        forever #(CLK_PERIOD / 2) clk = ~clk;  // Generate 75MHz clock.
+        forever #(CLK_PERIOD_NS / 2) clk = ~clk;  // Generate 75MHz clock.
     end
     
     // Test sequence.
@@ -96,7 +96,7 @@ module sdram_controller_tb;
         soc_side_rd_en = 0;    // No read enable.
         
         // Wait 10 clock cycles plus a quarter cycle and then deassert the reset.
-        #(CLK_PERIOD * 10 + CLK_PERIOD / 4);
+        #(CLK_PERIOD_NS * 10 + CLK_PERIOD_NS / 4);
         reset_n = 1;  // Deassert reset.
         
         #(500000);

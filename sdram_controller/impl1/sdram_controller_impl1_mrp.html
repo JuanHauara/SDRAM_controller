@@ -23,19 +23,19 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  04/14/25  00:24:27
+Mapped on:  04/14/25  10:38:18
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
    Number of registers:    128 out of  5145 (2%)
       PFU registers:           61 out of  4320 (1%)
       PIO registers:           67 out of   825 (8%)
-   Number of SLICEs:        78 out of  2160 (4%)
-      SLICEs as Logic/ROM:     78 out of  2160 (4%)
+   Number of SLICEs:        79 out of  2160 (4%)
+      SLICEs as Logic/ROM:     79 out of  2160 (4%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        156 out of  4320 (4%)
-      Number used as logic LUTs:        122
+   Number of LUT4s:        158 out of  4320 (4%)
+      Number used as logic LUTs:        124
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -72,18 +72,18 @@ Mapped on:  04/14/25  00:24:27
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
    Number of LSRs:  3
      Net reset_n_port_c: 70 loads, 3 LSLICEs
+     Net un35_i_a5_RNI44LP11[4]: 8 loads, 8 LSLICEs
      Net reset_refresh_counter: 9 loads, 9 LSLICEs
-     Net reset_delay_counter.N_7_i: 8 loads, 8 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
      Net reset_n_port_c: 96 loads
-     Net current_state[9]: 39 loads
+     Net current_state[9]: 40 loads
      Net current_state[23]: 37 loads
      Net soc_side_wr_en_port_c: 36 loads
-     Net N_638: 15 loads
-     Net delay_counter[2]: 13 loads
-     Net current_state[17]: 11 loads
-     Net N_640: 10 loads
+     Net N_636: 17 loads
+     Net current_state[17]: 12 loads
+     Net delay_counter[2]: 11 loads
+     Net N_638: 11 loads
      Net reset_refresh_counter: 10 loads
      Net current_state[21]: 9 loads
 
@@ -425,6 +425,7 @@ Mapped on:  04/14/25  00:24:27
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
 Block GSR_INST undriven or does not drive anything - clipped.
+Signal reset_delay_counter.N_7_i was merged into signal un35_i_a5_RNI44LP11[4]
 Signal current_state_i[9] was merged into signal current_state[9]
 Signal un2_delay_counter_1_cry_13_0_COUT undriven or does not drive anything -
      clipped.
@@ -442,6 +443,7 @@ Signal un2_delay_counter_1_cry_0_0_S1 undriven or does not drive anything -
 Signal un2_delay_counter_1_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_1 undriven or does not drive anything - clipped.
+Block reset_delay_counter.un35_i_a5_RNI44LP11_0[4] was optimized away.
 Block current_state_RNIK7DD1[9] was optimized away.
 
      
@@ -455,8 +457,6 @@ Block current_state_RNIK7DD1[9] was optimized away.
    Total REAL Time: 0 secs  
    Peak Memory Usage: 53 MB
         
-
-
 
 
 

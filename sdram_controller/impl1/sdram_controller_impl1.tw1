@@ -13,7 +13,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
-Mon Apr 14 00:24:28 2025
+Mon Apr 14 10:38:18 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -37,49 +37,47 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
-            2095 items scored, 3 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            1992 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error: The following path exceeds requirements by 0.448ns
+Passed: The following path meets requirements by 2.016ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              delay_counter[11]  (from clk_c +)
-   Destination:    FF         Data in        current_command_0io[3]  (to clk_c +)
+   Source:         FF         Q              delay_counter[14]  (from clk_c +)
+   Destination:    FF         Data in        current_command_0io[5]  (to clk_c +)
 
-   Delay:              12.060ns  (28.4% logic, 71.6% route), 7 logic levels.
+   Delay:              10.331ns  (28.3% logic, 71.7% route), 6 logic levels.
 
  Constraint Details:
 
-     12.060ns physical path delay SLICE_11 to ram_side_wr_en_port_MGIOL exceeds
-     11.765ns delay constraint less
-      0.153ns DO_SET requirement (totaling 11.612ns) by 0.448ns
+     10.331ns physical path delay SLICE_10 to ram_side_ras_n_port_MGIOL meets
+     12.500ns delay constraint less
+      0.153ns DO_SET requirement (totaling 12.347ns) by 2.016ns
 
  Physical Path Details:
 
-      Data path SLICE_11 to ram_side_wr_en_port_MGIOL:
+      Data path SLICE_10 to ram_side_ras_n_port_MGIOL:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.452   SLICE_11.CLK to    SLICE_11.Q0 SLICE_11 (from clk_c)
-ROUTE         2   e 1.234    SLICE_11.Q0 to    SLICE_55.B1 delay_counter[11]
-CTOF_DEL    ---     0.495    SLICE_55.B1 to    SLICE_55.F1 SLICE_55
-ROUTE         2   e 1.234    SLICE_55.F1 to    SLICE_46.A1 current_state_srsts_i_a2_1_2[25]
-CTOF_DEL    ---     0.495    SLICE_46.A1 to    SLICE_46.F1 SLICE_46
-ROUTE         4   e 1.234    SLICE_46.F1 to    SLICE_43.B1 N_636
-CTOF_DEL    ---     0.495    SLICE_43.B1 to    SLICE_43.F1 SLICE_43
-ROUTE         7   e 1.234    SLICE_43.F1 to    SLICE_33.A1 N_637
-CTOF_DEL    ---     0.495    SLICE_33.A1 to    SLICE_33.F1 SLICE_33
-ROUTE         4   e 1.234    SLICE_33.F1 to    SLICE_60.A1 N_664
-CTOF_DEL    ---     0.495    SLICE_60.A1 to    SLICE_60.F1 SLICE_60
-ROUTE         2   e 1.234    SLICE_60.F1 to    SLICE_40.C0 current_state_nss_1[5]
-CTOF_DEL    ---     0.495    SLICE_40.C0 to    SLICE_40.F0 SLICE_40
-ROUTE         1   e 1.234    SLICE_40.F0 to *rt_MGIOL.OPOS N_490_i (to clk_c)
+REG_DEL     ---     0.452   SLICE_10.CLK to    SLICE_10.Q1 SLICE_10 (from clk_c)
+ROUTE         3   e 1.234    SLICE_10.Q1 to    SLICE_67.C0 delay_counter[14]
+CTOF_DEL    ---     0.495    SLICE_67.C0 to    SLICE_67.F0 SLICE_67
+ROUTE         1   e 1.234    SLICE_67.F0 to    SLICE_53.A1 current_state_srsts_i_a2_1_4[25]
+CTOF_DEL    ---     0.495    SLICE_53.A1 to    SLICE_53.F1 SLICE_53
+ROUTE         3   e 1.234    SLICE_53.F1 to    SLICE_46.C1 N_634
+CTOF_DEL    ---     0.495    SLICE_46.C1 to    SLICE_46.F1 SLICE_46
+ROUTE        17   e 1.234    SLICE_46.F1 to    SLICE_60.A0 N_636
+CTOF_DEL    ---     0.495    SLICE_60.A0 to    SLICE_60.F0 SLICE_60
+ROUTE         1   e 1.234    SLICE_60.F0 to    SLICE_45.B0 N_601
+CTOF_DEL    ---     0.495    SLICE_45.B0 to    SLICE_45.F0 SLICE_45
+ROUTE         1   e 1.234    SLICE_45.F0 to *rt_MGIOL.OPOS N_494_i (to clk_c)
                   --------
-                   12.060   (28.4% logic, 71.6% route), 7 logic levels.
+                   10.331   (28.3% logic, 71.7% route), 6 logic levels.
 
-Warning:  81.880MHz is the maximum frequency for this preference.
+Report:   95.383MHz is the maximum frequency for this preference.
 
 Report Summary
 --------------
@@ -87,35 +85,12 @@ Report Summary
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 85.000000 MHz ;    |   85.000 MHz|   81.880 MHz|   7 *
+FREQUENCY PORT "clk" 80.000000 MHz ;    |   80.000 MHz|   95.383 MHz|   6  
                                         |             |             |
 ----------------------------------------------------------------------------
 
 
-1 preference(marked by "*" above) not met.
-
-----------------------------------------------------------------------------
-Critical Nets                           |   Loads|  Errors| % of total
-----------------------------------------------------------------------------
-current_state_srsts_i_a2_1_2[25]        |       2|       3|    100.00%
-                                        |        |        |
-N_636                                   |       4|       3|    100.00%
-                                        |        |        |
-N_637                                   |       7|       3|    100.00%
-                                        |        |        |
-current_state_nss_1[5]                  |       2|       3|    100.00%
-                                        |        |        |
-N_490_i                                 |       1|       3|    100.00%
-                                        |        |        |
-N_664                                   |       4|       3|    100.00%
-                                        |        |        |
-delay_counter[12]                       |       2|       1|     33.33%
-                                        |        |        |
-delay_counter[11]                       |       2|       1|     33.33%
-                                        |        |        |
-delay_counter[10]                       |       2|       1|     33.33%
-                                        |        |        |
-----------------------------------------------------------------------------
+All preferences were met.
 
 
 Clock Domains Analysis
@@ -124,20 +99,20 @@ Clock Domains Analysis
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Setup):
 ---------------
 
-Timing errors: 3  Score: 1344
-Cumulative negative slack: 1344
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
 
-Constraints cover 2095 paths, 1 nets, and 511 connections (52.90% coverage)
+Constraints cover 1992 paths, 1 nets, and 520 connections (53.44% coverage)
 
 --------------------------------------------------------------------------------
 Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
-Mon Apr 14 00:24:28 2025
+Mon Apr 14 10:38:18 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -161,8 +136,8 @@ BLOCK RESETPATHS
 
 
 ================================================================================
-Preference: FREQUENCY PORT "clk" 85.000000 MHz ;
-            2095 items scored, 0 timing errors detected.
+Preference: FREQUENCY PORT "clk" 80.000000 MHz ;
+            1992 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -199,7 +174,7 @@ Report Summary
 Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY PORT "clk" 85.000000 MHz ;    |            -|            -|   2  
+FREQUENCY PORT "clk" 80.000000 MHz ;    |            -|            -|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -213,7 +188,7 @@ Clock Domains Analysis
 Found 1 clocks:
 
 Clock Domain: clk_c   Source: clk.PAD   Loads: 100
-   Covered under: FREQUENCY PORT "clk" 85.000000 MHz ;
+   Covered under: FREQUENCY PORT "clk" 80.000000 MHz ;
 
 
 Timing summary (Hold):
@@ -222,16 +197,16 @@ Timing summary (Hold):
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 2095 paths, 1 nets, and 511 connections (52.90% coverage)
+Constraints cover 1992 paths, 1 nets, and 520 connections (53.44% coverage)
 
 
 
 Timing summary (Setup and Hold):
 ---------------
 
-Timing errors: 3 (setup), 0 (hold)
-Score: 1344 (setup), 0 (hold)
-Cumulative negative slack: 1344 (1344+0)
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------

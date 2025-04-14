@@ -4,7 +4,7 @@
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
 	Default options
-		CLK_FREQUENCY_MHZ = 85MHz
+		CLK_FREQUENCY_MHZ = 80MHz
 		CAS 3
 
 	Very simple CPU interface
@@ -34,10 +34,8 @@
 		Write data:
 			- soc_side_wr_data_port: Data for writing, latched in on clk posedge if soc_side_wr_en_port is high.
 
-			// TODO: Corregir esta documentación sobre cuando se muestrea la dirección de memoria.
-
-			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port and 
-			soc_side_addr_port will be latched in, after a few clocks data will be written to the SDRAM.
+			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port will be 
+			latched in, after a few clocks data will be written to the SDRAM.
 
 			- soc_side_ready_port: This signal is used to notify the CPU when read data is available on the 
 			soc_side_rd_data_port bus and also when a data write to memory has finished.
@@ -46,14 +44,14 @@
 			- soc_side_rd_data_port: Data for reading, comes available a few clocks after 
 			soc_side_rd_en_port and soc_side_addr_port are presented on the bus.
 
-			- soc_side_rd_en_port: On clk posedge soc_side_addr_port will be latched in, after a 
-			few clocks data will be available on the soc_side_rd_data_port port.
+			- soc_side_rd_en_port: If asserted (high), soc_side_addr_port is sampled during the READ_CAS and 
+			READ_BANK_ACTIVATE states. Data becomes available on soc_side_rd_data_port after a few clock cycles.
  */
 
 
 module sdram_controller # (
 	/* Timing parameters */
-	parameter CLK_FREQUENCY_MHZ = 85,	// Clock frequency [MHz].
+	parameter CLK_FREQUENCY_MHZ = 80,	// Clock frequency [MHz].
 	parameter REFRESH_TIME_MS = 64,		// Refresh period [ms].
 	parameter REFRESH_COUNT = 4096,		// Number of refresh cycles per refresh period.
 
@@ -62,7 +60,7 @@ module sdram_controller # (
 	parameter COL_WIDTH = 9,
 	parameter BANK_ADDR_WIDTH = 2,		// 2 bits wide for 4 banks.
 	
-	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,
+	parameter SOC_SIDE_ADDR_WIDTH = ROW_WIDTH + COL_WIDTH + BANK_ADDR_WIDTH,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
 	parameter SDRAM_ADDR_WIDTH = (ROW_WIDTH > COL_WIDTH)? ROW_WIDTH : COL_WIDTH
 ) (
 	input wire clk,
@@ -73,7 +71,7 @@ module sdram_controller # (
 	output wire soc_side_ready_port,
 
 	// Address.
-	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,  // 23 bits bus to address 8 million 32 bit words = 32MB RAM.
+	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_port,
 
 	// Read data.
 	output wire [31:0] soc_side_rd_data_port,
@@ -265,10 +263,10 @@ assign ram_side_addr_port = (in_write_cycle || in_read_cycle || current_state ==
 assign soc_side_busy_port = busy_signal;
 assign soc_side_ready_port = ready_signal;
 
-// Read data: From ram_side_chip0_data_port --> rd_data_reg --> soc_side_rd_data_port.
+// Read data: From ram_side_chip0_data_port and ram_side_chip1_data_port --> rd_data_reg --> soc_side_rd_data_port.
 assign soc_side_rd_data_port = rd_data_reg;
 
-// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
+// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port and ram_side_chip1_data_port.
 assign ram_side_chip0_data_port = (current_state == WRITE_CAS)? wr_data_reg[15:0] : 16'bz;		// Lower 16 bits in chip 0.
 assign ram_side_chip1_data_port = (current_state == WRITE_CAS)? wr_data_reg[31:16] : 16'bz;		// Upper 16 bits in chip 1.
 
@@ -295,9 +293,9 @@ assign in_read_cycle = (current_state == READ_BANK_ACTIVATE) || (current_state =
 					(current_state == READ_WAIT_TRP);
 
 
-//-------------------------------
-// Bloque Secuencial para el registro de estado
-//-------------------------------
+//-------------------------------------------------------
+// Sequential block for updating state machine registers.
+//-------------------------------------------------------
 always @(posedge clk) 
 begin
 	if (~reset_n_port)  // Reset síncrono.
@@ -318,7 +316,7 @@ begin
 			
 			// Update write data register.
 			// ----------------------------
-			// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port.
+			// Write data: From soc_side_wr_data_port --> wr_data_reg --> ram_side_chip0_data_port and ram_side_chip1_data_port.
 			if (soc_side_wr_en_port)
 				wr_data_reg <= soc_side_wr_data_port;  // Update the data to be written from the SOC.
 
@@ -330,9 +328,9 @@ begin
 		end
 end
 
-//-------------------------------
-// Contador para retardos de tiempo.
-//-------------------------------
+//-------------------------
+// Counter for time delays.
+//-------------------------
 always @(posedge clk) 
 begin
 	if (reset_delay_counter)
@@ -341,9 +339,9 @@ begin
 		delay_counter <= delay_counter + 1'b1;
 end
 
-//-------------------------------
-// Contador para los 8 ciclos de refresco al inicio.
-//-------------------------------
+//---------------------------------------------
+// Counter for the 8 refresh cycles at startup.
+//---------------------------------------------
 always @(posedge clk) 
 begin
 	if (~reset_n_port)
@@ -352,9 +350,9 @@ begin
 		init_counter <= init_counter + 1'b1;
 end
 
-//-------------------------------
-// Contador para ciclo de refresco.
-//-------------------------------
+//---------------------------
+// Counter for refresh cycle.
+//---------------------------
 always @(posedge clk) 
 begin
 	if (reset_refresh_counter)
@@ -364,9 +362,9 @@ begin
 end
 
 
-//-------------------------------
-// Bloque Combinacional.
-//-------------------------------
+//------------------------------------------
+// Combinational block for next-state logic.
+//------------------------------------------
 /*
 	Combinational logic of the state machine.
 
@@ -762,6 +760,12 @@ begin
 				// Activar el banco y fila especificados.
 				// Comando CMD_BANK_ACTIVATE emitido en el estado anterior IDLE.
 
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
+
 				// ---- Transitions ----
 				next_state = WRITE_WAIT_TRCD;
 				next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
@@ -785,10 +789,16 @@ begin
 			begin
 				// ---- Outputs ----
 				/*
-					Write current_command issued in the previous state.
+					WRITE_CAS command emitted in the previous state.
 					The data to be written is already in the wr_data_reg register; it is captured 
 					in wr_data_reg in the sequential block with the rising edge of clk.
 				*/
+
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
 
 				// ---- Transitions ----
 				next_state = WRITE_WAIT_TWR;
@@ -888,8 +898,14 @@ begin
 		READ_BANK_ACTIVATE:
 			begin
 				// ---- Outputs ----
-				// Activar el banco y fila especificados.
+				// Activar el banco y fila necesarios.
 				// current_command = CMD_BANK_ACTIVATE, emitido en el estado anterior IDLE.
+
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
 
 				// ---- Transitions ----
 				next_state = READ_WAIT_TRCD;
@@ -901,7 +917,7 @@ begin
 		READ_WAIT_TRCD:
 			begin
 				// ---- Outputs ----
-				// current_command = CMD_NOP, emitido en el estado anterior READ_BANK_ACTIVATE.
+				// current_command = CMD_NOP, emitido en el estado anterior.
 
 				// ---- Transitions ----
 				if (delay_counter == TRCD_CYCLES - 1)  // Esperar tRCD después de activar el banco.
@@ -915,7 +931,13 @@ begin
 			begin
 				// ---- Outputs ----
 				// Emitir comando de lectura.
-				// current_command = CMD_READ, emitido en el estado anterior READ_WAIT_TRCD.
+				// current_command = CMD_READ, emitido en el estado anterior.
+
+				// See:
+				//----------------------------------------------------------
+				// Combinational logic block for generating bank address and 
+				// word address for the SDRAM based on the current state.
+				//----------------------------------------------------------
 
 				// ---- Transitions ----
 				next_state = READ_WAIT_CAS_LATENCY;
@@ -1000,8 +1022,10 @@ begin
 	endcase
 end
 
-
-// Set the writing mask based on the current state.
+//--------------------------------------------------------
+// Combinational logic block to set the writing mask based 
+// on the current state.
+//--------------------------------------------------------
 always @(*) 
 begin
 	/*
@@ -1042,8 +1066,10 @@ begin
 		sdram_side_wr_mask_reg = 4'b1111;
 end
 
-
-// Send addresses to SDRAM based on the current state.
+//----------------------------------------------------------
+// Combinational logic block for generating bank address and 
+// word address for the SDRAM based on the current state.
+//----------------------------------------------------------
 always @(*) 
 begin
 	ram_bank_addr_reg = 2'b00;
