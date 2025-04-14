@@ -15,20 +15,20 @@ Target Vendor:  LATTICE
 Target Device:  LCMXO2-4000HCCABGA332
 Target Performance:   4
 Mapper:  xo2c00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  04/14/25  10:38:18
+Mapped on:  04/14/25  12:57:35
 
 Design Summary
 --------------
 
-   Number of registers:    128 out of  5145 (2%)
-      PFU registers:           61 out of  4320 (1%)
+   Number of registers:    124 out of  5145 (2%)
+      PFU registers:           57 out of  4320 (1%)
       PIO registers:           67 out of   825 (8%)
-   Number of SLICEs:        79 out of  2160 (4%)
-      SLICEs as Logic/ROM:     79 out of  2160 (4%)
+   Number of SLICEs:        72 out of  2160 (3%)
+      SLICEs as Logic/ROM:     72 out of  2160 (3%)
       SLICEs as RAM:            0 out of  1620 (0%)
       SLICEs as Carry:         17 out of  2160 (1%)
-   Number of LUT4s:        158 out of  4320 (4%)
-      Number used as logic LUTs:        124
+   Number of LUT4s:        143 out of  4320 (3%)
+      Number used as logic LUTs:        109
       Number used as distributed RAM:     0
       Number used as ripple logic:       34
       Number used as shift registers:     0
@@ -58,7 +58,7 @@ Design Summary
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  1
-     Net clk_c: 100 loads, 100 rising, 0 falling (Driver: PIO clk )
+     Net clk_c: 98 loads, 98 rising, 0 falling (Driver: PIO clk )
    Number of Clock Enables:  2
 
                                     Page 1
@@ -66,28 +66,28 @@ Design Summary
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 Design Summary (cont)
 ---------------------
-     Net current_state[23]: 32 loads, 0 LSLICEs
+     Net current_state[19]: 32 loads, 0 LSLICEs
      Net soc_side_wr_en_port_c: 32 loads, 0 LSLICEs
    Number of LSRs:  3
-     Net reset_n_port_c: 70 loads, 3 LSLICEs
-     Net un35_i_a5_RNI44LP11[4]: 8 loads, 8 LSLICEs
      Net reset_refresh_counter: 9 loads, 9 LSLICEs
+     Net reset_delay_counter.N_7_i: 8 loads, 8 LSLICEs
+     Net reset_n_port_c: 70 loads, 3 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_n_port_c: 96 loads
-     Net current_state[9]: 40 loads
-     Net current_state[23]: 37 loads
-     Net soc_side_wr_en_port_c: 36 loads
-     Net N_636: 17 loads
-     Net current_state[17]: 12 loads
-     Net delay_counter[2]: 11 loads
-     Net N_638: 11 loads
-     Net reset_refresh_counter: 10 loads
-     Net current_state[21]: 9 loads
+     Net reset_n_port_c: 92 loads
+     Net current_state[9]: 39 loads
+     Net current_state[19]: 35 loads
+     Net soc_side_wr_en_port_c: 35 loads
+     Net next_command16: 15 loads
+     Net N_391_i: 11 loads
+     Net N_392_i: 10 loads
+     Net current_state[10]: 9 loads
+     Net current_state[16]: 9 loads
+     Net current_state[18]: 9 loads
 
 
 
@@ -132,7 +132,7 @@ IO (PIO) Attributes
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -198,7 +198,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -264,7 +264,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -330,7 +330,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -396,7 +396,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -462,7 +462,7 @@ IO (PIO) Attributes (cont)
 
 
 
-Design:  sdram_controller                              Date:  04/14/25  10:38:18
+Design:  sdram_controller                              Date:  04/14/25  12:57:35
 
 IO (PIO) Attributes (cont)
 --------------------------
@@ -477,7 +477,6 @@ Removed logic
 -------------
 
 Block GSR_INST undriven or does not drive anything - clipped.
-Signal reset_delay_counter.N_7_i was merged into signal un35_i_a5_RNI44LP11[4]
 Signal current_state_i[9] was merged into signal current_state[9]
 Signal un2_delay_counter_1_cry_13_0_COUT undriven or does not drive anything -
      clipped.
@@ -495,7 +494,6 @@ Signal un2_delay_counter_1_cry_0_0_S1 undriven or does not drive anything -
 Signal un2_delay_counter_1_cry_0_0_S0 undriven or does not drive anything -
      clipped.
 Signal N_1 undriven or does not drive anything - clipped.
-Block reset_delay_counter.un35_i_a5_RNI44LP11_0[4] was optimized away.
 Block current_state_RNIK7DD1[9] was optimized away.
 
      
@@ -507,6 +505,8 @@ Run Time and Memory Usage
    Total REAL Time: 0 secs  
    Peak Memory Usage: 53 MB
         
+
+
 
 
 

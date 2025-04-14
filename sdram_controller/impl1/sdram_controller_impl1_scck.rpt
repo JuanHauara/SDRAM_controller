@@ -12,7 +12,7 @@ Hostname: 5CG407221K
 
 Implementation : impl1
 
-# Written on Mon Apr 14 10:38:12 2025
+# Written on Mon Apr 14 12:57:29 2025
 
 ##### FILES SYNTAX CHECKED ##############################################
 Constraint File(s):      (none)
@@ -32,7 +32,7 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock          Clock
 Level     Clock                    Frequency     Period        Type         Group          Load 
 ------------------------------------------------------------------------------------------------
-0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     128  
+0 -       sdram_controller|clk     80.0 MHz      12.500        inferred     (multiple)     124  
 ================================================================================================
 
 
@@ -42,5 +42,5 @@ Clock Load Summary
                          Clock     Source        Clock Pin               Non-clock Pin     Non-clock Pin
 Clock                    Load      Pin           Seq Example             Seq Example       Comb Example 
 --------------------------------------------------------------------------------------------------------
-sdram_controller|clk     128       clk(port)     wr_data_reg[31:0].C     -                 -            
+sdram_controller|clk     124       clk(port)     wr_data_reg[31:0].C     -                 -            
 ========================================================================================================
