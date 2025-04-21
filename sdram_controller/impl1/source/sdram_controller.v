@@ -125,19 +125,19 @@ localparam INIT_PAUSE_US = 300;  // Initial pause of 200us + safety margin.
 localparam INIT_PAUSE_CYCLES = INIT_PAUSE_US * CLK_FREQUENCY_MHZ;
 
 localparam TRP_NS = 18;  // Precharge to Active Command Period, tRP: 15ns + safety margin. Wait time after issuing the precharge all banks command.
-localparam TRP_CYCLES = ((TRP_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Number of wait cycles to meet tRP time. Rounded up.
+localparam TRP_CYCLES = ((TRP_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Rounded up number of wait cycles to meet tRP time.
 
 localparam INIT_REFRESH_COUNT = 8;  // Number of consecutive refresh cycles required during initialization.
 
 localparam TRC_NS = 65;  // Ref/Active to Ref/Active Command Period, tRC: 55-65ns. Wait time after issuing the auto refresh command.
-localparam TRC_CYCLES = ((TRC_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Number of wait cycles to meet tRC time. Rounded up.
+localparam TRC_CYCLES = ((TRC_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Rounded up number of wait cycles to meet tRC time.
 
 localparam TRSC_CYCLES = 2;  // Mode Register Set Cycle Time, tRSC: 2 clock cycles. Wait time after issuing the CMD_MRS Mode Register Set (MRS) command.
 
 // Write and read timings.
 // -------------------------------
 localparam TRCD_NS = 18;  // Active to Read/Write Command Delay Time, tRCD: 15ns + safety margin. Wait time after issuing the CMD_BANK_ACTIVATE command.
-localparam TRCD_CYCLES = ((TRCD_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Number of wait cycles to meet tRCD time. Rounded up.
+localparam TRCD_CYCLES = ((TRCD_NS * CLK_FREQUENCY_MHZ) + 999) / 1000;  // Rounded up number of wait cycles to meet tRCD time.
 
 localparam TWR_CYCLES = 2;  // Write Recovery Time, tWR: 2 clock cycles. Wait time after issuing the CMD_WRITE command.
 
@@ -165,7 +165,7 @@ localparam CAS_LATENCY = 3;
 
 // SDRAM initialization.
 localparam INIT						= 5'b00000;  // Initial state.
-localparam INIT_PAUSE				= 5'b00001;  // Initial pause of at least 200us.
+localparam INIT_WAIT				= 5'b00001;  // Initial pause of at least 200us.
 localparam INIT_PRECHARGE_ALL		= 5'b00011;  // Precharge all banks.
 localparam INIT_WAIT_TRP			= 5'b00010;  // Wait tRP nanoseconds after precharge all.
 localparam INIT_AUTO_REFRESH		= 5'b00110;  // 8 Auto Refresh cycles.
@@ -277,7 +277,7 @@ assign ram_side_chip1_ldqm_port = sdram_side_wr_mask_reg[2];
 assign ram_side_chip1_udqm_port = sdram_side_wr_mask_reg[3];
 
 // Signal to detect SDRAM initialization cycle states.
-assign in_initialization_cycle = (current_state == INIT) || (current_state == INIT_PAUSE) || 
+assign in_initialization_cycle = (current_state == INIT) || (current_state == INIT_WAIT) || 
 								(current_state == INIT_PRECHARGE_ALL) || (current_state == INIT_WAIT_TRP) || 
 								(current_state == INIT_AUTO_REFRESH) || (current_state == INIT_WAIT_TRC) || 
 								(current_state == INIT_MRS) || (current_state == INIT_WAIT_TRSC);
@@ -479,7 +479,7 @@ begin
 
 			1. INIT: Enable delay counter for the next state.
 
-			2. INIT_PAUSE: Wait at least 200us after power-up.
+			2. INIT_WAIT: Wait at least 200us after power-up.
 				- During this pause, DQM and CKE are kept high to prevent data contention.
 
 			3. INIT_PRECHARGE_ALL: Issues the precharge all banks current_command.
@@ -505,10 +505,10 @@ begin
 				next_command = CMD_NOP;  // Emit CMD_NOP command during timeouts.
 
 				// ---- Transitions ----
-				next_state = INIT_PAUSE;
+				next_state = INIT_WAIT;
 			end
-
-		INIT_PAUSE: 
+		
+		INIT_WAIT: 
 			begin
 				// ---- Outputs ----
 
@@ -1055,7 +1055,7 @@ begin
         //                 next_state = IDLE;			// Volver a IDLE.
 		// 			end
 		// 	end
-		
+
 		
 		default: 
 			begin
