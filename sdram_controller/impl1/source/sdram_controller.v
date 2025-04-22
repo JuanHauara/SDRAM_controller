@@ -37,8 +37,8 @@
 			- soc_side_wr_en_port: On clk posedge, if soc_side_wr_en_port is high soc_side_wr_data_port will be 
 			latched in, after a few clocks data will be written to the SDRAM.
 
-			- soc_side_ready_port: This signal is used to notify the CPU when read data is available on the 
-			soc_side_rd_data_port bus and also when a data write to memory has finished.
+			- soc_side_ready_port: This signal is used to notify the CPU when a data write to memory has 
+			finished or read data is available on the soc_side_rd_data_port bus.
 
 		Read data:
 			- soc_side_rd_data_port: Data for reading, comes available a few clocks after 
@@ -765,7 +765,7 @@ begin
 			begin
 				// ---- Outputs ----
 				// Activate the specified bank and row.
-				// CMD_BANK_ACTIVATE command issued in the previous IDLE state.
+				// CMD_BANK_ACTIVATE command issued in the previous state 'IDLE'.
 
 				// See:
 				//----------------------------------------------------------

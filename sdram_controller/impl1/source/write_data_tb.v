@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module sdram_controller_tb;
+module write_data_tb;
     // Parameters
     parameter CLK_PERIOD_NS = 12.5;  // 80MHz clock
     
@@ -13,11 +13,13 @@ module sdram_controller_tb;
     // Additional signals required for module instantiation
     // Using defaults for signals we're not actively testing
     reg [22:0] soc_side_addr;  // 23-bit address bus (8M x 32-bit words)
+
     reg [31:0] soc_side_wr_data;
     reg [3:0] soc_side_wr_mask;
     reg soc_side_wr_en;
-    reg soc_side_rd_en;
+    
     wire [31:0] soc_side_rd_data;
+	reg soc_side_rd_en;
     
     wire [11:0] ram_side_addr;  // Assuming max of ROW_WIDTH (12 bits) for SDRAM_ADDR_WIDTH
     wire [1:0] ram_side_bank_addr;
@@ -41,14 +43,7 @@ module sdram_controller_tb;
     assign ram_side_chip1_data = 16'hzzzz; // High impedance for data bus
     
     // Instantiate the SDRAM controller
-    sdram_controller #(
-        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
-        .REFRESH_TIME_MS(64),
-        .REFRESH_COUNT(4096),
-        .ROW_WIDTH(12),
-        .COL_WIDTH(9),
-        .BANK_ADDR_WIDTH(2)
-    ) dut (
+    sdram_controller (
         .clk(clk),
         .reset_n_port(reset_n),
         
@@ -81,7 +76,7 @@ module sdram_controller_tb;
     // Clock generation.
     initial begin
         clk = 0;
-        forever #(CLK_PERIOD_NS / 2) clk = ~clk;  // Generate 75MHz clock.
+        forever #(CLK_PERIOD_NS / 2) clk = ~clk;
     end
     
     // Test sequence.
@@ -91,15 +86,22 @@ module sdram_controller_tb;
 
         soc_side_addr = 0;
         soc_side_wr_data = 0;
-        soc_side_wr_mask = 0;  // No write operations.
-        soc_side_wr_en = 0;    // No write enable.
-        soc_side_rd_en = 0;    // No read enable.
+        soc_side_wr_mask = 0;
+        soc_side_wr_en = 0;
+        soc_side_rd_en = 0;
         
         // Wait 10 clock cycles plus a quarter cycle and then deassert the reset.
         #(CLK_PERIOD_NS * 10 + CLK_PERIOD_NS / 4);
         reset_n = 1;  // Deassert reset.
         
-        #(500000);
+        #(400000);  // Wait 400us for SDRAM to initialize.
+
+        soc_side_addr = 23'd8086;  // 0000 0000 0000 0000 0001 1111 1001 0110
+        soc_side_wr_data = 32'b11001100111100001111000011110001;  // 3438342385
+        soc_side_wr_mask = 4'b1111;
+        soc_side_wr_en = 1;    // No write enable.
+
+		#(1000);  // Wait 1us.
         
         // End simulation
         $display("Simulation complete at time %t", $time);
