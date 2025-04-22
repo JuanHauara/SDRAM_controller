@@ -43,7 +43,14 @@ module write_data_tb;
     assign ram_side_chip1_data = 16'hzzzz; // High impedance for data bus
     
     // Instantiate the SDRAM controller
-    sdram_controller (
+    sdram_controller #(
+        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
+        .REFRESH_TIME_MS(64),
+        .REFRESH_COUNT(4096),
+        .ROW_WIDTH(12),
+        .COL_WIDTH(9),
+        .BANK_ADDR_WIDTH(2)
+    ) dut (
         .clk(clk),
         .reset_n_port(reset_n),
         
@@ -99,7 +106,10 @@ module write_data_tb;
         soc_side_addr = 23'd8086;  // 0000 0000 0000 0000 0001 1111 1001 0110
         soc_side_wr_data = 32'b11001100111100001111000011110001;  // 3438342385
         soc_side_wr_mask = 4'b1111;
-        soc_side_wr_en = 1;    // No write enable.
+		
+        soc_side_wr_en = 1;		// Init write cycle.
+		#(CLK_PERIOD_NS * 2)	// Wait 2 clock cycles.
+		soc_side_wr_en = 0;
 
 		#(1000);  // Wait 1us.
         

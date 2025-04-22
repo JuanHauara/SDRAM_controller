@@ -1,0 +1,10 @@
+#Start recording tcl command: 4/22/2025 22:49:06
+#Project Location: C:/prog/FPGA/SDRAM_controller/sdram_controller; Project name: sdram_controller
+prj_project open "C:/prog/FPGA/SDRAM_controller/sdram_controller/sdram_controller.ldf"
+prj_src remove "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/sdram_controller_tb.v"
+prj_src add "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/init_and_refresh_cycle_tb.v" "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/read_data_tb.v" "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/write_data_tb.v"
+prj_src exclude "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/init_and_refresh_cycle_tb.v"
+prj_src exclude "C:/prog/FPGA/SDRAM_controller/sdram_controller/impl1/source/read_data_tb.v"
+prj_run Export -impl impl1 -forceAll
+prj_run Export -impl impl1 -forceAll
+#Stop recording: 4/22/2025 23:40:49

@@ -43,7 +43,14 @@ module init_and_refresh_cycle_tb;
     assign ram_side_chip1_data = 16'hzzzz; // High impedance for data bus
     
     // Instantiate the SDRAM controller
-    sdram_controller (
+    sdram_controller #(
+        .CLK_FREQUENCY_MHZ(80),  // 80MHz clock
+        .REFRESH_TIME_MS(64),
+        .REFRESH_COUNT(4096),
+        .ROW_WIDTH(12),
+        .COL_WIDTH(9),
+        .BANK_ADDR_WIDTH(2)
+    ) dut (
         .clk(clk),
         .reset_n_port(reset_n),
         
