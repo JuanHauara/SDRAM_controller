@@ -103,7 +103,7 @@ module write_data_tb;
         
         #(400000);  // Wait 400us for SDRAM to initialize.
 
-        soc_side_addr = 23'd8086;  // 0000 0000 0000 0000 0001 1111 1001 0110
+        soc_side_addr = 23'b01100111111001010101101;
         soc_side_wr_data = 32'b11001100111100001111000011110001;  // 3438342385
         soc_side_wr_mask = 4'b1111;
 		

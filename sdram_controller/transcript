@@ -16,7 +16,7 @@
 # do {C:/prog/FPGA/SDRAM_controller/sdram_controller/simulation/simulation.mdo}
 # Loading project simulation
 # vsim -voptargs="+acc" -L work -L pmi_work -L ovi_machxo2 write_data_tb 
-# Start time: 23:43:14 on Apr 22,2025
+# Start time: 21:58:12 on Apr 23,2025
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.write_data_tb(fast)
 # Loading work.sdram_controller(fast)
@@ -90,51 +90,150 @@ run 401us
 # Time: 400.169us, current_state: 01001, current_command: 0100xx1
 # Time: 400.181us, current_state: 01000, current_command: 0111000
 # Time: 400.206us, current_state: 10101, current_command: 0111000
-# Time: 400.219us, current_state: 01010, current_command: 0011xxx
-# Time: 400.231us, current_state: 01011, current_command: 0111000
-# Time: 400.256us, current_state: 01001, current_command: 0100xx1
-# Time: 400.269us, current_state: 01000, current_command: 0111000
-# Time: 400.294us, current_state: 10101, current_command: 0111000
-# Time: 400.306us, current_state: 01010, current_command: 0011xxx
-# Time: 400.319us, current_state: 01011, current_command: 0111000
-# Time: 400.344us, current_state: 01001, current_command: 0100xx1
-# Time: 400.356us, current_state: 01000, current_command: 0111000
-# Time: 400.381us, current_state: 10101, current_command: 0111000
-# Time: 400.394us, current_state: 01010, current_command: 0011xxx
-# Time: 400.406us, current_state: 01011, current_command: 0111000
-# Time: 400.431us, current_state: 01001, current_command: 0100xx1
-# Time: 400.444us, current_state: 01000, current_command: 0111000
-# Time: 400.469us, current_state: 10101, current_command: 0111000
-# Time: 400.481us, current_state: 01010, current_command: 0011xxx
-# Time: 400.494us, current_state: 01011, current_command: 0111000
-# Time: 400.519us, current_state: 01001, current_command: 0100xx1
-# Time: 400.531us, current_state: 01000, current_command: 0111000
-# Time: 400.556us, current_state: 10101, current_command: 0111000
-# Time: 400.569us, current_state: 01010, current_command: 0011xxx
-# Time: 400.581us, current_state: 01011, current_command: 0111000
-# Time: 400.606us, current_state: 01001, current_command: 0100xx1
-# Time: 400.619us, current_state: 01000, current_command: 0111000
-# Time: 400.644us, current_state: 10101, current_command: 0111000
-# Time: 400.656us, current_state: 01010, current_command: 0011xxx
-# Time: 400.669us, current_state: 01011, current_command: 0111000
-# Time: 400.694us, current_state: 01001, current_command: 0100xx1
-# Time: 400.706us, current_state: 01000, current_command: 0111000
-# Time: 400.731us, current_state: 10101, current_command: 0111000
-# Time: 400.744us, current_state: 01010, current_command: 0011xxx
-# Time: 400.756us, current_state: 01011, current_command: 0111000
-# Time: 400.781us, current_state: 01001, current_command: 0100xx1
-# Time: 400.794us, current_state: 01000, current_command: 0111000
-# Time: 400.819us, current_state: 10101, current_command: 0111000
-# Time: 400.831us, current_state: 01010, current_command: 0011xxx
-# Time: 400.844us, current_state: 01011, current_command: 0111000
-# Time: 400.869us, current_state: 01001, current_command: 0100xx1
-# Time: 400.881us, current_state: 01000, current_command: 0111000
-# Time: 400.906us, current_state: 10101, current_command: 0111000
-# Time: 400.919us, current_state: 01010, current_command: 0011xxx
-# Time: 400.931us, current_state: 01011, current_command: 0111000
-# Time: 400.956us, current_state: 01001, current_command: 0100xx1
-# Time: 400.969us, current_state: 01000, current_command: 0111000
-# Time: 400.994us, current_state: 10101, current_command: 0111000
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/current_state
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/current_command
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/delay_counter
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/reset_delay_counter
+stop
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.write_data_tb(fast)
+# Loading work.sdram_controller(fast)
+run 401us
+# Time: 0.000us, current_state: xxxxx, current_command: xxxxxxx
+# Time: 0.006us, current_state: 00000, current_command: 0111000
+# Time: 0.131us, current_state: 00001, current_command: 0111000
+# Time: 300.131us, current_state: 00011, current_command: 0010001
+# Time: 300.144us, current_state: 00010, current_command: 0111000
+# Time: 300.169us, current_state: 00110, current_command: 0001000
+# Time: 300.181us, current_state: 00111, current_command: 0111000
+# Time: 300.256us, current_state: 00110, current_command: 0001000
+# Time: 300.269us, current_state: 00111, current_command: 0111000
+# Time: 300.344us, current_state: 00110, current_command: 0001000
+# Time: 300.356us, current_state: 00111, current_command: 0111000
+# Time: 300.431us, current_state: 00110, current_command: 0001000
+# Time: 300.444us, current_state: 00111, current_command: 0111000
+# Time: 300.519us, current_state: 00110, current_command: 0001000
+# Time: 300.531us, current_state: 00111, current_command: 0111000
+# Time: 300.606us, current_state: 00110, current_command: 0001000
+# Time: 300.619us, current_state: 00111, current_command: 0111000
+# Time: 300.694us, current_state: 00110, current_command: 0001000
+# Time: 300.706us, current_state: 00111, current_command: 0111000
+# Time: 300.781us, current_state: 00110, current_command: 0001000
+# Time: 300.794us, current_state: 00111, current_command: 0111000
+# Time: 300.869us, current_state: 00101, current_command: 000000x
+# Time: 300.881us, current_state: 00100, current_command: 0111000
+# Time: 300.906us, current_state: 10101, current_command: 0111000
+# Time: 316.531us, current_state: 01100, current_command: 0010001
+# Time: 316.544us, current_state: 01101, current_command: 0111000
+# Time: 316.569us, current_state: 01111, current_command: 0001000
+# Time: 316.581us, current_state: 01110, current_command: 0111000
+# Time: 316.656us, current_state: 10101, current_command: 0111000
+# Time: 332.281us, current_state: 01100, current_command: 0010001
+# Time: 332.294us, current_state: 01101, current_command: 0111000
+# Time: 332.319us, current_state: 01111, current_command: 0001000
+# Time: 332.331us, current_state: 01110, current_command: 0111000
+# Time: 332.406us, current_state: 10101, current_command: 0111000
+# Time: 348.031us, current_state: 01100, current_command: 0010001
+# Time: 348.044us, current_state: 01101, current_command: 0111000
+# Time: 348.069us, current_state: 01111, current_command: 0001000
+# Time: 348.081us, current_state: 01110, current_command: 0111000
+# Time: 348.156us, current_state: 10101, current_command: 0111000
+# Time: 363.781us, current_state: 01100, current_command: 0010001
+# Time: 363.794us, current_state: 01101, current_command: 0111000
+# Time: 363.819us, current_state: 01111, current_command: 0001000
+# Time: 363.831us, current_state: 01110, current_command: 0111000
+# Time: 363.906us, current_state: 10101, current_command: 0111000
+# Time: 379.531us, current_state: 01100, current_command: 0010001
+# Time: 379.544us, current_state: 01101, current_command: 0111000
+# Time: 379.569us, current_state: 01111, current_command: 0001000
+# Time: 379.581us, current_state: 01110, current_command: 0111000
+# Time: 379.656us, current_state: 10101, current_command: 0111000
+# Time: 395.281us, current_state: 01100, current_command: 0010001
+# Time: 395.294us, current_state: 01101, current_command: 0111000
+# Time: 395.319us, current_state: 01111, current_command: 0001000
+# Time: 395.331us, current_state: 01110, current_command: 0111000
+# Time: 395.406us, current_state: 10101, current_command: 0111000
+# Time: 400.131us, current_state: 01010, current_command: 0011xxx
+# Time: 400.144us, current_state: 01011, current_command: 0111000
+# Time: 400.169us, current_state: 01001, current_command: 0100xx1
+# Time: 400.181us, current_state: 01000, current_command: 0111000
+# Time: 400.206us, current_state: 10101, current_command: 0111000
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/wr_data_reg
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/ram_bank_addr_reg
+add wave -position insertpoint  \
+sim:/write_data_tb/dut/ram_addr_reg
+stop
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.write_data_tb(fast)
+# Loading work.sdram_controller(fast)
+run 401us
+# Time: 0.000us, current_state: xxxxx, current_command: xxxxxxx
+# Time: 0.006us, current_state: 00000, current_command: 0111000
+# Time: 0.131us, current_state: 00001, current_command: 0111000
+# Time: 300.131us, current_state: 00011, current_command: 0010001
+# Time: 300.144us, current_state: 00010, current_command: 0111000
+# Time: 300.169us, current_state: 00110, current_command: 0001000
+# Time: 300.181us, current_state: 00111, current_command: 0111000
+# Time: 300.256us, current_state: 00110, current_command: 0001000
+# Time: 300.269us, current_state: 00111, current_command: 0111000
+# Time: 300.344us, current_state: 00110, current_command: 0001000
+# Time: 300.356us, current_state: 00111, current_command: 0111000
+# Time: 300.431us, current_state: 00110, current_command: 0001000
+# Time: 300.444us, current_state: 00111, current_command: 0111000
+# Time: 300.519us, current_state: 00110, current_command: 0001000
+# Time: 300.531us, current_state: 00111, current_command: 0111000
+# Time: 300.606us, current_state: 00110, current_command: 0001000
+# Time: 300.619us, current_state: 00111, current_command: 0111000
+# Time: 300.694us, current_state: 00110, current_command: 0001000
+# Time: 300.706us, current_state: 00111, current_command: 0111000
+# Time: 300.781us, current_state: 00110, current_command: 0001000
+# Time: 300.794us, current_state: 00111, current_command: 0111000
+# Time: 300.869us, current_state: 00101, current_command: 000000x
+# Time: 300.881us, current_state: 00100, current_command: 0111000
+# Time: 300.906us, current_state: 10101, current_command: 0111000
+# Time: 316.531us, current_state: 01100, current_command: 0010001
+# Time: 316.544us, current_state: 01101, current_command: 0111000
+# Time: 316.569us, current_state: 01111, current_command: 0001000
+# Time: 316.581us, current_state: 01110, current_command: 0111000
+# Time: 316.656us, current_state: 10101, current_command: 0111000
+# Time: 332.281us, current_state: 01100, current_command: 0010001
+# Time: 332.294us, current_state: 01101, current_command: 0111000
+# Time: 332.319us, current_state: 01111, current_command: 0001000
+# Time: 332.331us, current_state: 01110, current_command: 0111000
+# Time: 332.406us, current_state: 10101, current_command: 0111000
+# Time: 348.031us, current_state: 01100, current_command: 0010001
+# Time: 348.044us, current_state: 01101, current_command: 0111000
+# Time: 348.069us, current_state: 01111, current_command: 0001000
+# Time: 348.081us, current_state: 01110, current_command: 0111000
+# Time: 348.156us, current_state: 10101, current_command: 0111000
+# Time: 363.781us, current_state: 01100, current_command: 0010001
+# Time: 363.794us, current_state: 01101, current_command: 0111000
+# Time: 363.819us, current_state: 01111, current_command: 0001000
+# Time: 363.831us, current_state: 01110, current_command: 0111000
+# Time: 363.906us, current_state: 10101, current_command: 0111000
+# Time: 379.531us, current_state: 01100, current_command: 0010001
+# Time: 379.544us, current_state: 01101, current_command: 0111000
+# Time: 379.569us, current_state: 01111, current_command: 0001000
+# Time: 379.581us, current_state: 01110, current_command: 0111000
+# Time: 379.656us, current_state: 10101, current_command: 0111000
+# Time: 395.281us, current_state: 01100, current_command: 0010001
+# Time: 395.294us, current_state: 01101, current_command: 0111000
+# Time: 395.319us, current_state: 01111, current_command: 0001000
+# Time: 395.331us, current_state: 01110, current_command: 0111000
+# Time: 395.406us, current_state: 10101, current_command: 0111000
+# Time: 400.131us, current_state: 01010, current_command: 0011xxx
+# Time: 400.144us, current_state: 01011, current_command: 0111000
+# Time: 400.169us, current_state: 01001, current_command: 0100xx1
+# Time: 400.181us, current_state: 01000, current_command: 0111000
+# Time: 400.206us, current_state: 10101, current_command: 0111000
 # Compile of sdram_controller.v was successful.
 # Compile of write_data_tb.v was successful.
 # 2 compiles, 0 failed with no errors.
@@ -143,6 +242,7 @@ restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.write_data_tb(fast)
 # Loading work.sdram_controller(fast)
@@ -206,5 +306,5 @@ run 401us
 # Time: 400.169us, current_state: 01001, current_command: 0100xx1
 # Time: 400.181us, current_state: 01000, current_command: 0111000
 # Time: 400.206us, current_state: 10101, current_command: 0111000
-# End time: 00:05:12 on Apr 23,2025, Elapsed time: 0:21:58
+# End time: 23:35:04 on Apr 23,2025, Elapsed time: 1:36:52
 # Errors: 0, Warnings: 2

@@ -821,7 +821,7 @@ begin
 				// After waiting tWR nanoseconds the data has already been written to the SDRAM memory.
 
 				// ---- Transitions ----
-				if (delay_counter == TWR_CYCLES - 1)  // Wait tWR nanoseconds.
+				if (delay_counter == TWR_CYCLES - 1)  // Wait tWR cycles.
 					begin
 						next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
