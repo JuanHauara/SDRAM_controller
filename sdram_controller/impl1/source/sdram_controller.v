@@ -3,7 +3,7 @@
 	It is designed to use two of these 2M word x 4 bank x 16 bits (8M words x 16 bits) chips in parallel to 
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
-	El bus de datos debe ser de 23 bits para direccionar las 8M x 32 bit words.
+	The data bus must be 23 bits to address the 8M x 32 bit words.
 
 	Default options
 		CLK_FREQUENCY_MHZ = 80MHz
@@ -22,7 +22,7 @@
 		  and during the initialization sequence. The CPU must wait for soc_side_busy to be low before 
 		  sending commands to the SDRAM.
 		
-		- soc_side_addr_bus: Address for read/write 32 bits data.
+		- soc_side_word_addr_bus: Address for read/write 32 bits data.
 
 		- soc_side_wmask: 0000 --> No write/read memory.
 								1111 --> Write 32 bits.
@@ -44,9 +44,9 @@
 
 		Read data:
 			- soc_side_rdata: Data for reading, comes available a few clocks after 
-			soc_side_ren_port and soc_side_addr_bus are presented on the bus.
+			soc_side_ren and soc_side_word_addr_bus are presented on the bus.
 
-			- soc_side_ren_port: If asserted (high), soc_side_addr_bus is sampled during the READ_CAS and 
+			- soc_side_ren: If asserted (high), soc_side_word_addr_bus is sampled during the READ_CAS and 
 			READ_BANK_ACTIVATE states. Data becomes available on soc_side_rdata after a few clock cycles.
  */
 
@@ -73,11 +73,11 @@ module sdram_controller # (
 	output wire soc_side_ready,
 
 	// Address.
-	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_addr_bus,
+	input wire [SOC_SIDE_ADDR_WIDTH - 1: 0] soc_side_word_addr_bus,
 
 	// Read data.
 	output wire [31:0] soc_side_rdata,
-	input wire soc_side_ren_port,
+	input wire soc_side_ren,
 
 	// Write data.
 	input wire [31:0] soc_side_wdata,
@@ -647,7 +647,7 @@ begin
 
                         next_state = WRITE_BANK_ACTIVATE;
 					end
-				else if (soc_side_ren_port)
+				else if (soc_side_ren)
 					begin
 						// Starts read sequence.
 						next_command = CMD_BANK_ACTIVATE;
@@ -1126,12 +1126,12 @@ begin
 	
 	if (current_state == READ_BANK_ACTIVATE || current_state == WRITE_BANK_ACTIVATE)
 		begin
-			ram_bank_addr_reg = soc_side_addr_bus[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
-			ram_addr_reg = soc_side_addr_bus[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
+			ram_bank_addr_reg = soc_side_word_addr_bus[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+			ram_addr_reg = soc_side_word_addr_bus[SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + 1): SOC_SIDE_ADDR_WIDTH - (BANK_ADDR_WIDTH + ROW_WIDTH)];
 		end
 	else if (current_state == READ_CAS || current_state == WRITE_CAS)
 		begin
-			ram_bank_addr_reg = soc_side_addr_bus[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
+			ram_bank_addr_reg = soc_side_word_addr_bus[SOC_SIDE_ADDR_WIDTH - 1: SOC_SIDE_ADDR_WIDTH - BANK_ADDR_WIDTH];
 
 			/*
 									 BANK	 ROW	 COL
@@ -1141,7 +1141,7 @@ begin
 			ram_addr_reg = { {(SDRAM_ADDR_WIDTH - 11){1'b0}},		/* 0s */
 							1'b1,									/* 1 (A10 is always for auto precharge) */
 							{(10 - COL_WIDTH){1'b0}},				/* 0s */
-							soc_side_addr_bus[COL_WIDTH - 1: 0]		/* column address */
+							soc_side_word_addr_bus[COL_WIDTH - 1: 0]		/* column address */
 						};
 		end
 	else if (current_state == INIT_MRS)
