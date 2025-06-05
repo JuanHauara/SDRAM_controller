@@ -3,7 +3,7 @@
 	It is designed to use two of these 2M word x 4 bank x 16 bits (8M words x 16 bits) chips in parallel to 
 	achieve a total of 8M x 32 bit words = 32MB RAM.
 
-	The data bus must be 23 bits to address the 8M x 32 bit words.
+	The address bus must be 25 bits to address a total of 32MB.
 
 	Default options
 		L_CLK_FREQUENCY_MHZ = 80MHz
@@ -22,7 +22,7 @@
 		  and during the initialization sequence. The CPU must wait for soc_side_busy to be low before 
 		  sending commands to the SDRAM.
 		
-		- soc_side_byte_addr_bus: Byte-oriented address.
+		- soc_side_byte_addr_bus: Byte-oriented address. 25 bits to address a total of 32MB.
 
 		- soc_side_wmask: 0000 --> No write/read memory.
 								1111 --> Write 32 bits.
@@ -133,14 +133,14 @@ module sdram_controller (
 	localparam L_TRC_NS = 65;  // Ref/Active to Ref/Active Command Period, tRC: 55-65ns. Wait time after issuing the auto refresh command.
 	localparam L_TRC_CYCLES = ((L_TRC_NS * L_CLK_FREQUENCY_MHZ) + 999) / 1000;  // Rounded up number of wait cycles to meet tRC time.
 
-	localparam L_TRSC_CYCLES = 2;  // Mode Register Set Cycle Time, tRSC: 2 clock cycles. Wait time after issuing the CMD_MRS Mode Register Set (MRS) command.
+	localparam L_TRSC_CYCLES = 2;  // Mode Register Set Cycle Time, tRSC: 2 clock cycles. Wait time after issuing the L_CMD_MRS Mode Register Set (MRS) command.
 
 	// Write and read timings.
 	// -------------------------------
-	localparam L_TRCD_NS = 18;  // Active to Read/Write Command Delay Time, tRCD: 15ns + safety margin. Wait time after issuing the CMD_BANK_ACTIVATE command.
+	localparam L_TRCD_NS = 18;  // Active to Read/Write Command Delay Time, tRCD: 15ns + safety margin. Wait time after issuing the L_CMD_BANK_ACTIVATE command.
 	localparam L_TRCD_CYCLES = ((L_TRCD_NS * L_CLK_FREQUENCY_MHZ) + 999) / 1000;  // Rounded up number of wait cycles to meet tRCD time.
 
-	localparam L_TWR_CYCLES = 2;  // Write Recovery Time, tWR: 2 clock cycles. Wait time after issuing the CMD_WRITE command.
+	localparam L_TWR_CYCLES = 2;  // Write Recovery Time, tWR: 2 clock cycles. Wait time after issuing the L_CMD_WRITE command.
 
 	localparam L_CAS_LATENCY = 3;
 	// ------------------------------------------------------------------------
@@ -203,16 +203,25 @@ module sdram_controller (
 	//-------------------------------
 	// SDRAM Command Definitions
 	//-------------------------------
-	localparam CMD_PRECHARGE_ALL	= 7'b0010001;  // Precharge All.
-	localparam CMD_AUTO_REFRESH		= 7'b0001000;  // Auto Refresh.
-	localparam CMD_NOP				= 7'b0111000;  // No Operation.
-	localparam CMD_MRS				= 7'b000000x;  // Mode Register Set (MRS).
+	/*
+		See datasheet, Table 1, pag. 12.
+
+		7 bits commands: (CS, RAS, CAS, WE, BS1, BS0, A10)
+
+		Bits [6:3] = comando real (CS, RAS, CAS, WE)
+		Bits [2:1] = selección de banco (BS1, BS0)
+		Bit 0 = A10 (para auto-precharge)
+	*/
+	localparam L_CMD_PRECHARGE_ALL	= 7'b0010001;  // Precharge All. CS=0, RAS=0, CAS=1, WE=0, BS1=x, BS0=x, A10=1.
+	localparam L_CMD_AUTO_REFRESH	= 7'b0001000;  // Auto Refresh. CS=0, RAS=0, CAS=0, WE=1, BS1=x, BS0=x, A10=x.
+	localparam L_CMD_NOP			= 7'b0111000;  // No Operation. CS=0, RAS=1, CAS=1, WE=1, BS1=x, BS0=x, A10=x.
+	localparam L_CMD_MRS			= 7'b0000000;  // Mode Register Set (MRS). CS=0, RAS=0, CAS=0, WE=0, BS1=0, BS0=0, A10=0. See 10.4 Mode Register Set Cycle, datasheet, pag. 20.
 
 	// Commands for read/write operations.
-	localparam CMD_BANK_ACTIVATE	= 7'b0011xxx;  // Activate bank/row (x = bank address bits).
-	localparam CMD_WRITE			= 7'b0100xx1;  // Write command (x = bank address bits).
-	localparam CMD_PRECHARGE_BANK	= 7'b0010x00;  // Precharge specific bank (x = a10 for auto-precharge).
-	localparam CMD_READ				= 7'b0101xx1;  // CS=L, RAS=H, CAS=L, WE=H
+	localparam L_CMD_BANK_ACTIVATE	= 7'b0011000;  // Activate bank/row. CS=0, RAS=0, CAS=1, WE=1, BS1=x, BS0=x, A10=x. Bank address comes from the SOC address.
+	localparam L_CMD_WRITE			= 7'b0100000;  // Write command. CS=0, RAS=1, CAS=0, WE=0, BS1=x, BS0=x, A10=0. Bank address comes from the SOC address.
+	localparam L_CMD_READ			= 7'b0101000;  // Read command. CS=0, RAS=1, CAS=0, WE=1, BS1=x, BS0=x, A10=0. Bank address comes from the SOC address.
+	//localparam L_CMD_PRECHARGE_BANK	= 7'b0010000;  // Precharge specific bank. CS=0, RAS=0, CAS=1, WE=0, BS1=x, BS0=x, A10=0. Bank address comes from the SOC address.
 
 
 	//-------------------------------
@@ -312,7 +321,7 @@ module sdram_controller (
 		if (~reset_n)  // Synchronous reset.
 			begin
 				current_state <= INIT;
-				current_command <= CMD_NOP;
+				current_command <= L_CMD_NOP;
 				
 				// Data.
 				wdata_reg <= 32'b0;
@@ -464,7 +473,7 @@ module sdram_controller (
 	begin
 		// Default values to prevent unwanted latches.
 		next_state = current_state;
-		next_command = CMD_NOP;
+		next_command = L_CMD_NOP;
 
 		reset_delay_counter = 1'b0;
 		init_counter_count_one_cycle = 1'b0;
@@ -512,7 +521,7 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Emit CMD_NOP command during timeouts.
+					next_command = L_CMD_NOP;  // Emit L_CMD_NOP command during timeouts.
 
 					// ---- Transitions ----
 					next_state = INIT_WAIT;
@@ -525,7 +534,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_INIT_PAUSE_CYCLES - 1)  // Wait at least 200us before starting initialization.
 						begin
-							next_command = CMD_PRECHARGE_ALL;
+							next_command = L_CMD_PRECHARGE_ALL;
 							
 							next_state = INIT_PRECHARGE_ALL;
 						end
@@ -535,10 +544,10 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Precharge all banks.
-					// CMD_PRECHARGE_ALL command issued in the previous state.
+					// L_CMD_PRECHARGE_ALL command issued in the previous state.
 
 					reset_delay_counter = 1'b1;		// Enable the delay counter to start counting in the next state.
-					next_command = CMD_NOP;			// Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;		// Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = INIT_WAIT_TRP;
@@ -551,7 +560,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_TRP_CYCLES - 1)	// Wait tRP nanoseconds after issuing the precharge all command.
 						begin
-							next_command = CMD_AUTO_REFRESH;
+							next_command = L_CMD_AUTO_REFRESH;
 
 							next_state = INIT_AUTO_REFRESH;
 						end
@@ -563,13 +572,13 @@ module sdram_controller (
 					/*
 						Auto Refresh.
 
-						CMD_AUTO_REFRESH command issued in the previous state.
-						The CMD_AUTO_REFRESH command is active for a single clock cycle, immediately after 
+						L_CMD_AUTO_REFRESH command issued in the previous state.
+						The L_CMD_AUTO_REFRESH command is active for a single clock cycle, immediately after 
 						the SDRAM waits tRC with a NOP command.
 					*/
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = INIT_WAIT_TRC;  // Wait refresh cycle time tRC after sending the auto refresh command.
@@ -586,7 +595,7 @@ module sdram_controller (
 							if (init_counter == L_INIT_REFRESH_COUNT - 1) 
 								begin
 									// Once the 8 cycles are completed, set the mode register.
-									next_command = CMD_MRS;
+									next_command = L_CMD_MRS;
 
 									next_state = INIT_MRS;
 								end
@@ -594,7 +603,7 @@ module sdram_controller (
 								begin
 									// Still not completed the 8 Auto Refresh cycles.
 									init_counter_count_one_cycle = 1'b1;  // Count one completed refresh cycle.
-									next_command = CMD_AUTO_REFRESH;
+									next_command = L_CMD_AUTO_REFRESH;
 
 									next_state = INIT_AUTO_REFRESH;
 								end
@@ -605,10 +614,10 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Mode Register Set.
-					// CMD_MRS command issued in the previous state.
+					// L_CMD_MRS command issued in the previous state.
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = INIT_WAIT_TRSC;
@@ -622,7 +631,7 @@ module sdram_controller (
 					if (delay_counter == L_TRSC_CYCLES - 1)	// Wait tRSC (Mode Register Set Cycle Time) after the Mode Register Set
 						begin
 							reset_refresh_counter = 1'b1;	// Starts periodic refresh cycles.
-							next_command = CMD_NOP;			// The No Operation Command should be used in cases when the SDRAM is in an idle or a wait state.
+							next_command = L_CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in an idle or a wait state.
 
 							next_state = IDLE;				// Initialization completed.
 						end
@@ -644,21 +653,21 @@ module sdram_controller (
 								The auto-refresh counter always increments and resets at the end
 								of the auto-refresh sequence, in the REFRESH_WAIT_TRC state.
 							*/
-							next_command = CMD_PRECHARGE_ALL;
+							next_command = L_CMD_PRECHARGE_ALL;
 
 							next_state = REFRESH_PRECHARGE_ALL;
 						end
 					else if (soc_side_wen)
 						begin
 							// Starts write sequence.
-							next_command = CMD_BANK_ACTIVATE;
+							next_command = L_CMD_BANK_ACTIVATE;
 
 							next_state = WRITE_BANK_ACTIVATE;
 						end
 					else if (soc_side_ren)
 						begin
 							// Starts read sequence.
-							next_command = CMD_BANK_ACTIVATE;
+							next_command = L_CMD_BANK_ACTIVATE;
 
 							next_state = READ_BANK_ACTIVATE;
 						end
@@ -692,10 +701,10 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Precharge all banks.
-					// CMD_PRECHARGE_ALL command issued in the previous IDLE state.
+					// L_CMD_PRECHARGE_ALL command issued in the previous IDLE state.
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = REFRESH_WAIT_TRP;
@@ -708,7 +717,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_TRP_CYCLES - 1)  // Wait tRP nanoseconds after issuing the precharge all command.
 						begin
-							next_command = CMD_AUTO_REFRESH;
+							next_command = L_CMD_AUTO_REFRESH;
 
 							next_state = REFRESH_AUTO_REFRESH;
 						end
@@ -720,13 +729,13 @@ module sdram_controller (
 					/*
 						Auto Refresh.
 
-						CMD_AUTO_REFRESH command issued in the previous state.
-						The CMD_AUTO_REFRESH command is active for a single clock cycle, immediately after which 
+						L_CMD_AUTO_REFRESH command issued in the previous state.
+						The L_CMD_AUTO_REFRESH command is active for a single clock cycle, immediately after which 
 						the SDRAM waits tRC with the NOP command.
 					*/
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 					
 					// ---- Transitions ----
 					next_state = REFRESH_WAIT_TRC;
@@ -737,11 +746,11 @@ module sdram_controller (
 					// ---- Outputs ----
 
 					// ---- Transitions ----
-					if (delay_counter == L_TRC_CYCLES - 1)  // Wait tRC nanoseconds after issuing the CMD_AUTO_REFRESH command.
+					if (delay_counter == L_TRC_CYCLES - 1)  // Wait tRC nanoseconds after issuing the L_CMD_AUTO_REFRESH command.
 						begin
 							
 							reset_refresh_counter = 1'b1;	// Reset the refresh counter.
-							next_command = CMD_NOP;			// The No Operation Command should be used in cases when the SDRAM is in an idle or a wait state.
+							next_command = L_CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in an idle or a wait state.
 
 							next_state = IDLE;  // Return to IDLE state.
 						end
@@ -775,7 +784,7 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Activate the specified bank and row.
-					// CMD_BANK_ACTIVATE command issued in the previous state 'IDLE'.
+					// L_CMD_BANK_ACTIVATE command issued in the previous state 'IDLE'.
 
 					// See:
 					//----------------------------------------------------------
@@ -784,7 +793,7 @@ module sdram_controller (
 					//----------------------------------------------------------
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = WRITE_WAIT_TRCD;
@@ -797,7 +806,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_TRCD_CYCLES - 1)  // Wait for tRCD.
 						begin
-							next_command = CMD_WRITE;
+							next_command = L_CMD_WRITE;
 
 							next_state = WRITE_CAS;
 						end
@@ -819,7 +828,7 @@ module sdram_controller (
 					//----------------------------------------------------------
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;  // Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;  // Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = WRITE_WAIT_TWR;
@@ -833,7 +842,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_TWR_CYCLES - 1)  // Wait tWR cycles.
 						begin
-							next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+							next_command = L_CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 							next_state = IDLE;  // Return directly to IDLE.
 						end
@@ -857,13 +866,13 @@ module sdram_controller (
 			// 							del controlador.
 			// 						*/
 
-			// 						next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+			// 						next_command = L_CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 			//                      next_state = IDLE;  // Volver a IDLE directamente.
 			// 					end
 			// 				else 
 			// 					begin
-			// 						next_command = CMD_PRECHARGE_BANK;
+			// 						next_command = L_CMD_PRECHARGE_BANK;
 
 			//                      next_state = WRITE_PRECHARGE;
 			// 					end
@@ -874,10 +883,10 @@ module sdram_controller (
 			// 	begin
 			// 		// ---- Outputs ----
 			// 		// Precargar el banco específico.
-			// 		// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
+			// 		// Comando L_CMD_PRECHARGE_BANK emitido en el estado anterior.
 
 			// 		reset_delay_counter = 1'b1;
-			//         next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+			//         next_command = L_CMD_NOP;  // Emitir comando L_CMD_NOP durante los tiempos de espera.
 
 			// 		// ---- Transitions ----
 			// 		next_state = WRITE_WAIT_TRP;
@@ -890,7 +899,7 @@ module sdram_controller (
 			// 		// ---- Transitions ----
 			// 		if (delay_counter == L_TRP_CYCLES - 1)  // Esperar tRP.
 			// 			begin
-			// 				next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+			// 				next_command = L_CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 			//                 next_state = IDLE;			// Volver a IDLE.
 			// 			end
@@ -934,7 +943,7 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Activate the required bank and row.
-					// current_command = CMD_BANK_ACTIVATE, issued in the previous IDLE state.
+					// current_command = L_CMD_BANK_ACTIVATE, issued in the previous IDLE state.
 
 					// See:
 					//----------------------------------------------------------
@@ -943,7 +952,7 @@ module sdram_controller (
 					//----------------------------------------------------------
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;	// Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;	// Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = READ_WAIT_TRCD;
@@ -952,12 +961,12 @@ module sdram_controller (
 			READ_WAIT_TRCD:
 				begin
 					// ---- Outputs ----
-					// current_command = CMD_NOP, issued in the previous state.
+					// current_command = L_CMD_NOP, issued in the previous state.
 
 					// ---- Transitions ----
 					if (delay_counter == L_TRCD_CYCLES - 1)	// Wait tRCD after activating the bank.
 						begin
-							next_command = CMD_READ;
+							next_command = L_CMD_READ;
 
 							next_state = READ_CAS;
 						end
@@ -967,7 +976,7 @@ module sdram_controller (
 				begin
 					// ---- Outputs ----
 					// Issue read command.
-					// current_command = CMD_READ, issued in the previous state.
+					// current_command = L_CMD_READ, issued in the previous state.
 
 					// See:
 					//----------------------------------------------------------
@@ -976,7 +985,7 @@ module sdram_controller (
 					//----------------------------------------------------------
 
 					reset_delay_counter = 1'b1;
-					next_command = CMD_NOP;	// Issue CMD_NOP command during wait times.
+					next_command = L_CMD_NOP;	// Issue L_CMD_NOP command during wait times.
 
 					// ---- Transitions ----
 					next_state = READ_WAIT_CAS_LATENCY;
@@ -989,7 +998,7 @@ module sdram_controller (
 					// ---- Transitions ----
 					if (delay_counter == L_CAS_LATENCY - 1)	// Wait L_CAS_LATENCY cycles before data is available.
 						begin
-							next_command = CMD_NOP;
+							next_command = L_CMD_NOP;
 
 							next_state = READ_DATA;
 						end
@@ -1004,7 +1013,7 @@ module sdram_controller (
 					*/
 
 					// ---- Transitions ----
-					next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+					next_command = L_CMD_NOP;	// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 					next_state = IDLE;			// Return to IDLE.
 				end
@@ -1028,13 +1037,13 @@ module sdram_controller (
 			// 					controlador.
 			// 				*/
 
-			// 				next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+			// 				next_command = L_CMD_NOP;	// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 			//              next_state = IDLE;			// Volver a IDLE directamente.
 			// 			end
 			// 		else
 			// 			begin
-			// 				next_command = CMD_PRECHARGE_BANK;
+			// 				next_command = L_CMD_PRECHARGE_BANK;
 
 			//                 next_state = READ_PRECHARGE;
 			// 			end
@@ -1047,7 +1056,7 @@ module sdram_controller (
 			// 		// Comando CMD_PRECHARGE_BANK emitido en el estado anterior.
 
 			// 		reset_delay_counter = 1'b1;
-			//         next_command = CMD_NOP;  // Emitir comando CMD_NOP durante los tiempos de espera.
+			//         next_command = L_CMD_NOP;  // Emitir comando L_CMD_NOP durante los tiempos de espera.
 
 			// 		// ---- Transitions ----
 			// 		next_state = READ_WAIT_TRP;
@@ -1060,7 +1069,7 @@ module sdram_controller (
 			// 		// ---- Transitions ----
 			// 		if (delay_counter == L_TRP_CYCLES - 1)  // Esperar tRP después de precargar.
 			// 			begin
-			// 				next_command = CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+			// 				next_command = L_CMD_NOP;		// The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 			//                 next_state = IDLE;			// Volver a IDLE.
 			// 			end
@@ -1070,7 +1079,7 @@ module sdram_controller (
 			default: 
 				begin
 					// ---- Outputs ----
-					next_command = CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
+					next_command = L_CMD_NOP;  // The No Operation Command should be used in cases when the SDRAM is in a idle or a wait state.
 
 					// ---- Transitions ----
 					next_state = IDLE;
@@ -1155,13 +1164,15 @@ module sdram_controller (
 		else if (current_state == INIT_MRS)
 			begin
 				/*
+					See datasheet, pag. 20.
+
 					Mode Register Set (MRS) configuration during initialization:
 
-						Burst Length of 1 (no burst)      -> bits 0-2 = 000
-						Sequential burst type             -> bit 3    = 0
-						CAS Latency of 3                  -> bits 4-6 = 011
-						Standard operation mode           -> bits 7-8 = 00
-						"Burst Read/Single Write" setting -> bit 9    = 1
+						Burst Length of 1 (no burst)	-> bits 0-2 = 000
+						Sequential burst type			-> bit 3    = 0
+						CAS Latency of 3				-> bits 4-6 = 011
+						Standard operation mode			-> bits 7-8 = 00
+						Burst Read and Single Write		-> bit 9    = 1
 
 						= 10'b 1 00 011 0 000
 				*/
